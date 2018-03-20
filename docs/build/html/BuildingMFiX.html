@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building MFiX-Exa &mdash; MFiX-Exa  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MFiX-Exa  documentation" href="index.html"/>
+        <link rel="up" title="MFiX-Exa Introduction" href="Introduction.html"/>
+        <link rel="next" title="Running the MFIX Test Suite" href="TestingMFiX.html"/>
+        <link rel="prev" title="MFiX-Exa Introduction" href="Introduction.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MFiX-Exa
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building MFiX-Exa</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#superbuild-instructions">Superbuild Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">Building MFIX-Exa using a separate AMReX installation (no superbuild)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-amrex-library">Build AMReX Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Building MFIX-Exa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#a-few-more-notes-on-building-mfix-exa">A Few more notes on building MFIX-Exa</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TestingMFiX.html">Running the MFIX Test Suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html#directory-overview">Directory overview</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MFiX-Exa</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Introduction.html">MFiX-Exa Introduction</a> &raquo;</li>
+        
+      <li>Building MFiX-Exa</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/BuildingMFiX.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-mfix-exa">
+<h1>Building MFiX-Exa<a class="headerlink" href="#building-mfix-exa" title="Permalink to this headline">¶</a></h1>
+<p>There are two options to building MFIX-Exa:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>SUPERBUILD (default):</dt>
+<dd>Utilities download and build AMReX as part of the MFIX-Exa build process.
+This method is strongly encouraged as it ensures configure options for
+MFIX-Exa and AMReX are consistent.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Using an existing AMReX Library:</dt>
+<dd>MFIX-Exa is linked to an
+existing AMReX installation. This is ideal for continuous integration
+severs (CI) and regression testing applications.  AMReX library version
+must meet MFIX-Exa requirements.</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="superbuild-instructions">
+<h2>Superbuild Instructions<a class="headerlink" href="#superbuild-instructions" title="Permalink to this headline">¶</a></h2>
+<p>When building in <em>SUPERBUILD</em> mode, MFiX-Exa build system will take care of
+downloading, configuring and installing AMReX as part of the MFiX-Exa build.
+The following commands build MFiX-Exa and AMReX in a single step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
+<span class="nb">cd</span> mfix
+mkdir build
+<span class="nb">cd</span> build
+cmake CONFIG_OPTIONS ..
+make -j
+</pre></div>
+</div>
+<p>AMReX is built the first time the <code class="docutils literal notranslate"><span class="pre">make</span></code> command is issued.  No external
+installation of AMReX is needed. However, internet access to the AMReX github
+repository is required.  The optional string <code class="docutils literal notranslate"><span class="pre">CONFIG_OPTIONS</span></code> allows to
+customize the build of both AMReX and MFIX-Exa.  <code class="docutils literal notranslate"><span class="pre">CONFIG_OPTIONS</span></code> is a list
+of one or more configuration options given in the form <code class="docutils literal notranslate"><span class="pre">-DOPTION=VALUE</span></code>.</p>
+<p>The table below lists configuration options, possible values, and their effect
+on the build.  Options prefixed by <code class="docutils literal notranslate"><span class="pre">AMREX_</span></code> are specific to the build of
+AMReX.</p>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">MFiX-Exa compiler options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="24%" />
+<col width="36%" />
+<col width="24%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option name</th>
+<th class="head">Description</th>
+<th class="head">Possible values</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DEBUG</td>
+<td>Build in debug mode</td>
+<td>ON/OFF</td>
+<td>OFF</td>
+</tr>
+<tr class="row-odd"><td>MFIX_FFLAGS_OVERRIDES</td>
+<td>User-defined Fortran flags</td>
+<td>valid F90 compiler flags</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>MFIX_CXXFLAGS_OVERRIDES</td>
+<td>User-defined C++ flags</td>
+<td>valid C++ compiler flags</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>ENABLE_FPE</td>
+<td>Build with Floating-Point Exceptions checks</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_MPI</td>
+<td>Enable build with MPI</td>
+<td>0/1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>AMREX_ENABLE_OMP</td>
+<td>Enable build with OpenMP</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_DP</td>
+<td>Enable double precision</td>
+<td>0/1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>AMREX_ENABLE_DP_PARTICLES</td>
+<td>Enable double precision in particles classes</td>
+<td>0/1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_BASE_PROFILE</td>
+<td>Include profiling info</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>AMREX_ENABLE_TINY_PROFILE</td>
+<td>Include tiny profiling info</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_COMM_PROFILE</td>
+<td>Include communicators profiling info</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>AMREX_ENABLE_TRACE_PROFILE</td>
+<td>Include trace profiling info</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_MEM_PROFILE</td>
+<td>Include memory profiling info</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>AMREX_ENABLE_BACKTRACE</td>
+<td>Include backtrace info</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_PROFPARSER</td>
+<td>Include profile parser</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>AMREX_ENABLE_PIC</td>
+<td>Build position-independent code</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>AMREX_ENABLE_ASSERTION</td>
+<td>Build position-independent code</td>
+<td>0/1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>AMREX_GIT_COMMIT</td>
+<td>AMReX commit to be used in the build</td>
+<td>valid git commit id/branch</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>AMREX_INSTALL_DIR</td>
+<td>Global path to AMReX install directory</td>
+<td>valid global path</td>
+<td>None (superbuild)</td>
+</tr>
+</tbody>
+</table>
+<p>Note that SUPERBUILD mode is enabled automatically when <code class="docutils literal notranslate"><span class="pre">AMREX_INSTALL_DIR</span></code>
+is not given.</p>
+<p>Example: build mfix with custom fortran flags, AMReX profiling enabled and
+single precision particles:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DMFIX_FFLAGS_OVERRIDES<span class="o">=</span><span class="s2">&quot;custom flags&quot;</span> -DAMREX_ENABLE_BASE_PROFILE<span class="o">=</span><span class="m">1</span> -DAMREX_ENABLE_DP_PARTICLES<span class="o">=</span><span class="m">0</span> ..
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">
+<h2>Building MFIX-Exa using a separate AMReX installation (no superbuild)<a class="headerlink" href="#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-amrex-library">
+<h3>Build AMReX Library<a class="headerlink" href="#build-amrex-library" title="Permalink to this headline">¶</a></h3>
+<p>Clone AMReX from the official Git repository and checkout the _development_
+branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/AMReX-Codes/amrex.git
+<span class="nb">cd</span> amrex
+git checkout development
+</pre></div>
+</div>
+<p>Next, configure, build and install AMReX as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake AMREX_CONFIG_OPTIONS -DENABLE_PARTICLES<span class="o">=</span><span class="m">1</span> -DENABLE_FBASELIB<span class="o">=</span><span class="m">1</span> -DENABLE_EB<span class="o">=</span><span class="m">1</span> -DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span>/absolute/path/to/installdir .
+make install
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">AMREX_CONFIG_OPTIONS</span></code> are optional configure options for AMReX. Please
+refer to the AMReX user guide for a list of all the possible configuration
+options. The only options required are <code class="docutils literal notranslate"><span class="pre">-DENABLE_PARTICLES=1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">-DENABLE_FBASELIB=1</span></code>, and <code class="docutils literal notranslate"><span class="pre">-DENABLE_EB=1</span></code>.</p>
+</div>
+<div class="section" id="id1">
+<h3>Building MFIX-Exa<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Clone and build MFIX-Exa.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
+mkdir build
+<span class="nb">cd</span> build
+cmake CONFIG_OPTIONS -DAMREX_INSTALL_DIR<span class="o">=</span>/absolute/path/to/amrex/installdir ..
+make -j
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">CONFIG_OPTIONS</span></code> are MFiX-Exa specific configuration options, that is,
+any option NOT prefixed by <code class="docutils literal notranslate"><span class="pre">AMREX_</span></code> in the table above. Options prefixed by
+<code class="docutils literal notranslate"><span class="pre">AMREX_</span></code> are always ignored when using an external AMReX installation.</p>
+</div>
+</div>
+<div class="section" id="a-few-more-notes-on-building-mfix-exa">
+<h2>A Few more notes on building MFIX-Exa<a class="headerlink" href="#a-few-more-notes-on-building-mfix-exa" title="Permalink to this headline">¶</a></h2>
+<p>The system defaults compilers can be overwritten as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>&lt;c++-compiler&gt; -DCMAKE_Fortran_COMPILER<span class="o">=</span>&lt;f90-compiler&gt; CONFIG_OPTIONS  ..
+</pre></div>
+</div>
+<p>When building on a platform that uses the <code class="docutils literal notranslate"><span class="pre">module</span></code> utility, use either the above command (with full
+path to the compilers) or the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>CC -DCMAKE_Fortran_COMPILER<span class="o">=</span>ftn CONFIG_OPTIONS  ..
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="TestingMFiX.html" class="btn btn-neutral float-right" title="Running the MFIX Test Suite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Introduction.html" class="btn btn-neutral" title="MFiX-Exa Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, MFiX-Exa Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
