@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running the MFIX Test Suite &mdash; MFiX-Exa  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MFiX-Exa  documentation" href="index.html"/>
+        <link rel="up" title="MFiX-Exa Introduction" href="Introduction.html"/>
+        <link rel="prev" title="Building MFiX-Exa" href="BuildingMFiX.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MFiX-Exa
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Introduction.html#directory-overview">Directory overview</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="BuildingMFiX.html">Building MFiX-Exa</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Running the MFIX Test Suite</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-all-tests">Run all tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-all-tests-without-running-them">List all tests (without running them)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-a-particular-test-by-the-index-listed-in-ctest-n">Run a particular test by the index listed in <code class="docutils literal notranslate"><span class="pre">ctest</span> <span class="pre">-N</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-a-particular-test-by-name">Run a particular test by name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-specific">Run specific</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-a-user-defined-case">Run a user-defined case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generating-local-regression-test-data">Generating local regression test data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisite-environment-dependencies-on-joule-joule-specific">Prerequisite: Environment Dependencies on Joule (Joule specific)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MFiX-Exa</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Introduction.html">MFiX-Exa Introduction</a> &raquo;</li>
+        
+      <li>Running the MFIX Test Suite</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/TestingMFiX.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-the-mfix-test-suite">
+<h1>Running the MFIX Test Suite<a class="headerlink" href="#running-the-mfix-test-suite" title="Permalink to this headline">¶</a></h1>
+<p>MFiX-Exa comes with several tests aimed at evaluating software functionalities.
+The source files as well as the required input files for each test are located
+in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory. The <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory is copied to the build
+directory during MFIX-Exa configuration process. When a test is run (see
+below), output files are stored in <code class="docutils literal notranslate"><span class="pre">build_dir/tests/test-name</span></code>.</p>
+<p>There are various dependencies for comparing test results.</p>
+<ul class="simple">
+<li>To compare results to archived flow slices stored in <code class="docutils literal notranslate"><span class="pre">AUTOTEST</span></code>
+directories with the case files, the environment variable <code class="docutils literal notranslate"><span class="pre">FEXTRACT</span></code>
+must point to the location of the AMReX <cite>fextract</cite> utility located
+in the directory, <code class="docutils literal notranslate"><span class="pre">amrex/Tools/PostProcessing/F_Src</span></code>. Additionally,
+<code class="docutils literal notranslate"><span class="pre">numdiff</span></code> must be installed for comparing results.</li>
+<li>To compare point-by-point field data, the environment variable
+<code class="docutils literal notranslate"><span class="pre">FCOMPARE</span></code> must point the AMReX utility <code class="docutils literal notranslate"><span class="pre">plt_compare_diff_grids</span></code>
+found in the directory, <code class="docutils literal notranslate"><span class="pre">amrex/Tools/PostProcessing/F_Src</span></code>.
+Additionally, the environment variable <code class="docutils literal notranslate"><span class="pre">MFIX_BENCHMARKS_HOME</span></code>
+must point to the location of a local regression test data set.
+See <a class="reference internal" href="#sec-test-generate-data"><span class="std std-ref">Generating local regression test data</span></a> for instructions on
+creating a local regression test data set.</li>
+</ul>
+<div class="section" id="run-all-tests">
+<h2>Run all tests<a class="headerlink" href="#run-all-tests" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> to mfix-build-dir
+ctest
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-all-tests-without-running-them">
+<h2>List all tests (without running them)<a class="headerlink" href="#list-all-tests-without-running-them" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> to mfix-build-dir
+ctest -N
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-particular-test-by-the-index-listed-in-ctest-n">
+<h2>Run a particular test by the index listed in <code class="docutils literal notranslate"><span class="pre">ctest</span> <span class="pre">-N</span></code><a class="headerlink" href="#run-a-particular-test-by-the-index-listed-in-ctest-n" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> to mfix-build-dir
+ctest -I <span class="m">3</span>,3             <span class="c1"># run the third test</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-particular-test-by-name">
+<h2>Run a particular test by name<a class="headerlink" href="#run-a-particular-test-by-name" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> to mfix-build-dir
+ctest -R DEM01  <span class="c1"># running all tests with &quot;DEM01&quot; in the test name</span>
+</pre></div>
+</div>
+<div class="section" id="run-a-particular-test-via-make">
+<h3>Run a particular test via make<a class="headerlink" href="#run-a-particular-test-via-make" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> to mfix-build-dir
+make run_DEM01-x  <span class="c1"># running &quot;DEM01-x&quot; and output to the screen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="run-specific">
+<h2>Run specific<a class="headerlink" href="#run-specific" title="Permalink to this headline">¶</a></h2>
+<p>If the environment variable GRID is defined, it specifies which grid types to
+run for the test(s).  If GRID variable is not defined, the default is to run
+the tests for all grid types.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="nv">GRID</span><span class="o">=</span><span class="s2">&quot;tiled&quot;</span> ctest -R DEM01  <span class="c1"># running all tests with &quot;DEM01&quot; for tiled grid</span>
+env <span class="nv">GRID</span><span class="o">=</span><span class="s2">&quot;single multiple&quot;</span> ctest -R DEM01  <span class="c1"># running all tests with &quot;DEM01&quot; for single grid and multiple grid</span>
+ctest -R DEM01  <span class="c1"># running all tests with &quot;DEM01&quot; for all grid types (single, multiple, tiled)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-a-user-defined-case">
+<h2>Run a user-defined case<a class="headerlink" href="#run-a-user-defined-case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./mfix inputs-myrun
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">inputs-myrun</span></code> is a text file containing the AMReX input parameters; this can
+be named anything as long as it is the <strong>first</strong> argument following the
+executable. Note that many of the problem parameters are still defined in
+<code class="docutils literal notranslate"><span class="pre">mfix.dat</span></code>.</p>
+<div class="section" id="regression-testing">
+<h3>Regression testing<a class="headerlink" href="#regression-testing" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="generating-local-regression-test-data">
+<span id="sec-test-generate-data"></span><h2>Generating local regression test data<a class="headerlink" href="#generating-local-regression-test-data" title="Permalink to this headline">¶</a></h2>
+<p>Developers are encouraged to create local benchmark data for regression testing
+prior to committing code the GitLab repository.</p>
+<ol class="arabic simple">
+<li>Create a location to store benchmark data and clone the MFiX and AMReX
+repositories.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /home/user/exa-rt
+mkdir /home/user/exa-rt/benchmark
+<span class="nb">cd</span> /home/user/exa-rt
+git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
+git clone https://github.com/AMReX-Codes/amrex.git
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Create a local copy the regression test setup file from the MFiX repository.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp mfix/RegressionTesting/MFIX-tests.ini MFIX-local.ini
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Edit the local setup file. Specify the top level directories for test and
+web output under the <code class="docutils literal notranslate"><span class="pre">[main]</span></code> heading.</li>
+</ol>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[main]</span>
+<span class="na">testTopDir</span> <span class="o">=</span> <span class="s">/home/user/exa-rt/benchmark</span>
+<span class="na">webTopDir</span>  <span class="o">=</span> <span class="s">/home/user/exa-rt/web</span>
+</pre></div>
+</div>
+<p>Specify the AMReX source directory location under the <code class="docutils literal notranslate"><span class="pre">[AMReX]</span></code> heading.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[AMReX]</span>
+<span class="na">dir</span>    <span class="o">=</span> <span class="s">/home/user/exa-rt/amrex</span>
+<span class="na">branch</span> <span class="o">=</span> <span class="s">development</span>
+</pre></div>
+</div>
+<p>Specify the MFIX-Exa source directory location under the <code class="docutils literal notranslate"><span class="pre">[source]</span></code> heading.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[source]</span>
+<span class="na">dir</span>    <span class="o">=</span> <span class="s">/home/user/exa-rt/mfix</span>
+<span class="na">branch</span> <span class="o">=</span> <span class="s">develop</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Run the AMReX regression test tool. The second argument is a user supplied
+comment.</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/user/exa-rt
+amrex/Tools/RegressionTesting/regtest.py --make_benchmarks <span class="s2">&quot;MFIX&quot;</span> MFIX-local.ini
+</pre></div>
+</div>
+</div>
+<div class="section" id="prerequisite-environment-dependencies-on-joule-joule-specific">
+<h2>Prerequisite: Environment Dependencies on Joule (Joule specific)<a class="headerlink" href="#prerequisite-environment-dependencies-on-joule-joule-specific" title="Permalink to this headline">¶</a></h2>
+<p>For the Joule environment, load the gnu module and set environment variables
+first. If not on Joule, skip this step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load gnu/6.1.0
+<span class="nb">export</span> <span class="nv">CC</span><span class="o">=</span>/nfs/apps/Compilers/GNU/6.1.0/bin/gcc
+<span class="nb">export</span> <span class="nv">CXX</span><span class="o">=</span>/nfs/apps/Compilers/GNU/6.1.0/bin/g++
+<span class="nb">export</span> <span class="nv">F77</span><span class="o">=</span>/nfs/apps/Compilers/GNU/6.1.0/bin/gfortran
+<span class="nb">export</span> <span class="nv">FC</span><span class="o">=</span>/nfs/apps/Compilers/GNU/6.1.0/bin/gfortran
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="BuildingMFiX.html" class="btn btn-neutral" title="Building MFiX-Exa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, MFiX-Exa Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
