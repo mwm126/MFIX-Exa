@@ -38,14 +38,14 @@ installation of AMReX is needed. However, internet access to the AMReX github
 repository is required.  The optional string ``CONFIG_OPTIONS`` allows to
 customize the build of both AMReX and MFIX-Exa.  ``CONFIG_OPTIONS`` is a list
 of one or more configuration options given in the form ``-DOPTION=VALUE``.
- 
+
 The table below lists configuration options, possible values, and their effect
 on the build.  Options prefixed by ``AMREX_`` are specific to the build of
 AMReX.
 
 
 .. table:: MFiX-Exa compiler options
-    
+
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
     | Option name                  |  Description                                 | Possible values              | Default value       |
     +==============================+==============================================+==============================+=====================+
@@ -69,9 +69,9 @@ AMReX.
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
     | AMREX_ENABLE_TINY_PROFILE    | Include tiny profiling info                  |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
-    | AMREX_ENABLE_COMM_PROFILE    | Include communicators profiling info         |   0/1                        |   0                 |               
+    | AMREX_ENABLE_COMM_PROFILE    | Include communicators profiling info         |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
-    | AMREX_ENABLE_TRACE_PROFILE   | Include trace profiling info                 |   0/1                        |   0                 |              
+    | AMREX_ENABLE_TRACE_PROFILE   | Include trace profiling info                 |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
     | AMREX_ENABLE_MEM_PROFILE     | Include memory profiling info                |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
@@ -79,7 +79,7 @@ AMReX.
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
     | AMREX_ENABLE_PROFPARSER      | Include profile parser                       |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
-    | AMREX_ENABLE_PIC             | Build position-independent code              |   0/1                        |   0                 |              
+    | AMREX_ENABLE_PIC             | Build position-independent code              |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
     | AMREX_ENABLE_ASSERTION       | Build position-independent code              |   0/1                        |   0                 |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
@@ -87,7 +87,7 @@ AMReX.
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
     | AMREX_INSTALL_DIR            | Global path to AMReX install directory       | valid global path            |   None (superbuild) |
     +------------------------------+----------------------------------------------+------------------------------+---------------------+
- 
+
 Note that SUPERBUILD mode is enabled automatically when ``AMREX_INSTALL_DIR``
 is not given.
 
@@ -118,7 +118,7 @@ branch.
     cd amrex
     git checkout development
 
-Next, configure, build and install AMReX as follows: 
+Next, configure, build and install AMReX as follows:
 
 .. highlight:: bash
 
@@ -141,7 +141,7 @@ Clone and build MFIX-Exa.
 .. highlight:: bash
 
 ::
-    
+
     git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
     mkdir build
     cd build

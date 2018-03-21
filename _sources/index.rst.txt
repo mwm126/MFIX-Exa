@@ -9,7 +9,7 @@ MFiX-Exa is a multi-phase flow simulation tool based on `MFiX-Classic
 <http://mfix.netl.doe.gov>`_, incorporating the massively parallel,
 block-structured adaptive mesh refinement (AMR) functionality of `AMReX
 <http://amrex-codes.github.io>`_. MFiX-Exa is developed at LBNL and NETL, and
-as part of the DOE's Exascale Computing Project. 
+as part of the DOE's Exascale Computing Project.
 
 The code for now lives at NETL; instructions for how to get access to the code
 will be given below.
@@ -21,7 +21,7 @@ will be given below.
    Introduction
 
 
-See the User's Guide for more about MFIX-Exa
+See the User's Guide for more about MFiX-Exa
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To build the User's Guide,
