@@ -30,3 +30,7 @@ cd docs
 make html
 cd build
 mv html docs_html
+
+# Sphinx is set up to treat build/html (and by mv, build/docs_html) as the
+# webroot. Hence the .nojekyll file is in the wrong place
+mv docs_html/.nojekyll .
