@@ -17,3 +17,13 @@ addons:
   apt:
     packages:
       - doxygen
+
+deploy:
+  provider: pages
+  local-dir: docs/build/html
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  verbose: true
+  on:
+    branch: master
