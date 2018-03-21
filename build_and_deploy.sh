@@ -28,3 +28,5 @@ fi
 # now do sphinx
 cd docs
 make html
+cd build
+mv html docs_html
