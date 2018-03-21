@@ -15,10 +15,11 @@ The code for now lives at NETL; instructions for how to get access to the code
 will be given below.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
    Introduction
+   Particles
 
 
 See the User's Guide for more about MFiX-Exa
