@@ -36,4 +36,4 @@ mv html docs_html
 mv docs_html/.nojekyll .
 
 # PWD is currently /docs/build, we want to move /docs/webroot into /docs/build
-mv -r ../webroot/* .
+mv ../webroot/* .
