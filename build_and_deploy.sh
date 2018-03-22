@@ -16,20 +16,38 @@ fi
 #SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 #SHA=`git rev-parse --verify HEAD`
 
-# build the Doxygen documentation
-#cd Docs/Doxygen
-#doxygen doxygen.conf
-#cd ../..
+# Change working directory to /docs
+cd docs    # ..................................... now we're in /docs 
 
-# move it to the right place
-#mkdir -p out/doxygen
-#mv Docs/Doxygen/html/* out/doxygen/
+
+############################# DOXYGEN  ########################################
+
+
+cd doxygen # ..................................... now we're in /docs/doxygen
+
+# create temporary clone of MFiX-Exa SOURCE_BRANCH
+git clone https://gitlab-ci-token:$GITLAB_TOKEN@mfix.netl.doe.gov/gitlab/exa/mfix.git
+
+# build the Doxygen documentation
+doxygen doxygen.conf
+
+cd ..      # ..................................... now we're in /docs
+
+# move it to the deploy directory: /docs/build
+mv doxygen/html build/doxygen
+
+
+############################# SPHINX   ########################################
+
 
 # now do sphinx
-cd docs    # ..................................... now we're in /docs
 make html
 cd build   # ..................................... now we're in /docs/build
 mv html docs_html
+
+
+############################# WEB SERVER STUFF ################################
+
 
 # Sphinx is set up to treat build/html (and by mv, build/docs_html) as the
 # webroot. Hence the .nojekyll file is in the wrong place
