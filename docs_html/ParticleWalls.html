@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Particle/Fluid Interactions &mdash; MFiX-Exa  documentation</title>
+  <title>Particle/Wall Interactions &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -39,8 +39,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="MFiX-Exa  documentation" href="index.html"/>
         <link rel="up" title="Particles" href="Particles.html"/>
-        <link rel="next" title="Particle/Wall Interactions" href="ParticleWalls.html"/>
-        <link rel="prev" title="Particle Basics" href="ParticleBasics.html"/> 
+        <link rel="prev" title="Particle/Fluid Interactions" href="ParticleFuild.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -94,8 +93,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Particles.html">Particles</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Particle/Fluid Interactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ParticleWalls.html">Particle/Wall Interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParticleFuild.html">Particle/Fluid Interactions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Particle/Wall Interactions</a></li>
 </ul>
 </li>
 </ul>
@@ -144,13 +143,13 @@
         
           <li><a href="Particles.html">Particles</a> &raquo;</li>
         
-      <li>Particle/Fluid Interactions</li>
+      <li>Particle/Wall Interactions</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/ParticleFuild.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/ParticleWalls.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,28 +162,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="particle-fluid-interactions">
-<span id="sec-particle-fluid"></span><h1>Particle/Fluid Interactions<a class="headerlink" href="#particle-fluid-interactions" title="Permalink to this headline">¶</a></h1>
-<p>A standard <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix_level</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Evolve</span></span></code> step looks like this (for brevity, we are
-omitting some details here):</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Calculate particle volume fraction:</span>
-<span class="n">mfix_calc_volume_fraction</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">sum_vol</span><span class="p">)</span>
-
-<span class="c1">// Eolve fluid</span>
-<span class="k">if</span> <span class="p">(</span> <span class="n">use_proj_method</span> <span class="p">)</span>
-    <span class="n">EvolveFluidProjection</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">nstep</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="p">...)</span>
-<span class="k">else</span>
-    <span class="n">EvolveFluidSimple</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">nstep</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="p">...)</span>
-
-<span class="c1">// Apply fluid drag force on particles</span>
-<span class="n">mfix_calc_drag_particle</span><span class="p">(</span><span class="n">lev</span><span class="p">)</span>
-
-<span class="c1">// Move particles (using forces acting on particles)</span>
-<span class="n">pc</span> <span class="o">-&gt;</span> <span class="n">EvolveParticles</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">nstep</span><span class="p">,</span> <span class="n">dt</span> <span class="p">...)</span>
-</pre></div>
-</div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">lev</span></code> represents the AMR level, and <code class="docutils literal notranslate"><span class="pre">pc</span></code> is a pointer to a
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIXParticleContainer</span></span></code> instance.</p>
+  <div class="section" id="particle-wall-interactions">
+<h1>Particle/Wall Interactions<a class="headerlink" href="#particle-wall-interactions" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -197,10 +176,8 @@ omitting some details here):</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ParticleWalls.html" class="btn btn-neutral float-right" title="Particle/Wall Interactions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="ParticleBasics.html" class="btn btn-neutral" title="Particle Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ParticleFuild.html" class="btn btn-neutral" title="Particle/Fluid Interactions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
