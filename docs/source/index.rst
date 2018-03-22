@@ -34,9 +34,20 @@ To build the User's Guide,
     cd doc/UsersGuide
     make
 
-This will build a pdf of the MFiX-Exa User's Guide, which contains information
-about the equations being solved, run-time parameters, checkpoint/restart
-capability, options for visualization and more.
+This will build a pdf of the old MFiX-Exa User's Guide, which contains
+information about the equations being solved, run-time parameters,
+checkpoint/restart capability, options for visualization and more. Most of this
+information will enventually be migrated to these help pages.
+
+A pdf version of this guide can be compiled using sphinx using ``latexmk``.
+Ensure that you have ``latexmk`` installed on your system [#footnote:latexmk]_.
+Then run [#footnote:latex]_:
+
+.. highlight:: bash
+
+::
+
+    make latexpdf
 
 
 Notice
@@ -85,3 +96,16 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. [#footnote:latexmk] On Ubuntu, ``latexmk`` can be installed using ``apt
+    install latexmk``. On macOS, ``latexmk`` installed using the ``TexLive
+    Utility`` application.
+
+.. [#footnote:latex] The template used by ``latexmk`` uses the following packages:
+        1. tabulary
+        2. varwidth
+        3. framed
+        4. wrapfig
+        5. capt-of
+        6. needspace
+        7. courier
