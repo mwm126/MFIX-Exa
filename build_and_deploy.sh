@@ -34,6 +34,7 @@ doxygen doxygen.conf
 cd ..      # ..................................... now we're in /docs
 
 # move it to the deploy directory: /docs/build
+mkdir build
 mv doxygen/html build/doxygen
 
 
