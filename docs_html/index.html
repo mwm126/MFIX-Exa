@@ -183,9 +183,16 @@ will be given below.</p>
 make
 </pre></div>
 </div>
-<p>This will build a pdf of the MFiX-Exa User’s Guide, which contains information
-about the equations being solved, run-time parameters, checkpoint/restart
-capability, options for visualization and more.</p>
+<p>This will build a pdf of the old MFiX-Exa User’s Guide, which contains
+information about the equations being solved, run-time parameters,
+checkpoint/restart capability, options for visualization and more. Most of this
+information will enventually be migrated to these help pages.</p>
+<p>A pdf version of this guide can be compiled using sphinx using <code class="docutils literal notranslate"><span class="pre">latexmk</span></code>.
+Ensure that you have <code class="docutils literal notranslate"><span class="pre">latexmk</span></code> installed on your system <a class="footnote-reference" href="#footnote-latexmk" id="id1">[1]</a>.
+Then run <a class="footnote-reference" href="#footnote-latex" id="id2">[2]</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make latexpdf
+</pre></div>
+</div>
 <div class="section" id="notice">
 <h3>Notice<a class="headerlink" href="#notice" title="Permalink to this headline">¶</a></h3>
 <p>Neither the United States Government nor any agency thereof, nor any of their
@@ -230,6 +237,27 @@ agency thereof.</p>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
+<table class="docutils footnote" frame="void" id="footnote-latexmk" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>On Ubuntu, <code class="docutils literal notranslate"><span class="pre">latexmk</span></code> can be installed using <code class="docutils literal notranslate"><span class="pre">apt</span>
+<span class="pre">install</span> <span class="pre">latexmk</span></code>. On macOS, <code class="docutils literal notranslate"><span class="pre">latexmk</span></code> installed using the <code class="docutils literal notranslate"><span class="pre">TexLive</span>
+<span class="pre">Utility</span></code> application.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="footnote-latex" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The template used by <code class="docutils literal notranslate"><span class="pre">latexmk</span></code> uses the following packages:
+1. tabulary
+2. varwidth
+3. framed
+4. wrapfig
+5. capt-of
+6. needspace
+7. courier</td></tr>
+</tbody>
+</table>
 </div>
 
 
