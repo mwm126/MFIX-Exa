@@ -26,11 +26,14 @@ fi
 #mv Docs/Doxygen/html/* out/doxygen/
 
 # now do sphinx
-cd docs
+cd docs    # ..................................... now we're in /docs
 make html
-cd build
+cd build   # ..................................... now we're in /docs/build
 mv html docs_html
 
 # Sphinx is set up to treat build/html (and by mv, build/docs_html) as the
 # webroot. Hence the .nojekyll file is in the wrong place
 mv docs_html/.nojekyll .
+
+# PWD is currently /docs/build, we want to move /docs/webroot into /docs/build
+mv -r ../webroot/* .
