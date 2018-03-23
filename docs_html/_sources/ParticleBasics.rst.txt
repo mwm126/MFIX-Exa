@@ -69,4 +69,9 @@ method. It's structure is:
                                      neighbor_list[index].dataPtr(), &size_nl,
                                      tow[index].dataPtr(), fc[index].dataPtr(), &subdt, &ncoll);
         }
+        
+        // Move particles based on velocities and forces
+        des_time_loop(&nrp     , particles,
+                      &ntot, tow[index].dataPtr(), fc[index].dataPtr(), &subdt,
+                      &xlen, &ylen, &zlen, &stime, &n);
     }

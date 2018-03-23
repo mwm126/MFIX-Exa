@@ -220,6 +220,11 @@ method. It’s structure is:</p>
                                  <span class="n">neighbor_list</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">size_nl</span><span class="p">,</span>
                                  <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncoll</span><span class="p">);</span>
     <span class="p">}</span>
+
+    <span class="c1">// Move particles based on velocities and forces</span>
+    <span class="n">des_time_loop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nrp</span>     <span class="p">,</span> <span class="n">particles</span><span class="p">,</span>
+                  <span class="o">&amp;</span><span class="n">ntot</span><span class="p">,</span> <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span>
+                  <span class="o">&amp;</span><span class="n">xlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ylen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">zlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stime</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
