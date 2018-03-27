@@ -181,53 +181,100 @@ particle-particle, particle-fluid, and particle-wall forces).</p>
 <p>During the DES steps, particle positions are updated using the
 <a class="reference external" href="https://amrex-codes.github.io/MFIX-Exa/doxygen/class_m_f_i_x_particle_container.html#a158f3f5fa11c262ad6a9909b40a5cd13">MFIXParticleContainer::EvolveParticles</a>
 method. It’s structure is:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Set time-step size (subdt) and number (numbsebsteps) for the DES steps</span>
-<span class="n">des_init_time_loop</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">time</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nsubsteps</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subdt_io</span> <span class="p">);</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">// Set time-step size (subdt) and number (numbsebsteps) for the DES steps</span>
+ <span class="n">des_init_time_loop</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">time</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nsubsteps</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">subdt_io</span> <span class="p">);</span>
 
-<span class="c1">// Temporary storage of forces and torques</span>
-<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">PairIndex</span><span class="p">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span> <span class="n">tow</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">PairIndex</span><span class="p">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span> <span class="n">fc</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">MFIXParIter</span> <span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">lev</span><span class="p">);</span> <span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">pti</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">PairIndex</span> <span class="n">index</span><span class="p">(</span><span class="n">pti</span><span class="p">.</span><span class="n">index</span><span class="p">(),</span> <span class="n">pti</span><span class="p">.</span><span class="n">LocalTileIndex</span><span class="p">());</span>
-    <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="p">}</span>
+ <span class="c1">// Temporary storage of forces and torques</span>
+ <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">PairIndex</span><span class="p">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span> <span class="n">tow</span><span class="p">;</span>
+ <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">PairIndex</span><span class="p">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span> <span class="n">fc</span><span class="p">;</span>
+ <span class="k">for</span> <span class="p">(</span><span class="n">MFIXParIter</span> <span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">lev</span><span class="p">);</span> <span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">pti</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="n">PairIndex</span> <span class="n">index</span><span class="p">(</span><span class="n">pti</span><span class="p">.</span><span class="n">index</span><span class="p">(),</span> <span class="n">pti</span><span class="p">.</span><span class="n">LocalTileIndex</span><span class="p">());</span>
+     <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">();</span>
+     <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">();</span>
+ <span class="p">}</span>
 
-<span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">nsubsteps</span><span class="p">)</span> <span class="c1">// step over number of substeps (DES part)</span>
-<span class="p">{</span>
-    <span class="c1">// Neighbourlist house-keeping</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">25</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">clearNeighbors</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
-        <span class="n">Redistribute</span><span class="p">();</span>
-        <span class="n">fillNeighbors</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
-        <span class="n">buildNeighborList</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="n">sort_neighbor_list</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">updateNeighbors</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
-    <span class="p">}</span>
+ <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">nsubsteps</span><span class="p">)</span> <span class="c1">// step over number of substeps (DES part)</span>
+ <span class="p">{</span>
+     <span class="c1">// Neighbourlist house-keeping</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">25</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">clearNeighbors</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
+         <span class="n">Redistribute</span><span class="p">();</span>
+         <span class="n">fillNeighbors</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
+         <span class="n">buildNeighborList</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="n">sort_neighbor_list</span><span class="p">);</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="n">updateNeighbors</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
+     <span class="p">}</span>
 
-    <span class="c1">// Itterate over particles</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">MFIXParIter</span> <span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">lev</span><span class="p">);</span> <span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">pti</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Forces and torques due to particle-wall collisions</span>
-        <span class="n">calc_wall_collisions_ls</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">ntot</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">nrp</span><span class="p">,</span>
-                                <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span> <span class="n">subdt</span><span class="p">,</span>
-                                <span class="p">...</span>
-                                <span class="p">);</span>
+     <span class="c1">// Itterate over particles</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">MFIXParIter</span> <span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">lev</span><span class="p">);</span> <span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">pti</span><span class="p">)</span>
+     <span class="p">{</span>
+<span class="hll">         <span class="c1">// Forces and torques due to particle-wall collisions</span>
+</span><span class="hll">         <span class="n">calc_wall_collisions_ls</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">ntot</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">nrp</span><span class="p">,</span>
+</span><span class="hll">                                 <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span> <span class="n">subdt</span><span class="p">,</span>
+</span><span class="hll">                                 <span class="p">...</span>
+</span><span class="hll">                                 <span class="p">);</span>
+</span><span class="hll">
+</span><span class="hll">         <span class="n">calc_particle_collisions</span><span class="p">(</span><span class="n">particles</span>                     <span class="p">,</span> <span class="o">&amp;</span><span class="n">nrp</span><span class="p">,</span>
+</span><span class="hll">                                  <span class="n">neighbors</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">()</span>    <span class="p">,</span> <span class="o">&amp;</span><span class="n">size_ng</span><span class="p">,</span>
+</span><span class="hll">                                  <span class="n">neighbor_list</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">size_nl</span><span class="p">,</span>
+</span><span class="hll">                                  <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span>
+</span><span class="hll">                                  <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncoll</span><span class="p">);</span>
+</span>     <span class="p">}</span>
 
-        <span class="n">calc_particle_collisions</span><span class="p">(</span><span class="n">particles</span>                     <span class="p">,</span> <span class="o">&amp;</span><span class="n">nrp</span><span class="p">,</span>
-                                 <span class="n">neighbors</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">()</span>    <span class="p">,</span> <span class="o">&amp;</span><span class="n">size_ng</span><span class="p">,</span>
-                                 <span class="n">neighbor_list</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">size_nl</span><span class="p">,</span>
-                                 <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncoll</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Move particles based on velocities and forces</span>
-    <span class="n">des_time_loop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nrp</span>     <span class="p">,</span> <span class="n">particles</span><span class="p">,</span>
-                  <span class="o">&amp;</span><span class="n">ntot</span><span class="p">,</span> <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span>
-                  <span class="o">&amp;</span><span class="n">xlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ylen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">zlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stime</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="hll">     <span class="c1">// Move particles based on velocities and forces</span>
+</span><span class="hll">     <span class="n">des_time_loop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nrp</span>     <span class="p">,</span> <span class="n">particles</span><span class="p">,</span>
+</span><span class="hll">                   <span class="o">&amp;</span><span class="n">ntot</span><span class="p">,</span> <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span>
+</span><span class="hll">                   <span class="o">&amp;</span><span class="n">xlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ylen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">zlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stime</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span> <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
+<p>where the highlighted lines are responsible for moving the particles.</p>
 </div>
 </div>
 

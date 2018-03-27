@@ -26,13 +26,13 @@ During the DES steps, particle positions are updated using the
 <https://amrex-codes.github.io/MFIX-Exa/doxygen/class_m_f_i_x_particle_container.html#a158f3f5fa11c262ad6a9909b40a5cd13>`_
 method. It's structure is:
 
-.. highlight:: c++
-
-::
+.. code-block:: c++
+   :linenos:
+   :emphasize-lines: 29-39, 42-45
 
     // Set time-step size (subdt) and number (numbsebsteps) for the DES steps
     des_init_time_loop( &time, &dt, &nsubsteps, &subdt, &subdt_io );
-    
+
     // Temporary storage of forces and torques
     std::map<PairIndex, Vector<Real>> tow;
     std::map<PairIndex, Vector<Real>> fc;
@@ -63,15 +63,18 @@ method. It's structure is:
                                     tow[index].dataPtr(), fc[index].dataPtr(), & subdt,
                                     ...
                                     );
-            
+
             calc_particle_collisions(particles                     , &nrp,
                                      neighbors[index].dataPtr()    , &size_ng,
                                      neighbor_list[index].dataPtr(), &size_nl,
-                                     tow[index].dataPtr(), fc[index].dataPtr(), &subdt, &ncoll);
+                                     tow[index].dataPtr(), fc[index].dataPtr(),
+                                     &subdt, &ncoll);
         }
-        
+
         // Move particles based on velocities and forces
         des_time_loop(&nrp     , particles,
                       &ntot, tow[index].dataPtr(), fc[index].dataPtr(), &subdt,
                       &xlen, &ylen, &zlen, &stime, &n);
     }
+
+where the highlighted lines are responsible for moving the particles.
