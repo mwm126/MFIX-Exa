@@ -276,24 +276,24 @@ method. It’s structure is:</p>
      <span class="c1">// Itterate over particles</span>
      <span class="k">for</span> <span class="p">(</span><span class="n">MFIXParIter</span> <span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">lev</span><span class="p">);</span> <span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">pti</span><span class="p">)</span>
      <span class="p">{</span>
-<span class="hll">         <span class="c1">// Forces and torques due to particle-wall collisions</span>
-</span><span class="hll">         <span class="n">calc_wall_collisions_ls</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">ntot</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">nrp</span><span class="p">,</span>
-</span><span class="hll">                                 <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span> <span class="n">subdt</span><span class="p">,</span>
-</span><span class="hll">                                 <span class="p">...</span>
-</span><span class="hll">                                 <span class="p">);</span>
-</span><span class="hll">
-</span><span class="hll">         <span class="n">calc_particle_collisions</span><span class="p">(</span><span class="n">particles</span>                     <span class="p">,</span> <span class="o">&amp;</span><span class="n">nrp</span><span class="p">,</span>
-</span><span class="hll">                                  <span class="n">neighbors</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">()</span>    <span class="p">,</span> <span class="o">&amp;</span><span class="n">size_ng</span><span class="p">,</span>
-</span><span class="hll">                                  <span class="n">neighbor_list</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">size_nl</span><span class="p">,</span>
-</span><span class="hll">                                  <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span>
-</span><span class="hll">                                  <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncoll</span><span class="p">);</span>
-</span>     <span class="p">}</span>
+         <span class="c1">// Forces and torques due to particle-wall collisions</span>
+         <span class="n">calc_wall_collisions_ls</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">ntot</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">nrp</span><span class="p">,</span>
+                                 <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span> <span class="n">subdt</span><span class="p">,</span>
+                                 <span class="p">...</span>
+                                 <span class="p">);</span>
 
-<span class="hll">     <span class="c1">// Move particles based on velocities and forces</span>
-</span><span class="hll">     <span class="n">des_time_loop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nrp</span>     <span class="p">,</span> <span class="n">particles</span><span class="p">,</span>
-</span><span class="hll">                   <span class="o">&amp;</span><span class="n">ntot</span><span class="p">,</span> <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span>
-</span><span class="hll">                   <span class="o">&amp;</span><span class="n">xlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ylen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">zlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stime</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-</span> <span class="p">}</span>
+         <span class="n">calc_particle_collisions</span><span class="p">(</span><span class="n">particles</span>                     <span class="p">,</span> <span class="o">&amp;</span><span class="n">nrp</span><span class="p">,</span>
+                                  <span class="n">neighbors</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">()</span>    <span class="p">,</span> <span class="o">&amp;</span><span class="n">size_ng</span><span class="p">,</span>
+                                  <span class="n">neighbor_list</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">size_nl</span><span class="p">,</span>
+                                  <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span>
+                                  <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncoll</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="c1">// Move particles based on velocities and forces</span>
+     <span class="n">des_time_loop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nrp</span>     <span class="p">,</span> <span class="n">particles</span><span class="p">,</span>
+                   <span class="o">&amp;</span><span class="n">ntot</span><span class="p">,</span> <span class="n">tow</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="n">fc</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">subdt</span><span class="p">,</span>
+                   <span class="o">&amp;</span><span class="n">xlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ylen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">zlen</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stime</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+ <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>where the highlighted lines are responsible for moving the particles.</p>
