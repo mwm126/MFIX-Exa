@@ -28,7 +28,7 @@ method. It's structure is:
 
 .. code-block:: c++
    :linenos:
-   :emphasize-lines: 29-39, 42-45
+   
 
     // Set time-step size (subdt) and number (numbsebsteps) for the DES steps
     des_init_time_loop( &time, &dt, &nsubsteps, &subdt, &subdt_io );
