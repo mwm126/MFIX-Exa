@@ -368,7 +368,7 @@ input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
     background: #3cadd4;
     border-color: #3cadd4;
-    color: #ffffff;
+    color: #000000;
     content: '\f00c';
 }
 
@@ -460,7 +460,7 @@ input[type="radio"] + label:before {
 .icon.rounded {
     background-color: #383b43;
     border-radius: 100%;
-    color: #ffffff;
+    color: #000000;
     display: inline-block;
     height: 3.25em;
     line-height: 3.25em;
@@ -816,7 +816,7 @@ input[type="button"],
     background-color: #3cadd4;
     border-radius: 30px;
     border: 0;
-    color: #ffffff !important;
+    color: #000000 !important;
     cursor: pointer;
     display: inline-block;
     font-weight: 400;
@@ -916,7 +916,7 @@ input[type="reset"].special,
 input[type="button"].special,
 .button.special {
     background-color: #383b43;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 
 input[type="submit"].special:hover,
@@ -964,7 +964,7 @@ body.landing #header nav a {
 
 #header {
     background-color: #383b43;
-    color: #ffffff;
+    color: #000000;
     cursor: default;
     font-size: 1.1em;
     height: 6em;
@@ -974,7 +974,7 @@ body.landing #header nav a {
 }
 
 #header h1 {
-    color: #ffffff;
+    color: #000000;
     height: inherit;
     left: 3em;
     line-height: inherit;
@@ -1023,11 +1023,11 @@ body.landing #header nav a {
 }
 
 #header nav > ul > li a:active, #header nav > ul > li a:hover {
-    color: #ffffff;
+    color: #000000;
 }
 
 #header a:hover {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -1065,7 +1065,7 @@ body.landing #header nav a {
     background-image: url(../images/med_tint.png), url(../images/cover_image.png);
     background-position: center center;
     background-size: cover;
-    color: #ffffff;
+    color: #000000;
     padding: 14em 0em 14em;
     text-align: center;
 }
@@ -1075,7 +1075,7 @@ body.landing #header nav a {
 }
 
 #banner h2 {
-    color: #ffffff;
+    color: #000000;
     font-size: 4em;
     line-height: 1.25em;
     margin: 0 0 0.5em 0;
@@ -1147,11 +1147,11 @@ body.landing #header nav a {
 
 .wrapper.style3 {
     background-color: #3cadd4;
-    color: #ffffff;
+    color: #000000;
 }
 
 .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 p {
-    color: #ffffff;
+    color: #000000;
 }
 
 .wrapper.style3 input[type="text"],
@@ -1171,7 +1171,7 @@ body.landing #header nav a {
 }
 
 #footer h2, #footer h3, #footer h4 {
-    color: #ffffff;
+    color: #000000;
 }
 
 #footer p, #footer a, #footer li {
@@ -1219,7 +1219,7 @@ body.landing #header nav a {
 }
 
 #footer a.icon {
-    color: #ffffff;
+    color: #000000;
     font-size: 0.65em;
     height: 4em;
     line-height: 4em;
