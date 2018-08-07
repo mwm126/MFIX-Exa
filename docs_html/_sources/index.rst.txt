@@ -20,10 +20,7 @@ the master branch at the beginning of each month.
    :maxdepth: 2
    :caption: Contents:
 
-   Structure
-   Building
-   RunningTestSuite
-   RegressionTesting
+   Introduction
 
 Notice
 ------
