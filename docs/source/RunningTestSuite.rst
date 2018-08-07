@@ -86,17 +86,3 @@ Run a user-defined case
 this can be named anything as long as it is the **first** argument
 following the executable. Note that many of the problem parameters are
 still defined in *mfix.dat*.
-
-See the User's Guide for more about MFiX-Exa
-============================================
-
-To build the User's Guide,
-
-.. code:: shell
-
-    > cd doc/UsersGuide
-    > make
-
-This will build a pdf of the MFiX-Exa User's Guide, which contains
-information about the equations being solved, run-time parameters,
-checkpoint/restart capability, options for visualization and more.
