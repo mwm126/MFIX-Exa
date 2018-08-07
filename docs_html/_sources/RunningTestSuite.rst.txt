@@ -1,4 +1,4 @@
-Running MFiX Test Suite
+Running the MFiX Test Suite
 =======================
 
 MFiX-Exa comes with several tests aimed at evaluating software
