@@ -9,13 +9,11 @@ Particle Basics
 
 In MFiX-Exa, particles are managed by the `MFIXParticleContainer
 <https://amrex-codes.github.io/MFIX-Exa/doxygen/class_m_f_i_x_particle_container.html>`_
-class.  This class is derived from AMReX's :cpp:`NeighbourParticleContainer`
-and handles all of the particle data. Most importantly,
-:cpp:`MFIXParticleContainer` also provides the functions for solving the
+class.  This class is derived from AMReX's :cpp:`NeighborParticleContainer`
+and handles all of the particle data. 
+:cpp:`MFIXParticleContainer` provides the functions for solving the
 particle dynamics (based on particle-particle, particle-fluid, and
-particle-wall forces). Most importantly, :cpp:`MFIXParticleContainer` also
-provides the functions for solving the particle dynamics (based on
-particle-particle, particle-fluid, and particle-wall forces).
+particle-wall forces)
 
 
 Particle Dynamics
@@ -45,7 +43,7 @@ method. It's structure is:
 
     while (n < nsubsteps) // step over number of substeps (DES part)
     {
-        // Neighbourlist house-keeping
+        // Neighborlist house-keeping
         if (n % 25 == 0) {
             clearNeighbors(lev);
             Redistribute();

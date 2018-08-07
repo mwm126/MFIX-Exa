@@ -7,7 +7,8 @@ MFiX-Exa Introduction
    :maxdepth: 1
 
    Structure
-   Building
+   BuildingCMake
+   BuildingGMake
    RunningTestSuite
    RegressionTesting
 
