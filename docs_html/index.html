@@ -28,7 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Directory overview" href="Structure.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -77,39 +78,15 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to MFiX-EXA’s documentation!</a></li>
-<li><a class="reference internal" href="#directory-overview">Directory overview</a></li>
-<li><a class="reference internal" href="#building-mfix-exa">Building MFiX-Exa</a><ul>
-<li><a class="reference internal" href="#superbuild-instructions-recommended">SUPERBUILD Instructions (recommended)</a></li>
-<li><a class="reference internal" href="#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">Building MFiX-Exa using a separate AMReX installation (no superbuild)</a><ul>
-<li><a class="reference internal" href="#build-amrex-library">Build AMReX Library</a></li>
-<li><a class="reference internal" href="#id1">Building MFiX-Exa</a></li>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Structure.html">Directory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Building.html">Building MFiX-Exa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html#see-the-user-s-guide-for-more-about-mfix-exa">See the User’s Guide for more about MFiX-Exa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#few-more-notes-on-building-mfix-exa">Few more notes on building MFiX-Exa</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#running-mfix-test-suite">Running MFiX Test Suite</a><ul>
-<li><a class="reference internal" href="#run-all-tests">Run all tests</a></li>
-<li><a class="reference internal" href="#list-all-tests-without-running-them">List all tests (without running them)</a></li>
-<li><a class="reference internal" href="#run-a-particular-test-by-the-index-listed-in-ctest-n">Run a particular test by the index listed in ctest -N</a></li>
-<li><a class="reference internal" href="#run-a-particular-test-by-name">Run a particular test by name</a></li>
-<li><a class="reference internal" href="#run-a-particular-test-via-make">Run a particular test via make</a></li>
-<li><a class="reference internal" href="#run-specific">Run specific</a></li>
-<li><a class="reference internal" href="#run-a-user-defined-case">Run a user-defined case</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#see-the-user-s-guide-for-more-about-mfix-exa">See the User’s Guide for more about MFiX-Exa</a></li>
-<li><a class="reference internal" href="#regression-testing">Regression testing</a><ul>
-<li><a class="reference internal" href="#generating-local-regression-test-data">Generating local regression test data</a></li>
-<li><a class="reference internal" href="#notice">Notice</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
-</ul>
-</div>
+
             
           
         </div>
@@ -174,443 +151,40 @@
             
   <div class="section" id="welcome-to-mfix-exa-s-documentation">
 <h1>Welcome to MFiX-EXA’s documentation!<a class="headerlink" href="#welcome-to-mfix-exa-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>MFiX-Exa is a new multiphase modeling tool for the exascale.  It
+combines kernels from the existing MFiX code with the AMReX framework.
+&lt;<a class="reference external" href="https://github.com/AMReX-Codes/amrex">https://github.com/AMReX-Codes/amrex</a>&gt;`_.</p>
+<p>MFiX-Exa is developed by researchers at NETL, LBL, and CU Boulder as part of
+the MFiX-Exa applications project in DOE’s Exascale Computing Project.</p>
+<p>All of MFiX-Exa’s development is done in the NETL gitlab repository, with
+active development in the develop branch. Changes are merged into
+the master branch at the beginning of each month.</p>
 <div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="directory-overview">
-<h1>Directory overview<a class="headerlink" href="#directory-overview" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="building-mfix-exa">
-<h1>Building MFiX-Exa<a class="headerlink" href="#building-mfix-exa" title="Permalink to this headline">¶</a></h1>
-<p>There are two options to building MFiX-Exa:</p>
-<p>o <strong>SUPERBUILD (default):</strong> Utilities download and build AMReX as part
-of the MFiX-Exa build process. This method is strongly encouraged as it
-ensures configure options for MFiX-Exa and AMReX are consistent.</p>
-<p>o <strong>Using an existing AMReX Library:</strong> MFiX-Exa is linked to an existing
-AMReX installation. This is ideal for continuous integration severs (CI)
-and regression testing applications. AMReX library version must meet
-MFiX-Exa requirements.</p>
-<div class="section" id="superbuild-instructions-recommended">
-<h2>SUPERBUILD Instructions (recommended)<a class="headerlink" href="#superbuild-instructions-recommended" title="Permalink to this headline">¶</a></h2>
-<p>When building in <strong>SUPERBUILD</strong> mode, MFiX-Exa build system will take
-care of downloading, configuring and installing AMReX as part of the
-MFiX-Exa build. The following commands build MFiX-Exa and AMReX in a
-single step.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mfix</span><span class="o">.</span><span class="n">netl</span><span class="o">.</span><span class="n">doe</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">gitlab</span><span class="o">/</span><span class="n">exa</span><span class="o">/</span><span class="n">mfix</span><span class="o">.</span><span class="n">git</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">mfix</span>
-<span class="o">&gt;</span> <span class="n">mkdir</span> <span class="n">build</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">build</span>
-<span class="o">&gt;</span> <span class="n">cmake</span> <span class="n">CONFIG_OPTIONS</span> <span class="o">..</span>
-<span class="o">&gt;</span> <span class="n">make</span> <span class="o">-</span><span class="n">j</span>
-</pre></div>
-</div>
-<p>AMReX is built the first time the <code class="docutils literal notranslate"><span class="pre">make</span></code> command is issued. No
-external installation of AMReX is needed. However, internet access to
-the AMReX github repository is required. The optional string
-<code class="docutils literal notranslate"><span class="pre">CONFIG_OPTIONS</span></code> allows to customize the build of both AMReX and
-MFiX-Exa. <code class="docutils literal notranslate"><span class="pre">CONFIG_OPTIONS</span></code> is a list of one or more configuration
-options given in the form <strong>-D</strong><em>OPTION=VALUE</em>`.</p>
-<p>The table below lists configuration options, possible values, and their
-effect on the build. Options prefixed by <code class="docutils literal notranslate"><span class="pre">AMREX_</span></code> are specific to the
-build of AMReX.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="38%" />
-<col width="23%" />
-<col width="17%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option name</th>
-<th class="head">Description</th>
-<th class="head">Possible values</th>
-<th class="head">Default
-value</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>DEBUG</td>
-<td>Build in debug mode</td>
-<td>ON/OFF</td>
-<td>OFF</td>
-</tr>
-<tr class="row-odd"><td>CMAKE_Fortran_FLAGS</td>
-<td>User-defined Fortran flags
-for MFiX build</td>
-<td>valid F90
-compiler flags</td>
-<td>None</td>
-</tr>
-<tr class="row-even"><td>CMAKE_CXX_FLA
-GS</td>
-<td>User-defined C++ flags for
-MFiX build</td>
-<td>valid C++
-compiler flags</td>
-<td>None</td>
-</tr>
-<tr class="row-odd"><td>AMREX_Fortran_FLAGS</td>
-<td>User-defined Fortran flags
-for AMReX build</td>
-<td>valid F90
-compiler flags</td>
-<td>None</td>
-</tr>
-<tr class="row-even"><td>AMREX_CXX_FLA
-GS</td>
-<td>User-defined C++ flags for
-AMReX build</td>
-<td>valid C++
-compiler flags</td>
-<td>None</td>
-</tr>
-<tr class="row-odd"><td>ENABLE_FPE</td>
-<td>Build with Floating-Point
-Exceptions checks</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>ENABLE_PTESTS</td>
-<td>Include tests for projection
-method in Ctest suite</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>ENABLE_STESTS</td>
-<td>Include tests for SIMPLE
-method in Ctest suite</td>
-<td>0/1</td>
-<td>1</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-MPI</td>
-<td>Enable build with MPI</td>
-<td>0/1</td>
-<td>1</td>
-</tr>
-<tr class="row-odd"><td>AMREX_ENABLE_
-OMP</td>
-<td>Enable build with OpenMP</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-DP</td>
-<td>Enable double precision</td>
-<td>0/1</td>
-<td>1</td>
-</tr>
-<tr class="row-odd"><td>AMREX_ENABLE_
-DP_PARTICLES</td>
-<td>Enable double precision in
-particles classes</td>
-<td>0/1</td>
-<td>1</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-BASE_PROFILE</td>
-<td>Include profiling info</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>AMREX_ENABLE_
-TINY_PROFILE</td>
-<td>Include tiny profiling info</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-COMM_PROFILE</td>
-<td>Include communicators
-profiling info</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>AMREX_ENABLE_
-TRACE_PROFILE</td>
-<td>Include trace profiling info</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-MEM_PROFILE</td>
-<td>Include memory profiling
-info</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>AMREX_ENABLE_
-BACKTRACE</td>
-<td>Include backtrace info</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-PROFPARSER</td>
-<td>Include profile parser</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>AMREX_ENABLE_
-PIC</td>
-<td>Build position-independent
-code</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>AMREX_ENABLE_
-ASSERTION</td>
-<td>Build position-independent
-code</td>
-<td>0/1</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>AMREX_GIT_COM
-MIT</td>
-<td>AMReX commit to be used in
-the build</td>
-<td>valid git commit
-id/branch</td>
-<td>None</td>
-</tr>
-<tr class="row-even"><td>AMREX_INSTALL_DIR</td>
-<td>Global path to AMReX install
-directory</td>
-<td>valid global
-path</td>
-<td>None
-(superbuild
-)</td>
-</tr>
-</tbody>
-</table>
-<p><code class="docutils literal notranslate"><span class="pre">SUPERBUILD</span> <span class="pre">mode</span> <span class="pre">is</span> <span class="pre">enabled</span> <span class="pre">automatically</span> <span class="pre">when</span> <span class="pre">AMREX_INSTALL_DIR</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">given.</span></code></p>
-<p>Example: build mfix with custom fortran flags, AMReX profiling enabled
-and single precision particles:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DMFiX_FFLAGS_OVERRIDES</span><span class="o">=</span><span class="s2">&quot;custom flags&quot;</span> <span class="o">-</span><span class="n">DAMREX_ENABLE_BASE_PROFILE</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DAMREX_ENABLE_DP_PARTICLES</span><span class="o">=</span><span class="mi">0</span> <span class="o">..</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">
-<h2>Building MFiX-Exa using a separate AMReX installation (no superbuild)<a class="headerlink" href="#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="build-amrex-library">
-<h3>Build AMReX Library<a class="headerlink" href="#build-amrex-library" title="Permalink to this headline">¶</a></h3>
-<p>Clone AMReX from the official Git repository and checkout the
-<em>development</em> branch.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AMReX</span><span class="o">-</span><span class="n">Codes</span><span class="o">/</span><span class="n">amrex</span><span class="o">.</span><span class="n">git</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">amrex</span>
-<span class="o">&gt;</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">development</span>
-</pre></div>
-</div>
-<p>Next, configure, build and install AMReX as follows:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cmake</span> <span class="n">AMREX_CONFIG_OPTIONS</span> <span class="o">-</span><span class="n">DENABLE_PARTICLES</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DENABLE_AMRDATA</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DENABLE_EB</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="p">:</span><span class="n">PATH</span><span class="o">=/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">installdir</span> <span class="o">.</span>
-<span class="o">&gt;</span> <span class="n">make</span> <span class="n">install</span>
-</pre></div>
-</div>
-<p>Here,<code class="docutils literal notranslate"><span class="pre">AMREX_CONFIG_OPTIONS</span></code> are optional configure options for
-AMReX. Please refer to the AMReX user guide for a list of all the
-possible configuration options. The only options required are
-<strong>-DENABLE_PARTICLES=1</strong>, <strong>-DENABLE_AMRDATA=1</strong>, and
-<strong>-DENABLE_EB=1</strong>.</p>
-</div>
-<div class="section" id="id1">
-<h3>Building MFiX-Exa<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Clone and build MFiX-Exa.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mfix</span><span class="o">.</span><span class="n">netl</span><span class="o">.</span><span class="n">doe</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">gitlab</span><span class="o">/</span><span class="n">exa</span><span class="o">/</span><span class="n">mfix</span><span class="o">.</span><span class="n">git</span>
-<span class="o">&gt;</span> <span class="n">mkdir</span> <span class="n">build</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">build</span>
-<span class="o">&gt;</span> <span class="n">cmake</span> <span class="n">CONFIG_OPTIONS</span> <span class="o">-</span><span class="n">DAMREX_INSTALL_DIR</span><span class="o">=/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">amrex</span><span class="o">/</span><span class="n">installdir</span> <span class="o">..</span>
-<span class="o">&gt;</span> <span class="n">make</span> <span class="o">-</span><span class="n">j</span>
-</pre></div>
-</div>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">CONFIG_OPTIONS</span></code> are MFiX-Exa specific configuration options,
-that is, any option NOT prefixed by <code class="docutils literal notranslate"><span class="pre">AMREX_</span></code> in the table above.
-Options prefixed by <code class="docutils literal notranslate"><span class="pre">AMREX_</span></code> are always ignored when using an external
-AMReX installation.</p>
-</div>
-</div>
-<div class="section" id="few-more-notes-on-building-mfix-exa">
-<h2>Few more notes on building MFiX-Exa<a class="headerlink" href="#few-more-notes-on-building-mfix-exa" title="Permalink to this headline">¶</a></h2>
-<p>The system defaults compilers can be overwritten as follows:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cmake</span> <span class="o">-</span><span class="n">DCMAKE_CXX_COMPILER</span><span class="o">=&lt;</span><span class="n">c</span><span class="o">++-</span><span class="n">compiler</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">DCMAKE_Fortran_COMPILER</span><span class="o">=&lt;</span><span class="n">f90</span><span class="o">-</span><span class="n">compiler</span><span class="o">&gt;</span> <span class="n">CONFIG_OPTIONS</span>  <span class="o">..</span>
-</pre></div>
-</div>
-<p>When building on a platform that uses the <code class="docutils literal notranslate"><span class="pre">module</span></code> utility, use either
-the above command (with full path to the compilers) or the following:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cmake</span> <span class="o">-</span><span class="n">DCMAKE_CXX_COMPILER</span><span class="o">=</span><span class="n">CC</span> <span class="o">-</span><span class="n">DCMAKE_Fortran_COMPILER</span><span class="o">=</span><span class="n">ftn</span> <span class="n">CONFIG_OPTIONS</span>  <span class="o">..</span>
-</pre></div>
-</div>
-<p>MFiX-Exa uses the same compiler flags used to build AMReX, unless
-<code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> is explicitly provided, or
-the environmental variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/<code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> are set.</p>
-</div>
-</div>
-<div class="section" id="running-mfix-test-suite">
-<h1>Running MFiX Test Suite<a class="headerlink" href="#running-mfix-test-suite" title="Permalink to this headline">¶</a></h1>
-<p>MFiX-Exa comes with several tests aimed at evaluating software
-functionalities. The source files as well as the required input files
-for each test are located in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory. The <code class="docutils literal notranslate"><span class="pre">tests</span></code>
-directory is copied to the build directory during MFiX-Exa configuration
-process. When a test is run (see below), output files are stored in
-<code class="docutils literal notranslate"><span class="pre">build_dir/tests/test-name</span></code>.</p>
-<p>There are various dependencies for comparing test results.</p>
-<p>o To compare results to archived flow slices stored in <code class="docutils literal notranslate"><span class="pre">AUTOTEST</span></code>
-directories with the case files, the environment variable <code class="docutils literal notranslate"><span class="pre">FEXTRACT</span></code>
-must point to the location of the AMReX <code class="docutils literal notranslate"><span class="pre">fextract</span></code> utility located in
-the directory, <code class="docutils literal notranslate"><span class="pre">amrex/Tools/PostProcessing/F_Src</span></code>. Additionally,
-<code class="docutils literal notranslate"><span class="pre">numdiff</span></code> must be installed for comparing results.</p>
-<p>o To compare point-by-point field data, the environment variable
-<code class="docutils literal notranslate"><span class="pre">FCOMPARE</span></code> must point the AMReX utility <code class="docutils literal notranslate"><span class="pre">plt_compare_diff_grids</span></code>
-found in the directory, <code class="docutils literal notranslate"><span class="pre">amrex/Tools/PostProcessing/F_Src</span></code>.
-Additionally, the environment variable <code class="docutils literal notranslate"><span class="pre">MFiX_BENCHMARKS_HOME</span></code> must
-point to the location of a local regression test data set. See
-<em>Generating local regression test data</em> for instructions on creating a
-local regression test data set.</p>
-<div class="section" id="run-all-tests">
-<h2>Run all tests<a class="headerlink" href="#run-all-tests" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">to</span> <span class="n">mfix</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="nb">dir</span>
-<span class="o">&gt;</span> <span class="n">ctest</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="list-all-tests-without-running-them">
-<h2>List all tests (without running them)<a class="headerlink" href="#list-all-tests-without-running-them" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">to</span> <span class="n">mfix</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="nb">dir</span>
-<span class="o">&gt;</span> <span class="n">ctest</span> <span class="o">-</span><span class="n">N</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-a-particular-test-by-the-index-listed-in-ctest-n">
-<h2>Run a particular test by the index listed in ctest -N<a class="headerlink" href="#run-a-particular-test-by-the-index-listed-in-ctest-n" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">to</span> <span class="n">mfix</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="nb">dir</span>
-<span class="o">&gt;</span> <span class="n">ctest</span> <span class="o">-</span><span class="n">I</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span>             <span class="c1"># run the third test</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-a-particular-test-by-name">
-<h2>Run a particular test by name<a class="headerlink" href="#run-a-particular-test-by-name" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">to</span> <span class="n">mfix</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="nb">dir</span>
-<span class="o">&gt;</span> <span class="n">ctest</span> <span class="o">-</span><span class="n">R</span> <span class="n">DEM01</span>  <span class="c1"># running all tests with &quot;DEM01&quot; in the test name</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-a-particular-test-via-make">
-<h2>Run a particular test via make<a class="headerlink" href="#run-a-particular-test-via-make" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">to</span> <span class="n">mfix</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="nb">dir</span>
-<span class="o">&gt;</span> <span class="n">make</span> <span class="n">run_DEM01</span><span class="o">-</span><span class="n">x</span>  <span class="c1"># running &quot;DEM01-x&quot; and output to the screen</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-specific">
-<h2>Run specific<a class="headerlink" href="#run-specific" title="Permalink to this headline">¶</a></h2>
-<p>If the environment variable GRID is defined, it specifies which grid
-types to run for the test(s). If GRID variable is not defined, the
-default is to run the tests for all grid types. &gt; env GRID=”tiled” ctest
--R DEM01 # running all tests with “DEM01” for tiled grid &gt; env
-GRID=”single multiple” ctest -R DEM01 # running all tests with “DEM01”
-for single grid and multiple grid &gt; ctest -R DEM01 # running all tests
-with “DEM01” for all grid types (single, multiple, tiled)</p>
-</div>
-<div class="section" id="run-a-user-defined-case">
-<h2>Run a user-defined case<a class="headerlink" href="#run-a-user-defined-case" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">mfix</span> <span class="n">inputs</span><span class="o">-</span><span class="n">myrun</span>
-</pre></div>
-</div>
-<p><em>inputs-myrun</em> is a text file containing the AMReX input parameters;
-this can be named anything as long as it is the <strong>first</strong> argument
-following the executable. Note that many of the problem parameters are
-still defined in <em>mfix.dat</em>.</p>
-</div>
-</div>
-<div class="section" id="see-the-user-s-guide-for-more-about-mfix-exa">
-<h1>See the User’s Guide for more about MFiX-Exa<a class="headerlink" href="#see-the-user-s-guide-for-more-about-mfix-exa" title="Permalink to this headline">¶</a></h1>
-<p>To build the User’s Guide,</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">doc</span><span class="o">/</span><span class="n">UsersGuide</span>
-<span class="o">&gt;</span> <span class="n">make</span>
-</pre></div>
-</div>
-<p>This will build a pdf of the MFiX-Exa User’s Guide, which contains
-information about the equations being solved, run-time parameters,
-checkpoint/restart capability, options for visualization and more.</p>
-</div>
-<div class="section" id="regression-testing">
-<h1>Regression testing<a class="headerlink" href="#regression-testing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="generating-local-regression-test-data">
-<h2>Generating local regression test data<a class="headerlink" href="#generating-local-regression-test-data" title="Permalink to this headline">¶</a></h2>
-<p>Developers are encouraged to create local benchmark data for regression
-testing prior to committing code the GitLab repository.</p>
-<ol class="arabic">
-<li><p class="first">Create a location to store benchmark data and clone the MFiX and
-AMReX repositories.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span>
-<span class="n">mkdir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span><span class="o">/</span><span class="n">benchmark</span>
-<span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mfix</span><span class="o">.</span><span class="n">netl</span><span class="o">.</span><span class="n">doe</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">gitlab</span><span class="o">/</span><span class="n">exa</span><span class="o">/</span><span class="n">mfix</span><span class="o">.</span><span class="n">git</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AMReX</span><span class="o">-</span><span class="n">Codes</span><span class="o">/</span><span class="n">amrex</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Structure.html">Directory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Building.html">Building MFiX-Exa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Building.html#superbuild-instructions-recommended">SUPERBUILD Instructions (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building.html#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">Building MFiX-Exa using a separate AMReX installation (no superbuild)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Building.html#few-more-notes-on-building-mfix-exa">Few more notes on building MFiX-Exa</a></li>
+</ul>
 </li>
-<li><p class="first">Create a local copy the regression test setup file from the MFiX
-repository.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">mfix</span><span class="o">/</span><span class="n">RegressionTesting</span><span class="o">/</span><span class="n">MFiX</span><span class="o">-</span><span class="n">tests</span><span class="o">.</span><span class="n">ini</span> <span class="n">MFiX</span><span class="o">-</span><span class="n">local</span><span class="o">.</span><span class="n">ini</span>
-</pre></div>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running MFiX Test Suite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#run-all-tests">Run all tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#list-all-tests-without-running-them">List all tests (without running them)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#run-a-particular-test-by-the-index-listed-in-ctest-n">Run a particular test by the index listed in ctest -N</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#run-a-particular-test-by-name">Run a particular test by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#run-a-particular-test-via-make">Run a particular test via make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#run-specific">Run specific</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html#run-a-user-defined-case">Run a user-defined case</a></li>
+</ul>
 </li>
-<li><p class="first">Edit the local setup file. Specify the top level directories for test
-and web output under the <code class="docutils literal notranslate"><span class="pre">[main]</span></code> heading.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">main</span><span class="p">]</span>
-<span class="n">testTopDir</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span><span class="o">/</span><span class="n">benchmark</span>
-<span class="n">webTopDir</span> <span class="o">=</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span><span class="o">/</span><span class="n">web</span>
-</pre></div>
-</div>
-<p>Specify the AMReX source directory location under the <code class="docutils literal notranslate"><span class="pre">[AMReX]</span></code>
-heading.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">AMReX</span><span class="p">]</span>
-<span class="nb">dir</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span><span class="o">/</span><span class="n">amrex</span>
-<span class="n">branch</span> <span class="o">=</span> <span class="n">development</span>
-</pre></div>
-</div>
-<p>Specify the MFiX-Exa source directory location under the <code class="docutils literal notranslate"><span class="pre">[source]</span></code>
-heading.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
-<span class="nb">dir</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span><span class="o">/</span><span class="n">mfix</span>
-<span class="n">branch</span> <span class="o">=</span> <span class="n">develop</span>
-</pre></div>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html#see-the-user-s-guide-for-more-about-mfix-exa">See the User’s Guide for more about MFiX-Exa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html#generating-local-regression-test-data">Generating local regression test data</a></li>
+</ul>
 </li>
-<li><p class="first">Run the AMReX regression test tool. The second argument is a user
-supplied comment.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">exa</span><span class="o">-</span><span class="n">rt</span>
-<span class="n">amrex</span><span class="o">/</span><span class="n">Tools</span><span class="o">/</span><span class="n">RegressionTesting</span><span class="o">/</span><span class="n">regtest</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">make_benchmarks</span> <span class="s2">&quot;MFiX&quot;</span> <span class="n">MFiX</span><span class="o">-</span><span class="n">local</span><span class="o">.</span><span class="n">ini</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>## Prerequisite: Environment Dependencies on Joule (Joule specific)</td>
-</tr>
-<tr class="row-even"><td>For the Joule environment, load the gnu module and set environment variables first. If not on Joule, skip this step.</td>
-</tr>
-<tr class="row-odd"><td>```shell</td>
-</tr>
-<tr class="row-even"><td>&gt; module load gnu/6.1.0</td>
-</tr>
-<tr class="row-odd"><td>&gt; export CC=/nfs/apps/Compilers/GNU/6.1.0/bin/gcc</td>
-</tr>
-<tr class="row-even"><td>&gt; export CXX=/nfs/apps/Compilers/GNU/6.1.0/bin/g++</td>
-</tr>
-<tr class="row-odd"><td>&gt; export F77=/nfs/apps/Compilers/GNU/6.1.0/bin/gfortran</td>
-</tr>
-<tr class="row-even"><td>&gt; export FC=/nfs/apps/Compilers/GNU/6.1.0/bin/gfortran</td>
-</tr>
-<tr class="row-odd"><td>```</td>
-</tr>
-</tbody>
-</table>
+</ul>
 </div>
 <div class="section" id="notice">
 <h2>Notice<a class="headerlink" href="#notice" title="Permalink to this headline">¶</a></h2>
@@ -653,6 +227,13 @@ Government or any agency thereof.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Structure.html" class="btn btn-neutral float-right" title="Directory overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>
