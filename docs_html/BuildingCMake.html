@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building MFiX-Exa &mdash; MFiX-Exa  documentation</title>
+  <title>Building MFiX-Exa with CMake &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Running the MFiX Test Suite" href="RunningTestSuite.html" />
+    <link rel="next" title="Building MFiX-Exa with gmake" href="BuildingGMake.html" />
     <link rel="prev" title="Directory overview" href="Structure.html" /> 
 
   
@@ -83,16 +83,17 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Structure.html">Directory overview</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Building MFiX-Exa</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building MFiX-Exa with CMake</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#superbuild-instructions-recommended">SUPERBUILD Instructions (recommended)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">Building MFiX-Exa using a separate AMReX installation (no superbuild)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#build-amrex-library">Build AMReX Library</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Building MFiX-Exa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-mfix-exa">Building MFiX-Exa</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#few-more-notes-on-building-mfix-exa">Few more notes on building MFiX-Exa</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 </ul>
@@ -147,13 +148,13 @@
         
           <li><a href="Introduction.html">MFiX-Exa Introduction</a> &raquo;</li>
         
-      <li>Building MFiX-Exa</li>
+      <li>Building MFiX-Exa with CMake</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Building.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/BuildingCMake.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -166,9 +167,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="building-mfix-exa">
-<h1>Building MFiX-Exa<a class="headerlink" href="#building-mfix-exa" title="Permalink to this headline">¶</a></h1>
-<p>There are two options to building MFiX-Exa:</p>
+  <div class="section" id="building-mfix-exa-with-cmake">
+<h1>Building MFiX-Exa with CMake<a class="headerlink" href="#building-mfix-exa-with-cmake" title="Permalink to this headline">¶</a></h1>
+<p>There are two options to building MFiX-Exa with cmake:</p>
 <p>o <strong>SUPERBUILD (default):</strong> Utilities download and build AMReX as part
 of the MFiX-Exa build process. This method is strongly encouraged as it
 ensures configure options for MFiX-Exa and AMReX are consistent.</p>
@@ -399,8 +400,8 @@ possible configuration options. The only options required are
 <strong>-DENABLE_PARTICLES=1</strong>, <strong>-DENABLE_AMRDATA=1</strong>, and
 <strong>-DENABLE_EB=1</strong>.</p>
 </div>
-<div class="section" id="id1">
-<h3>Building MFiX-Exa<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="building-mfix-exa">
+<h3>Building MFiX-Exa<a class="headerlink" href="#building-mfix-exa" title="Permalink to this headline">¶</a></h3>
 <p>Clone and build MFiX-Exa.</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mfix</span><span class="o">.</span><span class="n">netl</span><span class="o">.</span><span class="n">doe</span><span class="o">.</span><span class="n">gov</span><span class="o">/</span><span class="n">gitlab</span><span class="o">/</span><span class="n">exa</span><span class="o">/</span><span class="n">mfix</span><span class="o">.</span><span class="n">git</span>
 <span class="o">&gt;</span> <span class="n">mkdir</span> <span class="n">build</span>
@@ -440,7 +441,7 @@ the environmental variables <code class="docutils literal notranslate"><span cla
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="RunningTestSuite.html" class="btn btn-neutral float-right" title="Running the MFiX Test Suite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="BuildingGMake.html" class="btn btn-neutral float-right" title="Building MFiX-Exa with gmake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Structure.html" class="btn btn-neutral" title="Directory overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

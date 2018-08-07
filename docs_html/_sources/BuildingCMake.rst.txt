@@ -1,7 +1,7 @@
-Building MFiX-Exa
-=================
+Building MFiX-Exa with CMake
+============================
 
-There are two options to building MFiX-Exa:
+There are two options to building MFiX-Exa with cmake:
 
 o **SUPERBUILD (default):** Utilities download and build AMReX as part
 of the MFiX-Exa build process. This method is strongly encouraged as it
