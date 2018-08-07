@@ -8,10 +8,9 @@ Welcome to MFiX-EXA's documentation!
 
 MFiX-Exa is a new multiphase modeling tool for the exascale.  It
 combines kernels from the existing MFiX code with the AMReX framework.
-<https://github.com/AMReX-Codes/amrex>`_.
 
-MFiX-Exa is developed by researchers at NETL, LBL, and CU Boulder as part of 
-the MFiX-Exa applications project in DOE's Exascale Computing Project. 
+MFiX-Exa is under active development as part of the MFiX-Exa 
+application project in DOE's Exascale Computing Project. 
 
 All of MFiX-Exa's development is done in the NETL gitlab repository, with 
 active development in the develop branch. Changes are merged into
