@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['fill_5fbc0',['fill_bc0',['../fill__bc0_8f90.html#ab7c7d38d89eca7b0bfade46941833bcd',1,'fill_bc0(s, slo, shi, bc_ilo_type, bc_ihi_type, bc_jlo_type, bc_jhi_type, bc_klo_type, bc_khi_type, domlo, domhi):&#160;fill_bc0.f90'],['../mfix___f_8_h.html#a49385fe7c7408c3eb6049be4f8a2f73c',1,'fill_bc0(amrex::Real *s, const int *slo, const int *shi, int *bc_ilo, int *bc_ihi, int *bc_jlo, int *bc_jhi, int *bc_klo, int *bc_khi, const int *domlo, const int *domhi):&#160;mfix_F.H']]],
-  ['findmax',['findmax',['../stl__functions__des__mod_8f90.html#ac9328a954c927f9b44a8764c7b5db13e',1,'stl_functions_des_mod.f90']]],
-  ['findmin',['findmin',['../stl__functions__des__mod_8f90.html#ad4c4132b9ab484eb8c8474aadc427edf',1,'stl_functions_des_mod.f90']]],
-  ['finl_5ferr_5fmsg',['finl_err_msg',['../classerror__manager.html#ae4807060d4432106afdd7f0f13f3817c',1,'error_manager']]],
-  ['flip_5fparticle_5fvol',['flip_particle_vol',['../flip__particle__vol_8f90.html#a49ba98e8cd3c86fc3c7114ef5f2dc1b8',1,'flip_particle_vol(slo, shi, vol, bc_ilo_type, bc_ihi_type, bc_jlo_type, bc_jhi_type, bc_klo_type, bc_khi_type, domlo, domhi):&#160;flip_particle_vol.f90'],['../mfix___f_8_h.html#ac5384e0dddff1cb0a43d5b74bd1104dc',1,'flip_particle_vol(const int *slo, const int *shi, amrex::Real *ep_g, int *bc_ilo, int *bc_ihi, int *bc_jlo, int *bc_jhi, int *bc_klo, int *bc_khi, const int *domlo, const int *domhi):&#160;mfix_F.H']]],
-  ['flow_5fto_5fvel',['flow_to_vel',['../classset__bc__flow__module.html#ae5fa8827e570c68a7cc7a3dddad9481d',1,'set_bc_flow_module']]],
-  ['flush_5ferr_5fmsg',['flush_err_msg',['../classerror__manager.html#ae0bdc99be6ea1936f2c6987915c43697',1,'error_manager']]],
-  ['flush_5flist',['flush_list',['../output__manager_8f90.html#a05125e459099faabdd06fe2ff10274e6',1,'output_manager.f90']]],
-  ['flush_5fnotify_5fuser',['flush_notify_user',['../output__manager_8f90.html#ac405842ce141f15264ac1ac78c37be9e',1,'output_manager.f90']]]
+  ['get_5fbc_5fface',['get_bc_face',['../projection__mod_8f90.html#aab875c273f7f30b1ec78960680b4b121',1,'projection_mod.f90']]],
+  ['get_5fdata',['get_data',['../classget__data__module.html#af7cf154ea9c165932b3101919711b6a7',1,'get_data_module']]],
+  ['get_5fphi',['get_phi',['../class_mac_projection.html#a5b5f8ca7d398bd8ba96fa09d95c7a549',1,'MacProjection']]],
+  ['get_5fpoly',['get_poly',['../classmfix__level.html#ac0bcf6c03a00ce10b8509e66cb04934b',1,'mfix_level']]],
+  ['get_5fsolver_5fparams',['get_solver_params',['../mfix___f_8_h.html#a4ec666fa44ff035373c92ec64790c657',1,'get_solver_params(int *eq_id, int *sweep, int *pc, int *maxiter, amrex::Real *tol):&#160;mfix_F.H'],['../get__solver__params_8f90.html#acaccda41eee29784a168308182202804',1,'get_solver_params(eq_id, sweep_type, pc_type, max_it, tol):&#160;get_solver_params.f90']]],
+  ['get_5fwalls',['get_walls',['../classmfix__level.html#a0b9fea78d6fdbb07ec9f8cb252d70377',1,'mfix_level']]],
+  ['goal_5fseek_5fmflux',['goal_seek_mflux',['../mfix___f_8_h.html#a62017aff687c6024160e956653c27a28',1,'mfix_F.H']]],
+  ['grow_5fconnectivity',['grow_connectivity',['../classeb__to__vtk.html#a5c19ae48823ff8d6869ae04d8cc63e65',1,'eb_to_vtk']]],
+  ['grow_5fpdata',['grow_pdata',['../classpar__gen__module.html#a99bbd71a12640ea9106f1e5a42768cfc',1,'par_gen_module']]],
+  ['grow_5fpoints',['grow_points',['../classeb__to__vtk.html#a590f298fddfa740b54276cfeb0e79049',1,'eb_to_vtk']]]
 ];

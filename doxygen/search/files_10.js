@@ -12,6 +12,5 @@ var searchData=
   ['usr_5fdrag_2ef90',['usr_drag.f90',['../usr__drag_8f90.html',1,'']]],
   ['usr_5fhooks_2einc',['usr_hooks.inc',['../usr__hooks_8inc.html',1,'']]],
   ['usr_5fmod_2ef90',['usr_mod.f90',['../usr__mod_8f90.html',1,'']]],
-  ['usrnlst_2einc',['usrnlst.inc',['../usrnlst_8inc.html',1,'']]],
-  ['utilities_5fmod_2ef90',['utilities_mod.f90',['../utilities__mod_8f90.html',1,'']]]
+  ['usrnlst_2einc',['usrnlst.inc',['../usrnlst_8inc.html',1,'']]]
 ];

@@ -1,16 +1,22 @@
 var searchData=
 [
+  ['macprojection_2ecpp',['MacProjection.cpp',['../_mac_projection_8cpp.html',1,'']]],
+  ['macprojection_2eh',['MacProjection.H',['../_mac_projection_8_h.html',1,'']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
   ['main_2edox',['main.dox',['../main_8dox.html',1,'']]],
   ['matrix_5fmod_2ef90',['matrix_mod.f90',['../matrix__mod_8f90.html',1,'']]],
+  ['matvec_2ef90',['matvec.f90',['../matvec_8f90.html',1,'']]],
+  ['mfix_5farrays_2ecpp',['mfix_arrays.cpp',['../mfix__arrays_8cpp.html',1,'']]],
+  ['mfix_5feb_2ecpp',['mfix_eb.cpp',['../mfix__eb_8cpp.html',1,'']]],
+  ['mfix_5feb_5ff_2eh',['mfix_eb_F.H',['../mfix__eb___f_8_h.html',1,'']]],
   ['mfix_5fevolve_2ecpp',['mfix_evolve.cpp',['../mfix__evolve_8cpp.html',1,'']]],
   ['mfix_5ff_2eh',['mfix_F.H',['../mfix___f_8_h.html',1,'']]],
   ['mfix_5finit_2ecpp',['mfix_init.cpp',['../mfix__init_8cpp.html',1,'']]],
   ['mfix_5flevel_2ecpp',['mfix_level.cpp',['../mfix__level_8cpp.html',1,'']]],
   ['mfix_5flevel_2eh',['mfix_level.H',['../mfix__level_8_h.html',1,'']]],
   ['mfix_5flinear_5fsolve_2ecpp',['mfix_linear_solve.cpp',['../mfix__linear__solve_8cpp.html',1,'']]],
+  ['mfix_5fprojection_2ecpp',['mfix_projection.cpp',['../mfix__projection_8cpp.html',1,'']]],
   ['mfix_5fregrid_2ecpp',['mfix_regrid.cpp',['../mfix__regrid_8cpp.html',1,'']]],
-  ['mfixio_2ecpp',['mfixIO.cpp',['../mfix_i_o_8cpp.html',1,'']]],
-  ['mfixparticlecontainer_2ecpp',['MFIXParticleContainer.cpp',['../_m_f_i_x_particle_container_8cpp.html',1,'']]],
-  ['mfixparticlecontainer_2eh',['MFIXParticleContainer.H',['../_m_f_i_x_particle_container_8_h.html',1,'']]]
+  ['mfix_5fsimple_2ecpp',['mfix_simple.cpp',['../mfix__simple_8cpp.html',1,'']]],
+  ['mfixio_2ecpp',['mfixIO.cpp',['../mfix_i_o_8cpp.html',1,'']]]
 ];

@@ -1,25 +1,11 @@
 var searchData=
 [
-  ['ic_5fep_5fg',['ic_ep_g',['../classic.html#adc6bd9bdbdc18095cddab84df7cbbd2c',1,'ic']]],
-  ['ic_5fep_5fs',['ic_ep_s',['../classic.html#a9974bc14ccff8ad8d7ad8d298a8cd74f',1,'ic']]],
-  ['ic_5fp_5fg',['ic_p_g',['../classic.html#ad4a706925fb859202c67819edbe957c7',1,'ic']]],
-  ['ic_5ft_5fg',['ic_t_g',['../classic.html#a6c47691cba9740149b63f9a52ad20244',1,'ic']]],
-  ['ic_5ft_5fs',['ic_t_s',['../classic.html#afd9743a7db15ac8a636f6361a4d0db77',1,'ic']]],
-  ['ic_5fu_5fg',['ic_u_g',['../classic.html#a0526bf2a0c1d3e9e437d874d04f339c0',1,'ic']]],
-  ['ic_5fu_5fs',['ic_u_s',['../classic.html#af4286f617e9c409f3ed9931f354c3392',1,'ic']]],
-  ['ic_5fv_5fg',['ic_v_g',['../classic.html#a93af19fac5e2416288edc63c26baf2cc',1,'ic']]],
-  ['ic_5fv_5fs',['ic_v_s',['../classic.html#a90455e1d8e918d08d93b24b7fc2ef94f',1,'ic']]],
-  ['ic_5fw_5fg',['ic_w_g',['../classic.html#ac8b05402e48e2768ca32b7166880b5ad',1,'ic']]],
-  ['ic_5fw_5fs',['ic_w_s',['../classic.html#abe55ebf13ba1afcef9252118d355d908',1,'ic']]],
-  ['ic_5fx_5fe',['ic_x_e',['../classic.html#a1fd331a9fbd52f4595e5dd80ba3881dd',1,'ic']]],
-  ['ic_5fx_5fg',['ic_x_g',['../classic.html#a5718ed217a2cb8e7089531f35092c093',1,'ic']]],
-  ['ic_5fx_5fs',['ic_x_s',['../classic.html#a37bd432d3f879be195a7fe99286398a4',1,'ic']]],
-  ['ic_5fx_5fw',['ic_x_w',['../classic.html#ac4affcb322458cd3d9a3dd6e8c26f881',1,'ic']]],
-  ['ic_5fy_5fn',['ic_y_n',['../classic.html#a279a65ddb3a45b2c733896477d7fa6d2',1,'ic']]],
-  ['ic_5fy_5fs',['ic_y_s',['../classic.html#a50f23bb38300a4f9e35c636ac8d79552',1,'ic']]],
-  ['ic_5fz_5fb',['ic_z_b',['../classic.html#a0b96b9a57af639ee35d156e7dfbebcb7',1,'ic']]],
-  ['ic_5fz_5ft',['ic_z_t',['../classic.html#a3c22215f41509aeb1a4b9a37a8e83446',1,'ic']]],
-  ['ier_5fem',['ier_em',['../classerror__manager.html#a5c2fe97cd7dfe78e74b6f80d07bd47af',1,'error_manager']]],
-  ['invalid_5fcoll',['invalid_coll',['../classdiscretelement.html#aa9124ba635ef43f28c876019e85c6a22',1,'discretelement']]],
-  ['invalid_5fdrag',['invalid_drag',['../classdrag.html#a91b8303da96ecc595afea858d2384040',1,'drag']]]
+  ['kn',['kn',['../classdiscretelement.html#a8a9775776a5aee3117cc382f6f9511d1',1,'discretelement']]],
+  ['kn_5fw',['kn_w',['../classdiscretelement.html#a727770d4becd2fd710f1d4f51e6007ae',1,'discretelement']]],
+  ['koch_5fhill',['koch_hill',['../classdrag.html#a5b6a8cb3a5f701662c0003d89ed5d239',1,'drag']]],
+  ['koch_5fhill_5fpcf',['koch_hill_pcf',['../classdrag.html#aa4ebe23ac8873a656bde44f2df203201',1,'drag']]],
+  ['kt',['kt',['../classdiscretelement.html#ae2df04dec25b3a0a5fc84fe0554a68e2',1,'discretelement']]],
+  ['kt_5ffac',['kt_fac',['../classdiscretelement.html#a47d3f9f6b2b6e6a222670168661e176e',1,'discretelement']]],
+  ['kt_5fw',['kt_w',['../classdiscretelement.html#a0450e0192d8e6a68e245963b0423d228',1,'discretelement']]],
+  ['kt_5fw_5ffac',['kt_w_fac',['../classdiscretelement.html#a3dacdbd31686bfa0b286816284d41c6d',1,'discretelement']]]
 ];

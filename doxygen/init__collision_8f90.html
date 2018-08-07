@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -109,13 +109,13 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="memname">subroutine init_collision </td>
           <td>(</td>
-          <td class="paramtype">real(c_real), dimension(dim_m), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension(dim_m), intent(in)&#160;</td>
           <td class="paramname"><em>d_p0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(dim_m), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension(dim_m), intent(in)&#160;</td>
           <td class="paramname"><em>ro_s0</em>&#160;</td>
         </tr>
         <tr>
@@ -127,8 +127,6 @@ Functions/Subroutines</h2></td></tr>
 </div><div class="memdoc">
 
 <p>References <a class="el" href="init__collision_8f90.html#a86074aa794fd1f05652685e52615696b">init_collision_hertz()</a>, and <a class="el" href="init__collision_8f90.html#a91e5cc9472372f3c6a265a70ec392e67">init_collision_lsd()</a>.</p>
-
-<p>Referenced by <a class="el" href="classmfix__level.html#aacb2b13a7ca6a1952e2853c6bddfed05">mfix_level::PostInit()</a>.</p>
 
 </div>
 </div>
@@ -185,19 +183,19 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(dim_m), intent(inout)&#160;</td>
+          <td class="paramtype">real(rt), dimension(dim_m), intent(inout)&#160;</td>
           <td class="paramname"><em>sum_np</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(dim_m), intent(inout)&#160;</td>
+          <td class="paramtype">real(rt), dimension(dim_m), intent(inout)&#160;</td>
           <td class="paramname"><em>sum_dp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(dim_m), intent(inout)&#160;</td>
+          <td class="paramtype">real(rt), dimension(dim_m), intent(inout)&#160;</td>
           <td class="paramname"><em>sum_ro</em>&#160;</td>
         </tr>
         <tr>

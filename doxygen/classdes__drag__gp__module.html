@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,37 +120,37 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(3), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension(3), intent(in)&#160;</td>
           <td class="paramname"><em>particle_vel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(3), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension(3), intent(in)&#160;</td>
           <td class="paramname"><em>fluid_vel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), intent(in)&#160;</td>
           <td class="paramname"><em>EPg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension         (slo(1):shi(1),slo(2):shi(2),slo(3):shi(3)), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension         (slo(1):shi(1),slo(2):shi(2),slo(3):shi(3)), intent(in)&#160;</td>
           <td class="paramname"><em>ro_g</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension         (slo(1):shi(1),slo(2):shi(2),slo(3):shi(3)), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension         (slo(1):shi(1),slo(2):shi(2),slo(3):shi(3)), intent(in)&#160;</td>
           <td class="paramname"><em>mu_g</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), intent(out)&#160;</td>
+          <td class="paramtype">real(rt), intent(out)&#160;</td>
           <td class="paramname"><em>f_gp</em>, </td>
         </tr>
         <tr>
@@ -174,19 +174,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), intent(in)&#160;</td>
           <td class="paramname"><em>des_radius</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), intent(in)&#160;</td>
           <td class="paramname"><em>pvol</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), intent(in)&#160;</td>
           <td class="paramname"><em>ros</em>, </td>
         </tr>
         <tr>
@@ -204,8 +204,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>References <a class="el" href="classdrag.html#a47407b22c2cda40f20d2af9d23b9ba68">drag::drag_bvk()</a>, <a class="el" href="classdrag.html#a9628535edddea3af0f00fa1a351aa19a">drag::drag_gidaspow()</a>, <a class="el" href="classdrag.html#aaf7385650837b170e9e2dd31fdaed684">drag::drag_gidaspow_blend()</a>, <a class="el" href="classdrag.html#a3163cb0fada785dce2f49d16078a1892">drag::drag_koch_hill()</a>, <a class="el" href="classdrag.html#a202c9ffa98a44bfd20b3edae0e0b3f43">drag::drag_syam_obrien()</a>, <a class="el" href="usr__drag_8f90.html#a6d86dd1dad6f84fc15f7c63a30ad375b">drag_usr()</a>, and <a class="el" href="classdrag.html#ab1b304d7574dca69e6c9315d9b54651c">drag::drag_wen_yu()</a>.</p>
-
-<p>Referenced by <a class="el" href="calc__drag_8f90.html#a5323c71df696c27bf9d7d5c240c00ec2">calc_drag_particle()</a>, and <a class="el" href="calc__drag_8f90.html#a3c73b969e014bf989ee719068860912a">calc_particle_beta()</a>.</p>
 
 </div>
 </div>

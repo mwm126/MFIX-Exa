@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,8 +97,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac26330c393b1cc1df699a49bce6689ef"><td class="memItemLeft" align="right" valign="top">real(c_real), dimension(dim_eqs)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classur__facs.html#ac26330c393b1cc1df699a49bce6689ef">ur_fac</a></td></tr>
-<tr class="separator:ac26330c393b1cc1df699a49bce6689ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff9434f97396f24221d1dfd06e992e4"><td class="memItemLeft" align="right" valign="top">real(rt), dimension(dim_eqs)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classur__facs.html#a0ff9434f97396f24221d1dfd06e992e4">ur_fac</a></td></tr>
+<tr class="separator:a0ff9434f97396f24221d1dfd06e992e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function/Subroutine Documentation</h2>
 <a class="anchor" id="ab416205ba1d9454d2c3ed29f267aa1ee"></a>
@@ -120,7 +120,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(varlo(1):varhi(1),varlo(2):varhi(2),varlo(3):varhi(3)), intent(in)&#160;</td>
+          <td class="paramtype">real(rt), dimension(varlo(1):varhi(1),varlo(2):varhi(2),varlo(3):varhi(3)), intent(in)&#160;</td>
           <td class="paramname"><em>var</em>, </td>
         </tr>
         <tr>
@@ -138,13 +138,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(alo(1):ahi(1),alo(2):ahi(2),alo(3):ahi(3),-3:3), intent(inout)&#160;</td>
+          <td class="paramtype">real(rt), dimension(alo(1):ahi(1),alo(2):ahi(2),alo(3):ahi(3),-3:3), intent(inout)&#160;</td>
           <td class="paramname"><em>A_m</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(c_real), dimension(alo(1):ahi(1),alo(2):ahi(2),alo(3):ahi(3)), intent(inout)&#160;</td>
+          <td class="paramtype">real(rt), dimension(alo(1):ahi(1),alo(2):ahi(2),alo(3):ahi(3)), intent(inout)&#160;</td>
           <td class="paramname"><em>b_m</em>, </td>
         </tr>
         <tr>
@@ -173,19 +173,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classparam.html#a9cbe74ea8ff3b92c9d98e6c741f76b78">param::equal()</a>.</p>
-
-<p>Referenced by <a class="el" href="classsolve__vel__star__module.html#abf7dfef93c2114f9ae1786dcab9d0d11">solve_vel_star_module::solve_u_g_star()</a>, <a class="el" href="classsolve__vel__star__module.html#a0f7b870705ffcfd2c8f927376979a750">solve_vel_star_module::solve_v_g_star()</a>, and <a class="el" href="classsolve__vel__star__module.html#ab8c9b639ef756bbaf1c90b32d6ff00cd">solve_vel_star_module::solve_w_g_star()</a>.</p>
+<p>Referenced by <a class="el" href="classsolve__vel__star__module.html#aef1acaa7453247acb68dcc8e42b03e9e">solve_vel_star_module::solve_u_g_star()</a>, <a class="el" href="classsolve__vel__star__module.html#a19859c8163e529153aaf2b85c8007a78">solve_vel_star_module::solve_v_g_star()</a>, and <a class="el" href="classsolve__vel__star__module.html#a96b0fe717b57a6cf6451432ae040c7d8">solve_vel_star_module::solve_w_g_star()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ac26330c393b1cc1df699a49bce6689ef"></a>
+<a class="anchor" id="a0ff9434f97396f24221d1dfd06e992e4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(c_real), dimension(dim_eqs) ur_facs::ur_fac</td>
+          <td class="memname">real(rt), dimension(dim_eqs) ur_facs::ur_fac</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,7 +191,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this module was generated from the following file:<ul>
-<li>mfix/src/<a class="el" href="ur__facs__mod_8f90.html">ur_facs_mod.f90</a></li>
+<li>mfix/src/simple/<a class="el" href="ur__facs__mod_8f90.html">ur_facs_mod.f90</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

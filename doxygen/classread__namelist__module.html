@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae7e471109da3209dae9741dfffb36ddd"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classread__namelist__module.html#ae7e471109da3209dae9741dfffb36ddd">read_namelist</a> (dt)</td></tr>
-<tr class="separator:ae7e471109da3209dae9741dfffb36ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ba707265b6af77496a7b7501a3b426"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classread__namelist__module.html#ab5ba707265b6af77496a7b7501a3b426">read_namelist</a> (dt_inout)</td></tr>
+<tr class="separator:ab5ba707265b6af77496a7b7501a3b426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa80bc5dee03ca7e07470d1059a6a1fa9"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classread__namelist__module.html#aa80bc5dee03ca7e07470d1059a6a1fa9">add_argument</a> (fname, nlen)</td></tr>
 <tr class="separator:aa80bc5dee03ca7e07470d1059a6a1fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -123,28 +123,28 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae7e471109da3209dae9741dfffb36ddd"></a>
+<a class="anchor" id="ab5ba707265b6af77496a7b7501a3b426"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">subroutine read_namelist_module::read_namelist </td>
           <td>(</td>
-          <td class="paramtype">real(c_real), intent(out)&#160;</td>
-          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td class="paramtype">real(rt), intent(out)&#160;</td>
+          <td class="paramname"><em>dt_inout</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classutilities.html#a62bc2df0c09e0a02f96b411d66a46b91">utilities::blank_line()</a>, <a class="el" href="classdeprecated__or__unknown__module.html#a1b4aaebd08a512e37d9660862a012f2e">deprecated_or_unknown_module::deprecated_or_unknown()</a>, <a class="el" href="classerror__manager.html#ae4807060d4432106afdd7f0f13f3817c">error_manager::finl_err_msg()</a>, <a class="el" href="classerror__manager.html#ae0bdc99be6ea1936f2c6987915c43697">error_manager::flush_err_msg()</a>, <a class="el" href="classerror__manager.html#a72d85b02b86d4ba55407ad111e008770">error_manager::init_err_msg()</a>, <a class="el" href="classerror__manager.html#a3e7c4c9b48cd18f914b0b0c2aefc5e68">error_manager::ivar()</a>, <a class="el" href="classutilities.html#a9f4916e69434aa9c3920c007854690e0">utilities::line_too_big()</a>, <a class="el" href="classutilities.html#a6cea4ef19c4641d868aed61c754c925e">utilities::make_upper_case()</a>, <a class="el" href="classremove__comment__module.html#a7675622b5a86425903209e799e547bf5">remove_comment_module::remove_comment()</a>, <a class="el" href="classremove__comment__module.html#ac42dcbf728022b5792546792621f34d7">remove_comment_module::remove_par_blanks()</a>, <a class="el" href="classutilities.html#a3a965b2bd12ec5970bfd43302f43b097">utilities::replace_tab()</a>, <a class="el" href="classutilities.html#a67be8f99293212844624759573e62109">utilities::seek_comment()</a>, and <a class="el" href="read__namelist_8f90.html#ae7b7ebfa05dc098146b74703257a4893">set_keyword()</a>.</p>
+<p>References <a class="el" href="classdeprecated__or__unknown__module.html#a1b4aaebd08a512e37d9660862a012f2e">deprecated_or_unknown_module::deprecated_or_unknown()</a>, <a class="el" href="classerror__manager.html#ae4807060d4432106afdd7f0f13f3817c">error_manager::finl_err_msg()</a>, <a class="el" href="classerror__manager.html#ae0bdc99be6ea1936f2c6987915c43697">error_manager::flush_err_msg()</a>, <a class="el" href="classerror__manager.html#a72d85b02b86d4ba55407ad111e008770">error_manager::init_err_msg()</a>, <a class="el" href="classmfix__level.html#aa82a95d8387907678c140328bd147568">mfix_level::output()</a>, <a class="el" href="classremove__comment__module.html#a7675622b5a86425903209e799e547bf5">remove_comment_module::remove_comment()</a>, <a class="el" href="classremove__comment__module.html#ac42dcbf728022b5792546792621f34d7">remove_comment_module::remove_par_blanks()</a>, and <a class="el" href="read__namelist_8f90.html#ae7b7ebfa05dc098146b74703257a4893">set_keyword()</a>.</p>
 
 <p>Referenced by <a class="el" href="classget__data__module.html#af7cf154ea9c165932b3101919711b6a7">get_data_module::get_data()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this module was generated from the following file:<ul>
-<li>mfix/src/<a class="el" href="read__namelist_8f90.html">read_namelist.f90</a></li>
+<li>mfix/src/io/<a class="el" href="read__namelist_8f90.html">read_namelist.f90</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

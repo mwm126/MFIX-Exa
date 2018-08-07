@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,6 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="moduleadjust__dt-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -89,11 +90,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8316a69991c2ebd890055640d8f593cc"><td class="memItemLeft" align="right" valign="top">integer(c_int) function, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadjust__dt.html#a8316a69991c2ebd890055640d8f593cc">adjustdt</a> (converged, nit, dt)</td></tr>
+<tr class="separator:a8316a69991c2ebd890055640d8f593cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a58441c6eff74a796c98d853d4a13c54b"><td class="memItemLeft" align="right" valign="top">integer, save&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classadjust__dt.html#a58441c6eff74a796c98d853d4a13c54b">dt_dir</a> = -1</td></tr>
 <tr class="separator:a58441c6eff74a796c98d853d4a13c54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function/Subroutine Documentation</h2>
+<a class="anchor" id="a8316a69991c2ebd890055640d8f593cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(c_int) function, public adjust_dt::adjustdt </td>
+          <td>(</td>
+          <td class="paramtype">integer(c_int), intent(in)&#160;</td>
+          <td class="paramname"><em>converged</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(c_int), intent(in)&#160;</td>
+          <td class="paramname"><em>nit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(rt), intent(inout)&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="mfix___f_8_h.html#a042fae55defccfbae7ad1665f9b1198b">adjustdt()</a>, <a class="el" href="classerror__manager.html#ae4807060d4432106afdd7f0f13f3817c">error_manager::finl_err_msg()</a>, <a class="el" href="classerror__manager.html#ae0bdc99be6ea1936f2c6987915c43697">error_manager::flush_err_msg()</a>, and <a class="el" href="classerror__manager.html#a72d85b02b86d4ba55407ad111e008770">error_manager::init_err_msg()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a58441c6eff74a796c98d853d4a13c54b"></a>
 <div class="memitem">
@@ -108,7 +149,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this module was generated from the following file:<ul>
-<li>mfix/src/<a class="el" href="adjust__dt__mod_8f90.html">adjust_dt_mod.f90</a></li>
+<li>mfix/src/simple/<a class="el" href="adjust__dt__mod_8f90.html">adjust_dt_mod.f90</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

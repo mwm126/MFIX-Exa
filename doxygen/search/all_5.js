@@ -1,20 +1,17 @@
 var searchData=
 [
-  ['fill_5fbc0',['fill_bc0',['../fill__bc0_8f90.html#ab7c7d38d89eca7b0bfade46941833bcd',1,'fill_bc0(s, slo, shi, bc_ilo_type, bc_ihi_type, bc_jlo_type, bc_jhi_type, bc_klo_type, bc_khi_type, domlo, domhi):&#160;fill_bc0.f90'],['../mfix___f_8_h.html#a49385fe7c7408c3eb6049be4f8a2f73c',1,'fill_bc0(amrex::Real *s, const int *slo, const int *shi, int *bc_ilo, int *bc_ihi, int *bc_jlo, int *bc_jhi, int *bc_klo, int *bc_khi, const int *domlo, const int *domhi):&#160;mfix_F.H']]],
+  ['fill_5fbc0',['fill_bc0',['../fill__bc0_8f90.html#ac82b5698c1cdd7000191825d9edcefd8',1,'fill_bc0(s, slo, shi, bc_ilo_type, bc_ihi_type, bc_jlo_type, bc_jhi_type, bc_klo_type, bc_khi_type, domlo, domhi, ng):&#160;fill_bc0.f90'],['../mfix___f_8_h.html#afba6e81a2ce02b8564809072e20776b8',1,'fill_bc0(amrex::Real *s, const int *slo, const int *shi, const int *bc_ilo, const int *bc_ihi, const int *bc_jlo, const int *bc_jhi, const int *bc_klo, const int *bc_khi, const int *domlo, const int *domhi, const int *ng):&#160;mfix_F.H']]],
   ['fill_5fbc0_2ef90',['fill_bc0.f90',['../fill__bc0_8f90.html',1,'']]],
+  ['fill_5flevelset',['fill_levelset',['../classmfix__level.html#a84af97cf2de50dee3d36c2b572218d71',1,'mfix_level']]],
   ['findmax',['findmax',['../stl__functions__des__mod_8f90.html#ac9328a954c927f9b44a8764c7b5db13e',1,'stl_functions_des_mod.f90']]],
   ['findmin',['findmin',['../stl__functions__des__mod_8f90.html#ad4c4132b9ab484eb8c8474aadc427edf',1,'stl_functions_des_mod.f90']]],
   ['finl_5ferr_5fmsg',['finl_err_msg',['../classerror__manager.html#ae4807060d4432106afdd7f0f13f3817c',1,'error_manager']]],
-  ['fld_5fconst',['fld_const',['../classfld__const.html',1,'']]],
-  ['fld_5fconstants_5fmod_2ef90',['fld_constants_mod.f90',['../fld__constants__mod_8f90.html',1,'']]],
-  ['flip_5fparticle_5fvol',['flip_particle_vol',['../flip__particle__vol_8f90.html#a49ba98e8cd3c86fc3c7114ef5f2dc1b8',1,'flip_particle_vol(slo, shi, vol, bc_ilo_type, bc_ihi_type, bc_jlo_type, bc_jhi_type, bc_klo_type, bc_khi_type, domlo, domhi):&#160;flip_particle_vol.f90'],['../mfix___f_8_h.html#ac5384e0dddff1cb0a43d5b74bd1104dc',1,'flip_particle_vol(const int *slo, const int *shi, amrex::Real *ep_g, int *bc_ilo, int *bc_ihi, int *bc_jlo, int *bc_jhi, int *bc_klo, int *bc_khi, const int *domlo, const int *domhi):&#160;mfix_F.H']]],
+  ['flip_5fparticle_5fvol',['flip_particle_vol',['../flip__particle__vol_8f90.html#a6eeefa7e97243f2d4ea4e39cbe8bed64',1,'flip_particle_vol.f90']]],
   ['flip_5fparticle_5fvol_2ef90',['flip_particle_vol.f90',['../flip__particle__vol_8f90.html',1,'']]],
   ['flow_5fto_5fvel',['flow_to_vel',['../classset__bc__flow__module.html#ae5fa8827e570c68a7cc7a3dddad9481d',1,'set_bc_flow_module']]],
   ['flush_5ferr_5fmsg',['flush_err_msg',['../classerror__manager.html#ae0bdc99be6ea1936f2c6987915c43697',1,'error_manager']]],
   ['flush_5flist',['flush_list',['../output__manager_8f90.html#a05125e459099faabdd06fe2ff10274e6',1,'output_manager.f90']]],
   ['flush_5fnotify_5fuser',['flush_notify_user',['../output__manager_8f90.html#ac405842ce141f15264ac1ac78c37be9e',1,'output_manager.f90']]],
-  ['fsw_5f',['fsw_',['../classbc.html#aa34a4fd18a0473158407b35f29c216e7',1,'bc']]],
-  ['full_5flog',['full_log',['../classrun.html#ac5168043d8d3c7316ff227cf5786c4f8',1,'run']]],
   ['functions',['functions',['../classfunctions.html',1,'']]],
   ['functions_2einc',['functions.inc',['../functions_8inc.html',1,'']]],
   ['functions_5fmod_2ef90',['functions_mod.f90',['../functions__mod_8f90.html',1,'']]]
