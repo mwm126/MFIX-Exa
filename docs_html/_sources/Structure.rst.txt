@@ -1,3 +1,5 @@
+.. _Chap:Structure:
+
 Directory overview
 ==================
 
