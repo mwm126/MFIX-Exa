@@ -26,3 +26,9 @@ Directory overview
 +--------------+------------------------------------------------+
 | tutorials    | Set-ups for different EB geometries            |
 +--------------+------------------------------------------------+
+
+.. toctree::
+   :maxdepth: 1
+
+   Structure
+
