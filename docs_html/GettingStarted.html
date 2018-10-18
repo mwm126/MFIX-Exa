@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MFiX-Exa Introduction &mdash; MFiX-Exa  documentation</title>
+  <title>Getting Started &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="GettingStarted.html" />
-    <link rel="prev" title="Welcome to MFiX-EXA’s documentation!" href="index.html" /> 
+    <link rel="next" title="Directory overview" href="Structure.html" />
+    <link rel="prev" title="MFiX-Exa Introduction" href="Introduction.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -81,8 +81,15 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Structure.html">Directory overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticleFluid.html">Particle/Fluid Interactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticleWalls.html">Particle/Wall Interactions</a></li>
@@ -131,13 +138,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>MFiX-Exa Introduction</li>
+      <li>Getting Started</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Introduction.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/GettingStarted.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -150,33 +157,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mfix-exa-introduction">
-<h1>MFiX-Exa Introduction<a class="headerlink" href="#mfix-exa-introduction" title="Permalink to this headline">¶</a></h1>
-<p>MFiX-Exa is a new massively parallel code for computing multiphase
-flow in which solid particles interact with the gas surrounding them.</p>
-<p>It is built on top of AMReX, a publicly available software framework designed for building
-massively parallel block-structured adaptive mesh refinement (AMR)
-applications.</p>
-<p>MFiX-Exa relies on the same fundamental physics as in MFIX but the spatial and
-time discretizations differ.  Specifically,</p>
-<ul class="simple">
-<li>Fluid velocity is defined at cell centers; pressure is defined at nodes.</li>
-<li><dl class="first docutils">
-<dt>The advection algorithm includes an intermediate MAC projection for face-centered</dt>
-<dd>advection velocities</dd>
-</dl>
-</li>
-<li>Incompressibility of the fluid is imposed through the use of a projection at the
-end of the time step rather than through SIMPLE iterations</li>
-<li>The representation of the complex geometry includes mesh refinement around the
-fluid-solid interface, which is represented used the embedded boundary, or
-cut-cell approach</li>
-<li>Parallelization via flat MPI, OpenMP, hybrid MPI/OpenMP, or MPI/MPI.</li>
-<li>Porting of MFiX-Exa to GPUs is in progress.</li>
-<li>Parallel I/O using AMReX native I/O or HDF5.</li>
-<li>Plotfile format supported by AmrVis, VisIt, ParaView, and yt.</li>
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Structure.html">Directory overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 </ul>
-<p>MFiX-Exa is being developed at NETL, LBNL, and CU as part of DOE’s Exascale Computing Project.</p>
+</div>
 </div>
 
 
@@ -187,10 +178,10 @@ cut-cell approach</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="GettingStarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Structure.html" class="btn btn-neutral float-right" title="Directory overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to MFiX-EXA’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Introduction.html" class="btn btn-neutral" title="MFiX-Exa Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

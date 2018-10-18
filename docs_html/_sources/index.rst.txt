@@ -21,6 +21,7 @@ the master branch at the beginning of each month.
    :caption: Contents:
 
    Introduction
+   GettingStarted
    Particle
    ParticleBasics
    ParticleFluid
