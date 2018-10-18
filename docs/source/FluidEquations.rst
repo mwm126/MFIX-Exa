@@ -16,7 +16,7 @@ Conservation of fluid momentum:
 
 Conservation of fluid volume:
 
-where $\sum_{part} \beta (V_{part} - U_g)$ is the drag term in which $V_{part}$ represents the particle velocity.
+where :math:`\sum_{part} \beta (V_{part} - U_g)` is the drag term in which :math:`V_{part}` represents the particle velocity.
 
 .. math:: \frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0
   :label: eqn::mass_vareps
