@@ -161,11 +161,7 @@ applications.</p>
 time discretizations differ.  Specifically,</p>
 <ul class="simple">
 <li>Fluid velocity is defined at cell centers; pressure is defined at nodes.</li>
-<li><dl class="first docutils">
-<dt>The advection algorithm includes an intermediate MAC projection for face-centered</dt>
-<dd>advection velocities</dd>
-</dl>
-</li>
+<li>The advection algorithm includes an intermediate MAC projection for face-centered advection velocities</li>
 <li>Incompressibility of the fluid is imposed through the use of a projection at the
 end of the time step rather than through SIMPLE iterations</li>
 <li>The representation of the complex geometry includes mesh refinement around the
