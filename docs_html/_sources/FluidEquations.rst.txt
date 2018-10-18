@@ -3,9 +3,15 @@ Fluid Equations
 
 We define the following fluid variables:
 
+where :math:`\rho_g =` 
+
 where :math:`\rho_g = ` fluid density (assumed to be constant in the absence of reactions)
 
+where :math:`\varepsilon_g =` 
+
 where :math:`\varepsilon_g = ` volume fraction of fluid (accounts only for displacement of fluid by particle, does not account for the EB walls)
+
+where :math:`U_g =`
 
 where :math:`U_g = ` fluid velocity
 
