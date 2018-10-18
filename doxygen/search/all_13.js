@@ -3,6 +3,8 @@ var searchData=
   ['u_5fg_5fconv_5fdif',['u_g_conv_dif',['../classu__g__conv__dif.html',1,'']]],
   ['under_5frelax',['under_relax',['../classur__facs.html#ab416205ba1d9454d2c3ed29f267aa1ee',1,'ur_facs']]],
   ['uni_5frno',['uni_rno',['../classpar__gen__module.html#a03e42ce62e7613cc16cca6c4cd659bc1',1,'par_gen_module']]],
+  ['unioncif',['UnionCIF',['../class_union_c_i_f.html',1,'UnionCIF&lt; F1, F2 &gt;'],['../class_union_c_i_f.html#ae309467c4c5a1af20d285441d1fb9670',1,'UnionCIF::UnionCIF(const F1 &amp;f1, const F2 &amp;f2)'],['../class_union_c_i_f.html#a409d59d8707a2695b13b7115f69f406e',1,'UnionCIF::UnionCIF(const UnionCIF &amp;rhs)=default'],['../class_union_c_i_f.html#a2acccad0ad8fcced4dbb05d8389ae2b2',1,'UnionCIF::UnionCIF(UnionCIF &amp;&amp;rhs)=default']]],
+  ['unionlistif',['UnionListIF',['../class_union_list_i_f.html',1,'UnionListIF&lt; F &gt;'],['../class_union_list_i_f.html#aab79e06b6424a642827fdfcef7df7517',1,'UnionListIF::UnionListIF(const Vector&lt; F &gt; &amp;a_ifs)'],['../class_union_list_i_f.html#a3052be45b6c7d37ce78a375535b1b842',1,'UnionListIF::UnionListIF(const UnionListIF &amp;rhs)=default'],['../class_union_list_i_f.html#a08680331ba49fbd7a6ce74ec92d985c5',1,'UnionListIF::UnionListIF(UnionListIF &amp;&amp;rhs)=default']]],
   ['unknown_5fkeyword',['unknown_keyword',['../deprecated_8f90.html#a4cdcd3007c8fd4227c84e759c8935b87',1,'deprecated.f90']]],
   ['ur_5ffac',['ur_fac',['../classur__facs.html#a0ff9434f97396f24221d1dfd06e992e4',1,'ur_facs']]],
   ['ur_5ffacs',['ur_facs',['../classur__facs.html',1,'']]],

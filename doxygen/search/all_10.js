@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['random_5ffill',['random_fill',['../classpar__gen__module.html#a7e89e38fc65bed7a2bc4c260844ff855',1,'par_gen_module']]],
   ['rdata',['rdata',['../classpar__gen__module.html#a8bb53d10e3c6d99d6983d77631c6188f',1,'par_gen_module']]],
   ['read_5fnamelist',['read_namelist',['../classread__namelist__module.html#ab5ba707265b6af77496a7b7501a3b426',1,'read_namelist_module']]],
   ['read_5fnamelist_2ef90',['read_namelist.f90',['../read__namelist_8f90.html',1,'']]],
@@ -8,7 +9,6 @@ var searchData=
   ['regrid',['Regrid',['../classmfix__level.html#a4bee332ab94445e7630b1b15d941118f',1,'mfix_level']]],
   ['regrid_5fint',['regrid_int',['../main_8cpp.html#aed66e4c49c0e22be40df88d6e67bb63e',1,'main.cpp']]],
   ['regridarrays',['RegridArrays',['../classmfix__level.html#ad6dbe9cbfaf95c1b6d9da18e5181fd07',1,'mfix_level']]],
-  ['regridonstart',['RegridOnStart',['../classmfix__level.html#ad3c40333a8ec1c9dce2a1c6dc17b24c2',1,'mfix_level']]],
   ['remakelevel',['RemakeLevel',['../classmfix__level.html#a138371a7cd2efdefa65ba9551ca69e52',1,'mfix_level']]],
   ['remove_5fcomment',['remove_comment',['../classremove__comment__module.html#a7675622b5a86425903209e799e547bf5',1,'remove_comment_module']]],
   ['remove_5fcomment_2ef90',['remove_comment.f90',['../remove__comment_8f90.html',1,'']]],
@@ -27,6 +27,6 @@ var searchData=
   ['resizearrays',['ResizeArrays',['../classmfix__level.html#a3e9e332615e8b797f12e7a1dadc0325f',1,'mfix_level']]],
   ['restart',['Restart',['../classmfix__level.html#ac72fb97c169b033cd902a3cf12abe19d',1,'mfix_level']]],
   ['restart_5ffile',['restart_file',['../main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5',1,'main.cpp']]],
-  ['rm_5fwall_5fcollisions',['rm_wall_collisions',['../classpar__gen__module.html#a2a262a467f6852a41cbbe3f69a6898f3',1,'par_gen_module']]],
+  ['rm_5fwall_5fcollisions',['rm_wall_collisions',['../classpar__gen__module.html#afb698e0855b7dd4ec73f23e654083777',1,'par_gen_module::rm_wall_collisions()'],['../mfix__eb___f_8_h.html#a6ba8282b255dfbd1019a0d0c0be4ff43',1,'rm_wall_collisions():&#160;mfix_eb_F.H']]],
   ['run_5fcontrol_2einc',['run_control.inc',['../run__control_8inc.html',1,'']]]
 ];

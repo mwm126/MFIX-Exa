@@ -15,5 +15,7 @@ var searchData=
   ['atest_5fy02',['atest_y02',['../stl__functions__des__mod_8f90.html#a54411981944d5a4328c444a488c68cdb',1,'stl_functions_des_mod.f90']]],
   ['atest_5fy1',['atest_y1',['../stl__functions__des__mod_8f90.html#a9ddf23ec6a45982a704836e7d176bdfe',1,'stl_functions_des_mod.f90']]],
   ['atest_5fz0',['atest_z0',['../stl__functions__des__mod_8f90.html#a3ae22b6b9c32f5cd2509898d103ece11',1,'stl_functions_des_mod.f90']]],
-  ['atest_5fz12',['atest_z12',['../stl__functions__des__mod_8f90.html#a42a27b2792ed36cde2bea03e4b2816bd',1,'stl_functions_des_mod.f90']]]
+  ['atest_5fz12',['atest_z12',['../stl__functions__des__mod_8f90.html#a42a27b2792ed36cde2bea03e4b2816bd',1,'stl_functions_des_mod.f90']]],
+  ['avg',['avg',['../classavg__functions.html#a6525168ca590c7df814bfc3d66be5486',1,'avg_functions']]],
+  ['avg_5fh',['avg_h',['../classavg__functions.html#a0dce5f360a30f95b866daa299a5c8ee5',1,'avg_functions']]]
 ];

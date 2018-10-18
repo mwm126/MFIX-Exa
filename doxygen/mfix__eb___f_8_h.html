@@ -103,6 +103,8 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a581e5b77f44c994d9fcf3d9460ba9521"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a581e5b77f44c994d9fcf3d9460ba9521">mfix_get_walls</a> (int *bcv, int *exists, void *normal, void *center)</td></tr>
 <tr class="separator:a581e5b77f44c994d9fcf3d9460ba9521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a1aca7edb91580e0b7b5b0669198e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#af3a1aca7edb91580e0b7b5b0669198e7">mfix_get_real_walls</a> (int *bcv, int *exists, void *normal, void *center)</td></tr>
+<tr class="separator:af3a1aca7edb91580e0b7b5b0669198e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a0161a2f2781bb78bb6424ef272669"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#ae5a0161a2f2781bb78bb6424ef272669">mfix_eb_to_polygon</a> (const amrex::Real *dx, const int *slo, const int *shi, const void *flag, const int *fglo, const int *fghi, const amrex_real *bcent, const int *blo, const int *bhi, const amrex_real *ax, const int *axlo, const int *axhi, const amrex_real *ay, const int *aylo, const int *ayhi, const amrex_real *az, const int *azlo, const int *azhi)</td></tr>
 <tr class="separator:ae5a0161a2f2781bb78bb6424ef272669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019cab5e8f49979d87cb0329a9754861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a019cab5e8f49979d87cb0329a9754861">mfix_write_eb_vtp</a> (int *myID)</td></tr>
@@ -113,6 +115,8 @@ Functions</h2></td></tr>
 <tr class="separator:a6e0d817a11a7582fdb0f311a97e458b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16006fc6139e8b5896fdd0894a4eae83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a16006fc6139e8b5896fdd0894a4eae83">calc_wall_collisions_ls</a> (void *rparticles, const int *ntot, const int *nrp, amrex_real *tow, amrex_real *fc, amrex_real *subdt, const int *valid, const int *vlo, const int *vhi, const amrex_real *phi, const int *phlo, const int *phhi, const amrex_real *dx, const int *n_refine)</td></tr>
 <tr class="separator:a16006fc6139e8b5896fdd0894a4eae83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba8282b255dfbd1019a0d0c0be4ff43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a6ba8282b255dfbd1019a0d0c0be4ff43">rm_wall_collisions</a> (void *rparticle, const int *nrp, const int *valid, const int *vlo, const int *vhi, const amrex_real *phi, const int *phlo, const int *phhi, const amrex_real *dx, const int *n_refine)</td></tr>
+<tr class="separator:a6ba8282b255dfbd1019a0d0c0be4ff43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="acb6d48305132f6aa2ad69f1aaa78e4c6"></a>
@@ -408,6 +412,44 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af3a1aca7edb91580e0b7b5b0669198e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix_get_real_walls </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>bcv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>exists</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>normal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>center</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a581e5b77f44c994d9fcf3d9460ba9521"></a>
 <div class="memitem">
 <div class="memproto">
@@ -479,6 +521,80 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Referenced by <a class="el" href="classmfix__level.html#a24adb821814a5896b5b49e3465360399">mfix_level::WriteEBSurface()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ba8282b255dfbd1019a0d0c0be4ff43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rm_wall_collisions </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>rparticle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>nrp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>valid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>vlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>vhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex_real *&#160;</td>
+          <td class="paramname"><em>phi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>phlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>phhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex_real *&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>n_refine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
