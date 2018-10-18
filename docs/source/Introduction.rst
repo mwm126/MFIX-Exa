@@ -13,8 +13,7 @@ time discretizations differ.  Specifically,
 
 -  Fluid velocity is defined at cell centers; pressure is defined at nodes.
 
--  The advection algorithm includes an intermediate MAC projection for face-centered 
-    advection velocities
+-  The advection algorithm includes an intermediate MAC projection for face-centered advection velocities
 
 -  Incompressibility of the fluid is imposed through the use of a projection at the
    end of the time step rather than through SIMPLE iterations
