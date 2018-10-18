@@ -3,27 +3,21 @@ Fluid Equations
 
 We define the following fluid variables:
 
-where :math:`\rho_g =` 
+where :math:`\rho_g =` fluid density (assumed to be constant in the absence of reactions)
 
-where :math:`\rho_g = `:math: fluid density (assumed to be constant in the absence of reactions)
+where :math:`\varepsilon_g =` volume fraction of fluid (accounts only for displacement of fluid by particle, does not account for the EB walls)
 
-where :math:`\varepsilon_g =` 
+where :math:`U_g =` fluid velocity
 
-where :math:`\varepsilon_g = `:math: volume fraction of fluid (accounts only for displacement of fluid by particle, does not account for the EB walls)
+where :math:`p_g =` fluid pressure
 
-where :math:`U_g =`
+where :math:`tau =` viscous stress tensor
 
-where :math:`U_g = ` fluid velocity
+where :math:`g =` gravitational acceleration 
 
-where :math:`p_g = ` fluid pressure
+where :math:`\beta_p =` drag coefficient associated with a particle
 
-where :math:`tau = ` viscous stress tensor
-
-where :math:`g = ` gravitational acceleration 
-
-where :math:`\beta_p = ` drag coefficient associated with a particle
-
-where :math:`V_p = ` velocity associated with a particle
+where :math:`V_p =` velocity associated with a particle
 
 Below are the governing equations for the fluid:
 
