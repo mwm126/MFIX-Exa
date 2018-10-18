@@ -1,6 +1,3 @@
-Here we describe the fluid variables, the governing equations, and the time discretization
-of the fluid evolution.
-
 Fluid Variables
 ===============
 
@@ -35,12 +32,3 @@ where :math:`\sum_p \beta_p (V_p - U_g)` is the drag term in which :math:`V_p` r
 Conservation of fluid volume:
 
 .. math:: \frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0
-
-Time Discretization
-===============
-
-In the absence of reactions, we assume that the fluid density is unchanged.
-
-We compute the fluid volume fraction directly from the particle locations.
-
-Thus here we focus on the discretization of the momentum equation

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Solving the Fluid Equations &mdash; MFiX-Exa  documentation</title>
+  <title>Time Discretization &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Fluid Variables" href="FluidEquations.html" />
-    <link rel="prev" title="Regression testing" href="RegressionTesting.html" /> 
+    <link rel="next" title="Particles" href="Particles.html" />
+    <link rel="prev" title="Fluid Variables" href="FluidEquations.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,10 +83,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Solving the Fluid Equations</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="Fluids.html">Solving the Fluid Equations</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FluidEquations.html">Fluid Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FluidEquations.html#fluid-equations">Fluid Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FluidTimeDiscretization.html">Time Discretization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time Discretization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
@@ -135,13 +135,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Solving the Fluid Equations</li>
+          <li><a href="Fluids.html">Solving the Fluid Equations</a> &raquo;</li>
+        
+      <li>Time Discretization</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Fluids.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/FluidTimeDiscretization.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,17 +156,79 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>Here we describe the fluid variables, the governing equations, and the time discretization
-of the fluid evolution.</p>
-<div class="section" id="solving-the-fluid-equations">
-<h1>Solving the Fluid Equations<a class="headerlink" href="#solving-the-fluid-equations" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="FluidEquations.html">Fluid Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FluidEquations.html#fluid-equations">Fluid Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FluidTimeDiscretization.html">Time Discretization</a></li>
+  <div class="section" id="time-discretization">
+<h1>Time Discretization<a class="headerlink" href="#time-discretization" title="Permalink to this headline">¶</a></h1>
+<p>In the absence of reactions, we assume that the fluid density is unchanged.</p>
+<p>We compute the fluid volume fraction directly from the particle locations.</p>
+<p>Thus here we focus on the discretization of the momentum equation</p>
+<p>In the predictor</p>
+<ol class="arabic">
+<li><p class="first">Define <span class="math notranslate nohighlight">\(U^{MAC}\)</span>, the face-centered (staggered) MAC velocity which is used for advection.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Define an approximation to the new-time state,:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>(varepsilon_g rho_g U)^* = (varepsilon_g rho_g U)^n +</dt>
+<dd><dl class="first last docutils">
+<dt>Delta t ( -nabla cdot (varepsilon_g rho_g U^{MAC} U_g)</dt>
+<dd><ul class="first last simple">
+<li>varepsilon_g nabla {p_g}^{n-1/2} + nabla cdot tau^n</li>
+<li>sum_{part} beta_p (V_p - {U_g}^*) + rho_g g )`</li>
 </ul>
-</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Project <span class="math notranslate nohighlight">\(U^*\)</span> by solving</dt>
+<dd><p class="first"><span class="math notranslate nohighlight">\(\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^*\)</span>
+then defining</p>
+<blockquote>
+<div><p>:math:(varepsilon_g  U)^{**} = (varepsilon_g  U)^{*} - frac{varepsilon_g}{rho_g} nabla phi</p>
+</div></blockquote>
+<dl class="last docutils">
+<dt>and</dt>
+<dd><p class="first last"><span class="math notranslate nohighlight">\({p_g}^{n+1/2,*} = {p_g}^{n-1/2} + \phi\)</span></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+<p>In the corrector</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Define an approximation to the new-time state,:math:<a href="#id3"><span class="problematic" id="id4">`</span></a>(varepsilon_g rho_g U)^{<a href="#id5"><span class="problematic" id="id6">**</span></a><a href="#id7"><span class="problematic" id="id8">*</span></a>} = (varepsilon_g rho_g U)^n +</dt>
+<dd><dl class="first last docutils">
+<dt>Delta t ( (-1/2) nabla cdot (varepsilon_g rho_g U^{MAC} U_g)^n</dt>
+<dd><blockquote class="first">
+<div><p>-(1/2) nabla cdot (varepsilon_g rho_g U^{MAC} U_g)^{**}</p>
+</div></blockquote>
+<ul class="last simple">
+<li>varepsilon_g nabla {p_g}^{n+1/2,*}</li>
+<li>(1/2) nabla cdot tau^n + (1/2) nabla cdot tau^{**}</li>
+<li>sum_{part} beta_p (V_p - {U_g}^{**}) + rho_g g )`</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Project <span class="math notranslate nohighlight">\(U^{***}\)</span> by solving</dt>
+<dd><p class="first"><span class="math notranslate nohighlight">\(\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{***}\)</span>
+then defining</p>
+<blockquote>
+<div><p>:math:(varepsilon_g  U)^{n+1} = (varepsilon_g  U)^{<a href="#id9"><span class="problematic" id="id10">**</span></a><a href="#id11"><span class="problematic" id="id12">*</span></a>} - frac{varepsilon_g}{rho_g} nabla phi</p>
+</div></blockquote>
+<dl class="last docutils">
+<dt>and</dt>
+<dd><p class="first last"><span class="math notranslate nohighlight">\({p_g}^{n+1/2} = {p_g}^{n-1/2} + \phi\)</span></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
 </div>
 
 
@@ -175,10 +239,10 @@ of the fluid evolution.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="FluidEquations.html" class="btn btn-neutral float-right" title="Fluid Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Particles.html" class="btn btn-neutral float-right" title="Particles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="RegressionTesting.html" class="btn btn-neutral" title="Regression testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="FluidEquations.html" class="btn btn-neutral" title="Fluid Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
