@@ -1,3 +1,5 @@
+.. _Chap:Particles
+
 Particles
 =========
 
@@ -22,7 +24,7 @@ particle-particle, particle-fluid, and particle-wall interactions.
    :caption: Contents:
 
    ParticleBasics
-   ParticleFuild
+   ParticleFluid
    ParticleWalls
 
 

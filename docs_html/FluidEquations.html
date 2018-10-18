@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Particles" href="Particles.html" />
-    <link rel="prev" title="Regression testing" href="RegressionTesting.html" /> 
+    <link rel="prev" title="Solving the Fluid Equations" href="Fluids.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,12 +83,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fluid Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#fluid-equations">Fluid Equations</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Fluids.html">Solving the Fluid Equations</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fluid Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fluid-equations">Fluid Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time-discretization">Time Discretization</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ParticleFluid.html">Particle/Fluid Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ParticleWalls.html">Particle/Wall Interactions</a></li>
 </ul>
 
             
@@ -134,6 +135,8 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
+          <li><a href="Fluids.html">Solving the Fluid Equations</a> &raquo;</li>
+        
       <li>Fluid Variables</li>
     
     
@@ -153,7 +156,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fluid-variables">
+  <p>Here we describe the fluid variables, the governing equations, and the time discretization
+of the fluid evolution.</p>
+<div class="section" id="fluid-variables">
 <h1>Fluid Variables<a class="headerlink" href="#fluid-variables" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><table border="1" class="docutils">
@@ -200,6 +205,12 @@
 <div class="math notranslate nohighlight">
 \[\frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0\]</div>
 </div>
+<div class="section" id="time-discretization">
+<h1>Time Discretization<a class="headerlink" href="#time-discretization" title="Permalink to this headline">¶</a></h1>
+<p>In the absence of reactions, we assume that the fluid density is unchanged.</p>
+<p>We compute the fluid volume fraction directly from the particle locations.</p>
+<p>Thus here we focus on the discretization of the momentum equation</p>
+</div>
 
 
            </div>
@@ -212,7 +223,7 @@
         <a href="Particles.html" class="btn btn-neutral float-right" title="Particles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="RegressionTesting.html" class="btn btn-neutral" title="Regression testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Fluids.html" class="btn btn-neutral" title="Solving the Fluid Equations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
