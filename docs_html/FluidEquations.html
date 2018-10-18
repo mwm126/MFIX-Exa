@@ -158,26 +158,29 @@
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="14%" />
-<col width="37%" />
 <col width="32%" />
+<col width="68%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2">Variable</th>
-<th class="head" colspan="2">Definition</th>
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Definition</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td colspan="4"><span class="math notranslate nohighlight">\(\rho_g\)</span>        | Fluid density</td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\rho_g\)</span></td>
+<td>Fluid density</td>
 </tr>
-<tr class="row-odd"><td colspan="4"><span class="math notranslate nohighlight">\(\varepsilon_g\)</span> | Volume fraction of fluid (= 1 if no particles)</td>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\varepsilon_g\)</span></td>
+<td>Volume fraction of fluid (= 1 if no particles)</td>
 </tr>
-<tr class="row-even"><td colspan="4"><span class="math notranslate nohighlight">\(U_g\)</span>           | Fluid velocity</td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(U_g\)</span></td>
+<td>Fluid velocity</td>
 </tr>
-<tr class="row-odd"><td colspan="4"><span class="math notranslate nohighlight">\(\tau\)</span>          | Viscous stress tensor</td>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\tau\)</span></td>
+<td>Viscous stress tensor</td>
 </tr>
-<tr class="row-even"><td colspan="4"><span class="math notranslate nohighlight">\(g\)</span>             | Gravitational acceleration</td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(g\)</span></td>
+<td>Gravitational acceleration</td>
 </tr>
 </tbody>
 </table>
@@ -192,10 +195,7 @@
 <div class="math notranslate nohighlight">
 \[\frac{ \partial (\varepsilon_g \rho_g U)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g = \nabla \cdot \tau
 + \sum_{part} \beta_p (V_p - U_g) + \rho_g g\]</div>
-<dl class="docutils">
-<dt>where <span class="math notranslate nohighlight">\(\sum_p \beta_p (V_p - U_g)\)</span> is the drag term in which <span class="math notranslate nohighlight">\(V_p\)</span> represents the particle velocity and</dt>
-<dd><span class="math notranslate nohighlight">\(\beta_p\)</span> is the drag coefficient associated with that particle</dd>
-</dl>
+<p>where <span class="math notranslate nohighlight">\(\sum_p \beta_p (V_p - U_g)\)</span> is the drag term in which <span class="math notranslate nohighlight">\(V_p\)</span> represents the particle velocity and <span class="math notranslate nohighlight">\(\beta_p\)</span> is the drag coefficient associated with that particle</p>
 <p>Conservation of fluid volume:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0\]</div>
