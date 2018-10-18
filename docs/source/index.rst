@@ -17,16 +17,13 @@ active development in the develop branch. Changes are merged into
 the master branch at the beginning of each month.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    Introduction
    GettingStarted
-   FluidEquations
+   Fluids
    Particles
-   ParticleBasics
-   ParticleFluid
-   ParticleWalls
 
 Notice
 ------
