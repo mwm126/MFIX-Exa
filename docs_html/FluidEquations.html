@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fluid Equations &mdash; MFiX-Exa  documentation</title>
+  <title>Fluid Variables &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -83,7 +83,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fluid Equations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fluid Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#fluid-equations">Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ParticleFluid.html">Particle/Fluid Interactions</a></li>
@@ -133,7 +134,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Fluid Equations</li>
+      <li>Fluid Variables</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -152,18 +153,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fluid-equations">
+  <div class="section" id="fluid-variables">
+<h1>Fluid Variables<a class="headerlink" href="#fluid-variables" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="14%" />
+<col width="37%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Variable</th>
+<th class="head" colspan="2">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="4"><span class="math notranslate nohighlight">\(\rho_g\)</span>        | Fluid density</td>
+</tr>
+<tr class="row-odd"><td colspan="4"><span class="math notranslate nohighlight">\(\varepsilon_g\)</span> | Volume fraction of fluid (= 1 if no particles)</td>
+</tr>
+<tr class="row-even"><td colspan="4"><span class="math notranslate nohighlight">\(U_g\)</span>           | Fluid velocity</td>
+</tr>
+<tr class="row-odd"><td colspan="4"><span class="math notranslate nohighlight">\(\tau\)</span>          | Viscous stress tensor</td>
+</tr>
+<tr class="row-even"><td colspan="4"><span class="math notranslate nohighlight">\(g\)</span>             | Gravitational acceleration</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="fluid-equations">
 <h1>Fluid Equations<a class="headerlink" href="#fluid-equations" title="Permalink to this headline">¶</a></h1>
-<p>We define the following fluid variables:</p>
-<p>where <span class="math notranslate nohighlight">\(\rho_g =\)</span> fluid density (assumed to be constant in the absence of reactions)</p>
-<p>where <span class="math notranslate nohighlight">\(\varepsilon_g =\)</span> volume fraction of fluid (accounts only for displacement of fluid by particle, does not account for the EB walls)</p>
-<p>where <span class="math notranslate nohighlight">\(U_g =\)</span> fluid velocity</p>
-<p>where <span class="math notranslate nohighlight">\(p_g =\)</span> fluid pressure</p>
-<p>where <span class="math notranslate nohighlight">\(tau =\)</span> viscous stress tensor</p>
-<p>where <span class="math notranslate nohighlight">\(g =\)</span> gravitational acceleration</p>
-<p>where <span class="math notranslate nohighlight">\(\beta_p =\)</span> drag coefficient associated with a particle</p>
-<p>where <span class="math notranslate nohighlight">\(V_p =\)</span> velocity associated with a particle</p>
-<p>Below are the governing equations for the fluid:</p>
 <p>Conservation of fluid mass:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial (\varepsilon_g \rho_g)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g)  = 0\]</div>
@@ -171,7 +192,10 @@
 <div class="math notranslate nohighlight">
 \[\frac{ \partial (\varepsilon_g \rho_g U)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g = \nabla \cdot \tau
 + \sum_{part} \beta_p (V_p - U_g) + \rho_g g\]</div>
-<p>where <span class="math notranslate nohighlight">\(\sum_p \beta_p (V_p - U_g)\)</span> is the drag term in which <span class="math notranslate nohighlight">\(V_p\)</span> represents the particle velocity.</p>
+<dl class="docutils">
+<dt>where <span class="math notranslate nohighlight">\(\sum_p \beta_p (V_p - U_g)\)</span> is the drag term in which <span class="math notranslate nohighlight">\(V_p\)</span> represents the particle velocity and</dt>
+<dd><span class="math notranslate nohighlight">\(\beta_p\)</span> is the drag coefficient associated with that particle</dd>
+</dl>
 <p>Conservation of fluid volume:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0\]</div>
