@@ -22,7 +22,8 @@ the master branch at the beginning of each month.
 
    Introduction
    GettingStarted
-   Particle
+   FluidEquations
+   Particles
    ParticleBasics
    ParticleFluid
    ParticleWalls
