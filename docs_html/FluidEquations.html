@@ -156,16 +156,16 @@
 <h1>Fluid Equations<a class="headerlink" href="#fluid-equations" title="Permalink to this headline">¶</a></h1>
 <p>Below are the governing equations for the fluid:</p>
 <p>Conservation of fluid mass:</p>
-<div class="math notranslate nohighlight" id="equation-eqn-mass-cons">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-mass-cons" title="Permalink to this equation">¶</a></span>\[\frac{\partial (\varepsilon_g \rho_g)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g)  = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial (\varepsilon_g \rho_g)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g)  = 0\]</div>
 <p>Conservation of fluid momentum:</p>
-<div class="math notranslate nohighlight" id="equation-eqn-mom-cons">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-mom-cons" title="Permalink to this equation">¶</a></span>\[\frac{ \partial (\varepsilon_g \rho_g U)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g = \nabla \cdot \tau + {\bf g}
-         + \sum_{part} \beta (V_{part} - U_g)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{ \partial (\varepsilon_g \rho_g U)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g = \nabla \cdot \tau + {\bf g}
++ \sum_{part} \beta (V_{part} - U_g)\]</div>
 <p>Conservation of fluid volume:</p>
-<p>where $sum_{part} beta (V_{part} - U_g)$ is the drag term in which $V_{part}$ represents the particle velocity.</p>
-<div class="math notranslate nohighlight" id="equation-eqn-mass-vareps">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-mass-vareps" title="Permalink to this equation">¶</a></span>\[\frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sum_{part} \beta (V_{part} - U_g)\)</span> is the drag term in which <span class="math notranslate nohighlight">\(V_{part}\)</span> represents the particle velocity.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0\]</div>
 </div>
 
 
