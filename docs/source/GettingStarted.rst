@@ -11,4 +11,5 @@ Getting Started
    BuildingGMake
    RunningTestSuite
    RegressionTesting
+   Inputs
 
