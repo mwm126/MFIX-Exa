@@ -166,20 +166,21 @@
 <li>Define <span class="math notranslate nohighlight">\(U^{MAC}\)</span>, the face-centered (staggered) MAC velocity which is used for advection.</li>
 <li>Define an approximation to the new-time state, <span class="math notranslate nohighlight">\((\varepsilon_g \rho_g U)^{\ast}\)</span> by setting</li>
 </ol>
+<div class="math notranslate nohighlight">
+\[(\varepsilon_g \rho_g U)^{\ast} = (\varepsilon_g \rho_g U)^n +
+\Delta t ( -\nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) + \varepsilon_g \nabla {p_g}^{n-1/2} +
+\nabla \cdot \tau^n + \sum_{part} \beta_p (V_p - {U_g}^{\ast}) + \rho_g g )\]</div>
 <ol class="arabic simple">
-<li><dl class="first docutils">
-<dt>Project <span class="math notranslate nohighlight">\(U^{\ast}\)</span> by solving</dt>
-<dd><span class="math notranslate nohighlight">\(\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{\ast}\)</span>
-then defining</dd>
-</dl>
-</li>
+<li>Project <span class="math notranslate nohighlight">\(U^{\ast}\)</span> by solving</li>
 </ol>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}(\varepsilon_g  U)^{n+1} = (\varepsilon_g  U)^{***} - \frac{\varepsilon_g}{\rho_g} \nabla \phi\\and\end{aligned}\end{align} \]</div>
+\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{\ast}\]</div>
+<p>then defining</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}{p_g}^{n+1/2, \ast} = {p_g}^{n-1/2} + \phi\\     :math:(\varepsilon_g  U)^{\ast \ast} = (\varepsilon_g  U)^{\ast} - \frac{\varepsilon_g}{\rho_g} \nabla \phi
-and
-     :math:`{p_g}^{n+1/2,\ast} = {p_g}^{n-1/2} + \phi`\end{aligned}\end{align} \]</div>
+\[(\varepsilon_g  U)^{n+1} = (\varepsilon_g  U)^{***} - \frac{\varepsilon_g}{\rho_g} \nabla \phi\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[{p_g}^{n+1/2, \ast} = {p_g}^{n-1/2} + \phi\]</div>
 <p>In the corrector</p>
 <ol class="arabic simple">
 <li>Define an approximation to the new-time state,:math:<cite>(varepsilon_g rho_g U)^{ast ast ast}</cite> by setting</li>
@@ -190,12 +191,14 @@ and
 + \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + (1/2) \nabla \cdot \tau^n + (1/2) \nabla \cdot \tau^{\ast \ast} +
   \sum_{part} \beta_p (V_p - {U_g}^{\ast \ast}) + \rho_g g )\]</div>
 <ol class="arabic simple">
-<li>Project <span class="math notranslate nohighlight">\(U^{***}\)</span> by solving</li>
+<li>Project <span class="math notranslate nohighlight">\(U^{\ast \ast \ast}\)</span> by solving</li>
 </ol>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{***}\\then defining\end{aligned}\end{align} \]</div>
+\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{\ast \ast \ast}\]</div>
+<p>then defining</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}(\varepsilon_g  U)^{n+1} = (\varepsilon_g  U)^{***} - \frac{\varepsilon_g}{\rho_g} \nabla \phi\\and\end{aligned}\end{align} \]</div>
+\[(\varepsilon_g  U)^{n+1} = (\varepsilon_g  U)^{\ast \ast \ast} - \frac{\varepsilon_g}{\rho_g} \nabla \phi\]</div>
+<p>and</p>
 <div class="math notranslate nohighlight">
 \[{p_g}^{n+1/2} = {p_g}^{n-1/2} + \phi\]</div>
 </div>
