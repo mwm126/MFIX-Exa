@@ -41,7 +41,7 @@ The following inputs must be preceded by "geometry."
 +=================+=======================================================================+=============+
 | coord_sys       | 0 for Cartesian                                                       |     0       |
 +-----------------+-----------------------------------------------------------------------+-------------+
-| is_periodic     | 1 for true, 0 for false (one value for each coordinate direction)     |     0       |
+| is_periodic     | 1 for true, 0 for false (one value for each coordinate direction)     |   0 0 0     |
 +-----------------+-----------------------------------------------------------------------+-------------+
 
 
@@ -50,9 +50,9 @@ The following inputs must be preceded by "mfix."
 +-----------------+-----------------------------------------------------------------------+-------------+
 | File            | Description                                                           |   Default   |
 +=================+=======================================================================+=============+
-| fixed_dt        | Should we use a fixed timestep?                                       |    None     |
+| fixed_dt        | Should we use a fixed timestep?                                       |     0       |
 +-----------------+-----------------------------------------------------------------------+-------------+
-| dt_max          | Maximum value of dt if calculating with cfl                           |    None     |
+| dt_max          | Maximum value of dt if calculating with cfl                           |    1.e14    |
 +-----------------+-----------------------------------------------------------------------+-------------+
-| cfl             | CFL constraint (dt < cfl * dx / u) if fixed_dt not 1                  |    None     |
+| cfl             | CFL constraint (dt < cfl * dx / u) if fixed_dt not 1                  |     0.5     |
 +-----------------+-----------------------------------------------------------------------+-------------+

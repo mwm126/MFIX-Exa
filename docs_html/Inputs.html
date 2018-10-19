@@ -131,8 +131,6 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="GettingStarted.html">Getting Started</a> &raquo;</li>
-        
       <li>Run-time Inputs</li>
     
     
@@ -238,7 +236,7 @@
 </tr>
 <tr class="row-odd"><td>is_periodic</td>
 <td>1 for true, 0 for false (one value for each coordinate direction)</td>
-<td>0</td>
+<td>0 0 0</td>
 </tr>
 </tbody>
 </table>
@@ -258,15 +256,15 @@
 <tbody valign="top">
 <tr class="row-even"><td>fixed_dt</td>
 <td>Should we use a fixed timestep?</td>
-<td>None</td>
+<td>0</td>
 </tr>
 <tr class="row-odd"><td>dt_max</td>
 <td>Maximum value of dt if calculating with cfl</td>
-<td>None</td>
+<td>1.e14</td>
 </tr>
 <tr class="row-even"><td>cfl</td>
 <td>CFL constraint (dt &lt; cfl * dx / u) if fixed_dt not 1</td>
-<td>None</td>
+<td>0.5</td>
 </tr>
 </tbody>
 </table>
