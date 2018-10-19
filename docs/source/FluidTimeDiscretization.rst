@@ -15,13 +15,13 @@ In the predictor
 -  Define an approximation to the new-time state, :math:`(\varepsilon_g \rho_g U)^{\ast}` by setting 
 
 .. math:: (\varepsilon_g \rho_g U)^{\ast} = (\varepsilon_g \rho_g U)^n +  
-           \Delta t \left( -\nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) - \varepsilon_g \nabla {p_g}^{n-1/2}
+           \Delta t \left( -\nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) - \varepsilon_g \nabla {p_g}^{n-1/2} \right.
 
-.. math:: \nabla \cdot \tau^n + \sum_p \beta_p (V_p - {U_g}^{\ast}) + \rho_g g \right)
+.. math:: \left. \nabla \cdot \tau^n + \sum_p \beta_p (V_p - {U_g}^{\ast}) + \rho_g g \right)
 
 -  Project :math:`U^{\ast}` by solving
 
-.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \varepsilon_g  U)^{\ast}+ \varepsilon_g \nabla {p_g}^{n-1/2} \right)
+.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\varepsilon_g  U)^{\ast}+ \varepsilon_g \nabla {p_g}^{n-1/2} \right)
 
 then defining
 
