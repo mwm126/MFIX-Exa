@@ -10,18 +10,18 @@ Thus here we focus on the discretization of the momentum equation
 
 In the predictor
 
--  Define :math:`U^{MAC}`, the face-centered (staggered) MAC velocity which is used for advection.
+-  Define :math:`U^{MAC,n}`, the face-centered (staggered) MAC velocity which is used for advection, using :math:`U^n`
 
 -  Define an approximation to the new-time state, :math:`(\varepsilon_g \rho_g U)^{\ast}` by setting 
 
 .. math:: (\varepsilon_g \rho_g U)^{\ast} = (\varepsilon_g \rho_g U)^n +  
-           \Delta t ( -\nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) + \varepsilon_g \nabla {p_g}^{n-1/2}
+           \Delta t \left( -\nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) - \varepsilon_g \nabla {p_g}^{n-1/2}
 
-.. math:: | \nabla \cdot \tau^n + \sum_{part} \beta_p (V_p - {U_g}^{\ast}) + \rho_g g )
+.. math:: \nabla \cdot \tau^n + \sum_p \beta_p (V_p - {U_g}^{\ast}) + \rho_g g \right)
 
 -  Project :math:`U^{\ast}` by solving
 
-.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{\ast}
+.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \varepsilon_g  U)^{\ast}+ \varepsilon_g \nabla {p_g}^{n-1/2} \right)
 
 then defining
 
@@ -29,28 +29,30 @@ then defining
 
 and 
 
-.. math:: {p_g}^{n+1/2, \ast} = {p_g}^{n-1/2} + \phi
+.. math:: {p_g}^{n+1/2, \ast} = \phi
 
 
 In the corrector
 
--  Define an approximation to the new-time state,:math:`(\varepsilon_g \rho_g U)^{\ast \ast \ast}` by setting  
+-  Define :math:`U^{MAC,\ast \ast}` at the "new" time using :math:`U^{\ast \ast}`
+
+-  Define a new approximation to the new-time state, :math:`(\varepsilon_g \rho_g U)^{\ast \ast \ast}` by setting  
 
 .. math::  (\varepsilon_g \rho_g U)^{\ast \ast \ast} = (\varepsilon_g \rho_g U)^n + 
-           \Delta t ( (-1/2) \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n -(1/2) \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast} 
-          + \varepsilon_g \nabla {p_g}^{n+1/2,\ast} 
+           \Delta t \left( (-1/2) \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n -(1/2) \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast} 
+          - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} 
 
 .. math::  + (1/2) \nabla \cdot \tau^n + (1/2) \nabla \cdot \tau^{\ast \ast} + 
-            \sum_{part} \beta_p (V_p - {U_g}^{\ast \ast}) + \rho_g g )
+            \sum_p \beta_p (V_p - {U_g}^{\ast \ast \ast}) + \rho_g g \right)
 
 -  Project :math:`U^{\ast \ast \ast}` by solving
 
-.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot (\varepsilon_g  U)^{\ast \ast \ast}
+.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\varepsilon_g  U)^{\ast \ast \ast} + \varepsilon_g \nabla {p_g}^{n+1/2,\ast} \right)
 
-   then defining
+then defining
 
 .. math:: U^{n+1} = U^{\ast \ast \ast} - \frac{1}{\rho_g} \nabla \phi
 
 and 
 
-.. math:: {p_g}^{n+1/2} = {p_g}^{n-1/2} + \phi
+.. math:: {p_g}^{n+1/2} = \phi
