@@ -22,6 +22,7 @@ the master branch at the beginning of each month.
 
    Introduction
    GettingStarted
+   Inputs
    Fluids
    Particles
 
