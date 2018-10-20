@@ -153,7 +153,121 @@
   <div class="section" id="run-time-inputs">
 <span id="chap-inputs"></span><h1>Run-time Inputs<a class="headerlink" href="#run-time-inputs" title="Permalink to this headline">¶</a></h1>
 <p>The following inputs must be preceded by “amr.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="63%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>max_step</td>
+<td>Maximum number of time steps to take</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>stop_time</td>
+<td>Maximum time to reach</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>max_level</td>
+<td>Maximum level of refinement allowed (0 when single-level)</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>n_cell</td>
+<td>Number of cells at level 0 in each coordinate direction</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>plot_int</td>
+<td>Frequency of plotfile output</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>plot_file</td>
+<td>Prefix to use for plotfile output</td>
+<td>String</td>
+<td>plt</td>
+</tr>
+<tr class="row-even"><td>check_int</td>
+<td>Frequency of checkpoint output</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>chk_file</td>
+<td>Prefix to use for checkpoint output</td>
+<td>String</td>
+<td>chk</td>
+</tr>
+<tr class="row-even"><td>restart</td>
+<td>Name of file from which to restart the run</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>max_grid_size_x</td>
+<td>Maximum number of cells at level 0 in each grid in x-direction</td>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr class="row-even"><td>max_grid_size_y</td>
+<td>Maximum number of cells at level 0 in each grid in y-direction</td>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr class="row-odd"><td>max_grid_size_z</td>
+<td>Maximum number of cells at level 0 in each grid in z-direction</td>
+<td>Int</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
 <p>The following inputs must be preceded by “geometry.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="63%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>coord_sys</td>
+<td>0 for Cartesian</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>is_periodic</td>
+<td>1 for true, 0 for false (one value for each coordinate direction)</td>
+<td>Ints</td>
+<td>0 0 0</td>
+</tr>
+<tr class="row-even"><td>prob_lo</td>
+<td>Low corner of physical domain (physical not index space)</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>prob_hi</td>
+<td>High corner of physical domain (physical not index space)</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <p>The following inputs must be preceded by “mfix.”</p>
 <table border="1" class="docutils">
 <colgroup>
