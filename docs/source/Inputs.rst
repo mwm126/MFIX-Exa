@@ -8,29 +8,29 @@ The following inputs must be preceded by "amr."
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
 | File            | Description                                                           |   Type      | Default   |
 +=================+=======================================================================+=============+===========+
-| max_step        | Maximum number of time steps to take                                  |    Int      | None     |
+| max_step        | Maximum number of time steps to take                                  |    Int      | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| stop_time       | Maximum time to reach                                                 |    Real     | None     |
+| stop_time       | Maximum time to reach                                                 |    Real     | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_level       | Maximum level of refinement allowed (0 when single-level)             |    Int      | None     |
+| max_level       | Maximum level of refinement allowed (0 when single-level)             |    Int      | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| n_cell          | Number of cells at level 0 in each coordinate direction               |    Int      | None     |
+| n_cell          | Number of cells at level 0 in each coordinate direction               |    Int      | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| plot_int        | Frequency of plotfile output                                          |    Int      | None     |
+| plot_int        | Frequency of plotfile output                                          |    Int      | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| plot_file       | Prefix to use for plotfile output                                     |  String     | plt      |
+| plot_file       | Prefix to use for plotfile output                                     |  String     | plt       |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| check_int       | Frequency of checkpoint output                                        |    Int      | None     |
+| check_int       | Frequency of checkpoint output                                        |    Int      | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| chk_file        | Prefix to use for checkpoint output                                   |  String     | chk      |
+| chk_file        | Prefix to use for checkpoint output                                   |  String     | chk       |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
 | restart         | Name of file from which to restart the run                            |  String     | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_x | Maximum number of cells at level 0 in each grid in x-direction        |    Int      | 32       | 
+| max_grid_size_x | Maximum number of cells at level 0 in each grid in x-direction        |    Int      | 32        | 
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_y | Maximum number of cells at level 0 in each grid in y-direction        |    Int      | 32       |
+| max_grid_size_y | Maximum number of cells at level 0 in each grid in y-direction        |    Int      | 32        |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_z | Maximum number of cells at level 0 in each grid in z-direction        |    Int      | 32       |
+| max_grid_size_z | Maximum number of cells at level 0 in each grid in z-direction        |    Int      | 32        |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
 
 
@@ -43,9 +43,9 @@ The following inputs must be preceded by "geometry."
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
 | is_periodic     | 1 for true, 0 for false (one value for each coordinate direction)     |   Ints      | 0 0 0     |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| prob_lo         | Low corner of physical domain (physical not index space)              |   Reals     | None       |
+| prob_lo         | Low corner of physical domain (physical not index space)              |   Reals     | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| prob_hi         | High corner of physical domain (physical not index space)             |   Reals     | None       |
+| prob_hi         | High corner of physical domain (physical not index space)             |   Reals     | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
 
 
