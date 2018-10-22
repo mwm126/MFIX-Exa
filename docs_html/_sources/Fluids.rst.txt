@@ -1,4 +1,4 @@
-.. _Chap:Fluids
+.. _Chap:Fluids:
 
 Here we describe the fluid variables, the governing equations, and the time discretization
 of the fluid evolution.

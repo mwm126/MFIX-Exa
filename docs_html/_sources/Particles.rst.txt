@@ -1,4 +1,4 @@
-.. _Chap:Particles
+.. _Chap:Particles:
 
 Particles
 =========
