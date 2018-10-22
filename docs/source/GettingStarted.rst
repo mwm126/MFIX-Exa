@@ -1,7 +1,7 @@
-.. _Chap:GettingStarted
+.. _Chap:GettingStarted:
 
 Getting Started
-==================
+===============
 
 .. toctree::
    :maxdepth: 1

@@ -1,5 +1,5 @@
 Running the MFiX Test Suite
-=======================
+===========================
 
 MFiX-Exa comes with several tests aimed at evaluating software
 functionalities. The source files as well as the required input files
