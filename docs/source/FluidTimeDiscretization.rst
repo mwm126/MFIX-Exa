@@ -21,7 +21,7 @@ In the predictor
 
 -  Project :math:`U^{\ast}` by solving
 
-.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\varepsilon_g  U)^{\ast}+ \varepsilon_g \nabla {p_g}^{n-1/2} \right)
+.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\varepsilon_g  U)^{\ast}+ \Delta t \varepsilon_g \nabla {p_g}^{n-1/2} \right)
 
 then defining
 
@@ -42,7 +42,7 @@ In the corrector
 
 -  Project :math:`U^{\ast \ast \ast}` by solving
 
-.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\varepsilon_g  U)^{\ast \ast \ast} + \varepsilon_g \nabla {p_g}^{n+1/2,\ast} \right)
+.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\varepsilon_g  U)^{\ast \ast \ast} + \Delta t \varepsilon_g \nabla {p_g}^{n+1/2,\ast} \right)
 
 then defining
 
