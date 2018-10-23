@@ -189,14 +189,7 @@
 <li>Define a new approximation to the new-time state, <span class="math notranslate nohighlight">\((\varepsilon_g \rho_g U)^{\ast \ast \ast}\)</span> by setting</li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}(\varepsilon_g \rho_g U)^{\ast \ast \ast} &amp;= (\varepsilon_g \rho_g U)^n + \frac{\Delta t}{2} \left( - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast}\right) + \\ &amp;+ \frac{Delta t}{2} \left( \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) \\ &amp;+ \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \Pi + \Gamma \right)\end{split}\]</div>
-<p>where the external forcing terms are given by:</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
-\[\Pi = \sum_p \beta_p (V_p - {U_g}^{\ast \ast \ast})\]</div>
-<div class="math notranslate nohighlight">
-\[\Gamma = \rho_g g\]</div>
-</div></blockquote>
+\[\begin{split}(\varepsilon_g \rho_g U)^{\ast \ast \ast} &amp;= (\varepsilon_g \rho_g U)^n + \frac{\Delta t}{2} \left( - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast}\right) + \\ &amp;+ \frac{\Delta t}{2} \left( \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) + \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \sum_p \beta_p (V_p - {U_g}^{\ast \ast \ast} + \rho_g g \right)\end{split}\]</div>
 <ul class="simple">
 <li>Project <span class="math notranslate nohighlight">\(U^{\ast \ast \ast}\)</span> by solving</li>
 </ul>
