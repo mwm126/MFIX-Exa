@@ -170,12 +170,12 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}(\varepsilon_g \rho_g U)^{\ast} &amp;= (\varepsilon_g \rho_g U)^n -
 \Delta t \left( \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) + \varepsilon_g \nabla {p_g}^{n-1/2} \right) \\ &amp;+
-\Delta t \left( \nabla \cdot \tau^n + \sum_p \beta_p (V_p - {U_g}^{\ast}) + \rho_g g \right)\end{split}\]</div>
+\Delta t \left( \nabla \cdot \tau^n + \sum_p \beta_p (V_p - {U_g}^{\ast}) + \rho_g \varepsilon_g g \right)\end{split}\]</div>
 <ul class="simple">
 <li>Project <span class="math notranslate nohighlight">\(U^{\ast}\)</span> by solving</li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( (\frac{1}{\Delta} t \varepsilon_g  U)^{\ast}+ \varepsilon_g \nabla {p_g}^{n-1/2} \right)\]</div>
+\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} (\varepsilon_g  U)^{\ast}+ {\varepsilon_g}{\rho_g} \nabla {p_g}^{n-1/2} \right)\]</div>
 <p>then defining</p>
 <div class="math notranslate nohighlight">
 \[U^{\ast \ast} = U^{\ast} - \frac{1}{\rho_g} \nabla \phi\]</div>
@@ -188,12 +188,12 @@
 <li>Define a new approximation to the new-time state, <span class="math notranslate nohighlight">\((\varepsilon_g \rho_g U)^{\ast \ast \ast}\)</span> by setting</li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}(\varepsilon_g \rho_g U)^{\ast \ast \ast} &amp;= (\varepsilon_g \rho_g U)^n - \frac{\Delta t}{2} \left( \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n + \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast}\right) + \\ &amp;+ \frac{\Delta t}{2} \left( \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) + \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \sum_p \beta_p (V_p - {U_g}^{\ast \ast \ast}) + \rho_g g \right)\end{split}\]</div>
+\[\begin{split}(\varepsilon_g \rho_g U)^{\ast \ast \ast} &amp;= (\varepsilon_g \rho_g U)^n - \frac{\Delta t}{2} \left( \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n + \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast}\right) + \\ &amp;+ \frac{\Delta t}{2} \left( \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) + \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \sum_p \beta_p (V_p - {U_g}^{\ast \ast \ast}) + \varepsilon_g \rho_g g \right)\end{split}\]</div>
 <ul class="simple">
 <li>Project <span class="math notranslate nohighlight">\(U^{\ast \ast \ast}\)</span> by solving</li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} (\varepsilon_g  U)^{\ast \ast \ast} + \varepsilon_g \nabla {p_g}^{n+1/2,\ast} \right)\]</div>
+\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} (\varepsilon_g  U)^{\ast \ast \ast} + \frac{\varepsilon_g}{\rho_g} \nabla {p_g}^{n+1/2,\ast} \right)\]</div>
 <p>then defining</p>
 <div class="math notranslate nohighlight">
 \[U^{n+1} = U^{\ast \ast \ast} - \frac{1}{\rho_g} \nabla \phi\]</div>
