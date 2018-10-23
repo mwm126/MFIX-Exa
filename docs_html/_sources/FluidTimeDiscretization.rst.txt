@@ -38,7 +38,7 @@ In the corrector
 
 -  Define a new approximation to the new-time state, :math:`(\varepsilon_g \rho_g U)^{\ast \ast \ast}` by setting  
 
-.. math:: (\varepsilon_g \rho_g U)^{\ast \ast \ast} &= (\varepsilon_g \rho_g U)^n + \frac{\Delta t}{2} \left( - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast} + \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) \\ &+ \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \Pi + \Gamma \right)
+.. math:: (\varepsilon_g \rho_g U)^{\ast \ast \ast} &= (\varepsilon_g \rho_g U)^n + \frac{\Delta t}{2} \left( - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n - \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast}\right) + \\ &+ \frac{Delta t}{2} \left( \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) \\ &+ \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \Pi + \Gamma \right)
 
 where the external forcing terms are given by: 
 
