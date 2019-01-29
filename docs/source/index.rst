@@ -25,6 +25,9 @@ the master branch at the beginning of each month.
    Inputs
    Fluids
    Particles
+   EB
+
+
 
 Notice
 ------
