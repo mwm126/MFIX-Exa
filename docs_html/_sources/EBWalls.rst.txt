@@ -1,0 +1,321 @@
+.. role:: cpp(code)
+   :language: c++
+
+.. role:: fortran(code)
+   :language: fortran
+
+
+.. _sec:EB-basics:
+
+
+Constructing Embedded Boundaries in MFiX-Exa
+============================================
+
+MFiX uses AMReX's constructive solid geometry framework defined in the namespace
+:cpp:`amrex::EB2`. See the `AMReX EB documentation`_ for more details. These are
+defined in ``src/eb/mfix_eb.cpp``. A the function :cpp:`mfix::make_eb_geometry`
+(also defined in ``src/eb/mfix_eb.cpp``) selects :cpp:one of the following
+geometries depending on the value of the :cpp:``mfix.geometry`` setting in the
+``inputs`` file.
+
++------------------------------+----------------------+-------------------------+
+|   Description                |  ``mfix.geometry``   |   Implementation Satus  |
++==============================+======================+=========================+
+| Planar walls from mfix.dat   | Don't specify        | Fully implemented       |
+| (on by default)              |                      |                         |
++------------------------------+----------------------+-------------------------+
+| Box (up to six walls)        | ``box``              | Fully implemented       |
++------------------------------+----------------------+-------------------------+
+| Cylinder                     | ``cylinder``         | Fully implemented       |
++------------------------------+----------------------+-------------------------+
+| Hopper                       | ``hopper``           | Fully implemented       |
++------------------------------+----------------------+-------------------------+
+| Cyclone                      | ``cyclone``          | Fully implemented       |
++------------------------------+----------------------+-------------------------+
+| General                      | ``general``          | Partially implemented   |
+|                              | cf. note 1 below     |                         |
++------------------------------+----------------------+-------------------------+
+| Hourglass                    | ``hourglass``        | Deprecated              |
+|                              | cf. note 1           | cf. note 2 below        |
++------------------------------+----------------------+-------------------------+
+| CLR (chemical looping        | ``clr``              | Deprecated              |
+| reactor)                     | cf. note 1           | cf. note 2              |
++------------------------------+----------------------+-------------------------+
+| CLR Riser                    | ``clr_riser``        | Deprecated              |
+|                              | cf. note 1           | cf. note 2              |
++------------------------------+----------------------+-------------------------+
+
+1. Older (legacy) alternative settings are:
+
+   +-----------------------------+-------------------------------+
+   | Value of  ``mfix.geometry`` |  Alternative                  |
+   +=============================+===============================+
+   | ``general``                 | ``mfix.use_poly2 = true``     |
+   |                             | or ``mfix.use_walls = true``  |
+   +-----------------------------+-------------------------------+
+   | ``hourglass``               | ``mfix.hourglass = true``     |
+   +-----------------------------+-------------------------------+
+   | ``clr``                     | ``mfix.clr = true``           |
+   +-----------------------------+-------------------------------+
+   | ``clr_riser``               | ``mfix.clr_riser = true``     |
+   +-----------------------------+-------------------------------+
+
+2. These geometries where not ported from AMReX's old :cpp:``EB`` system to the
+   new :cpp:``EB2``.
+
+Also note that planar boundary conditions can be specified in the ``mfix.dat``
+file. Even if the user does not specify an ``mfix.geometry`` in the ``inputs``,
+any no-sleep or free-slip boundary conditions are expressed as EB walls.
+
+
+Constructing the EB Geometry
+----------------------------
+
+Once a geometry is selected by :cpp:`mfix::make_eb_geometry`, the procedure is
+the same for (almost) all geometries:
+
+1. Construct an implicit function representing the geometry (using the language
+   of constructive solid geometry). For example
+
+.. highlight:: c++
+
+::
+
+   EB2::CylinderIF my_cyl(radius, height, direction, center, inside);
+   auto gshop_cyl = EB2::makeShop(my_cyl);
+
+2. Construct the implicit function representing the EB seen by the particles.
+   This only deviates from the "standard" EB by adding additional walls to
+   Mass-Inflow boundary conditions. This is necessary in order to have the
+   "correct" volume fraction used by the
+   :cpp:`MFIXParticleContainer::PICDeposition` function. I.e. this function
+   needs to see the mass-inflow as a volume fraction of 0.
+
+
+3. Call :cpp:`mfix::build_eb_levels(gshop)` and
+   :cpp:`mfix::build_particle_eb_levels(gshop_part)`. These functions build the
+   EB levels, and fill the implicit function :cpp:`MultiFab` (the later being
+   used to construct the level-set function).
+
+
+MFiX's EB Data Structures
+-------------------------
+
+The :cpp:`mfix` class stores the following EB data:
+
+.. highlight:: c++
+
+::
+
+   //! EB levels representing fluid boundary conditions
+   Vector<const EB2::Level *> eb_levels;
+   //! EB levels representing particle boundary conditions (same as
+   //! `mfix::eb_levels` but additional walls at MI BCs).
+   Vector<const EB2::Level *> particle_eb_levels;
+
+   //! EB factory that lives on the fluid grids
+   Vector< std::unique_ptr<amrex::EBFArrayBoxFactory> > ebfactory;
+   //! EB factory that lives on the particle grids
+   Vector< std::unique_ptr<amrex::EBFArrayBoxFactory> > particle_ebfactory;
+
+As discussed in the previous sub-section, the difference between
+:cpp:`mfix::eb_levels` and :cpp:`mfix::particle_eb_levels` is how mass-inflow
+boundary conditions are treated: the walls in :cpp:`mfix::eb_levels` are only
+the "real" walls, whereas :cpp:`mfix::particle_eb_levels` has additional walls
+for every mass inflow.
+
+In the same spirit, the :cpp:`mfix::ebfactory` is constructed over the fluid
+grid and using the fluid EB levels, whereas :cpp:`mfix::particle_ebfactory` is
+constructed over the particle grid and using the particle EB levels.
+
+
+A note about constructing EB Levels
+-----------------------------------
+
+When building an EB level, the maximum coarsening level and the required
+coarsening level need to be specified. The reason for this is that we need to
+specify to which level of coarseness the EB is still defined. It might not be
+immediately obvious, but the Poisson solver (used in the fluid solve) also
+depends indirectly on these parameters. Thus changing these during EB level
+creation might restrict how many levels the MLMG solver can use, and therefore
+give slightly different answers in the fluid solve.
+
+
+
+Local Mesh Refinement at Walls
+==============================
+
+MFiX-Exa has the capability of locally refining the computational grid near EBs.
+This is done by tagging (in :cpp:`mfix::ErrorEst`) any cells with volume
+fraction between 0 and 1. To enable local mesh refinement, set ``amr.max_level``
+to a value greater than 1. Note that the parameter ``mfix.levelset__refinement``
+is ignored on all cases except when ``amr.max_level = 1``.
+
+
+MFiX-Exa Initialization Process
+-------------------------------
+
+Since MFiX requires the volume fraction when building grids (because it is
+needed by :cpp:`mfix::ErrorEst`), the EB geometries need to be built before
+calling :cpp:`mfix::Init`. The recommended procedure therefore is
+
+.. highlight:: c++
+
+::
+
+   // Default constructor (geom[lev] is defined here)
+   mfix my_mfix;
+
+   // Initialize internals from ParamParse database
+   my_mfix.InitParams(solve_fluid, solve_dem, call_udf);
+
+   // Initialize memory for data-array internals
+   my_mfix.ResizeArrays();
+
+   // Construct EB (must be done _before_ mfix::Init)
+   my_mfix.make_eb_geometry();
+
+   // Initialize derived internals
+   my_mfix.Init(dt, time);
+
+   // Create EB factories on new grids
+   my_mfix.make_eb_factories();
+
+   if (solve_dem)
+   {
+       // Fill level-sets on each level (must be done _after_ mfix::Init)
+       my_mfix.fill_eb_levelsets();
+   }
+
+   // Finish constructing levels
+   my_mfix.InitLevelData(dt,time);
+
+   // Regrid (ensure all MultiFabs are on their correct grids)
+   my_mfix.Regrid();
+
+
+Also note that mfix defines boundary conditions in Fortran also (via the
+mfix.dat). Since these are potentially needed to build EB walls,
+:cpp:`mfix::make_eb_geometry` also calls :cpp:`mfix_set_bc_type`.
+ 
+The grids for each level are build in the :cpp:`mfix::Init` by invoking the
+initialization functions inherited from :cpp:`amrex::AmrCore`.
+
+.. highlight:: c++
+
+::
+
+   // This tells the AmrMesh class not to iterate when creating the initial
+   // grid hierarchy
+   SetIterateToFalse();
+
+   // This tells the Cluster routine to use the new chopping routine which
+   // rejects cuts if they don't improve the efficiency
+   SetUseNewChop();
+
+   // This Builds the new Grids
+   InitFromScratch(0.);
+
+
+
+The Level-Set Function
+======================
+
+MFiX-Exa uses a level-set function to resolve particle-wall collisions. See the
+`AMReX Level-Set documentation`_ for more details. The level-set function is
+stored on the nodal :cpp:`Vector<std::unique_ptr<MultiFab>> mfix::level_sets`.
+The level-set data is always stored on the particle grids. Depending on the
+input ``amr.max_level`` The level-set can be in one of two modes:
+
+1. MFiX-Exa is running in single-level mode (:cpp:`nlev == 1`). Then
+   :cpp:`mfix::level_sets[0]` will be at the same resolution as the fluid
+   (except that it's store on the particle grid). Even though :cpp:`nlev == 1`,
+   there is a second level, :cpp:`level_sets[1]`. This level is the same as
+   :cpp:`level_sets[0]` but refined by :cpp:`mfix::levelset__refinement`. This
+   way the level-set always has the appropriate resolution to resolve structures
+   in the EB, even if the fluid is defined on a fairly coarse grid.
+
+2. MFiX-Exa is running in multi-level mode (:cpp:`nlev > 1`). The the parameter
+   :cpp:`mfix::levelset__refinement` is ignored. :cpp:`mfix::level_sets` then
+   follows the rest of MFiX, i.e. it is defined on the particle grids on all
+   levels.
+
+The level-set is used in two places:
+
+1. The function :cpp:`MFIXParticleContainer` interpolates the level-set onto
+   each particle's position in order to resolve collisions with the EBs. If
+   :cpp:`nlev == 1`, :cpp:`level_sets[1]` is used to evolve the particle
+   positions. Otherwise :cpp:`level_sets[lev]` is used for each level.
+
+2. The fluid-particle coupling can sometimes rely on neighbor stencils where one
+   or more cell is covered by an EB. In order to avoid values that do not
+   conform with the boundary conditions, the fluid velocity is reconstructed in
+   those cells. The algorithm relies on the level-set, and uses
+   :cpp:`level_sets[lev]` on each level.
+
+
+Fluid Reconstruction
+--------------------
+
+The reconstruction algorithm is called whenever a cell in the particle's
+neighbor stencil is covered. For no-slip walls, the reconstructed velocity in
+that cell is linearly extrapolated from the nearest "valid" fluid cell and 0 at
+the wall. This way the fluid velocity is consistent with the no-slip boundary
+condition along the normal to the EB.
+
+This is achieved by starting a the covered cell, and "walking" along the EB
+normal on cell at a time (computed from the level-set function), until the
+neighbor stencil does not include covered cells:
+
+.. highlight:: c++
+
+::
+
+   if ( is_covered_cell(flags(i,j,k))                         .and. &
+   &   minval(abs(phi(i:i+1,j:j+1,k:k+1))) <= phi_threshold ) then
+
+       ! Coordinates of cell center
+       x_cc = ( real([i,j,k],rt) + half ) * dx
+
+       ! Get phi at cell center
+       call amrex_eb_interp_levelset(x_cc, x0, n_refine, phi, phlo, phhi, dx, phi_cc)
+
+       ! Get normal at cell center
+       call amrex_eb_normal_levelset(x_cc, x0, n_refine, phi, phlo, phhi, dx, norm_cc)
+
+       ! Initial guess of interpolation point:
+       x_i  = x_cc + two * abs(phi_cc) * norm_cc
+
+       ! Find location of interpolation point by iteration if necessary
+       iter = 0
+       find_xi: do
+ 
+           if ( interp_stencil_is_valid(x_i, x0, dx, flags, flo, fhi) ) exit find_xi
+
+           ! Get normal at interpolation point
+           call amrex_eb_normal_levelset(x_i, x0, n_refine, phi, phlo, phhi, dx, norm_i)
+
+           x_i = x_i + maxval(dx) * norm_i
+
+           iter = iter + 1
+
+           if ( iter > max_iter ) &
+               call amrex_abort("reconstruct_velocity(): cannot find interpolation point")
+
+       end do find_xi
+
+       ! Get phi at interpolation point
+       call amrex_eb_interp_levelset(x_i, x0, n_refine, phi, phlo, phhi, dx, phi_i)
+
+       ! Compute interpolated velocity at x_i
+       vel_i = trilinear_interp(vel_in, vilo, vihi, 3, x_i, x0, dx)
+
+       ! Since interpolation point is only slightly shifted with respect to
+       ! the mirror point, we approximate vel at mirror point with vel_i and
+       ! then use linear interpolation between x_m and x_c
+
+       vel_out(i,j,k,:) = vel_i * phi_cc / phi_i
+   end if
+
+.. _AMReX EB documentation: https://amrex-codes.github.io/amrex/docs_html/EB_Chapter.html
+.. _AMReX Level-Set documentation: https://amrex-codes.github.io/amrex/docs_html/EB.html#level-sets
