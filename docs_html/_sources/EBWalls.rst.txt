@@ -65,14 +65,32 @@ geometries depending on the value of the :cpp:``mfix.geometry`` setting in the
 
 Also note that planar boundary conditions can be specified in the ``mfix.dat``
 file. Even if the user does not specify an ``mfix.geometry`` in the ``inputs``,
-any no-sleep or free-slip boundary conditions are expressed as EB walls.
+any no-slip or free-slip boundary conditions are expressed as EB walls.
+
+There are also two parameters (specified in the ``inputs`` file) that influence
+the level-set creation:
+
++-------------------------------+------------------------------------------------+
+|  Parameter                    |  Description                                   |
++===============================+================================================+
+| ``amr.max_level``             | If greater than 1, MFiX operates in multi-level|
+|                               | mode. The level-set grids follow all other     |
+|                               | grids. If equal to 1, the level-set has two    |
+|                               | levels (one additional level with higher       |
+|                               | refinement).                                   |
++-------------------------------+------------------------------------------------+
+| ``mfix.levelset__refinement`` | If ``amr.max_level > 1`` this parameter is     |
+|                               | ignored. Otherwise it sets the maximum         |
+|                               | refinement of the level-set                    |
++-------------------------------+------------------------------------------------+
 
 
-Constructing the EB Geometry
-----------------------------
+How MFiX-Exa Constructs the EB Geometry
+---------------------------------------
 
 Once a geometry is selected by :cpp:`mfix::make_eb_geometry`, the procedure is
-the same for (almost) all geometries:
+the same for (almost) all geometries. Also see the `AMReX geometry
+documentation`_ for information on how to construct new geometries:
 
 1. Construct an implicit function representing the geometry (using the language
    of constructive solid geometry). For example
@@ -126,14 +144,26 @@ for every mass inflow.
 
 In the same spirit, the :cpp:`mfix::ebfactory` is constructed over the fluid
 grid and using the fluid EB levels, whereas :cpp:`mfix::particle_ebfactory` is
-constructed over the particle grid and using the particle EB levels.
+constructed over the particle grid using the particle EB levels.
 
 
 A note about constructing EB Levels
 -----------------------------------
 
-When building an EB level, the maximum coarsening level and the required
-coarsening level need to be specified. The reason for this is that we need to
+MFiX-Exa builds EB levels in :cpp:`mfix::build_eb_levels` (via
+:cpp:`LSCore<F>::BuildEBLevel`)
+
+.. highlight:: c++
+
+::
+
+   EB2::Build(gshop, geom[lev], required_crse_lev, max_crse_level);
+   const EB2::IndexSpace & ebis = EB2::IndexSpace::top();
+
+
+When building an EB level, the maximum coarsening level (:cpp:`int
+max_crse_level`) and the required coarsening level (:cpp:`int
+required_crse_lev`) need to be specified. The reason for this is that we need to
 specify to which level of coarseness the EB is still defined. It might not be
 immediately obvious, but the Poisson solver (used in the fluid solve) also
 depends indirectly on these parameters. Thus changing these during EB level
@@ -155,7 +185,7 @@ is ignored on all cases except when ``amr.max_level = 1``.
 MFiX-Exa Initialization Process
 -------------------------------
 
-Since MFiX requires the volume fraction when building grids (because it is
+Since MFiX requires the volume fraction when building grids (because this is
 needed by :cpp:`mfix::ErrorEst`), the EB geometries need to be built before
 calling :cpp:`mfix::Init`. The recommended procedure therefore is
 
@@ -175,7 +205,7 @@ calling :cpp:`mfix::Init`. The recommended procedure therefore is
    // Construct EB (must be done _before_ mfix::Init)
    my_mfix.make_eb_geometry();
 
-   // Initialize derived internals
+   // Initialize derived internals. Grids are create here.
    my_mfix.Init(dt, time);
 
    // Create EB factories on new grids
@@ -229,7 +259,7 @@ input ``amr.max_level`` The level-set can be in one of two modes:
 
 1. MFiX-Exa is running in single-level mode (:cpp:`nlev == 1`). Then
    :cpp:`mfix::level_sets[0]` will be at the same resolution as the fluid
-   (except that it's store on the particle grid). Even though :cpp:`nlev == 1`,
+   (except that it is stored on the particle grid). Even though :cpp:`nlev == 1`,
    there is a second level, :cpp:`level_sets[1]`. This level is the same as
    :cpp:`level_sets[0]` but refined by :cpp:`mfix::levelset__refinement`. This
    way the level-set always has the appropriate resolution to resolve structures
@@ -242,10 +272,10 @@ input ``amr.max_level`` The level-set can be in one of two modes:
 
 The level-set is used in two places:
 
-1. The function :cpp:`MFIXParticleContainer` interpolates the level-set onto
-   each particle's position in order to resolve collisions with the EBs. If
-   :cpp:`nlev == 1`, :cpp:`level_sets[1]` is used to evolve the particle
-   positions. Otherwise :cpp:`level_sets[lev]` is used for each level.
+1. The function :cpp:`MFIXParticleContainer::EvolveParticles` interpolates the
+   level-set onto each particle's position in order to resolve collisions with
+   the EBs. If :cpp:`nlev == 1`, :cpp:`level_sets[1]` is used to evolve the
+   particle positions. Otherwise :cpp:`level_sets[lev]` is used for each level.
 
 2. The fluid-particle coupling can sometimes rely on neighbor stencils where one
    or more cell is covered by an EB. In order to avoid values that do not
@@ -261,13 +291,10 @@ The reconstruction algorithm is called whenever a cell in the particle's
 neighbor stencil is covered. For no-slip walls, the reconstructed velocity in
 that cell is linearly extrapolated from the nearest "valid" fluid cell and 0 at
 the wall. This way the fluid velocity is consistent with the no-slip boundary
-condition along the normal to the EB.
+condition along the normal to the EB. For a planar EB wall, the following would
+be enough (the level-set is called :fortran:`phi` here):
 
-This is achieved by starting a the covered cell, and "walking" along the EB
-normal on cell at a time (computed from the level-set function), until the
-neighbor stencil does not include covered cells:
-
-.. highlight:: c++
+.. highlight:: fortran
 
 ::
 
@@ -286,24 +313,6 @@ neighbor stencil does not include covered cells:
        ! Initial guess of interpolation point:
        x_i  = x_cc + two * abs(phi_cc) * norm_cc
 
-       ! Find location of interpolation point by iteration if necessary
-       iter = 0
-       find_xi: do
- 
-           if ( interp_stencil_is_valid(x_i, x0, dx, flags, flo, fhi) ) exit find_xi
-
-           ! Get normal at interpolation point
-           call amrex_eb_normal_levelset(x_i, x0, n_refine, phi, phlo, phhi, dx, norm_i)
-
-           x_i = x_i + maxval(dx) * norm_i
-
-           iter = iter + 1
-
-           if ( iter > max_iter ) &
-               call amrex_abort("reconstruct_velocity(): cannot find interpolation point")
-
-       end do find_xi
-
        ! Get phi at interpolation point
        call amrex_eb_interp_levelset(x_i, x0, n_refine, phi, phlo, phhi, dx, phi_i)
 
@@ -315,7 +324,41 @@ neighbor stencil does not include covered cells:
        ! then use linear interpolation between x_m and x_c
 
        vel_out(i,j,k,:) = vel_i * phi_cc / phi_i
-   end if
+
+
+If the EB represents a curved wall, the initial normal is not a good estimate
+for the normal at the closest point on the wall. Therefore we start a the
+covered cell, and "walking" along the EB normal on cell at a time (computed from
+the level-set function), until the neighbor stencil does not include covered
+cells:
+
+.. highlight:: fortran
+
+::
+
+   ! Find location of interpolation point by iteration if necessary
+   iter = 0
+   find_xi: do
+ 
+       if ( interp_stencil_is_valid(x_i, x0, dx, flags, flo, fhi) ) exit find_xi
+
+       ! Get normal at interpolation point
+       call amrex_eb_normal_levelset(x_i, x0, n_refine, phi, phlo, phhi, dx, norm_i)
+
+       x_i = x_i + maxval(dx) * norm_i
+
+       iter = iter + 1
+
+       if ( iter > max_iter ) &
+           call amrex_abort("reconstruct_velocity(): cannot find interpolation point")
+
+   end do find_xi
+
+Note that the level-set here needs to be at the same resolution as the fluid.
+This is the reason why we need to keep the coarse level :cpp:`level_sets[0]`
+even when running in single-level mode.
+
 
 .. _AMReX EB documentation: https://amrex-codes.github.io/amrex/docs_html/EB_Chapter.html
 .. _AMReX Level-Set documentation: https://amrex-codes.github.io/amrex/docs_html/EB.html#level-sets
+.. _AMReX geometry documentation: https://amrex-codes.github.io/amrex/docs_html/EB.html#initializing-the-geometric-database 

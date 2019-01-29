@@ -91,7 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="EB.html">Embedded Boundaries</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Constructing Embedded Boundaries in MFiX-Exa</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#constructing-the-eb-geometry">Constructing the EB Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-mfix-exa-constructs-the-eb-geometry">How MFiX-Exa Constructs the EB Geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mfix-s-eb-data-structures">MFiX’s EB Data Structures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#a-note-about-constructing-eb-levels">A note about constructing EB Levels</a></li>
 </ul>
@@ -275,11 +275,39 @@ new :cpp:<code class="docutils literal notranslate"><span class="pre">EB2</span>
 </ol>
 <p>Also note that planar boundary conditions can be specified in the <code class="docutils literal notranslate"><span class="pre">mfix.dat</span></code>
 file. Even if the user does not specify an <code class="docutils literal notranslate"><span class="pre">mfix.geometry</span></code> in the <code class="docutils literal notranslate"><span class="pre">inputs</span></code>,
-any no-sleep or free-slip boundary conditions are expressed as EB walls.</p>
-<div class="section" id="constructing-the-eb-geometry">
-<h2>Constructing the EB Geometry<a class="headerlink" href="#constructing-the-eb-geometry" title="Permalink to this headline">¶</a></h2>
+any no-slip or free-slip boundary conditions are expressed as EB walls.</p>
+<p>There are also two parameters (specified in the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file) that influence
+the level-set creation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">amr.max_level</span></code></td>
+<td>If greater than 1, MFiX operates in multi-level
+mode. The level-set grids follow all other
+grids. If equal to 1, the level-set has two
+levels (one additional level with higher
+refinement).</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">mfix.levelset__refinement</span></code></td>
+<td>If <code class="docutils literal notranslate"><span class="pre">amr.max_level</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> this parameter is
+ignored. Otherwise it sets the maximum
+refinement of the level-set</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="how-mfix-exa-constructs-the-eb-geometry">
+<h2>How MFiX-Exa Constructs the EB Geometry<a class="headerlink" href="#how-mfix-exa-constructs-the-eb-geometry" title="Permalink to this headline">¶</a></h2>
 <p>Once a geometry is selected by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">make_eb_geometry</span></span></code>, the procedure is
-the same for (almost) all geometries:</p>
+the same for (almost) all geometries. Also see the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/EB.html#initializing-the-geometric-database">AMReX geometry
+documentation</a> for information on how to construct new geometries:</p>
 <ol class="arabic simple">
 <li>Construct an implicit function representing the geometry (using the language
 of constructive solid geometry). For example</li>
@@ -323,12 +351,19 @@ the “real” walls, whereas <code class="code cpp c++ docutils literal notrans
 for every mass inflow.</p>
 <p>In the same spirit, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ebfactory</span></span></code> is constructed over the fluid
 grid and using the fluid EB levels, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">particle_ebfactory</span></span></code> is
-constructed over the particle grid and using the particle EB levels.</p>
+constructed over the particle grid using the particle EB levels.</p>
 </div>
 <div class="section" id="a-note-about-constructing-eb-levels">
 <h2>A note about constructing EB Levels<a class="headerlink" href="#a-note-about-constructing-eb-levels" title="Permalink to this headline">¶</a></h2>
-<p>When building an EB level, the maximum coarsening level and the required
-coarsening level need to be specified. The reason for this is that we need to
+<p>MFiX-Exa builds EB levels in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">build_eb_levels</span></span></code> (via
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LSCore</span></span><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">F</span></span><span class="operator"><span class="pre">&gt;::</span></span><span class="name"><span class="pre">BuildEBLevel</span></span></code>)</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">gshop</span><span class="p">,</span> <span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span> <span class="n">required_crse_lev</span><span class="p">,</span> <span class="n">max_crse_level</span><span class="p">);</span>
+<span class="k">const</span> <span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span> <span class="o">&amp;</span> <span class="n">ebis</span> <span class="o">=</span> <span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="o">::</span><span class="n">top</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>When building an EB level, the maximum coarsening level (<code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span>
+<span class="name"><span class="pre">max_crse_level</span></span></code>) and the required coarsening level (<code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span>
+<span class="name"><span class="pre">required_crse_lev</span></span></code>) need to be specified. The reason for this is that we need to
 specify to which level of coarseness the EB is still defined. It might not be
 immediately obvious, but the Poisson solver (used in the fluid solve) also
 depends indirectly on these parameters. Thus changing these during EB level
@@ -345,7 +380,7 @@ to a value greater than 1. Note that the parameter <code class="docutils literal
 is ignored on all cases except when <code class="docutils literal notranslate"><span class="pre">amr.max_level</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
 <div class="section" id="mfix-exa-initialization-process">
 <h2>MFiX-Exa Initialization Process<a class="headerlink" href="#mfix-exa-initialization-process" title="Permalink to this headline">¶</a></h2>
-<p>Since MFiX requires the volume fraction when building grids (because it is
+<p>Since MFiX requires the volume fraction when building grids (because this is
 needed by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ErrorEst</span></span></code>), the EB geometries need to be built before
 calling <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Init</span></span></code>. The recommended procedure therefore is</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Default constructor (geom[lev] is defined here)</span>
@@ -360,7 +395,7 @@ calling <code class="code cpp c++ docutils literal notranslate"><span class="nam
 <span class="c1">// Construct EB (must be done _before_ mfix::Init)</span>
 <span class="n">my_mfix</span><span class="p">.</span><span class="n">make_eb_geometry</span><span class="p">();</span>
 
-<span class="c1">// Initialize derived internals</span>
+<span class="c1">// Initialize derived internals. Grids are create here.</span>
 <span class="n">my_mfix</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
 
 <span class="c1">// Create EB factories on new grids</span>
@@ -408,7 +443,7 @@ input <code class="docutils literal notranslate"><span class="pre">amr.max_level
 <ol class="arabic simple">
 <li>MFiX-Exa is running in single-level mode (<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">nlev</span></span> <span class="operator"><span class="pre">==</span></span> <span class="literal number integer"><span class="pre">1</span></span></code>). Then
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">]</span></span></code> will be at the same resolution as the fluid
-(except that it’s store on the particle grid). Even though <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">nlev</span></span> <span class="operator"><span class="pre">==</span></span> <span class="literal number integer"><span class="pre">1</span></span></code>,
+(except that it is stored on the particle grid). Even though <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">nlev</span></span> <span class="operator"><span class="pre">==</span></span> <span class="literal number integer"><span class="pre">1</span></span></code>,
 there is a second level, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">]</span></span></code>. This level is the same as
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">]</span></span></code> but refined by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">levelset__refinement</span></span></code>. This
 way the level-set always has the appropriate resolution to resolve structures
@@ -420,10 +455,10 @@ levels.</li>
 </ol>
 <p>The level-set is used in two places:</p>
 <ol class="arabic simple">
-<li>The function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIXParticleContainer</span></span></code> interpolates the level-set onto
-each particle’s position in order to resolve collisions with the EBs. If
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">nlev</span></span> <span class="operator"><span class="pre">==</span></span> <span class="literal number integer"><span class="pre">1</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">]</span></span></code> is used to evolve the particle
-positions. Otherwise <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">lev</span></span><span class="punctuation"><span class="pre">]</span></span></code> is used for each level.</li>
+<li>The function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIXParticleContainer</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">EvolveParticles</span></span></code> interpolates the
+level-set onto each particle’s position in order to resolve collisions with
+the EBs. If <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">nlev</span></span> <span class="operator"><span class="pre">==</span></span> <span class="literal number integer"><span class="pre">1</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">]</span></span></code> is used to evolve the
+particle positions. Otherwise <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">lev</span></span><span class="punctuation"><span class="pre">]</span></span></code> is used for each level.</li>
 <li>The fluid-particle coupling can sometimes rely on neighbor stencils where one
 or more cell is covered by an EB. In order to avoid values that do not
 conform with the boundary conditions, the fluid velocity is reconstructed in
@@ -436,57 +471,63 @@ those cells. The algorithm relies on the level-set, and uses
 neighbor stencil is covered. For no-slip walls, the reconstructed velocity in
 that cell is linearly extrapolated from the nearest “valid” fluid cell and 0 at
 the wall. This way the fluid velocity is consistent with the no-slip boundary
-condition along the normal to the EB.</p>
-<p>This is achieved by starting a the covered cell, and “walking” along the EB
-normal on cell at a time (computed from the level-set function), until the
-neighbor stencil does not include covered cells:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">is_covered_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>                         <span class="p">.</span><span class="n">and</span><span class="p">.</span> <span class="o">&amp;</span>
-<span class="o">&amp;</span>   <span class="n">minval</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="nl">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nl">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nl">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="o">&lt;=</span> <span class="n">phi_threshold</span> <span class="p">)</span> <span class="n">then</span>
+condition along the normal to the EB. For a planar EB wall, the following would
+be enough (the level-set is called <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">phi</span></span></code> here):</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">is_covered_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>                         <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="p">&amp;</span>
+<span class="p">&amp;</span>   <span class="nb">minval</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="o">&lt;=</span> <span class="n">phi_threshold</span> <span class="p">)</span> <span class="k">then</span>
 
-    <span class="o">!</span> <span class="n">Coordinates</span> <span class="n">of</span> <span class="n">cell</span> <span class="n">center</span>
-    <span class="n">x_cc</span> <span class="o">=</span> <span class="p">(</span> <span class="n">real</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">rt</span><span class="p">)</span> <span class="o">+</span> <span class="n">half</span> <span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="c">! Coordinates of cell center</span>
+    <span class="n">x_cc</span> <span class="o">=</span> <span class="p">(</span> <span class="kt">real</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">rt</span><span class="p">)</span> <span class="o">+</span> <span class="n">half</span> <span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
 
-    <span class="o">!</span> <span class="n">Get</span> <span class="n">phi</span> <span class="n">at</span> <span class="n">cell</span> <span class="n">center</span>
-    <span class="n">call</span> <span class="n">amrex_eb_interp_levelset</span><span class="p">(</span><span class="n">x_cc</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">phi_cc</span><span class="p">)</span>
+    <span class="c">! Get phi at cell center</span>
+    <span class="k">call </span><span class="n">amrex_eb_interp_levelset</span><span class="p">(</span><span class="n">x_cc</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">phi_cc</span><span class="p">)</span>
 
-    <span class="o">!</span> <span class="n">Get</span> <span class="n">normal</span> <span class="n">at</span> <span class="n">cell</span> <span class="n">center</span>
-    <span class="n">call</span> <span class="n">amrex_eb_normal_levelset</span><span class="p">(</span><span class="n">x_cc</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">norm_cc</span><span class="p">)</span>
+    <span class="c">! Get normal at cell center</span>
+    <span class="k">call </span><span class="n">amrex_eb_normal_levelset</span><span class="p">(</span><span class="n">x_cc</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">norm_cc</span><span class="p">)</span>
 
-    <span class="o">!</span> <span class="n">Initial</span> <span class="n">guess</span> <span class="n">of</span> <span class="n">interpolation</span> <span class="nl">point</span><span class="p">:</span>
-    <span class="n">x_i</span>  <span class="o">=</span> <span class="n">x_cc</span> <span class="o">+</span> <span class="n">two</span> <span class="o">*</span> <span class="n">abs</span><span class="p">(</span><span class="n">phi_cc</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_cc</span>
+    <span class="c">! Initial guess of interpolation point:</span>
+    <span class="n">x_i</span>  <span class="o">=</span> <span class="n">x_cc</span> <span class="o">+</span> <span class="n">two</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">phi_cc</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_cc</span>
 
-    <span class="o">!</span> <span class="n">Find</span> <span class="n">location</span> <span class="n">of</span> <span class="n">interpolation</span> <span class="n">point</span> <span class="n">by</span> <span class="n">iteration</span> <span class="k">if</span> <span class="n">necessary</span>
-    <span class="n">iter</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="nl">find_xi</span><span class="p">:</span> <span class="k">do</span>
+    <span class="c">! Get phi at interpolation point</span>
+    <span class="k">call </span><span class="n">amrex_eb_interp_levelset</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">phi_i</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="p">(</span> <span class="n">interp_stencil_is_valid</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">flo</span><span class="p">,</span> <span class="n">fhi</span><span class="p">)</span> <span class="p">)</span> <span class="n">exit</span> <span class="n">find_xi</span>
-
-        <span class="o">!</span> <span class="n">Get</span> <span class="n">normal</span> <span class="n">at</span> <span class="n">interpolation</span> <span class="n">point</span>
-        <span class="n">call</span> <span class="n">amrex_eb_normal_levelset</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">norm_i</span><span class="p">)</span>
-
-        <span class="n">x_i</span> <span class="o">=</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">maxval</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_i</span>
-
-        <span class="n">iter</span> <span class="o">=</span> <span class="n">iter</span> <span class="o">+</span> <span class="mi">1</span>
-
-        <span class="k">if</span> <span class="p">(</span> <span class="n">iter</span> <span class="o">&gt;</span> <span class="n">max_iter</span> <span class="p">)</span> <span class="o">&amp;</span>
-            <span class="n">call</span> <span class="n">amrex_abort</span><span class="p">(</span><span class="s">&quot;reconstruct_velocity(): cannot find interpolation point&quot;</span><span class="p">)</span>
-
-    <span class="n">end</span> <span class="k">do</span> <span class="n">find_xi</span>
-
-    <span class="o">!</span> <span class="n">Get</span> <span class="n">phi</span> <span class="n">at</span> <span class="n">interpolation</span> <span class="n">point</span>
-    <span class="n">call</span> <span class="n">amrex_eb_interp_levelset</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">phi_i</span><span class="p">)</span>
-
-    <span class="o">!</span> <span class="n">Compute</span> <span class="n">interpolated</span> <span class="n">velocity</span> <span class="n">at</span> <span class="n">x_i</span>
+    <span class="c">! Compute interpolated velocity at x_i</span>
     <span class="n">vel_i</span> <span class="o">=</span> <span class="n">trilinear_interp</span><span class="p">(</span><span class="n">vel_in</span><span class="p">,</span> <span class="n">vilo</span><span class="p">,</span> <span class="n">vihi</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
 
-    <span class="o">!</span> <span class="n">Since</span> <span class="n">interpolation</span> <span class="n">point</span> <span class="n">is</span> <span class="n">only</span> <span class="n">slightly</span> <span class="n">shifted</span> <span class="n">with</span> <span class="n">respect</span> <span class="n">to</span>
-    <span class="o">!</span> <span class="n">the</span> <span class="n">mirror</span> <span class="n">point</span><span class="p">,</span> <span class="n">we</span> <span class="n">approximate</span> <span class="n">vel</span> <span class="n">at</span> <span class="n">mirror</span> <span class="n">point</span> <span class="n">with</span> <span class="n">vel_i</span> <span class="n">and</span>
-    <span class="o">!</span> <span class="n">then</span> <span class="n">use</span> <span class="n">linear</span> <span class="n">interpolation</span> <span class="n">between</span> <span class="n">x_m</span> <span class="n">and</span> <span class="n">x_c</span>
+    <span class="c">! Since interpolation point is only slightly shifted with respect to</span>
+    <span class="c">! the mirror point, we approximate vel at mirror point with vel_i and</span>
+    <span class="c">! then use linear interpolation between x_m and x_c</span>
 
-    <span class="n">vel_out</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">:</span><span class="p">)</span> <span class="o">=</span> <span class="n">vel_i</span> <span class="o">*</span> <span class="n">phi_cc</span> <span class="o">/</span> <span class="n">phi_i</span>
-<span class="n">end</span> <span class="k">if</span>
+    <span class="n">vel_out</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">vel_i</span> <span class="o">*</span> <span class="n">phi_cc</span> <span class="o">/</span> <span class="n">phi_i</span>
 </pre></div>
 </div>
+<p>If the EB represents a curved wall, the initial normal is not a good estimate
+for the normal at the closest point on the wall. Therefore we start a the
+covered cell, and “walking” along the EB normal on cell at a time (computed from
+the level-set function), until the neighbor stencil does not include covered
+cells:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">! Find location of interpolation point by iteration if necessary</span>
+<span class="n">iter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">find_xi</span><span class="p">:</span> <span class="k">do</span>
+
+<span class="k">    if</span> <span class="p">(</span> <span class="n">interp_stencil_is_valid</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">flo</span><span class="p">,</span> <span class="n">fhi</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit </span><span class="n">find_xi</span>
+
+    <span class="c">! Get normal at interpolation point</span>
+    <span class="k">call </span><span class="n">amrex_eb_normal_levelset</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">norm_i</span><span class="p">)</span>
+
+    <span class="n">x_i</span> <span class="o">=</span> <span class="n">x_i</span> <span class="o">+</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_i</span>
+
+    <span class="n">iter</span> <span class="o">=</span> <span class="n">iter</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="n">iter</span> <span class="o">&gt;</span> <span class="n">max_iter</span> <span class="p">)</span> <span class="p">&amp;</span>
+        <span class="k">call </span><span class="n">amrex_abort</span><span class="p">(</span><span class="s2">&quot;reconstruct_velocity(): cannot find interpolation point&quot;</span><span class="p">)</span>
+
+<span class="k">end do </span><span class="n">find_xi</span>
+</pre></div>
+</div>
+<p>Note that the level-set here needs to be at the same resolution as the fluid.
+This is the reason why we need to keep the coarse level <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">]</span></span></code>
+even when running in single-level mode.</p>
 </div>
 </div>
 
