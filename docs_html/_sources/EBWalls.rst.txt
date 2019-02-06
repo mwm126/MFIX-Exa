@@ -129,7 +129,7 @@ The :cpp:`mfix` class stores the following EB data:
    //! EB levels representing fluid boundary conditions
    Vector<const EB2::Level *> eb_levels;
    //! EB levels representing particle boundary conditions (same as
-   //! `mfix::eb_levels` but might include additional walls at MI BCs).
+   //! `mfix::eb_levels` but might include additional walls).
    Vector<const EB2::Level *> particle_eb_levels;
 
    //! EB factory that lives on the fluid grids
@@ -138,10 +138,11 @@ The :cpp:`mfix` class stores the following EB data:
    Vector< std::unique_ptr<amrex::EBFArrayBoxFactory> > particle_ebfactory;
 
 As discussed in the previous sub-section, the difference between
-:cpp:`mfix::eb_levels` and :cpp:`mfix::particle_eb_levels` is how mass-inflow
-boundary conditions are treated: the walls in :cpp:`mfix::eb_levels` are only
-the "real" walls, whereas :cpp:`mfix::particle_eb_levels` has additional walls
-for every mass inflow.
+:cpp:`mfix::eb_levels` and :cpp:`mfix::particle_eb_levels` enables the user to
+specify a modfied EB geometry for particles only. Whereas the fluid sees the EB
+geometry in :cpp:`mfix::eb_levels`. If no addition particle EB geometry is
+specified (point 4 in the previous section), then
+:cpp:`mfix::particle_eb_levels` points to :cpp:`mfix::eb_levels`.
 
 In the same spirit, the :cpp:`mfix::ebfactory` is constructed over the fluid
 grid and using the fluid EB levels, whereas :cpp:`mfix::particle_ebfactory` is

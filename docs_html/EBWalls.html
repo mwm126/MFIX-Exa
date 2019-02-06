@@ -337,7 +337,7 @@ the particle EB levels.</li>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//! EB levels representing fluid boundary conditions</span>
 <span class="n">Vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EB2</span><span class="o">::</span><span class="n">Level</span> <span class="o">*&gt;</span> <span class="n">eb_levels</span><span class="p">;</span>
 <span class="c1">//! EB levels representing particle boundary conditions (same as</span>
-<span class="c1">//! `mfix::eb_levels` but might include additional walls at MI BCs).</span>
+<span class="c1">//! `mfix::eb_levels` but might include additional walls).</span>
 <span class="n">Vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EB2</span><span class="o">::</span><span class="n">Level</span> <span class="o">*&gt;</span> <span class="n">particle_eb_levels</span><span class="p">;</span>
 
 <span class="c1">//! EB factory that lives on the fluid grids</span>
@@ -347,10 +347,11 @@ the particle EB levels.</li>
 </pre></div>
 </div>
 <p>As discussed in the previous sub-section, the difference between
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">eb_levels</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">particle_eb_levels</span></span></code> is how mass-inflow
-boundary conditions are treated: the walls in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">eb_levels</span></span></code> are only
-the “real” walls, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">particle_eb_levels</span></span></code> has additional walls
-for every mass inflow.</p>
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">eb_levels</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">particle_eb_levels</span></span></code> enables the user to
+specify a modfied EB geometry for particles only. Whereas the fluid sees the EB
+geometry in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">eb_levels</span></span></code>. If no addition particle EB geometry is
+specified (point 4 in the previous section), then
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">particle_eb_levels</span></span></code> points to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">eb_levels</span></span></code>.</p>
 <p>In the same spirit, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ebfactory</span></span></code> is constructed over the fluid
 grid and using the fluid EB levels, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">particle_ebfactory</span></span></code> is
 constructed over the particle grid using the particle EB levels.</p>
