@@ -101,6 +101,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#the-level-set-function">The Level-Set Function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#special-cases-involving-level-sets">Special Cases Involving Level-Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluid-reconstruction">Fluid Reconstruction</a></li>
 </ul>
 </li>
@@ -317,16 +318,17 @@ of constructive solid geometry). For example</li>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Construct the implicit function representing the EB seen by the particles.
-This only deviates from the “standard” EB by adding additional walls to
-Mass-Inflow boundary conditions. This is necessary in order to have the
-“correct” volume fraction used by the
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIXParticleContainer</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">PICDeposition</span></span></code> function. I.e. this function
-needs to see the mass-inflow as a volume fraction of 0.</li>
-<li>Call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">build_eb_levels</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">gshop</span></span><span class="punctuation"><span class="pre">)</span></span></code> and
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">build_particle_eb_levels</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">gshop_part</span></span><span class="punctuation"><span class="pre">)</span></span></code>. These functions build the
-EB levels, and fill the implicit function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> (the later being
-used to construct the level-set function).</li>
+<li>(Optional) Construct the implicit function representing the EB seen by the
+particles. This might deviate from the “standard” EB depending on the
+specific application. In all standard cases used by mfix, this step is
+omitted.</li>
+<li>Call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">build_eb_levels</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">gshop</span></span><span class="punctuation"><span class="pre">)</span></span></code> this function builds the EB levels
+and fills the implicit function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> (the later being used to
+construct the level-set function). Note that this also makes the particle EB
+levels point to the fluid eb levels.</li>
+<li>(Optional, do this if you did 2.) Call
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">build_particle_eb_levels</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">gshop_part</span></span><span class="punctuation"><span class="pre">)</span></span></code> <strong>last</strong>. This will update
+the particle EB levels.</li>
 </ol>
 </div>
 <div class="section" id="mfix-s-eb-data-structures">
@@ -335,7 +337,7 @@ used to construct the level-set function).</li>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//! EB levels representing fluid boundary conditions</span>
 <span class="n">Vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EB2</span><span class="o">::</span><span class="n">Level</span> <span class="o">*&gt;</span> <span class="n">eb_levels</span><span class="p">;</span>
 <span class="c1">//! EB levels representing particle boundary conditions (same as</span>
-<span class="c1">//! `mfix::eb_levels` but additional walls at MI BCs).</span>
+<span class="c1">//! `mfix::eb_levels` but might include additional walls at MI BCs).</span>
 <span class="n">Vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">EB2</span><span class="o">::</span><span class="n">Level</span> <span class="o">*&gt;</span> <span class="n">particle_eb_levels</span><span class="p">;</span>
 
 <span class="c1">//! EB factory that lives on the fluid grids</span>
@@ -465,6 +467,22 @@ conform with the boundary conditions, the fluid velocity is reconstructed in
 those cells. The algorithm relies on the level-set, and uses
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">lev</span></span><span class="punctuation"><span class="pre">]</span></span></code> on each level.</li>
 </ol>
+<div class="section" id="special-cases-involving-level-sets">
+<h2>Special Cases Involving Level-Sets<a class="headerlink" href="#special-cases-involving-level-sets" title="Permalink to this headline">¶</a></h2>
+<p>The level-set function is filled by the <cite>mfix::fill_eb_levelsets()</cite> function.
+There are two special cases involving level-sets:</p>
+<ol class="arabic simple">
+<li>Mass-Inflow boundary conditions are not given EB walls. However, we don’t
+want particles to fall out of a MI either, so at the very end of the
+<cite>mfix::fill_eb_levelsets()</cite> function we call <cite>mfix::intersect_ls_walls()</cite>.
+This performs an intersection operation with the level-set representing a
+wall at each MI.</li>
+<li>Box geometries and regular geometries are comprised entirely out of planar
+surfaces. Therefore the levelset is not construction out of an EB factory (as
+would be the case for all other geometries). But out of an intersection with
+all planar surfaces. This has the advantage of correctly describing corners.</li>
+</ol>
+</div>
 <div class="section" id="fluid-reconstruction">
 <h2>Fluid Reconstruction<a class="headerlink" href="#fluid-reconstruction" title="Permalink to this headline">¶</a></h2>
 <p>The reconstruction algorithm is called whenever a cell in the particle’s

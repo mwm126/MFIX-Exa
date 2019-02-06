@@ -102,18 +102,19 @@ documentation`_ for information on how to construct new geometries:
    EB2::CylinderIF my_cyl(radius, height, direction, center, inside);
    auto gshop_cyl = EB2::makeShop(my_cyl);
 
-2. Construct the implicit function representing the EB seen by the particles.
-   This only deviates from the "standard" EB by adding additional walls to
-   Mass-Inflow boundary conditions. This is necessary in order to have the
-   "correct" volume fraction used by the
-   :cpp:`MFIXParticleContainer::PICDeposition` function. I.e. this function
-   needs to see the mass-inflow as a volume fraction of 0.
+2. (Optional) Construct the implicit function representing the EB seen by the
+   particles. This might deviate from the "standard" EB depending on the
+   specific application. In all standard cases used by mfix, this step is
+   omitted.
 
+3. Call :cpp:`mfix::build_eb_levels(gshop)` this function builds the EB levels
+   and fills the implicit function :cpp:`MultiFab` (the later being used to
+   construct the level-set function). Note that this also makes the particle EB
+   levels point to the fluid eb levels.
 
-3. Call :cpp:`mfix::build_eb_levels(gshop)` and
-   :cpp:`mfix::build_particle_eb_levels(gshop_part)`. These functions build the
-   EB levels, and fill the implicit function :cpp:`MultiFab` (the later being
-   used to construct the level-set function).
+4. (Optional, do this if you did 2.) Call
+   :cpp:`mfix::build_particle_eb_levels(gshop_part)` **last**. This will update
+   the particle EB levels.
 
 
 MFiX's EB Data Structures
@@ -128,7 +129,7 @@ The :cpp:`mfix` class stores the following EB data:
    //! EB levels representing fluid boundary conditions
    Vector<const EB2::Level *> eb_levels;
    //! EB levels representing particle boundary conditions (same as
-   //! `mfix::eb_levels` but additional walls at MI BCs).
+   //! `mfix::eb_levels` but might include additional walls at MI BCs).
    Vector<const EB2::Level *> particle_eb_levels;
 
    //! EB factory that lives on the fluid grids
@@ -282,6 +283,24 @@ The level-set is used in two places:
    conform with the boundary conditions, the fluid velocity is reconstructed in
    those cells. The algorithm relies on the level-set, and uses
    :cpp:`level_sets[lev]` on each level.
+
+
+Special Cases Involving Level-Sets
+----------------------------------
+
+The level-set function is filled by the `mfix::fill_eb_levelsets()` function.
+There are two special cases involving level-sets:
+
+1. Mass-Inflow boundary conditions are not given EB walls. However, we don't
+   want particles to fall out of a MI either, so at the very end of the
+   `mfix::fill_eb_levelsets()` function we call `mfix::intersect_ls_walls()`.
+   This performs an intersection operation with the level-set representing a
+   wall at each MI.
+
+2. Box geometries and regular geometries are comprised entirely out of planar
+   surfaces. Therefore the levelset is not construction out of an EB factory (as
+   would be the case for all other geometries). But out of an intersection with
+   all planar surfaces. This has the advantage of correctly describing corners.
 
 
 Fluid Reconstruction
