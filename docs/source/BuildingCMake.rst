@@ -58,6 +58,12 @@ build of AMReX.
 | AMREX\_CXX\_FLA | User-defined C++ flags for   | valid C++        | None        |
 | GS              | AMReX build                  | compiler flags   |             |
 +-----------------+------------------------------+------------------+-------------+
+| ENABLE\_MPI     | Enable build with MPI        | 0/1              | 1           |
+|                 |                              |                  |             |
++-----------------+------------------------------+------------------+-------------+
+| ENABLE\_OMP     | Enable build with OpenMP     | 0/1              | 0           |
+|                 |                              |                  |             |
++-----------------+------------------------------+------------------+-------------+
 | ENABLE\_FPE     | Build with Floating-Point    | 0/1              | 0           |
 |                 | Exceptions checks            |                  |             |
 +-----------------+------------------------------+------------------+-------------+
