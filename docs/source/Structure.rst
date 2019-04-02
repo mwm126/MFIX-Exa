@@ -12,17 +12,7 @@ Directory overview
 +---------------+--------------------------------------------------+
 | exec          | Directory for building with gmake (optional)     |
 +---------------+--------------------------------------------------+
-| exec_cc       | Directory for building with gmake (optional)     |
-+---------------+--------------------------------------------------+
-| src_des       | Source files for particle-only operations        |
-+---------------+--------------------------------------------------+
-| src_ebs       | Source files for EB-only operations              |
-+---------------+--------------------------------------------------+
-| src_staggered | Source files for SIMPLE and projection algorithm |
-|               | with face-centered velocity components           |
-+---------------+--------------------------------------------------+
-| src_cc        | Source files for projection algorithms with      |
-|               | cell-centered velocity components                |
+| src           | Source files                                     |
 +---------------+--------------------------------------------------+
 | tests         | Regression tests (see tests/README.md)           |
 +---------------+--------------------------------------------------+
