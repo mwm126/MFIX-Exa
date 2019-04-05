@@ -63,7 +63,7 @@ The following inputs must be preceded by "mfix."
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
 | geometry           | Which type of geometry are we using?                                  |   String    |           |
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
-| explicit_diffusion | Should we use explicit or implicit diffusion?                         |   Int       |    1      | 
+| explicit_diffusion | Should we use explicit or implicit diffusion?                         |   Int       |    0      | 
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
 | eb_ho_dirichlet    | Should we use ray tracing to compute dphi/dn for Dirichlet EB faces?  |   Int       |    0      | 
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
