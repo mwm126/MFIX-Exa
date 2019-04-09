@@ -1,10 +1,6 @@
-# Minimal makefile for Sphinx documentation
-#
-
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = amrex
 SOURCEDIR     = source
 BUILDDIR      = webroot
 
@@ -25,6 +21,6 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 webroot/doxygen:
-	git clone https://gitlab-ci-token:$GITLAB_TOKEN@mfix.netl.doe.gov/gitlab/exa/mfix.git doxygen/mfix
+	git clone "https://gitlab-ci-token:$(GITLAB_TOKEN)@mfix.netl.doe.gov/gitlab/exa/mfix.git" doxygen/mfix
 	cd doxygen && doxygen doxygen.conf
 	mv doxygen/html $@
