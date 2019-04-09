@@ -6,11 +6,7 @@ python:
   - 3.6
 
 install:
-  - pip install --user sphinx  # sphinx_rtd_theme
-    # pypi's sphinx_rtd_theme is outdated. Internet recommends using current
-    # master. Note: at some point, it will be OK to add `sphinx_rtd_theme` to
-    # the `pip install` above => remove line below:
-  - python -m pip install --user https://github.com/rtfd/sphinx_rtd_theme/archive/master.zip -U
+  - python -m pip install --user sphinx sphinx-rtd-theme
 
 script: bash ./build_and_deploy.sh
 

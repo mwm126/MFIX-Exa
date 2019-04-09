@@ -148,14 +148,19 @@ Next, configure, build and install AMReX as follows:
 
 .. code:: shell
 
-    > cmake AMREX_CONFIG_OPTIONS -DENABLE_PARTICLES=1 -DENABLE_AMRDATA=1 -DENABLE_EB=1 -DCMAKE_INSTALL_PREFIX:PATH=/absolute/path/to/installdir .
+    > cmake . AMREX_CONFIG_OPTIONS \
+          -DENABLE_PARTICLES=1 \
+          -DENABLE_AMRDATA=1 \
+          -DENABLE_EB=1 \
+          -DENABLE_3D_NODAL_MLMG=1 \
+          -DCMAKE_INSTALL_PREFIX:PATH=/absolute/path/to/installdir
+
     > make install
 
-Here,\ ``AMREX_CONFIG_OPTIONS`` are optional configure options for
-AMReX. Please refer to the AMReX user guide for a list of all the
-possible configuration options. The only options required are
-**-DENABLE\_PARTICLES=1**, **-DENABLE\_AMRDATA=1**, and
-**-DENABLE\_EB=1**.
+Here,\ ``AMREX_CONFIG_OPTIONS`` are optional configure options for AMReX. Please
+refer to the AMReX user guide for a list of all the possible configuration
+options. The only options required are **-DENABLE\_PARTICLES=1**,
+**-DENABLE\_AMRDATA=1**, **-DENABLE\_EB=1**, and **-DENABLE_3D_NODAL_MLMG=1**.
 
 Building MFiX-Exa
 ~~~~~~~~~~~~~~~~~
