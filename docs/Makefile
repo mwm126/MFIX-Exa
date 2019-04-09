@@ -6,9 +6,14 @@ SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
 SPHINXPROJ    = amrex
 SOURCEDIR     = source
-BUILDDIR      = build
+BUILDDIR      = webroot
 
-# Put it first so that "make" without argument is like "make help".
+all: html webroot/doxygen
+	mv webroot/html webroot/docs_html
+# Sphinx is set up to treat its build directory as the webroot, hence the
+# .nojekyll file is in the wrong place
+	mv webroot/docs_html/.nojekyll webroot
+
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
@@ -18,3 +23,8 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+webroot/doxygen:
+	git clone https://gitlab-ci-token:$GITLAB_TOKEN@mfix.netl.doe.gov/gitlab/exa/mfix.git doxygen/mfix
+	cd doxygen && doxygen doxygen.conf
+	mv doxygen/html $@
