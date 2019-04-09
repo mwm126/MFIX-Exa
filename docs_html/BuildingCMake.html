@@ -407,15 +407,20 @@ and single precision particles:</p>
 </pre></div>
 </div>
 <p>Next, configure, build and install AMReX as follows:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cmake</span> <span class="n">AMREX_CONFIG_OPTIONS</span> <span class="o">-</span><span class="n">DENABLE_PARTICLES</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DENABLE_AMRDATA</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DENABLE_EB</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="p">:</span><span class="n">PATH</span><span class="o">=/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">installdir</span> <span class="o">.</span>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cmake</span> <span class="o">.</span> <span class="n">AMREX_CONFIG_OPTIONS</span> \
+      <span class="o">-</span><span class="n">DENABLE_PARTICLES</span><span class="o">=</span><span class="mi">1</span> \
+      <span class="o">-</span><span class="n">DENABLE_AMRDATA</span><span class="o">=</span><span class="mi">1</span> \
+      <span class="o">-</span><span class="n">DENABLE_EB</span><span class="o">=</span><span class="mi">1</span> \
+      <span class="o">-</span><span class="n">DENABLE_3D_NODAL_MLMG</span><span class="o">=</span><span class="mi">1</span> \
+      <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="p">:</span><span class="n">PATH</span><span class="o">=/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">installdir</span>
+
 <span class="o">&gt;</span> <span class="n">make</span> <span class="n">install</span>
 </pre></div>
 </div>
-<p>Here,<code class="docutils literal notranslate"><span class="pre">AMREX_CONFIG_OPTIONS</span></code> are optional configure options for
-AMReX. Please refer to the AMReX user guide for a list of all the
-possible configuration options. The only options required are
-<strong>-DENABLE_PARTICLES=1</strong>, <strong>-DENABLE_AMRDATA=1</strong>, and
-<strong>-DENABLE_EB=1</strong>.</p>
+<p>Here,<code class="docutils literal notranslate"><span class="pre">AMREX_CONFIG_OPTIONS</span></code> are optional configure options for AMReX. Please
+refer to the AMReX user guide for a list of all the possible configuration
+options. The only options required are <strong>-DENABLE_PARTICLES=1</strong>,
+<strong>-DENABLE_AMRDATA=1</strong>, <strong>-DENABLE_EB=1</strong>, and <strong>-DENABLE_3D_NODAL_MLMG=1</strong>.</p>
 </div>
 <div class="section" id="building-mfix-exa">
 <h3>Building MFiX-Exa<a class="headerlink" href="#building-mfix-exa" title="Permalink to this headline">¶</a></h3>
