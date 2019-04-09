@@ -26,6 +26,4 @@ particle-particle, particle-fluid, and particle-wall interactions.
    ParticleBasics
    ParticleFluid
    ParticleWalls
-
-
-
+   ParticlesOnGpus

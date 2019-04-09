@@ -44,11 +44,10 @@
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -75,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -95,6 +95,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -167,11 +168,75 @@ the master branch at the beginning of each month.</p>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Structure.html">Directory overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BuildingCMake.html#superbuild-instructions-recommended">SUPERBUILD Instructions (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingCMake.html#building-mfix-exa-using-a-separate-amrex-installation-no-superbuild">Building MFiX-Exa using a separate AMReX installation (no superbuild)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BuildingCMake.html#build-amrex-library">Build AMReX Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BuildingCMake.html#building-mfix-exa">Building MFiX-Exa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingCMake.html#few-more-notes-on-building-mfix-exa">Few more notes on building MFiX-Exa</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#run-all-tests">Run all tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#list-all-tests-without-running-them">List all tests (without running them)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#run-a-particular-test-by-the-index-listed-in-ctest-n">Run a particular test by the index listed in ctest -N</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#run-a-particular-test-by-name">Run a particular test by name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#run-a-particular-test-via-make">Run a particular test via make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#run-specific">Run specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RunningTestSuite.html#run-a-user-defined-case">Run a user-defined case</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html">Regression testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="RegressionTesting.html#generating-local-regression-test-data">Generating local regression test data</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs.html">Run-time Inputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Fluids.html">Solving the Fluid Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fluids.html">Solving the Fluid Equations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FluidEquations.html">Fluid Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FluidEquations.html#fluid-equations">Fluid Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FluidTimeDiscretization.html">Time Discretization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FluidTimeStep.html">Fluid Time Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Slopes.html">Computing slopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingMacVelocities.html">Creating the MAC velocities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ParticleBasics.html#particle-dynamics">Particle Dynamics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ParticleFluid.html">Particle/Fluid Interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParticleWalls.html">Particle/Wall Interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParticlesOnGpus.html">Particles on GPUs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="EBWalls.html">Constructing Embedded Boundaries in MFiX-Exa</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="EBWalls.html#how-mfix-exa-constructs-the-eb-geometry">How MFiX-Exa Constructs the EB Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EBWalls.html#mfix-s-eb-data-structures">MFiX’s EB Data Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EBWalls.html#a-note-about-constructing-eb-levels">A note about constructing EB Levels</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="EBWalls.html#local-mesh-refinement-at-walls">Local Mesh Refinement at Walls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="EBWalls.html#mfix-exa-initialization-process">MFiX-Exa Initialization Process</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="EBWalls.html#the-level-set-function">The Level-Set Function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="EBWalls.html#special-cases-involving-level-sets">Special Cases Involving Level-Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EBWalls.html#fluid-reconstruction">Fluid Reconstruction</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="notice">

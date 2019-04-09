@@ -17,7 +17,7 @@ active development in the develop branch. Changes are merged into
 the master branch at the beginning of each month.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
    :caption: Contents:
 
    Introduction

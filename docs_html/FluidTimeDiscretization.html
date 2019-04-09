@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Particles" href="Particles.html" />
+    <link rel="next" title="Fluid Time Step" href="FluidTimeStep.html" />
     <link rel="prev" title="Fluid Variables" href="FluidEquations.html" /> 
 </head>
 
@@ -45,11 +45,10 @@
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -76,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -91,7 +91,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Fluids.html">Solving the Fluid Equations</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="FluidEquations.html">Fluid Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FluidEquations.html#fluid-equations">Fluid Equations</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Time Discretization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time Discretization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="FluidTimeStep.html">Fluid Time Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Slopes.html">Computing slopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BuildingMacVelocities.html">Creating the MAC velocities</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particles.html">Particles</a></li>
@@ -101,6 +106,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -164,47 +170,13 @@
             
   <div class="section" id="time-discretization">
 <h1>Time Discretization<a class="headerlink" href="#time-discretization" title="Permalink to this headline">¶</a></h1>
-<p>In the absence of reactions, we assume that the fluid density is unchanged.</p>
-<p>We compute the fluid volume fraction directly from the particle locations.</p>
-<p>Thus here we focus on the discretization of the momentum equation</p>
-<p>In the predictor</p>
-<ul class="simple">
-<li>Define <span class="math notranslate nohighlight">\(U^{MAC,n}\)</span>, the face-centered (staggered) MAC velocity which is used for advection, using <span class="math notranslate nohighlight">\(U^n\)</span></li>
-<li>Define an approximation to the new-time state, <span class="math notranslate nohighlight">\((\varepsilon_g \rho_g U)^{\ast}\)</span> by setting</li>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FluidTimeStep.html">Fluid Time Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Slopes.html">Computing slopes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingMacVelocities.html">Creating the MAC velocities</a></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}(\varepsilon_g \rho_g U)^{\ast} &amp;= (\varepsilon_g \rho_g U)^n -
-\Delta t \left( \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g) + \varepsilon_g \nabla {p_g}^{n-1/2} \right) \\ &amp;+
-\Delta t \left( \nabla \cdot \tau^n + \sum_p \beta_p (V_p - {U_g}^{\ast}) + \rho_g \varepsilon_g g \right)\end{split}\]</div>
-<ul class="simple">
-<li>Project <span class="math notranslate nohighlight">\(U^{\ast}\)</span> by solving</li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} (\varepsilon_g  U)^{\ast}+ {\varepsilon_g}{\rho_g} \nabla {p_g}^{n-1/2} \right)\]</div>
-<p>then defining</p>
-<div class="math notranslate nohighlight">
-\[U^{\ast \ast} = U^{\ast} - \frac{1}{\rho_g} \nabla \phi\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[{p_g}^{n+1/2, \ast} = \phi\]</div>
-<p>In the corrector</p>
-<ul class="simple">
-<li>Define <span class="math notranslate nohighlight">\(U^{MAC,\ast \ast}\)</span> at the “new” time using <span class="math notranslate nohighlight">\(U^{\ast \ast}\)</span></li>
-<li>Define a new approximation to the new-time state, <span class="math notranslate nohighlight">\((\varepsilon_g \rho_g U)^{\ast \ast \ast}\)</span> by setting</li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}(\varepsilon_g \rho_g U)^{\ast \ast \ast} &amp;= (\varepsilon_g \rho_g U)^n - \frac{\Delta t}{2} \left( \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^n + \nabla \cdot (\varepsilon_g \rho_g U^{MAC} U_g)^{\ast \ast}\right) + \\ &amp;+ \frac{\Delta t}{2} \left( \nabla \cdot \tau^n + \nabla \cdot \tau^{\ast \ast} \right) + \Delta t \left( - \varepsilon_g \nabla {p_g}^{n+1/2,\ast} + \sum_p \beta_p (V_p - {U_g}^{\ast \ast \ast}) + \varepsilon_g \rho_g g \right)\end{split}\]</div>
-<ul class="simple">
-<li>Project <span class="math notranslate nohighlight">\(U^{\ast \ast \ast}\)</span> by solving</li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} (\varepsilon_g  U)^{\ast \ast \ast} + \frac{\varepsilon_g}{\rho_g} \nabla {p_g}^{n+1/2,\ast} \right)\]</div>
-<p>then defining</p>
-<div class="math notranslate nohighlight">
-\[U^{n+1} = U^{\ast \ast \ast} - \frac{1}{\rho_g} \nabla \phi\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[{p_g}^{n+1/2} = \phi\]</div>
+</div>
 </div>
 
 
@@ -215,7 +187,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Particles.html" class="btn btn-neutral float-right" title="Particles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="FluidTimeStep.html" class="btn btn-neutral float-right" title="Fluid Time Step" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="FluidEquations.html" class="btn btn-neutral float-left" title="Fluid Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
