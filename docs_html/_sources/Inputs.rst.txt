@@ -32,7 +32,7 @@ The following inputs must be preceded by "amr."
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | max_grid_size_z  | Maximum number of cells at level 0 in each grid in z-direction        |    Int      | 32        |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-| plt_ccse_regtest | Save all variables to plot file (overrides all other IO flags)        |    Int      | 0         |
+| plt_regtest      | Save all variables to plot file (overrides all other IO flags)        |    Int      | 0         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plt_vel_g        | Save fluid velocity data to plot file                                 |    Int      | 1         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
