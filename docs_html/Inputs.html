@@ -473,6 +473,51 @@
 </tr>
 </tbody>
 </table>
+<p>Setting basic EB walls can be specified by inputs preceded by “xlo”, “xhi”, “ylo”, “yhi”, “zlo”, and “zhi”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="63%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>type</td>
+<td><p class="first">Used to define boundary type. Available options include:</p>
+<ul class="last simple">
+<li>‘pi’  or ‘pressure_inflow’</li>
+<li>‘po’  or ‘pressure_outflow’</li>
+<li>‘mi’  or ‘mass_inflow’</li>
+<li>‘nsw’ or ‘no_slip_wall’</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>pressure</td>
+<td>Sets boundary pressure for pressure inflows, outflows and mass inflows</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>velocity</td>
+<td>Sets boundary velocity for mass inflows</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>location</td>
+<td>Specifies an offset from the domain boundary for no-slip walls</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
