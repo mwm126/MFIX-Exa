@@ -126,3 +126,23 @@ The following inputs must be preceded by "particles."
 +====================+===========================================================================+=============+===========+
 | removeOutOfRange   |   Should we remove particles at initialization that are touching the wall |    Int      |   1       |
 +--------------------+---------------------------------------------------------------------------+-------------+-----------+
+
+
+Setting basic EB walls can be specified by inputs preceded by "xlo", "xhi", "ylo", "yhi", "zlo", and "zhi"
+
++--------------------+---------------------------------------------------------------------------+-------------+-----------+
+|                    | Description                                                               |   Type      | Default   |
++====================+===========================================================================+=============+===========+
+| type               | Used to define boundary type. Available options include:                  |  String     |  None     |
+|                    |                                                                           |             |           |
+|                    | * 'pi'  or 'pressure_inflow'                                              |             |           |
+|                    | * 'po'  or 'pressure_outflow'                                             |             |           |
+|                    | * 'mi'  or 'mass_inflow'                                                  |             |           |
+|                    | * 'nsw' or 'no_slip_wall'                                                 |             |           |
++--------------------+---------------------------------------------------------------------------+-------------+-----------+
+| pressure           | Sets boundary pressure for pressure inflows, outflows and mass inflows    |    Real     |  None     |
++--------------------+---------------------------------------------------------------------------+-------------+-----------+
+| velocity           | Sets boundary velocity for mass inflows                                   |    Real     |  None     |
++--------------------+---------------------------------------------------------------------------+-------------+-----------+
+| location           | Specifies an offset from the domain boundary for no-slip walls            |    Real     |  None     |
++--------------------+---------------------------------------------------------------------------+-------------+-----------+
