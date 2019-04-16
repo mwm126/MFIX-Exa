@@ -518,14 +518,14 @@
 </tr>
 </tbody>
 </table>
-<p>To specify multiple mass inflows (e.g., define a jet and uniform background flow), provide multiple velocities for the region and define the physical extents of the sub-region. The first velocity will be applied to the entire to domain. Subsequent velocities are successively applied. If multiple regions overlap, the last specified region is used. An example of a uniform mass inflow with a square-jet centered at (0.5x0.5) is given below.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>xlo.type <span class="o">=</span> <span class="s2">&quot;mi&quot;</span>
-xlo.velocity <span class="o">=</span> <span class="m">0</span>.01  <span class="m">0</span>.10
+<p>To specify multiple mass inflows (e.g., define a jet and uniform background flow), provide multiple velocities for the region and define the physical extents of the sub-region. The first velocity is applied to the entire flow plane. Subsequent velocities are successively applied to the specified sub-regions. If multiple sub-regions overlap, the velocity of last specified region is used. An example of a uniform mass inflow with a square-jet centered at (0.5x0.5) is given below.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xlo.type = &quot;mi&quot;
+xlo.velocity = 0.01  0.10
 
-xlo.ylo <span class="o">=</span>            <span class="m">0</span>.25
-xlo.yhi <span class="o">=</span>            <span class="m">0</span>.75
-xlo.zlo <span class="o">=</span>            <span class="m">0</span>.25
-xlo.zhi <span class="o">=</span>            <span class="m">0</span>.75
+xlo.ylo =            0.25
+xlo.yhi =            0.75
+xlo.zlo =            0.25
+xlo.zhi =            0.75
 </pre></div>
 </div>
 </div>
