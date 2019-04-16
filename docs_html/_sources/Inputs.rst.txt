@@ -146,3 +146,15 @@ Setting basic EB walls can be specified by inputs preceded by "xlo", "xhi", "ylo
 +--------------------+---------------------------------------------------------------------------+-------------+-----------+
 | location           | Specifies an offset from the domain boundary for no-slip walls            |    Real     |  None     |
 +--------------------+---------------------------------------------------------------------------+-------------+-----------+
+
+To specify multiple mass inflows (e.g., define a jet and uniform background flow), provide multiple velocities for the region and define the physical extents of the sub-region. The first velocity will be applied to the entire to domain. Subsequent velocities are successively applied. If multiple regions overlap, the last specified region is used. An example of a uniform mass inflow with a square-jet centered at (0.5x0.5) is given below.
+
+```
+xlo.type = "mi"
+xlo.velocity = 0.01  0.10
+
+xlo.ylo =            0.25
+xlo.yhi =            0.75
+xlo.zlo =            0.25
+xlo.zhi =            0.75
+```
