@@ -199,14 +199,44 @@
 <p>Conservation of fluid mass:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial (\varepsilon_g \rho_g)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g)  = 0\]</div>
+<p>Unlike two-fluid modeling, <span class="math notranslate nohighlight">\(\varepsilon_g = 1 - \varepsilon_s\)</span>, is not a solution
+variable. Rather, <span class="math notranslate nohighlight">\(\varepsilon_s\)</span> is evaluated from the particle field through
+volume filtering,</p>
+<div class="math notranslate nohighlight">
+\[(1 - \varepsilon_g) A (\boldsymbol{x},t) \approx
+\sum_{i=1}^{N_p} A_i(\boldsymbol{X}_i,t) {\mathcal G}
+(\left| \boldsymbol{x} - \boldsymbol{X}_i \right|) {\mathcal V}_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_i\)</span> is a general particle property, <span class="math notranslate nohighlight">\({\mathcal V}_i\)</span> is the particle
+volume and <span class="math notranslate nohighlight">\(\mathcal G\)</span> is a transfer kernel with compact support–here linear hat.
+Setting <span class="math notranslate nohighlight">\(A_i = 1\)</span> gives the local void fraction.</p>
 <p>Assuming the fluid phase is incompressible, <span class="math notranslate nohighlight">\(\frac{D \rho_g}{Dt} = 0\)</span>, the conservation of fluid mass is equivalent to the conservation of fluid volume:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial \varepsilon_g}{\partial t} + \nabla \cdot (\varepsilon_g  U_g)  = 0\]</div>
-<p>Conservation of fluid momentum:</p>
+<p>The conservation of fluid momentum is:</p>
 <div class="math notranslate nohighlight">
-\[\frac{ \partial (\varepsilon_g \rho_g U_g)}{\partial t} + \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g = \nabla \cdot \tau
-+ \sum_p \beta_p (V_p - U_g) + \rho_g g\]</div>
-<p>where <span class="math notranslate nohighlight">\(\sum_p \beta_p (V_p - U_g)\)</span> is the drag term in which <span class="math notranslate nohighlight">\(V_p\)</span> represents the particle velocity and <span class="math notranslate nohighlight">\(\beta_p\)</span> is the drag coefficient associated with that particle</p>
+\[\frac{ \partial (\varepsilon_g \rho_g U_g)}{\partial t}
++ \nabla \cdot (\varepsilon_g \rho_g U_g \otimes U_g) + \nabla p_g
+= \nabla \cdot \tau + M_{sg} + \varepsilon_g \rho_g g\]</div>
+<p>where <span class="math notranslate nohighlight">\(M_{sg} = - M_{gs}\)</span> is the generalized interfacial momentum transfer from
+the solid particles to the gas-phase to the gas-phase. Like <span class="math notranslate nohighlight">\(\varepsilon_s\)</span>,
+<span class="math notranslate nohighlight">\(M_{gs}\)</span> is determined from the L-E transfer kernel by setting <span class="math notranslate nohighlight">\(A_i = F_{gi}\)</span>,
+where <span class="math notranslate nohighlight">\(F_{gi}\)</span> is the force due to the gas-phase on the ith particle. Following
+MFiX classic (and many other CFD-DEM codes designed for high density ratio gas-solids
+flows), only buoyancy (pressure gradient) and steady drag are considered:</p>
+<div class="math notranslate nohighlight">
+\[F_{gi} = - \mathcal{V}_i \nabla p_g
+- \frac{1}{2} C_D \rho_g \boldsymbol{V}_{ig} -  \left|\boldsymbol{V}_{ig}\right| A_i^{(proj)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{V}_{ig} = \boldsymbol{V}_i - \boldsymbol{U}_g ( \boldsymbol{X}_i )\)</span>
+is the velocity of ith particle relative to the gas-phase (at the particle position
+<span class="math notranslate nohighlight">\(\boldsymbol{X}_i\)</span>). <span class="math notranslate nohighlight">\(F_{gi}\)</span> is closed by the specification of a drag
+coefficient, <span class="math notranslate nohighlight">\(C_D\)</span>. Currently, MFiX-Exa includes Wen-Yu, Gidaspow and BVK2 drag laws.</p>
+<p>In chemical engineering literature, it is common to lump all drag-related terms of
+<span class="math notranslate nohighlight">\(M_{gs}\)</span> into <span class="math notranslate nohighlight">\(\beta\)</span>. With this simplification and some re-arrangement,
+the flud momentum takes the more convenient form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{ \partial (\varepsilon_g \rho_g U_g)}{\partial t}
++ \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g
+= \nabla \cdot \tau + \sum_p \beta_p (V_p - U_g) + \varepsilon_g \rho_g g\]</div>
 </div>
 
 
