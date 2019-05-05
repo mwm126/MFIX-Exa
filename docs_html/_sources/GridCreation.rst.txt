@@ -4,17 +4,17 @@
 .. role:: fortran(code)
    :language: fortran
 
-.. _ss:grid_creation:
+.. _sec:grid_creation:
 
 Grid Creation
 -------------
 
-To run MFiX-Exa you must specifiy the domain size by specifying :cpp:`n_cell` -- 
-this is the number of cells spanning the domain in each coordinate direction at the coarsest level (level 0).
+To run MFiX-Exa you must specify :cpp:`n_cell` in the inputs file -- 
+this is the number of cells spanning the domain in each coordinate direction at level 0.
 
 Users often specify :cpp:`max_grid_size` as well. The default load balancing algorithm then divides the 
 domain in every direction so that each grid is no longer than :cpp:`max_grid_size` in that direction.
-If not specified by the user, :cpp:`max_grid_size` defaults to 32 in 3D (in each coordinate direction).
+If not specified by the user, :cpp:`max_grid_size` defaults to 128 in 2D and 32 in 3D (in each coordinate direction).
 
 Another popular input is :cpp:`blocking_factor`.  The value of :cpp:`blocking_factor` 
 constrains grid creation in that in that each grid must be divisible by :cpp:`blocking_factor`.  
@@ -46,15 +46,10 @@ applying to all coordinate directions, or as separate values for each direction.
    (or :cpp:`blocking_factor_x`, :cpp:`blocking_factor_y` and :cpp:`blocking_factor_z`) must be used.  
    If you don't specify as many integers as there are levels, the final value will be used for the remaining levels.
 
-Additional notes:
-
- - to create identical grids of a specific size, e.g. of length *m* in each direction, 
-   then set :cpp:`max_grid_size` = *m* and :cpp:`blocking_factor` = *m*.
-
  - note that :cpp:`max_grid_size` is just an upper bound; with :cpp:`n_cell = 48` 
    and :cpp:`max_grid_size = 32`, we will typically have one grid of length 32 and one of length 16.
 
-The grid creation proceeds as follows:
+The grid creation process at level 0 proceeds as follows (if not using the KD-tree approach):
 
 #. The domain is initially defined by a single grid of size :cpp:`n_cell`.
 
@@ -66,8 +61,4 @@ The grid creation proceeds as follows:
 #. Next, if :cpp:`refine_grid_layout = true` and there are more processors than grids
    at this level, then the grids at this level are further divided until Ngrids >= Nprocs
    (unless doing so would violate the :cpp:`blocking_factor` criterion).
-
-#. The creation of grids at higher levels begins by tagging cells at the coarser level and follows
-   the Berger-Rigoutsis clustering algorithm with the additional constraint of satisfying
-   the :cpp:`blocking_factor` criterion.
 

@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Dual Grid Approach" href="DualGrid.html" />
-    <link rel="prev" title="Managing the Grid Hierarchy" href="ManagingGridHierarchy_Chapter.html" /> 
+    <link rel="prev" title="Gridding and Load Balancing" href="ManagingGridHierarchy_Chapter.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,9 +87,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs.html">Run-time Inputs</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Managing the Grid Hierarchy</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Grid Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DualGrid.html">Dual Grid Approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LoadBalancing.html">Load Balancing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
@@ -141,7 +142,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ManagingGridHierarchy_Chapter.html">Managing the Grid Hierarchy</a> &raquo;</li>
+          <li><a href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a> &raquo;</li>
         
       <li>Grid Creation</li>
     
@@ -163,12 +164,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="grid-creation">
-<span id="ss-grid-creation"></span><h1>Grid Creation<a class="headerlink" href="#grid-creation" title="Permalink to this headline">¶</a></h1>
-<p>To run MFiX-Exa you must specifiy the domain size by specifying <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">n_cell</span></span></code> –
-this is the number of cells spanning the domain in each coordinate direction at the coarsest level (level 0).</p>
+<span id="sec-grid-creation"></span><h1>Grid Creation<a class="headerlink" href="#grid-creation" title="Permalink to this headline">¶</a></h1>
+<p>To run MFiX-Exa you must specify <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">n_cell</span></span></code> in the inputs file –
+this is the number of cells spanning the domain in each coordinate direction at level 0.</p>
 <p>Users often specify <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> as well. The default load balancing algorithm then divides the
 domain in every direction so that each grid is no longer than <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> in that direction.
-If not specified by the user, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> defaults to 32 in 3D (in each coordinate direction).</p>
+If not specified by the user, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> defaults to 128 in 2D and 32 in 3D (in each coordinate direction).</p>
 <p>Another popular input is <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code>.  The value of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code>
 constrains grid creation in that in that each grid must be divisible by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code>.
 Note that both the domain (at each level) and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> must be divisible by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code>
@@ -194,18 +195,11 @@ integers as there are levels, the final value will be used for the remaining lev
 then <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size_x</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size_y</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size_z</span></span></code>
 (or <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor_x</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor_y</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor_z</span></span></code>) must be used.
 If you don’t specify as many integers as there are levels, the final value will be used for the remaining levels.</li>
-</ul>
-</div></blockquote>
-<p>Additional notes:</p>
-<blockquote>
-<div><ul class="simple">
-<li>to create identical grids of a specific size, e.g. of length <em>m</em> in each direction,
-then set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> = <em>m</em> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code> = <em>m</em>.</li>
 <li>note that <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> is just an upper bound; with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">n_cell</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">48</span></span></code>
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">32</span></span></code>, we will typically have one grid of length 32 and one of length 16.</li>
 </ul>
 </div></blockquote>
-<p>The grid creation proceeds as follows:</p>
+<p>The grid creation process at level 0 proceeds as follows (if not using the KD-tree approach):</p>
 <ol class="arabic simple">
 <li>The domain is initially defined by a single grid of size <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">n_cell</span></span></code>.</li>
 <li>If <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">n_cell</span></span></code> is greater than <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max_grid_size</span></span></code> then the grids are subdivided until
@@ -215,9 +209,6 @@ is satisfied during this process.</li>
 <li>Next, if <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">refine_grid_layout</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name builtin"><span class="pre">true</span></span></code> and there are more processors than grids
 at this level, then the grids at this level are further divided until Ngrids &gt;= Nprocs
 (unless doing so would violate the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code> criterion).</li>
-<li>The creation of grids at higher levels begins by tagging cells at the coarser level and follows
-the Berger-Rigoutsis clustering algorithm with the additional constraint of satisfying
-the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code> criterion.</li>
 </ol>
 </div>
 
@@ -232,7 +223,7 @@ the <code class="code cpp c++ docutils literal notranslate"><span class="name"><
         <a href="DualGrid.html" class="btn btn-neutral float-right" title="Dual Grid Approach" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ManagingGridHierarchy_Chapter.html" class="btn btn-neutral float-left" title="Managing the Grid Hierarchy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ManagingGridHierarchy_Chapter.html" class="btn btn-neutral float-left" title="Gridding and Load Balancing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
