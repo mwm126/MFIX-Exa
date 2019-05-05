@@ -110,8 +110,6 @@ The following inputs must be preceded by "mfix."
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
 | explicit_diffusion | Should we use explicit or implicit diffusion?                         |   Int       |    0      |
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
-| eb_ho_dirichlet    | Should we use ray tracing to compute dphi/dn for Dirichlet EB faces?  |   Int       |    0      |
-+--------------------+-----------------------------------------------------------------------+-------------+-----------+
 | particle_init_type | How do we initialize the particles?   "Auto" vs AsciiFile             |   String    | AsciiFile |
 +--------------------+-----------------------------------------------------------------------+-------------+-----------+
 | do_initial_proj    | Should we do the initial projection?                                  |    Bool     |  True     |
