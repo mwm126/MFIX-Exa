@@ -27,6 +27,7 @@ the master branch at the beginning of each month.
    Fluids_Chapter
    Particles_Chapter
    EB
+   Debugging
 
 Notice
 ------
