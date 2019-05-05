@@ -15,7 +15,10 @@ Computational load balancing is based on several different steps:
    i.e. defining the :cpp:`DistributionMapping` with which :cpp:`MultiFabs` at that level will be built.
    How we do this depends on what strategy we specify and what work estimate we use 
 
+We note that we can load balance the mesh and particle data separately; see :ref:`dual_grid`
+
 .. toctree::
    :maxdepth: 1
 
-   ManagingGridHierarchy
+   GridCreation
+   DualGrid
