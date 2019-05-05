@@ -65,7 +65,7 @@ The grid creation proceeds as follows:
 
 #. Next, if :cpp:`refine_grid_layout = true` and there are more processors than grids
    at this level, then the grids at this level are further divided until Ngrids >= Nprocs
-   (unless doing so would violate the:cpp:`blocking_factor` criterion).
+   (unless doing so would violate the :cpp:`blocking_factor` criterion).
 
 #. The creation of grids at higher levels begins by tagging cells at the coarser level and follows
    the Berger-Rigoutsis clustering algorithm with the additional constraint of satisfying

@@ -212,7 +212,7 @@ each grid is no longer than  <code class="code cpp c++ docutils literal notransl
 is satisfied during this process.</li>
 <li>Next, if <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">refine_grid_layout</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name builtin"><span class="pre">true</span></span></code> and there are more processors than grids
 at this level, then the grids at this level are further divided until Ngrids &gt;= Nprocs
-(unless doing so would violate the:cpp:<cite>blocking_factor</cite> criterion).</li>
+(unless doing so would violate the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code> criterion).</li>
 <li>The creation of grids at higher levels begins by tagging cells at the coarser level and follows
 the Berger-Rigoutsis clustering algorithm with the additional constraint of satisfying
 the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">blocking_factor</span></span></code> criterion.</li>
