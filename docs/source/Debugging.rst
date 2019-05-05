@@ -1,3 +1,6 @@
+.. role:: cpp(code)
+   :language: c++
+
 .. _Chap:Debugging:
 
 Debugging
