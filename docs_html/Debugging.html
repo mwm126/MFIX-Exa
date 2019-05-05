@@ -159,20 +159,20 @@
 <span id="chap-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
 <p>Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.</p>
-<p>Compiling in debug mode (e.g., <a href="#id1"><span class="problematic" id="id2">:cpp:`make DEBUG=TRUE`</span></a>) and running with
-<a href="#id3"><span class="problematic" id="id4">:cpp:`amrex.fpe_trap_invalid=1`</span></a> in the inputs file can be helpful.
+<p>Compiling in debug mode (e.g., <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">make</span></span> <span class="name"><span class="pre">DEBUG</span></span><span class="operator"><span class="pre">=</span></span><span class="name"><span class="pre">TRUE</span></span></code>) and running with
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fpe_trap_invalid</span></span><span class="operator"><span class="pre">=</span></span><span class="literal number integer"><span class="pre">1</span></span></code> in the inputs file can be helpful.
 In debug mode, many compiler debugging flags are turned on and all
-<a href="#id5"><span class="problematic" id="id6">:cpp:`MultiFab`s are initialized to signaling NaNs.  The
-:cpp:`amrex.fpe_trap_invalid`</span></a> parameter will result in backtrace files
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="error"><span class="pre">`</span></span><span class="name"><span class="pre">s</span></span> <span class="name"><span class="pre">are</span></span> <span class="name"><span class="pre">initialized</span></span> <span class="name"><span class="pre">to</span></span> <span class="name"><span class="pre">signaling</span></span> <span class="name"><span class="pre">NaNs</span></span><span class="punctuation"><span class="pre">.</span></span>&#160; <span class="name label"><span class="pre">The</span></span>
+<span class="punctuation"><span class="pre">:</span></span><span class="name label"><span class="pre">cpp</span></span><span class="punctuation"><span class="pre">:</span></span><span class="error"><span class="pre">`</span></span><span class="name"><span class="pre">amrex</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fpe_trap_invalid</span></span></code> parameter will result in backtrace files
 when a floating point exception occurs.  One can then examine those
 files to track down the origin of the issue.</p>
-<p>Writing a <a href="#id7"><span class="problematic" id="id8">:cpp:`MultiFab`</span></a> to disk with</p>
+<p>Writing a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> to disk with</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span> <span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>and examining it with <code class="docutils literal notranslate"><span class="pre">Amrvis</span></code> (section <span class="xref std std-ref">sec:amrvis</span> in the AMReX documeintation)
 can be helpful as well.</p>
-<p>You can also use the <a href="#id9"><span class="problematic" id="id10">:cpp:`print_state`</span></a> routine:</p>
+<p>You can also use the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">print_state</span></span></code> routine:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
