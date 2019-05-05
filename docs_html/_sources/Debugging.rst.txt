@@ -9,10 +9,11 @@ Debugging
 Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.
 
-Compiling in debug mode (e.g., :cpp:`make DEBUG=TRUE`) and running with
+Compiling in debug mode (e.g., :cpp:`make DEBUG=TRUE` for gmake users;
+:cpp:`cmake -DDEBUG` for cmake users) and running with
 :cpp:`amrex.fpe_trap_invalid=1` in the inputs file can be helpful.
 In debug mode, many compiler debugging flags are turned on and all
-:cpp:`MultiFab`s are initialized to signaling NaNs.  The
+:cpp:`MultiFab` s are initialized to signaling NaNs.  The
 :cpp:`amrex.fpe_trap_invalid` parameter will result in backtrace files
 when a floating point exception occurs.  One can then examine those
 files to track down the origin of the issue.
