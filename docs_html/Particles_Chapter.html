@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started &mdash; MFiX-Exa  documentation</title>
+  <title>Particles &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Directory overview" href="Structure.html" />
-    <link rel="prev" title="MFiX-Exa Introduction" href="Introduction.html" /> 
+    <link rel="next" title="Particle Basics" href="ParticleBasics.html" />
+    <link rel="prev" title="Creating the MAC velocities" href="BuildingMacVelocities.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,18 +85,17 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Structure.html">Directory overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Managing the Grid Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Particles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParticleFluid.html">Particle/Fluid Interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParticleWalls.html">Particle/Wall Interactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ParticlesOnGpus.html">Particles on GPUs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
 </ul>
 
@@ -143,13 +142,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Getting Started</li>
+      <li>Particles</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/GettingStarted.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Particles_Chapter.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -162,15 +161,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-started">
-<span id="chap-gettingstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="particles">
+<span id="chap-particles"></span><h1>Particles<a class="headerlink" href="#particles" title="Permalink to this headline">¶</a></h1>
+<p>MFiX-Exa supports solid particles which are immersed in the fluid. In the
+future particles can be implemented using the immersed-boundary method (and
+hence these IBM-particles can support non-spherical shapes, and special
+hydrodynamical and chemical interactions). But for now, particles are
+spherical, with approximate fluid-particle interactions. The main consequence
+of this approximation is that particles should not be bigger than the fluid
+grid resolution.</p>
+<p>Particles interact with container walls (implemented using AMReX’s
+Embedded-Boundary functionality) using a level-set constructed from the signed
+closest distance function at the beginning of the simulation.</p>
+<p>Refer to the subsequent sections for details on the implementation of the
+particle-particle, particle-fluid, and particle-wall interactions.</p>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Structure.html">Directory overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParticleBasics.html">Particle Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParticleFluid.html">Particle/Fluid Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParticleWalls.html">Particle/Wall Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ParticlesOnGpus.html">Particles on GPUs</a></li>
 </ul>
 </div>
 </div>
@@ -183,10 +194,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Structure.html" class="btn btn-neutral float-right" title="Directory overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ParticleBasics.html" class="btn btn-neutral float-right" title="Particle Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Introduction.html" class="btn btn-neutral float-left" title="MFiX-Exa Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="BuildingMacVelocities.html" class="btn btn-neutral float-left" title="Creating the MAC velocities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
