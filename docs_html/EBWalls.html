@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Debugging" href="Debugging.html" />
     <link rel="prev" title="Embedded Boundaries" href="EB.html" /> 
 </head>
 
@@ -102,11 +103,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#the-level-set-function">The Level-Set Function</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#special-cases-involving-level-sets">Special Cases Involving Level-Sets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fluid-reconstruction">Fluid Reconstruction</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 </ul>
 
             
@@ -484,70 +485,6 @@ would be the case for all other geometries). But out of an intersection with
 all planar surfaces. This has the advantage of correctly describing corners.</li>
 </ol>
 </div>
-<div class="section" id="fluid-reconstruction">
-<h2>Fluid Reconstruction<a class="headerlink" href="#fluid-reconstruction" title="Permalink to this headline">¶</a></h2>
-<p>The reconstruction algorithm is called whenever a cell in the particle’s
-neighbor stencil is covered. For no-slip walls, the reconstructed velocity in
-that cell is linearly extrapolated from the nearest “valid” fluid cell and 0 at
-the wall. This way the fluid velocity is consistent with the no-slip boundary
-condition along the normal to the EB. For a planar EB wall, the following would
-be enough (the level-set is called <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">phi</span></span></code> here):</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">is_covered_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>                         <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="p">&amp;</span>
-<span class="p">&amp;</span>   <span class="nb">minval</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span> <span class="o">&lt;=</span> <span class="n">phi_threshold</span> <span class="p">)</span> <span class="k">then</span>
-
-    <span class="c">! Coordinates of cell center</span>
-    <span class="n">x_cc</span> <span class="o">=</span> <span class="p">(</span> <span class="kt">real</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">],</span><span class="n">rt</span><span class="p">)</span> <span class="o">+</span> <span class="n">half</span> <span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
-
-    <span class="c">! Get phi at cell center</span>
-    <span class="k">call </span><span class="n">amrex_eb_interp_levelset</span><span class="p">(</span><span class="n">x_cc</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">phi_cc</span><span class="p">)</span>
-
-    <span class="c">! Get normal at cell center</span>
-    <span class="k">call </span><span class="n">amrex_eb_normal_levelset</span><span class="p">(</span><span class="n">x_cc</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">norm_cc</span><span class="p">)</span>
-
-    <span class="c">! Initial guess of interpolation point:</span>
-    <span class="n">x_i</span>  <span class="o">=</span> <span class="n">x_cc</span> <span class="o">+</span> <span class="n">two</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">phi_cc</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_cc</span>
-
-    <span class="c">! Get phi at interpolation point</span>
-    <span class="k">call </span><span class="n">amrex_eb_interp_levelset</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">phi_i</span><span class="p">)</span>
-
-    <span class="c">! Compute interpolated velocity at x_i</span>
-    <span class="n">vel_i</span> <span class="o">=</span> <span class="n">trilinear_interp</span><span class="p">(</span><span class="n">vel_in</span><span class="p">,</span> <span class="n">vilo</span><span class="p">,</span> <span class="n">vihi</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
-
-    <span class="c">! Since interpolation point is only slightly shifted with respect to</span>
-    <span class="c">! the mirror point, we approximate vel at mirror point with vel_i and</span>
-    <span class="c">! then use linear interpolation between x_m and x_c</span>
-
-    <span class="n">vel_out</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,:)</span> <span class="o">=</span> <span class="n">vel_i</span> <span class="o">*</span> <span class="n">phi_cc</span> <span class="o">/</span> <span class="n">phi_i</span>
-</pre></div>
-</div>
-<p>If the EB represents a curved wall, the initial normal is not a good estimate
-for the normal at the closest point on the wall. Therefore we start a the
-covered cell, and “walking” along the EB normal on cell at a time (computed from
-the level-set function), until the neighbor stencil does not include covered
-cells:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">! Find location of interpolation point by iteration if necessary</span>
-<span class="n">iter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">find_xi</span><span class="p">:</span> <span class="k">do</span>
-
-<span class="k">    if</span> <span class="p">(</span> <span class="n">interp_stencil_is_valid</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">flo</span><span class="p">,</span> <span class="n">fhi</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit </span><span class="n">find_xi</span>
-
-    <span class="c">! Get normal at interpolation point</span>
-    <span class="k">call </span><span class="n">amrex_eb_normal_levelset</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n_refine</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phlo</span><span class="p">,</span> <span class="n">phhi</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">norm_i</span><span class="p">)</span>
-
-    <span class="n">x_i</span> <span class="o">=</span> <span class="n">x_i</span> <span class="o">+</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span> <span class="o">*</span> <span class="n">norm_i</span>
-
-    <span class="n">iter</span> <span class="o">=</span> <span class="n">iter</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="k">if</span> <span class="p">(</span> <span class="n">iter</span> <span class="o">&gt;</span> <span class="n">max_iter</span> <span class="p">)</span> <span class="p">&amp;</span>
-        <span class="k">call </span><span class="n">amrex_abort</span><span class="p">(</span><span class="s2">&quot;reconstruct_velocity(): cannot find interpolation point&quot;</span><span class="p">)</span>
-
-<span class="k">end do </span><span class="n">find_xi</span>
-</pre></div>
-</div>
-<p>Note that the level-set here needs to be at the same resolution as the fluid.
-This is the reason why we need to keep the coarse level <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">level_sets</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">]</span></span></code>
-even when running in single-level mode.</p>
-</div>
 </div>
 
 
@@ -557,6 +494,8 @@ even when running in single-level mode.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Debugging.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="EB.html" class="btn btn-neutral float-left" title="Embedded Boundaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

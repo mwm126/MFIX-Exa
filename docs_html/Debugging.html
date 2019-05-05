@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; MFiX-Exa  documentation</title>
+  <title>Debugging &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -26,7 +26,6 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -37,7 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Constructing Embedded Boundaries in MFiX-Exa" href="EBWalls.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -64,7 +64,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -82,7 +82,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs.html">Run-time Inputs</a></li>
@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Debugging</a></li>
 </ul>
 
             
@@ -136,12 +136,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Debugging</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/Debugging.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -153,24 +155,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="debugging">
+<span id="chap-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
+<p>Debugging is an art.  Everyone has their own favorite method.  Here we
+offer a few tips we have found to be useful.</p>
+<p>Compiling in debug mode (e.g., <a href="#id1"><span class="problematic" id="id2">:cpp:`make DEBUG=TRUE`</span></a>) and running with
+<a href="#id3"><span class="problematic" id="id4">:cpp:`amrex.fpe_trap_invalid=1`</span></a> in the inputs file can be helpful.
+In debug mode, many compiler debugging flags are turned on and all
+<a href="#id5"><span class="problematic" id="id6">:cpp:`MultiFab`s are initialized to signaling NaNs.  The
+:cpp:`amrex.fpe_trap_invalid`</span></a> parameter will result in backtrace files
+when a floating point exception occurs.  One can then examine those
+files to track down the origin of the issue.</p>
+<p>Writing a <a href="#id7"><span class="problematic" id="id8">:cpp:`MultiFab`</span></a> to disk with</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span> <span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>and examining it with <code class="docutils literal notranslate"><span class="pre">Amrvis</span></code> (section <span class="xref std std-ref">sec:amrvis</span> in the AMReX documeintation)
+can be helpful as well.</p>
+<p>You can also use the <a href="#id9"><span class="problematic" id="id10">:cpp:`print_state`</span></a> routine:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>which outputs the data for a single cell.</p>
+<p>Valgrind is another useful debugging tool.  Note that for runs using
+more than one MPI process, one can tell valgrind to output to different
+files for different processes.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 valgrind --leak-check=yes --track-origins=yes --log-file=vallog.%p ./mfix.exe ...</span>
+</pre></div>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="EBWalls.html" class="btn btn-neutral float-left" title="Constructing Embedded Boundaries in MFiX-Exa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -203,14 +229,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
