@@ -7,6 +7,7 @@ The following regression tests are run nightly with MFiX-Exa.   The plotfiles ge
 are compared with the benchmark plotfiles using the AMReX :cpp:`fcompare` utility to compare the mesh data
 and :cpp:`particle_compare" to compare the particle data.
 
+The results of these tests can be found at https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/
 
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 |                      | nx | ny | nz | bc_x  | bc_y    | bc_z | EB   | Npart  | Ngrids | Nprocs | What does this test?
