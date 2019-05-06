@@ -61,24 +61,24 @@ interior to the domain boundaries; they also use drag type "BVK2".
 |                   | nz | bc_z  |      |        |    |    |                      |
 +===================+====+=======+======+========+====+====+======================+
 | BENCH05           | 40 | MIPO  | Cyl  | 7949   | 4  | 4  | EB in parallel       |
-| Size0008          | 10 |   IG  |      | Auto   |    |    |                      |
-|                   | 10 |   IG  |      |        |    |    |                      |
+| Size0008          | 10 | IG    |      | Auto   |    |    |                      |
+|                   | 10 | IG    |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH05           | 40 | MIPO  | Cyl  | 7968   | 4  | 1  | EB in serial         |
-| Size0008          | 10 |   IG  |      | Auto   |    |    |                      |
-| serial            | 10 |   IG  |      |        |    |    |                      |
+| Size0008          | 10 | IG    |      | Auto   |    |    |                      |
+| serial            | 10 | IG    |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH05           | 40 | MIPO  | Cyl  | 157106 | 16 | 4  | Regrid & dual grid   |
-| Size0008          | 40 |   IG  |      |  Auto  |    |    |                      |
-| wide              | 40 |   IG  |      |        |    |    |                      |
+| Size0008          | 40 | IG    |      | Auto   |    |    |                      |
+| wide              | 40 | IG    |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH06           | 40 |  Per  | Cyl  | 627    | 4  | 1  | EB                   |
-| Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
-| serial            | 10 |   IG  |      |        |    |    | serial               |
+| BENCH06           | 40 | Per   | Cyl  | 627    | 4  | 1  | EB                   |
+| Size0008          | 10 | IG    |      | Auto   |    |    | with periodic        |
+| serial            | 10 | IG    |      |        |    |    | serial               |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH06           | 40 |  Per  | Cyl  | 624    | 4  | 4  | EB                   |
-| Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
-|                   | 10 |   IG  |      |        |    |    | parallel             |
+| BENCH06           | 40 | Per   | Cyl  | 624    | 4  | 4  | EB                   |
+| Size0008          | 10 | IG    |      | Auto   |    |    | with periodic        |
+|                   | 10 | IG    |      |        |    |    | parallel             |
 +-------------------+----+-------+------+--------+----+-----+---------------------+
 
 
