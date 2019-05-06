@@ -1,10 +1,10 @@
 .. _Chap:Inputs:
 
-Monitors/User-defined Spatial Averaging
-=======================================
+Monitors
+========
 
 The following inputs must be preceded by "amr" and control whether to compute
-spatial averages and how often to output the results. 
+monitors, i.e., spatial averages, and how often to output the results. 
 n is the number of monitors specified in avg_int. 
 
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -36,34 +36,6 @@ n is the number of monitors specified in avg_int.
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | avg_region_z_t   | Upper bound of averaging region in z-direction                        |  n*Real     | None      |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-
-
-
-.. comment::
-
-  amr.avg_int = 10
-  amr.avg_file = "uio"
-
-  amr.avg_vel_p =        1       0        0
-  amr.avg_p_g   =        0       1        1
-  amr.avg_ep_g  =        0       0        0
-  amr.avg_vel_g =        0       0        0
-
-  amr.avg_region_x_w =   0.000   0.0000   0.0002
-  amr.avg_region_x_e =   0.008   0.0000   0.0002
-  amr.avg_region_y_s =   0.000   0.000    0.000
-  amr.avg_region_y_n =   0.002   0.002    0.002
-  amr.avg_region_z_b =   0.000   0.000    0.000
-  amr.avg_region_z_t =   0.002   0.002    0.002
-
-
-
-
-
-
-
-
-
 
 
 
