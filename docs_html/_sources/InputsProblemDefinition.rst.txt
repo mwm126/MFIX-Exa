@@ -8,7 +8,7 @@ The following inputs must be preceded by "amr."
 +===================+=======================================================================+=============+===========+
 | max_level         | Maximum level of refinement allowed (0 when single-level)             |    Int      | None      |
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| n_cell            | Number of cells at level 0 in each coordinate direction               |    Int      | None      |
+| n_cell            | Number of cells at level 0 in each coordinate direction               | Int Int Int | None      |
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
 | max_grid_size_x   | Maximum number of cells at level 0 in each grid in x-direction        |    Int      | 32        |
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
