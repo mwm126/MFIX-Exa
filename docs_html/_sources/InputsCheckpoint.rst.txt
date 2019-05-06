@@ -13,6 +13,6 @@ The following inputs must be preceded by "amr" and control checkpoint/restart.
 | check_int        | Frequency of checkpoint output;                                       |    Int      | -1        |
 |                  | if -1 then no checkpoints will be written                             |             |           |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-| chk_file         | Prefix to use for checkpoint output                                   |  String     | chk       |
+| check_file       | Prefix to use for checkpoint output                                   |  String     | chk       |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 

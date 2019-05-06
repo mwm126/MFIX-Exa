@@ -171,6 +171,49 @@
             
   <div class="section" id="initialization">
 <span id="chap-inputs"></span><h1>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h1>
+<p>The following inputs must be preceded by “amr” and determine how we initialize a calculation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="59%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>input_deck</td>
+<td>Read physical data from this file</td>
+<td>String</td>
+<td>mfix.dat</td>
+</tr>
+<tr class="row-odd"><td>restart</td>
+<td>If set, then restart from this file rather than from scratch</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>repl_x</td>
+<td>Replicate initial data by this factor in the x-direction</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>repl_y</td>
+<td>Replicate initial data by this factor in the y-direction</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>repl_z</td>
+<td>Replicate initial data by this factor in the z-direction</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 <p>The following inputs must be preceded by “mfix” and determine how we initialize a calculation:</p>
 <table border="1" class="docutils">
 <colgroup>
