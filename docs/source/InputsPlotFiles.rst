@@ -9,8 +9,8 @@ as which variables will be written out.
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                  | Description                                                           |   Type      | Default   |
 +==================+=======================================================================+=============+===========+
-| plot_int         | Frequency of plotfile output;                                         |    Int      |  -1      |
-|                  | if -1 then no plotfiles will be written                               |             |          |
+| plot_int         | Frequency of plotfile output;                                         |    Int      |  -1       |
+|                  | if -1 then no plotfiles will be written                               |             |           |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plot_file        | Prefix to use for plotfile output                                     |  String     | plt       |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -27,8 +27,6 @@ as which variables will be written out.
 | plt_mu_g         | Save fluid viscosity to plot file                                     |    Int      | 0         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plt_diveu        | Save div(ep_g . u) to plot file                                       |    Int      | 0         |
-+------------------+-----------------------------------------------------------------------+-------------+-----------+
-| plt_volfrac      | Save Eulerian grid volume fraction (from cut cells) to plot file      |    Int      | 0         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plt_volfrac      | Save Eulerian grid volume fraction (from cut cells) to plot file      |    Int      | 0         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
