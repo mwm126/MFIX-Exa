@@ -166,13 +166,11 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
-<col width="4%" />
-<col width="4%" />
-<col width="4%" />
+<col width="9%" />
 <col width="6%" />
 <col width="8%" />
-<col width="5%" />
-<col width="5%" />
+<col width="6%" />
+<col width="6%" />
 <col width="7%" />
 <col width="7%" />
 <col width="7%" />
@@ -181,9 +179,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test Name</th>
-<th class="head">nx</th>
-<th class="head">ny</th>
-<th class="head">nz</th>
+<th class="head">nx/ny/nz</th>
 <th class="head">bc_x</th>
 <th class="head">bc_y</th>
 <th class="head">bc_z</th>
@@ -196,9 +192,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>BENCH01-Size0001</td>
-<td>32</td>
-<td>32</td>
-<td>32</td>
+<td>32/32/32</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -213,9 +207,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>replicate</dd>
 </dl>
 </td>
-<td>64</td>
-<td>64</td>
-<td>64</td>
+<td>64/64/64</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -230,9 +222,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>restart</dd>
 </dl>
 </td>
-<td>32</td>
-<td>32</td>
-<td>32</td>
+<td>32/32/32</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -243,9 +233,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td colspan="2">Restart</td>
 </tr>
 <tr class="row-odd"><td>BENCH02-Size0001</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
+<td>10/10/10</td>
 <td>Per</td>
 <td>NSW</td>
 <td>Per</td>
@@ -256,9 +244,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td colspan="2">NSW with periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH03-Size0001</td>
-<td>4</td>
-<td>50</td>
-<td>4</td>
+<td>4/50/4</td>
 <td>Per</td>
 <td>MI/PO</td>
 <td>Per</td>
@@ -269,9 +255,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td colspan="2">MI/PO with periodic</td>
 </tr>
 <tr class="row-odd"><td>BENCH04-Size0001</td>
-<td>4</td>
-<td>50</td>
-<td>4</td>
+<td>4/50/4</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -282,9 +266,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td colspan="2">Triply periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH05-Size0008</td>
-<td>40</td>
-<td>10</td>
-<td>10</td>
+<td>40/10/10</td>
 <td>MI/PI</td>
 <td>IG</td>
 <td>IG</td>
@@ -300,9 +282,11 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>serial</dd>
 </dl>
 </td>
-<td>40</td>
-<td>10</td>
-<td>10</td>
+<td><dl class="first last docutils">
+<dt>40/10/10</dt>
+<dd>j</dd>
+</dl>
+</td>
 <td>MI/PI</td>
 <td>IG</td>
 <td>IG</td>
@@ -318,9 +302,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>wide</dd>
 </dl>
 </td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
+<td>40/40/40</td>
 <td>MI/PI</td>
 <td>IG</td>
 <td>IG</td>
@@ -336,9 +318,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>serial</dd>
 </dl>
 </td>
-<td>40</td>
-<td>10</td>
-<td>10</td>
+<td>40/10/10</td>
 <td>Per</td>
 <td>IG</td>
 <td>IG</td>
@@ -351,9 +331,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 with periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH06-Size0008</td>
-<td>40</td>
-<td>10</td>
-<td>10</td>
+<td>40/10/10</td>
 <td>Per</td>
 <td>IG</td>
 <td>IG</td>
@@ -366,9 +344,7 @@ with periodic</td>
 with periodic</td>
 </tr>
 <tr class="row-odd"><td>DEM01-x_single</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
+<td>4/4/4</td>
 <td>NSW</td>
 <td>NSW</td>
 <td>NSW</td>
@@ -379,9 +355,7 @@ with periodic</td>
 <td colspan="2">Particle  only</td>
 </tr>
 <tr class="row-even"><td>DEM03-z_single</td>
-<td>5</td>
-<td>5</td>
-<td>2</td>
+<td>5/5/2</td>
 <td>Per</td>
 <td>Per</td>
 <td>NSW</td>
@@ -392,9 +366,7 @@ with periodic</td>
 <td colspan="2">Particles only</td>
 </tr>
 <tr class="row-odd"><td>DEM04-z_single</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
+<td>4/4/4</td>
 <td>NSW</td>
 <td>Per</td>
 <td>Per</td>
@@ -409,9 +381,7 @@ with periodic</td>
 <dd>LSD</dd>
 </dl>
 </td>
-<td>5</td>
-<td>2</td>
-<td>5</td>
+<td>5/2/5</td>
 <td>Per</td>
 <td>NSW</td>
 <td>Per</td>
@@ -422,9 +392,7 @@ with periodic</td>
 <td colspan="2">Particle  only</td>
 </tr>
 <tr class="row-odd"><td>DEM06-z_multiple</td>
-<td>5</td>
-<td>5</td>
-<td>50</td>
+<td>5/5/50</td>
 <td>Per</td>
 <td>Per</td>
 <td>NSW</td>
