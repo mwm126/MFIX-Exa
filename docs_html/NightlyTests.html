@@ -163,22 +163,25 @@
 are compared with the benchmark plotfiles using the AMReX <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fcompare</span></span></code> utility to compare the mesh data
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">particle_compare</span></span></code> to compare the particle data.</p>
 <p>The results of these tests can be found at <a class="reference external" href="https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/">https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/</a></p>
+<p>Below Ng = number of grids, Np = number of MPI ranks.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="10%" />
-<col width="7%" />
-<col width="9%" />
-<col width="6%" />
-<col width="6%" />
+<col width="20%" />
+<col width="4%" />
 <col width="8%" />
+<col width="10%" />
+<col width="6%" />
+<col width="6%" />
+<col width="9%" />
 <col width="4%" />
 <col width="4%" />
-<col width="26%" />
+<col width="28%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test</th>
-<th class="head">nx/ny/nz</th>
+<th class="head">nx
+ny
+nz</th>
 <th class="head">bc_x</th>
 <th class="head">bc_y</th>
 <th class="head">bc_z</th>
@@ -191,7 +194,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>BENCH01-Size0001</td>
-<td>32/32/32</td>
+<td>32
+32
+32</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -206,7 +211,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>replicate</dd>
 </dl>
 </td>
-<td>64/64/64</td>
+<td>64
+64
+64</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -221,7 +228,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>restart</dd>
 </dl>
 </td>
-<td>32/32/32</td>
+<td>32
+32
+32</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -232,7 +241,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>Restart</td>
 </tr>
 <tr class="row-odd"><td>BENCH02-Size0001</td>
-<td>10/10/10</td>
+<td>10
+10
+10</td>
 <td>Per</td>
 <td>NSW</td>
 <td>Per</td>
@@ -243,7 +254,13 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>NSW with periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH03-Size0001</td>
-<td>4/50/4</td>
+<td><blockquote class="first">
+<div>4</div></blockquote>
+<dl class="last docutils">
+<dt>50</dt>
+<dd>4</dd>
+</dl>
+</td>
 <td>Per</td>
 <td>MI/PO</td>
 <td>Per</td>
@@ -254,7 +271,13 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>MI/PO with periodic</td>
 </tr>
 <tr class="row-odd"><td>BENCH04-Size0001</td>
-<td>4/50/4</td>
+<td><blockquote class="first">
+<div>4</div></blockquote>
+<dl class="last docutils">
+<dt>50</dt>
+<dd>4</dd>
+</dl>
+</td>
 <td>Per</td>
 <td>Per</td>
 <td>Per</td>
@@ -265,13 +288,18 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>Triply periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH05-Size0008</td>
-<td>40/10/10</td>
+<td>40
+10
+10</td>
 <td>MI/PI</td>
 <td>IG</td>
 <td>IG</td>
 <td>Cyl</td>
-<td>7949
-(Auto)</td>
+<td><p class="first">7949
+(Auto)</p>
+<blockquote class="last">
+<div>)</div></blockquote>
+</td>
 <td>4</td>
 <td>4</td>
 <td>EB – parallel</td>
@@ -281,11 +309,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>serial</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>40/10/10</dt>
-<dd>j</dd>
-</dl>
-</td>
+<td>40
+10
+10</td>
 <td>MI/PI</td>
 <td>IG</td>
 <td>IG</td>
@@ -301,7 +327,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>wide</dd>
 </dl>
 </td>
-<td>40/40/40</td>
+<td>40
+40
+40</td>
 <td>MI/PI</td>
 <td>IG</td>
 <td>IG</td>
@@ -317,7 +345,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <dd>serial</dd>
 </dl>
 </td>
-<td>40/10/10</td>
+<td>40
+10
+10</td>
 <td>Per</td>
 <td>IG</td>
 <td>IG</td>
@@ -330,7 +360,9 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 with periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH06-Size0008</td>
-<td>40/10/10</td>
+<td>40
+10
+10</td>
 <td>Per</td>
 <td>IG</td>
 <td>IG</td>
@@ -343,7 +375,9 @@ with periodic</td>
 with periodic</td>
 </tr>
 <tr class="row-odd"><td>DEM01-x_single</td>
-<td>4/4/4</td>
+<td>4
+4
+4</td>
 <td>NSW</td>
 <td>NSW</td>
 <td>NSW</td>
@@ -354,7 +388,9 @@ with periodic</td>
 <td>Particle  only</td>
 </tr>
 <tr class="row-even"><td>DEM03-z_single</td>
-<td>5/5/2</td>
+<td>5
+5
+2</td>
 <td>Per</td>
 <td>Per</td>
 <td>NSW</td>
@@ -365,7 +401,9 @@ with periodic</td>
 <td>Particles only</td>
 </tr>
 <tr class="row-odd"><td>DEM04-z_single</td>
-<td>4/4/4</td>
+<td>4
+4
+4</td>
 <td>NSW</td>
 <td>Per</td>
 <td>Per</td>
@@ -380,7 +418,9 @@ with periodic</td>
 <dd>LSD</dd>
 </dl>
 </td>
-<td>5/2/5</td>
+<td>5
+2
+5</td>
 <td>Per</td>
 <td>NSW</td>
 <td>Per</td>
@@ -391,7 +431,11 @@ with periodic</td>
 <td>Particle  only</td>
 </tr>
 <tr class="row-odd"><td>DEM06-z_multiple</td>
-<td>5/5/50</td>
+<td><blockquote class="first">
+<div>5
+5</div></blockquote>
+<p class="last">50</p>
+</td>
 <td>Per</td>
 <td>Per</td>
 <td>NSW</td>
