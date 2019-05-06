@@ -1,4 +1,4 @@
-.. _Chap:Inputs:
+.. _Chap:InputsCheckpoint:
 
 Checkpoint/Restart
 ==================

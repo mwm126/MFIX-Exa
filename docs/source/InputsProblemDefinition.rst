@@ -10,18 +10,6 @@ The following inputs must be preceded by "amr."
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
 | n_cell            | Number of cells at level 0 in each coordinate direction               | Int Int Int | None      |
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_x   | Maximum number of cells at level 0 in each grid in x-direction        |    Int      | 32        |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_y   | Maximum number of cells at level 0 in each grid in y-direction        |    Int      | 32        |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_z   | Maximum number of cells at level 0 in each grid in z-direction        |    Int      | 32        |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| blocking_factor_x | Each grid must be divisible by blocking_factor_x in x-direction       |    Int      |  8        |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| blocking_factor_y | Each grid must be divisible by blocking_factor_y in y-direction       |    Int      |  8        |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| blocking_factor_z | Each grid must be divisible by blocking_factor_z in z-direction       |    Int      |  8        |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 The following inputs must be preceded by "geometry."
 
