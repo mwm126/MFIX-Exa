@@ -8,9 +8,9 @@ The following inputs must be preceded by "amr."
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                  | Description                                                           |   Type      | Default   |
 +==================+=======================================================================+=============+===========+
-| max_step         | Maximum number of time steps to take                                  |    Int      | None      |
+| max_step         | Maximum number of time steps to take                                  |    Int      |  -1       |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-| stop_time        | Maximum time to reach                                                 |    Real     | None      |
+| stop_time        | Maximum time to reach                                                 |    Real     | -1.0      |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 The following inputs must be preceded by "mfix."
