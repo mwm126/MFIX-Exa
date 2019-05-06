@@ -165,29 +165,28 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <p>The results of these tests can be found at <a class="reference external" href="https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/">https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/</a></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
+<col width="19%" />
+<col width="10%" />
+<col width="7%" />
 <col width="9%" />
 <col width="6%" />
+<col width="6%" />
 <col width="8%" />
-<col width="6%" />
-<col width="6%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="12%" />
-<col width="11%" />
+<col width="4%" />
+<col width="4%" />
+<col width="26%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Test Name</th>
+<tr class="row-odd"><th class="head">Test</th>
 <th class="head">nx/ny/nz</th>
 <th class="head">bc_x</th>
 <th class="head">bc_y</th>
 <th class="head">bc_z</th>
 <th class="head">EB</th>
 <th class="head">Npart</th>
-<th class="head">Ngrids</th>
-<th class="head">Nprocs</th>
-<th class="head" colspan="2">What does this test?</th>
+<th class="head">Ng</th>
+<th class="head">Np</th>
+<th class="head">What does this test?</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -200,7 +199,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>5005</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">Triply periodic</td>
+<td>Triply periodic</td>
 </tr>
 <tr class="row-odd"><td><dl class="first last docutils">
 <dt>BENCH01-Size0001-</dt>
@@ -215,7 +214,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>40040</td>
 <td>8</td>
 <td>4</td>
-<td colspan="2">Replicate</td>
+<td>Replicate</td>
 </tr>
 <tr class="row-even"><td><dl class="first last docutils">
 <dt>BENCH01-Size0001</dt>
@@ -230,7 +229,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>5005</td>
 <td>8</td>
 <td>4</td>
-<td colspan="2">Restart</td>
+<td>Restart</td>
 </tr>
 <tr class="row-odd"><td>BENCH02-Size0001</td>
 <td>10/10/10</td>
@@ -241,7 +240,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>1611</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">NSW with periodic</td>
+<td>NSW with periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH03-Size0001</td>
 <td>4/50/4</td>
@@ -252,7 +251,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>2500</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">MI/PO with periodic</td>
+<td>MI/PO with periodic</td>
 </tr>
 <tr class="row-odd"><td>BENCH04-Size0001</td>
 <td>4/50/4</td>
@@ -263,7 +262,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <td>224</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">Triply periodic</td>
+<td>Triply periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH05-Size0008</td>
 <td>40/10/10</td>
@@ -275,7 +274,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 (Auto)</td>
 <td>4</td>
 <td>4</td>
-<td colspan="2">EB – parallel</td>
+<td>EB – parallel</td>
 </tr>
 <tr class="row-odd"><td><dl class="first last docutils">
 <dt>BENCH05-Size0008</dt>
@@ -295,7 +294,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 (Auto)</td>
 <td>4</td>
 <td>1</td>
-<td colspan="2">EB – serial</td>
+<td>EB – serial</td>
 </tr>
 <tr class="row-even"><td><dl class="first last docutils">
 <dt>BENCH05-Size0008</dt>
@@ -311,7 +310,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 (Auto)</td>
 <td>16</td>
 <td>4</td>
-<td colspan="2">Regrid &amp; dual grid</td>
+<td>Regrid &amp; dual grid</td>
 </tr>
 <tr class="row-odd"><td><dl class="first last docutils">
 <dt>BENCH06-Size0008</dt>
@@ -327,7 +326,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 (Auto)</td>
 <td>4</td>
 <td>1</td>
-<td colspan="2">EB – serial
+<td>EB – serial
 with periodic</td>
 </tr>
 <tr class="row-even"><td>BENCH06-Size0008</td>
@@ -340,7 +339,7 @@ with periodic</td>
 (Auto)</td>
 <td>4</td>
 <td>4</td>
-<td colspan="2">EB – parallel
+<td>EB – parallel
 with periodic</td>
 </tr>
 <tr class="row-odd"><td>DEM01-x_single</td>
@@ -352,7 +351,7 @@ with periodic</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">Particle  only</td>
+<td>Particle  only</td>
 </tr>
 <tr class="row-even"><td>DEM03-z_single</td>
 <td>5/5/2</td>
@@ -363,7 +362,7 @@ with periodic</td>
 <td>2</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">Particles only</td>
+<td>Particles only</td>
 </tr>
 <tr class="row-odd"><td>DEM04-z_single</td>
 <td>4/4/4</td>
@@ -374,7 +373,7 @@ with periodic</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">Particle  only</td>
+<td>Particle  only</td>
 </tr>
 <tr class="row-even"><td><dl class="first last docutils">
 <dt>DEM05-z_single</dt>
@@ -389,7 +388,7 @@ with periodic</td>
 <td>93</td>
 <td>1</td>
 <td>1</td>
-<td colspan="2">Particle  only</td>
+<td>Particle  only</td>
 </tr>
 <tr class="row-odd"><td>DEM06-z_multiple</td>
 <td>5/5/50</td>
@@ -400,7 +399,7 @@ with periodic</td>
 <td>1</td>
 <td>10</td>
 <td>4</td>
-<td colspan="2">Particle  only</td>
+<td>Particle  only</td>
 </tr>
 </tbody>
 </table>
