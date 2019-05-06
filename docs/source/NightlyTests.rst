@@ -33,29 +33,29 @@ All of these tests use drag type "BVK2".
 | Size0001          | 32 | Per   |      |        |    |    |                      |
 | restart           | 32 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH02 Size0001  | 10 | Per   | None | 1611   | 1  | 1  | NSW with periodic    |
-|                   | 10 | NSW   |      |        |    |    |                      |
+| BENCH02           | 10 | Per   | None | 1611   | 1  | 1  | NSW with periodic    |
+| Size0001          | 10 | NSW   |      |        |    |    |                      |
 |                   | 10 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH03 Size0001  |  4 | Per   | None | 2500   | 1  | 1  | MI/PO with periodic  |
-|                   | 50 | MI PO |      |        |    |    |                      |
+| BENCH03           |  4 | Per   | None | 2500   | 1  | 1  | MI/PO with periodic  |
+| Size0001          | 50 | MI PO |      |        |    |    |                      |
 |                   |  4 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH04 Size0001  |  4 | Per   | None | 224    | 1  | 1  | Triply periodic      |
-|                   | 50 | Per   |      |        |    |    |                      |
+| BENCH04           |  4 | Per   | None | 224    | 1  | 1  | Triply periodic      |
+| Size0001          | 50 | Per   |      |        |    |    |                      |
 |                   |  4 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH05           | 40 | MI PI | Cyl  | 7949   | 4  | 4  | EB -- parallel       |
+| BENCH05           | 40 | MI PI | Cyl  | 7949   | 4  | 4  | EB in parallel       |
 | Size0008          | 10 |   IG  |      | Auto   |    |    |                      |
 |                   | 10 |   IG  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH05           | 40 | MI PI | Cyl  | 7968   | 4  | 1  | EB -- serial         |
+| BENCH05           | 40 | MI PI | Cyl  | 7968   | 4  | 1  | EB in serial         |
 | Size0008          | 10 |   IG  |      | Auto   |    |    |                      |
 | serial            | 10 |   IG  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH05           | 40 | MI PI | Cyl  | 157106 | 16 | 4  | Regrid & dual grid   |
-|  Size0008         | 40 |   IG  |      |  Auto  |    |    |                      |
-|  wide             | 40 |   IG  |      |        |    |    |                      |
+| Size0008          | 40 |   IG  |      |  Auto  |    |    |                      |
+| wide              | 40 |   IG  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH06           | 40 |  Per  | Cyl  | 627    | 4  | 1  | EB                   |
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
@@ -65,23 +65,23 @@ All of these tests use drag type "BVK2".
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
 |                   | 10 |   IG  |      |        |    |    | parallel             |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM01-x_single    |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
-|                   |  4 |  NSW  |      |        |    |    |                      |
+| DEM01             |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
+| x single          |  4 |  NSW  |      |        |    |    |                      |
 |                   |  4 |  NSW  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM03-z_single    |  5 |  Per  | None |   2    | 1  | 1  | Particles only       |
-|                   |  5 |  Per  |      |        |    |    |                      |
+| DEM03             |  5 |  Per  | None |   2    | 1  | 1  | Particles only       |
+| z single          |  5 |  Per  |      |        |    |    |                      |
 |                   |  2 |  NSW  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM04 zksingle    |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
-|                   |  4 |  Per  |      |        |    |    |                      |
+| DEM04             |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
+| z single          |  4 |  Per  |      |        |    |    |                      |
 |                   |  4 |  Per  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM05 z single    |  5 |  Per  | None |   93   | 1  | 1  | Particle  only       |
-|                   |  2 |  Per  |      |        |    |    |                      |
+| DEM05             |  5 |  Per  | None |   93   | 1  | 1  | Particle  only       |
+| z single          |  2 |  Per  |      |        |    |    |                      |
 |                   |  5 |  Per  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM06 z multiple  |  5 |  Per  | None |   1    | 10 | 4  | Particle  only       |
-|                   |  5 |  Per  |      |        |    |    |                      |
+| DEM06             |  5 |  Per  | None |   1    | 10 | 4  |                      |
+| z multiple        |  5 |  Per  |      |        |    |    |                      |
 |                   | 50 |  NSW  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
