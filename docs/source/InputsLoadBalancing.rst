@@ -8,6 +8,9 @@ The following inputs must be preceded by "amr" and determine whether we use the 
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 |                      | Description                                                           |   Type      | Default      |
 +======================+=======================================================================+=============+==============+
+| regrid_int           | How often to regrid (in number of steps at level 0)                   |   Int       |    -1        |
+|                      |  if regrid_int = -1 then no regridding will occur                     |             |              |
++----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | dual_grid            | If true then use the "dual_grid" approach for load balancing          |   Bool      | False        |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 
