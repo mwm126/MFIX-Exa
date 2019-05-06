@@ -1,20 +1,20 @@
 .. _Chap:Inputs:
 
-Monitors/User-defined Spatial Averaging
-=======================================
+Monitors
+========
 
 The following inputs must be preceded by "amr" and control whether to compute
-spatial averages and how often to output the results. 
-
-n is the number of monitors specified in avg_int. 
+monitors, i.e., spatial averages, and how often to output the results. 
+n is the number of monitors implicitly defined by the size of avg_region_x_w. 
 
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                  | Description                                                           |   Type      | Default   |
 +==================+=======================================================================+=============+===========+
 | avg_int          | Interval, in number of CFD dt's, to write output                      |  Int        | -1        |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-| avg_file         | Base file name which is appended with type data type (vel_p, p_g,     |  String     | avg_region|
-|                  | ep_g or vel_g), number of this type of averaging and extension, .csv  |             |           |
+| avg_file         | Base file name which is appended with the data type (vel_p_, p_g_,    |  String     | avg_region|
+|                  | ep_g_ or vel_g_), the number of this type of averaging,  and the .csv |             |           |
+|                  | file extension                                                        |             |           |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | avg_vel_p        | Average and save particle velocity (if 1)                             |  n*Int      | 0         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -36,34 +36,6 @@ n is the number of monitors specified in avg_int.
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | avg_region_z_t   | Upper bound of averaging region in z-direction                        |  n*Real     | None      |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-
-
-
-.. comment::
-
-  amr.avg_int = 10
-  amr.avg_file = "uio"
-
-  amr.avg_vel_p =        1       0        0
-  amr.avg_p_g   =        0       1        1
-  amr.avg_ep_g  =        0       0        0
-  amr.avg_vel_g =        0       0        0
-
-  amr.avg_region_x_w =   0.000   0.0000   0.0002
-  amr.avg_region_x_e =   0.008   0.0000   0.0002
-  amr.avg_region_y_s =   0.000   0.000    0.000
-  amr.avg_region_y_n =   0.002   0.002    0.002
-  amr.avg_region_z_b =   0.000   0.000    0.000
-  amr.avg_region_z_t =   0.002   0.002    0.002
-
-
-
-
-
-
-
-
-
 
 
 
