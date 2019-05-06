@@ -14,7 +14,8 @@ Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
 "Auto" means the particles were generated automatically with the random number
 generator; if "Auto" is not specified the particle data were read in from "particle_input.dat"
 
-These first tests have both fluid and particles; they all use drag type "BVK2".
+These first tests have both fluid and particles and are run in rectangular geometries;
+they all use drag type "BVK2".
 
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
@@ -38,40 +39,50 @@ These first tests have both fluid and particles; they all use drag type "BVK2".
 |                   | 10 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH03           |  4 | Per   | None | 2500   | 1  | 1  | MI/PO with periodic  |
-| Size0001          | 50 | MI PO |      |        |    |    |                      |
+| Size0001          | 50 | MIPO  |      |        |    |    |                      |
 |                   |  4 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH04           |  4 | Per   | None | 224    | 1  | 1  | Triply periodic      |
 | Size0001          | 50 | Per   |      |        |    |    |                      |
 |                   |  4 | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH05           | 40 | MI PO | Cyl  | 7949   | 4  | 4  | EB in parallel       |
+| DEM06             |  5 |  Per  | None |   1    | 10 | 4  |                      |
+| z multiple        |  5 |  Per  |      |        |    |    |                      |
+|                   | 50 |  NSW  |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+
+This second set of tests have both fluid and particles and are run in cylindrial geometries
+interior to the domain boundaries; they also use drag type "BVK2".
+
+
++-------------------+----+-------+------+--------+----+----+----------------------+
+| Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
+|                   | ny | bc_y  |      |        |    |    |                      |
+|                   | nz | bc_z  |      |        |    |    |                      |
++===================+====+=======+======+========+====+====+======================+
+| BENCH05           | 40 | MIPO  | Cyl  | 7949   | 4  | 4  | EB in parallel       |
 | Size0008          | 10 |   IG  |      | Auto   |    |    |                      |
 |                   | 10 |   IG  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH05           | 40 | MI PO | Cyl  | 7968   | 4  | 1  | EB in serial         |
+| BENCH05           | 40 | MIPO  | Cyl  | 7968   | 4  | 1  | EB in serial         |
 | Size0008          | 10 |   IG  |      | Auto   |    |    |                      |
 | serial            | 10 |   IG  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| BENCH05           | 40 | MI PO | Cyl  | 157106 | 16 | 4  | Regrid & dual grid   |
+| BENCH05           | 40 | MIPO  | Cyl  | 157106 | 16 | 4  | Regrid & dual grid   |
 | Size0008          | 40 |   IG  |      |  Auto  |    |    |                      |
 | wide              | 40 |   IG  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH06           | 40 |  Per  | Cyl  | 627    | 4  | 1  | EB                   |
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
 | serial            | 10 |   IG  |      |        |    |    | serial               |
-+-------------------+----+-------+------+--------+----+-----+---------------------+
++-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH06           | 40 |  Per  | Cyl  | 624    | 4  | 4  | EB                   |
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
 |                   | 10 |   IG  |      |        |    |    | parallel             |
-+-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM06             |  5 |  Per  | None |   1    | 10 | 4  |                      |
-| z multiple        |  5 |  Per  |      |        |    |    |                      |
-|                   | 50 |  NSW  |      |        |    |    |                      |
-+-------------------+----+-------+------+--------+----+----+----------------------+
++-------------------+----+-------+------+--------+----+-----+---------------------+
 
 
-This second set of tests is particles-only.
+This third set of tests is particles-only in rectangular geometries.
 
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
