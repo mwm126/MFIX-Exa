@@ -167,6 +167,313 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <p>“Auto” means the particles were generated automatically with the random number
 generator; if “Auto” is not specified the particle data were read in from “particle_input.dat”</p>
 <p>All of these tests use drag type “BVK2”.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="5%" />
+<col width="10%" />
+<col width="8%" />
+<col width="11%" />
+<col width="5%" />
+<col width="5%" />
+<col width="0%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Test</th>
+<th class="head">nx
+ny
+nz</th>
+<th class="head">bc_x
+bc_y
+bc_z</th>
+<th class="head">EB</th>
+<th class="head">Npa</th>
+<th class="head">Ng</th>
+<th class="head">Np</th>
+<th class="head" colspan="2">What does this test?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>BENCH01
+Size0001</td>
+<td>32
+32
+32</td>
+<td>Per
+Per
+Per</td>
+<td>None</td>
+<td>5005</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">Triply periodic</td>
+</tr>
+<tr class="row-odd"><td>BENCH01
+Size0001
+replicate</td>
+<td>64
+64
+64</td>
+<td>Per
+Per
+Per</td>
+<td>None</td>
+<td>40040</td>
+<td>8</td>
+<td>4</td>
+<td colspan="2">Replicate</td>
+</tr>
+<tr class="row-even"><td>BENCH01
+Size0001
+restart</td>
+<td>32
+32
+32</td>
+<td>Per
+Per
+Per</td>
+<td>None</td>
+<td>5005</td>
+<td>8</td>
+<td>4</td>
+<td colspan="2">Restart</td>
+</tr>
+<tr class="row-odd"><td>BENCH02 Size0001</td>
+<td>10
+10
+10</td>
+<td>Per
+NSW
+Per</td>
+<td>None</td>
+<td>1611</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">NSW with periodic</td>
+</tr>
+<tr class="row-even"><td>BENCH03 Size0001</td>
+<td><blockquote class="first">
+<div>4</div></blockquote>
+<dl class="last docutils">
+<dt>50</dt>
+<dd>4</dd>
+</dl>
+</td>
+<td>Per
+MI/PO
+Per</td>
+<td>None</td>
+<td>2500</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">MI/PO with periodic</td>
+</tr>
+<tr class="row-odd"><td>BENCH04 Size0001</td>
+<td><blockquote class="first">
+<div>4</div></blockquote>
+<dl class="last docutils">
+<dt>50</dt>
+<dd>4</dd>
+</dl>
+</td>
+<td>Per
+Per
+Per</td>
+<td>None</td>
+<td>224</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">Triply periodic</td>
+</tr>
+<tr class="row-even"><td>BENCH05
+Size0008</td>
+<td>40
+10
+10</td>
+<td><dl class="first last docutils">
+<dt>MI/PI</dt>
+<dd>IG
+IG</dd>
+</dl>
+</td>
+<td>Cyl</td>
+<td>7949
+Auto</td>
+<td>4</td>
+<td>4</td>
+<td colspan="2">EB – parallel</td>
+</tr>
+<tr class="row-odd"><td>BENCH05
+Size0008
+serial</td>
+<td>40
+10
+10</td>
+<td><dl class="first last docutils">
+<dt>MI/PI</dt>
+<dd>IG
+IG</dd>
+</dl>
+</td>
+<td>Cyl</td>
+<td>7968
+Auto</td>
+<td>4</td>
+<td>1</td>
+<td colspan="2">EB – serial</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>BENCH05</dt>
+<dd>Size0008
+wide</dd>
+</dl>
+</td>
+<td>40
+40
+40</td>
+<td><dl class="first last docutils">
+<dt>MI/PI</dt>
+<dd>IG
+IG</dd>
+</dl>
+</td>
+<td>Cyl</td>
+<td><dl class="first last docutils">
+<dt>157106</dt>
+<dd>Auto</dd>
+</dl>
+</td>
+<td>16</td>
+<td>4</td>
+<td colspan="2">Regrid &amp; dual grid</td>
+</tr>
+<tr class="row-odd"><td>BENCH06
+Size0008
+serial</td>
+<td>40
+10
+10</td>
+<td><dl class="first last docutils">
+<dt>Per</dt>
+<dd>IG
+IG</dd>
+</dl>
+</td>
+<td>Cyl</td>
+<td><dl class="first last docutils">
+<dt>627</dt>
+<dd>Auto</dd>
+</dl>
+</td>
+<td>4</td>
+<td colspan="3"><dl class="first last docutils">
+<dt>1  | EB</dt>
+<dd><div class="first last line-block">
+<div class="line">with periodic</div>
+<div class="line">serial</div>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td>BENCH06
+Size0008</td>
+<td>40
+10
+10</td>
+<td><dl class="first last docutils">
+<dt>Per</dt>
+<dd>IG
+IG</dd>
+</dl>
+</td>
+<td>Cyl</td>
+<td><dl class="first last docutils">
+<dt>624</dt>
+<dd>Auto</dd>
+</dl>
+</td>
+<td>4</td>
+<td colspan="3"><dl class="first last docutils">
+<dt>4  | EB</dt>
+<dd><div class="first last line-block">
+<div class="line">with periodic</div>
+<div class="line">parallel</div>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>DEM01-x_single</td>
+<td>4
+4
+4</td>
+<td>NSW
+NSW
+NSW</td>
+<td>None</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">Particle  only</td>
+</tr>
+<tr class="row-even"><td>DEM03-z_single</td>
+<td>5
+5
+2</td>
+<td>Per
+Per
+NSW</td>
+<td>None</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">Particles only</td>
+</tr>
+<tr class="row-odd"><td>DEM04 zksingle</td>
+<td>4
+4
+4</td>
+<td>NSW
+Per
+Per</td>
+<td>None</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">Particle  only</td>
+</tr>
+<tr class="row-even"><td>DEM05 z single</td>
+<td>5
+2
+5</td>
+<td>Per
+Per
+Per</td>
+<td>None</td>
+<td>93</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">Particle  only</td>
+</tr>
+<tr class="row-odd"><td>DEM06 z multiple</td>
+<td><blockquote class="first">
+<div>5
+5</div></blockquote>
+<p class="last">50</p>
+</td>
+<td>Per
+Per
+NSW</td>
+<td>None</td>
+<td>1</td>
+<td>10</td>
+<td>4</td>
+<td colspan="2">Particle  only</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 

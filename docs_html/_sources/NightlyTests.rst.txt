@@ -60,7 +60,7 @@ All of these tests use drag type "BVK2".
 | BENCH06           | 40 |  Per  | Cyl  | 627    | 4  | 1  | EB                   |
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
 | serial            | 10 |   IG  |      |        |    |    | serial               |
-+-------------------+----+-------+------+--------+----+-----+----------------------+
++-------------------+----+-------+------+--------+----+-----+---------------------+
 | BENCH06           | 40 |  Per  | Cyl  | 624    | 4  | 4  | EB                   |
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
 |                   | 10 |   IG  |      |        |    |    | parallel             |
