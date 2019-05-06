@@ -1,7 +1,7 @@
 .. _Chap:Inputs:
 
-Run-time Inputs
-===============
+Checkpoint/Restart
+==================
 
 The following inputs must be preceded by "amr" and control checkpoint/restart.
 
