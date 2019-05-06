@@ -5,7 +5,6 @@ Monitors/User-defined Spatial Averaging
 
 The following inputs must be preceded by "amr" and control whether to compute
 spatial averages and how often to output the results. 
-
 n is the number of monitors specified in avg_int. 
 
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -13,8 +12,9 @@ n is the number of monitors specified in avg_int.
 +==================+=======================================================================+=============+===========+
 | avg_int          | Interval, in number of CFD dt's, to write output                      |  Int        | -1        |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
-| avg_file         | Base file name which is appended with type data type (vel_p, p_g,     |  String     | avg_region|
-|                  | ep_g or vel_g), number of this type of averaging and extension, .csv  |             |           |
+| avg_file         | Base file name which is appended with the data type (vel_p_, p_g_,    |  String     | avg_region|
+|                  | ep_g_ or vel_g_), the number of this type of averaging,  and the .csv |             |           |
+|                  | file extension                                                        |             |           |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 | avg_vel_p        | Average and save particle velocity (if 1)                             |  n*Int      | 0         |
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
