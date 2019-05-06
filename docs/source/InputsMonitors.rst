@@ -3,7 +3,10 @@
 Monitors/User-defined Spatial Averaging
 =======================================
 
-The following inputs must be preceded by "amr" and control checkpoint/restart. n is the number of monitors specified. 
+The following inputs must be preceded by "amr" and control whether to compute
+spatial averages and how often to output the results. 
+
+n is the number of monitors specified in avg_int. 
 
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                  | Description                                                           |   Type      | Default   |
