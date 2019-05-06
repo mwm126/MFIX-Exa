@@ -12,4 +12,5 @@ Run-time Inputs
    InputsLoadBalancing 
    InputsPlotFiles 
    InputsCheckpoint
+   InputsMonitors
    InputsVerbosity
