@@ -13,4 +13,5 @@ Run-time Inputs
    InputsMultiGrid
    InputsPlotFiles 
    InputsCheckpoint
+   InputsMonitors
    InputsVerbosity
