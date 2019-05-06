@@ -14,7 +14,7 @@ Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
 "Auto" means the particles were generated automatically with the random number
 generator; if "Auto" is not specified the particle data were read in from "particle_input.dat"
 
-All of these tests use drag type "BVK2".
+These first tests have both fluid and particles; they all use drag type "BVK2".
 
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
@@ -65,6 +65,19 @@ All of these tests use drag type "BVK2".
 | Size0008          | 10 |   IG  |      |  Auto  |    |    | with periodic        |
 |                   | 10 |   IG  |      |        |    |    | parallel             |
 +-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM06             |  5 |  Per  | None |   1    | 10 | 4  |                      |
+| z multiple        |  5 |  Per  |      |        |    |    |                      |
+|                   | 50 |  NSW  |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+
+
+This second set of tests is particles-only.
+
++-------------------+----+-------+------+--------+----+----+----------------------+
+| Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
+|                   | ny | bc_y  |      |        |    |    |                      |
+|                   | nz | bc_z  |      |        |    |    |                      |
++===================+====+=======+======+========+====+====+======================+
 | DEM01             |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
 | x single          |  4 |  NSW  |      |        |    |    |                      |
 |                   |  4 |  NSW  |      |        |    |    |                      |
@@ -80,8 +93,4 @@ All of these tests use drag type "BVK2".
 | DEM05             |  5 |  Per  | None |   93   | 1  | 1  | Particle  only       |
 | z single          |  2 |  Per  |      |        |    |    |                      |
 |                   |  5 |  Per  |      |        |    |    |                      |
-+-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM06             |  5 |  Per  | None |   1    | 10 | 4  |                      |
-| z multiple        |  5 |  Per  |      |        |    |    |                      |
-|                   | 50 |  NSW  |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+

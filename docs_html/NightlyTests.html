@@ -166,7 +166,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <p>Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.</p>
 <p>“Auto” means the particles were generated automatically with the random number
 generator; if “Auto” is not specified the particle data were read in from “particle_input.dat”</p>
-<p>All of these tests use drag type “BVK2”.</p>
+<p>These first tests have both fluid and particles; they all use drag type “BVK2”.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="26%" />
@@ -405,62 +405,6 @@ IG</dd>
 </dl>
 </td>
 </tr>
-<tr class="row-odd"><td>DEM01
-x single</td>
-<td>4
-4
-4</td>
-<td>NSW
-NSW
-NSW</td>
-<td>None</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td colspan="2">Particle  only</td>
-</tr>
-<tr class="row-even"><td>DEM03
-z single</td>
-<td>5
-5
-2</td>
-<td>Per
-Per
-NSW</td>
-<td>None</td>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-<td colspan="2">Particles only</td>
-</tr>
-<tr class="row-odd"><td>DEM04
-z single</td>
-<td>4
-4
-4</td>
-<td>NSW
-Per
-Per</td>
-<td>None</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td colspan="2">Particle  only</td>
-</tr>
-<tr class="row-even"><td>DEM05
-z single</td>
-<td>5
-2
-5</td>
-<td>Per
-Per
-Per</td>
-<td>None</td>
-<td>93</td>
-<td>1</td>
-<td>1</td>
-<td colspan="2">Particle  only</td>
-</tr>
 <tr class="row-odd"><td>DEM06
 z multiple</td>
 <td><blockquote class="first">
@@ -476,6 +420,92 @@ NSW</td>
 <td>10</td>
 <td>4</td>
 <td colspan="2">&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>This second set of tests is particles-only.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="5%" />
+<col width="9%" />
+<col width="8%" />
+<col width="11%" />
+<col width="5%" />
+<col width="5%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Test</th>
+<th class="head">nx
+ny
+nz</th>
+<th class="head">bc_x
+bc_y
+bc_z</th>
+<th class="head">EB</th>
+<th class="head">Npa</th>
+<th class="head">Ng</th>
+<th class="head">Np</th>
+<th class="head">What does this test?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DEM01
+x single</td>
+<td>4
+4
+4</td>
+<td>NSW
+NSW
+NSW</td>
+<td>None</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Particle  only</td>
+</tr>
+<tr class="row-odd"><td>DEM03
+z single</td>
+<td>5
+5
+2</td>
+<td>Per
+Per
+NSW</td>
+<td>None</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Particles only</td>
+</tr>
+<tr class="row-even"><td>DEM04
+z single</td>
+<td>4
+4
+4</td>
+<td>NSW
+Per
+Per</td>
+<td>None</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Particle  only</td>
+</tr>
+<tr class="row-odd"><td>DEM05
+z single</td>
+<td>5
+2
+5</td>
+<td>Per
+Per
+Per</td>
+<td>None</td>
+<td>93</td>
+<td>1</td>
+<td>1</td>
+<td>Particle  only</td>
 </tr>
 </tbody>
 </table>
