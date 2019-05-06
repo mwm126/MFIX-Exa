@@ -184,30 +184,20 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>verbosity</td>
-<td>&#160;</td>
+<tr class="row-even"><td>verbose</td>
+<td>Verbosity in MFiX-Exa routines</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>dt_min</td>
-<td>Abort if dt gets smaller than this value</td>
-<td>Real</td>
-<td>1.e-6</td>
+<tr class="row-odd"><td>mg_verbose</td>
+<td>Verbosity of multigrid solver in nodal projection</td>
+<td>Int</td>
+<td>0</td>
 </tr>
-<tr class="row-even"><td>dt_max</td>
-<td>Maximum value of dt if calculating with cfl</td>
-<td>Real</td>
-<td>1.e14</td>
-</tr>
-<tr class="row-odd"><td>cfl</td>
-<td>CFL constraint (dt &lt; cfl * dx / u) if fixed_dt not 1</td>
-<td>Real</td>
-<td>0.5</td>
-</tr>
-<tr class="row-even"><td>geometry</td>
-<td>Which type of geometry are we using?</td>
-<td>String</td>
-<td>&#160;</td>
+<tr class="row-even"><td>mg_cg_verbose</td>
+<td>Verbosity of BiCGStab solver in nodal projection</td>
+<td>Int</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -227,8 +217,13 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>verbose</td>
-<td>&#160;</td>
+<tr class="row-even"><td>mg_verbose</td>
+<td>Verbosity of multigrid solver in MAC projection</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>mg_cg_verbose</td>
+<td>Verbosity of BiCGStab solver in MAC projection</td>
 <td>Int</td>
 <td>0</td>
 </tr>
@@ -250,8 +245,13 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>verbose</td>
-<td>&#160;</td>
+<tr class="row-even"><td>mg_verbose</td>
+<td>Verbosity of linear solver for diffusion solve</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>mg_cg_verbose</td>
+<td>Verbosity of BiCGStab solver in diffusion solve</td>
 <td>Int</td>
 <td>0</td>
 </tr>

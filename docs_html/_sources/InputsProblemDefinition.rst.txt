@@ -20,7 +20,7 @@ The following inputs must be preceded by "amr."
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
 | blocking_factor_y | Each grid must be divisible by blocking_factor_y in y-direction       |    Int      |  8        |
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| blocking_factor_: | Each grid must be divisible by blocking_factor_z in z-direction       |    Int      |  8        |
+| blocking_factor_z | Each grid must be divisible by blocking_factor_z in z-direction       |    Int      |  8        |
 +-------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 The following inputs must be preceded by "geometry."

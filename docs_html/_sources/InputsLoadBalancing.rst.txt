@@ -3,6 +3,14 @@
 Load Balancing
 ==============
 
+The following inputs must be preceded by "amr" and determine whether we use the "dual grid" approach.
+
++----------------------+-----------------------------------------------------------------------+-------------+--------------+
+|                      | Description                                                           |   Type      | Default      |
++======================+=======================================================================+=============+==============+
+| dual_grid            | If true then use the "dual_grid" approach for load balancing          |   Bool      | False        |
++----------------------+-----------------------------------------------------------------------+-------------+--------------+
+
 The following inputs must be preceded by "mfix" and determine how we create grids and do load balancing:
 
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
