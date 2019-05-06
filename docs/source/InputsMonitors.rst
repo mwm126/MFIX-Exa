@@ -5,7 +5,7 @@ Monitors
 
 The following inputs must be preceded by "amr" and control whether to compute
 monitors, i.e., spatial averages, and how often to output the results. 
-n is the number of monitors specified in avg_int. 
+n is the number of monitors implicitly defined by the size of avg_region_x_w. 
 
 +------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                  | Description                                                           |   Type      | Default   |
