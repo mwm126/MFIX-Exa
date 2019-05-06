@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dual Grid Approach &mdash; MFiX-Exa  documentation</title>
+  <title>Time Stepping &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Load Balancing" href="LoadBalancing.html" />
-    <link rel="prev" title="Grid Creation" href="GridCreation.html" /> 
+    <link rel="next" title="Initialization" href="InputsInitialization.html" />
+    <link rel="prev" title="Problem Definition" href="InputsProblemDefinition.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,13 +86,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="GridCreation.html">Grid Creation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Dual Grid Approach</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LoadBalancing.html">Load Balancing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
@@ -142,15 +145,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a> &raquo;</li>
+          <li><a href="Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
         
-      <li>Dual Grid Approach</li>
+      <li>Time Stepping</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/DualGrid.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/InputsTimeStepping.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,17 +166,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dual-grid-approach">
-<span id="ss-dual-grid"></span><h1>Dual Grid Approach<a class="headerlink" href="#dual-grid-approach" title="Permalink to this headline">¶</a></h1>
-<p>In MFiX-Exa the mesh work and particle work have very different requirements for load balancing.</p>
-<p>Rather than using a combined work estimate to create the same grids for mesh and particle
-data, we have the option to pursue a “dual grid” approach.</p>
-<p>With this approach the mesh (<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>) and particle (<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code>) data
-are allocated on different <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArrays</span></span></code> with different <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMappings</span></span></code>.</p>
-<p>This enables separate load balancing strategies to be used for the mesh and particle work.</p>
-<p>The cost of this strategy, of course, is the need to copy mesh data onto temporary
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code> defined on the particle <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArrays</span></span></code> when mesh-particle communication
-is required.</p>
+  <div class="section" id="time-stepping">
+<h1>Time Stepping<a class="headerlink" href="#time-stepping" title="Permalink to this headline">¶</a></h1>
+<p>The following inputs must be preceded by “amr.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="63%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>max_step</td>
+<td>Maximum number of time steps to take</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>stop_time</td>
+<td>Maximum time to reach</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by “mfix.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="59%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>fixed_dt</td>
+<td>Should we use a fixed timestep?</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>dt_min</td>
+<td>Abort if dt gets smaller than this value</td>
+<td>Real</td>
+<td>1.e-6</td>
+</tr>
+<tr class="row-even"><td>dt_max</td>
+<td>Maximum value of dt if calculating with cfl</td>
+<td>Real</td>
+<td>1.e14</td>
+</tr>
+<tr class="row-odd"><td>cfl</td>
+<td>CFL constraint (dt &lt; cfl * dx / u) if fixed_dt not 1</td>
+<td>Real</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -184,10 +244,10 @@ is required.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="LoadBalancing.html" class="btn btn-neutral float-right" title="Load Balancing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="InputsInitialization.html" class="btn btn-neutral float-right" title="Initialization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="GridCreation.html" class="btn btn-neutral float-left" title="Grid Creation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="InputsProblemDefinition.html" class="btn btn-neutral float-left" title="Problem Definition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Directory overview &mdash; MFiX-Exa  documentation</title>
+  <title>Plotfiles &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Building MFiX-Exa with CMake" href="BuildingCMake.html" />
-    <link rel="prev" title="Getting Started" href="GettingStarted.html" /> 
+    <link rel="next" title="Verbosity" href="InputsVerbosity.html" />
+    <link rel="prev" title="Load Balancing" href="InputsLoadBalancing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,15 +85,16 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="GettingStarted.html">Getting Started</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Directory overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Load Balancing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
@@ -144,15 +145,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="GettingStarted.html">Getting Started</a> &raquo;</li>
+          <li><a href="Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
         
-      <li>Directory overview</li>
+      <li>Plotfiles</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Structure.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/InputsPlotFiles.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -165,39 +166,144 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="directory-overview">
-<span id="chap-structure"></span><h1>Directory overview<a class="headerlink" href="#directory-overview" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="plotfiles">
+<span id="chap-inputs"></span><h1>Plotfiles<a class="headerlink" href="#plotfiles" title="Permalink to this headline">¶</a></h1>
+<p>The following inputs must be preceded by “amr” and control frequency and naming of plotfile generation as well
+as which variables will be written out.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="77%" />
+<col width="16%" />
+<col width="63%" />
+<col width="12%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">File</th>
+<tr class="row-odd"><th class="head">&#160;</th>
 <th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>benchmarks</td>
-<td>UC Benchmark cases (see benchmark/README.md)</td>
+<tr class="row-even"><td>plot_int</td>
+<td>Frequency of plotfile output</td>
+<td>Int</td>
+<td>None</td>
 </tr>
-<tr class="row-odd"><td>doc</td>
-<td>Source code for building the documentation</td>
+<tr class="row-odd"><td>plot_file</td>
+<td>Prefix to use for plotfile output</td>
+<td>String</td>
+<td>plt</td>
 </tr>
-<tr class="row-even"><td>exec</td>
-<td>Directory for building with gmake (optional)</td>
+<tr class="row-even"><td>plt_regtest</td>
+<td>Save all variables to plot file (overrides all other IO flags)</td>
+<td>Int</td>
+<td>0</td>
 </tr>
-<tr class="row-odd"><td>src</td>
-<td>Source files</td>
+<tr class="row-odd"><td>plt_vel_g</td>
+<td>Save fluid velocity data to plot file</td>
+<td>Int</td>
+<td>1</td>
 </tr>
-<tr class="row-even"><td>tests</td>
-<td>Regression tests (see tests/README.md)</td>
+<tr class="row-even"><td>plt_ep_g</td>
+<td>Save fluid volume fraction to plot file</td>
+<td>Int</td>
+<td>1</td>
 </tr>
-<tr class="row-odd"><td>tools</td>
-<td>CMake configuration files</td>
+<tr class="row-odd"><td>plt_p_g</td>
+<td>Save fluid pressure to plot file</td>
+<td>Int</td>
+<td>0</td>
 </tr>
-<tr class="row-even"><td>tutorials</td>
-<td>Set-ups for different EB geometries</td>
+<tr class="row-even"><td>plt_ro_g</td>
+<td>Save fluid density to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_mu_g</td>
+<td>Save fluid viscosity to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_diveu</td>
+<td>Save div(ep_g . u) to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_volfrac</td>
+<td>Save Eulerian grid volume fraction (from cut cells) to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_volfrac</td>
+<td>Save Eulerian grid volume fraction (from cut cells) to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_gradp_g</td>
+<td>Save gradient of pressure filed to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_vort</td>
+<td>Save vorticity to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_vel_p</td>
+<td>Save particle velocity to plot file</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>plt_radius</td>
+<td>Save particle radius to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_volume</td>
+<td>Save particle volume to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_mass</td>
+<td>Save particle mass to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_ro_p</td>
+<td>Save particle density to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_omoi</td>
+<td>Save (one divided by the) particle momentum of inertia to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_mass</td>
+<td>Save particle mass to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_omega_p</td>
+<td>Save particle angular velocity to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_drag_p</td>
+<td>Save particle drag force to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_phase</td>
+<td>Save particle type to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_state</td>
+<td>Save particle state to plot file</td>
+<td>Int</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -211,10 +317,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="BuildingCMake.html" class="btn btn-neutral float-right" title="Building MFiX-Exa with CMake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="InputsVerbosity.html" class="btn btn-neutral float-right" title="Verbosity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="GettingStarted.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="InputsLoadBalancing.html" class="btn btn-neutral float-left" title="Load Balancing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

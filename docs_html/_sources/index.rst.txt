@@ -22,7 +22,7 @@ the master branch at the beginning of each month.
 
    Introduction
    GettingStarted
-   Inputs
+   Inputs_Chapter
    ManagingGridHierarchy_Chapter
    Fluids_Chapter
    Particles_Chapter

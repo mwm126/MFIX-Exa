@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Run-time Inputs &mdash; MFiX-Exa  documentation</title>
+  <title>Problem Definition &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Time Stepping" href="InputsTimeStepping.html" />
+    <link rel="prev" title="Run-time Inputs" href="Inputs_Chapter.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,10 +83,18 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Problem Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
@@ -135,13 +145,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Run-time Inputs</li>
+          <li><a href="Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
+        
+      <li>Problem Definition</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Inputs.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/InputsProblemDefinition.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,14 +166,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="run-time-inputs">
-<span id="chap-inputs"></span><h1>Run-time Inputs<a class="headerlink" href="#run-time-inputs" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="problem-definition">
+<h1>Problem Definition<a class="headerlink" href="#problem-definition" title="Permalink to this headline">¶</a></h1>
 <p>The following inputs must be preceded by “amr.”</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="63%" />
-<col width="12%" />
+<col width="17%" />
+<col width="62%" />
+<col width="11%" />
 <col width="10%" />
 </colgroup>
 <thead valign="bottom">
@@ -172,16 +184,6 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>max_step</td>
-<td>Maximum number of time steps to take</td>
-<td>Int</td>
-<td>None</td>
-</tr>
-<tr class="row-odd"><td>stop_time</td>
-<td>Maximum time to reach</td>
-<td>Real</td>
-<td>None</td>
-</tr>
 <tr class="row-even"><td>max_level</td>
 <td>Maximum level of refinement allowed (0 when single-level)</td>
 <td>Int</td>
@@ -190,16 +192,6 @@
 <tr class="row-odd"><td>n_cell</td>
 <td>Number of cells at level 0 in each coordinate direction</td>
 <td>Int</td>
-<td>None</td>
-</tr>
-<tr class="row-even"><td>dual_grid</td>
-<td>If true then use the “dual_grid” approach for load balancing</td>
-<td>Bool</td>
-<td>False</td>
-</tr>
-<tr class="row-odd"><td>restart</td>
-<td>Name of file from which to restart the run</td>
-<td>String</td>
 <td>None</td>
 </tr>
 <tr class="row-even"><td>max_grid_size_x</td>
@@ -217,171 +209,20 @@
 <td>Int</td>
 <td>32</td>
 </tr>
-</tbody>
-</table>
-<p>The following inputs must be preceded by “amr” and control frequency and naming of plotfile and checkpoint generation</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="16%" />
-<col width="63%" />
-<col width="12%" />
-<col width="10%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>plot_int</td>
-<td>Frequency of plotfile output</td>
+<tr class="row-odd"><td>blocking_factor_x</td>
+<td>Each grid must be divisible by blocking_factor_x in x-direction</td>
 <td>Int</td>
-<td>None</td>
+<td>8</td>
 </tr>
-<tr class="row-odd"><td>plot_file</td>
-<td>Prefix to use for plotfile output</td>
-<td>String</td>
-<td>plt</td>
-</tr>
-<tr class="row-even"><td>check_int</td>
-<td>Frequency of checkpoint output</td>
+<tr class="row-even"><td>blocking_factor_y</td>
+<td>Each grid must be divisible by blocking_factor_y in y-direction</td>
 <td>Int</td>
-<td>None</td>
+<td>8</td>
 </tr>
-<tr class="row-odd"><td>chk_file</td>
-<td>Prefix to use for checkpoint output</td>
-<td>String</td>
-<td>chk</td>
-</tr>
-</tbody>
-</table>
-<p>The following inputs must be preceded by “amr” and determine which variables are written in a plotfile.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="16%" />
-<col width="63%" />
-<col width="12%" />
-<col width="10%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>plt_regtest</td>
-<td>Save all variables to plot file (overrides all other IO flags)</td>
+<tr class="row-odd"><td><a href="#id1"><span class="problematic" id="id2">blocking_factor_</span></a>:</td>
+<td>Each grid must be divisible by blocking_factor_z in z-direction</td>
 <td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_vel_g</td>
-<td>Save fluid velocity data to plot file</td>
-<td>Int</td>
-<td>1</td>
-</tr>
-<tr class="row-even"><td>plt_ep_g</td>
-<td>Save fluid volume fraction to plot file</td>
-<td>Int</td>
-<td>1</td>
-</tr>
-<tr class="row-odd"><td>plt_p_g</td>
-<td>Save fluid pressure to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_ro_g</td>
-<td>Save fluid density to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_mu_g</td>
-<td>Save fluid viscosity to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_diveu</td>
-<td>Save div(ep_g . u) to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_volfrac</td>
-<td>Save Eulerian grid volume fraction (from cut cells) to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_volfrac</td>
-<td>Save Eulerian grid volume fraction (from cut cells) to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_gradp_g</td>
-<td>Save gradient of pressure filed to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_vort</td>
-<td>Save vorticity to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_vel_p</td>
-<td>Save particle velocity to plot file</td>
-<td>Int</td>
-<td>1</td>
-</tr>
-<tr class="row-even"><td>plt_radius</td>
-<td>Save particle radius to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_volume</td>
-<td>Save particle volume to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_mass</td>
-<td>Save particle mass to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_ro_p</td>
-<td>Save particle density to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_omoi</td>
-<td>Save (one divided by the) particle momentum of inertia to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_mass</td>
-<td>Save particle mass to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_omega_p</td>
-<td>Save particle angular velocity to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_drag_p</td>
-<td>Save particle drag force to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_phase</td>
-<td>Save particle type to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_state</td>
-<td>Save particle state to plot file</td>
-<td>Int</td>
-<td>0</td>
+<td>8</td>
 </tr>
 </tbody>
 </table>
@@ -439,126 +280,10 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>fixed_dt</td>
-<td>Should we use a fixed timestep?</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>dt_min</td>
-<td>Abort if dt gets smaller than this value</td>
-<td>Real</td>
-<td>1.e-6</td>
-</tr>
-<tr class="row-even"><td>dt_max</td>
-<td>Maximum value of dt if calculating with cfl</td>
-<td>Real</td>
-<td>1.e14</td>
-</tr>
-<tr class="row-odd"><td>cfl</td>
-<td>CFL constraint (dt &lt; cfl * dx / u) if fixed_dt not 1</td>
-<td>Real</td>
-<td>0.5</td>
-</tr>
 <tr class="row-even"><td>geometry</td>
-<td>Which type of geometry are we using?</td>
+<td>Which type of EB geometry are we using?</td>
 <td>String</td>
 <td>&#160;</td>
-</tr>
-</tbody>
-</table>
-<p>The following inputs must be preceded by “mfix” and determine how we initialize a calculation:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="18%" />
-<col width="59%" />
-<col width="11%" />
-<col width="12%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td>particle_init_type</td>
-<td>How do we initialize the particles?   “Auto” vs AsciiFile</td>
-<td>String</td>
-<td>AsciiFile</td>
-</tr>
-<tr class="row-even"><td>do_initial_proj</td>
-<td>Should we do the initial projection?</td>
-<td>Bool</td>
-<td>True</td>
-</tr>
-<tr class="row-odd"><td>initial_iterations</td>
-<td>How many pressure iterations before starting the first timestep</td>
-<td>Int</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<p>The following inputs must be preceded by “mfix” and determine how we create grids and do load balancing:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="18%" />
-<col width="59%" />
-<col width="11%" />
-<col width="12%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>load_balance_fluid</td>
-<td>Only relevant if (dual_grid); if so do we also regrid mesh data</td>
-<td>Int</td>
-<td>1</td>
-</tr>
-<tr class="row-odd"><td>load_balance_type</td>
-<td>What strategy to use for load balancing
-Options are “FixedSize”, “KDTree” or “Knapsack”</td>
-<td>String</td>
-<td>FixedSize</td>
-</tr>
-<tr class="row-even"><td>knapsack_weight_type</td>
-<td>What weighting function to use if using Knapsack load balancing
-Options are “RunTimeCosts” or “NumParticles”“</td>
-<td>String</td>
-<td>RunTimeCosts</td>
-</tr>
-</tbody>
-</table>
-<p>The following inputs must be preceded by “particles.”</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="63%" />
-<col width="11%" />
-<col width="9%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>removeOutOfRange</td>
-<td>Should we remove particles at initialization that are touching the wall</td>
-<td>Int</td>
-<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -624,6 +349,15 @@ xlo.zhi =            0.75
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InputsTimeStepping.html" class="btn btn-neutral float-right" title="Time Stepping" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Inputs_Chapter.html" class="btn btn-neutral float-left" title="Run-time Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
