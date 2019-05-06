@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Problem Definition" href="InputsProblemDefinition.html" />
-    <link rel="prev" title="Regression testing" href="RegressionTesting.html" /> 
+    <link rel="next" title="Plotfiles" href="InputsPlotFiles.html" />
+    <link rel="prev" title="Load Balancing" href="InputsLoadBalancing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,14 +86,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Run-time Inputs</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Load Balancing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Run-time Inputs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run-time Inputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Run-time Inputs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Run-time Inputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
 </ul>
 </li>
@@ -147,13 +147,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
+          <li><a href="Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
+        
       <li>Run-time Inputs</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/Inputs_Chapter.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/InputsCheckpoint.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,18 +170,40 @@
             
   <div class="section" id="run-time-inputs">
 <span id="chap-inputs"></span><h1>Run-time Inputs<a class="headerlink" href="#run-time-inputs" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsLoadBalancing.html">Load Balancing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsCheckpoint.html">Run-time Inputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsCheckpoint.html">Run-time Inputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
-</ul>
-</div>
+<p>The following inputs must be preceded by “amr” and control checkpoint/restart.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="63%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>restart</td>
+<td>If present, then the name of file to restart from</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>check_int</td>
+<td>Frequency of checkpoint output
+If -1 then no checkpoints will be written</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>chk_file</td>
+<td>Prefix to use for checkpoint output</td>
+<td>String</td>
+<td>chk</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -190,10 +214,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="InputsProblemDefinition.html" class="btn btn-neutral float-right" title="Problem Definition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="InputsPlotFiles.html" class="btn btn-neutral float-right" title="Plotfiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="RegressionTesting.html" class="btn btn-neutral float-left" title="Regression testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="InputsLoadBalancing.html" class="btn btn-neutral float-left" title="Load Balancing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
