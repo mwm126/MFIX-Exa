@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Load Balancing &mdash; MFiX-Exa  documentation</title>
+  <title>Gridding and Load Balancing &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -90,7 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Load Balancing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gridding and Load Balancing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
@@ -150,7 +150,7 @@
         
           <li><a href="Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
         
-      <li>Load Balancing</li>
+      <li>Gridding and Load Balancing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,15 +169,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="load-balancing">
-<span id="chap-inputs"></span><h1>Load Balancing<a class="headerlink" href="#load-balancing" title="Permalink to this headline">¶</a></h1>
-<p>The following inputs must be preceded by “amr” and determine whether we use the “dual grid” approach.</p>
+  <div class="section" id="gridding-and-load-balancing">
+<span id="chap-inputsloadbalancing"></span><h1>Gridding and Load Balancing<a class="headerlink" href="#gridding-and-load-balancing" title="Permalink to this headline">¶</a></h1>
+<p>The following inputs must be preceded by “amr” and determine how we create the grids and how often we regrid.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="59%" />
+<col width="19%" />
+<col width="61%" />
 <col width="11%" />
-<col width="12%" />
+<col width="9%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -196,20 +196,45 @@
 <td>Int</td>
 <td>-1</td>
 </tr>
-<tr class="row-odd"><td>dual_grid</td>
-<td>If true then use the “dual_grid” approach for load balancing</td>
-<td>Bool</td>
-<td>False</td>
+<tr class="row-odd"><td>max_grid_size_x</td>
+<td>Maximum number of cells at level 0 in each grid in x-direction</td>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr class="row-even"><td>max_grid_size_y</td>
+<td>Maximum number of cells at level 0 in each grid in y-direction</td>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr class="row-odd"><td>max_grid_size_z</td>
+<td>Maximum number of cells at level 0 in each grid in z-direction</td>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr class="row-even"><td>blocking_factor_x</td>
+<td>Each grid must be divisible by blocking_factor_x in x-direction</td>
+<td>Int</td>
+<td>8</td>
+</tr>
+<tr class="row-odd"><td>blocking_factor_y</td>
+<td>Each grid must be divisible by blocking_factor_y in y-direction</td>
+<td>Int</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>blocking_factor_z</td>
+<td>Each grid must be divisible by blocking_factor_z in z-direction</td>
+<td>Int</td>
+<td>8</td>
 </tr>
 </tbody>
 </table>
-<p>The following inputs must be preceded by “mfix” and determine how we create grids and do load balancing:</p>
+<p>The following inputs must be preceded by “particles”</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="59%" />
+<col width="17%" />
+<col width="62%" />
 <col width="11%" />
-<col width="12%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -219,25 +244,27 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>load_balance_fluid</td>
-<td>Only relevant if (dual_grid); if so do we also regrid mesh data</td>
+<tr class="row-even"><td>max_grid_size_x</td>
+<td>Maximum number of cells at level 0 in each grid in x-direction
+for grids in the ParticleBoxArray if dual_grid is true</td>
 <td>Int</td>
-<td>1</td>
+<td>32</td>
 </tr>
-<tr class="row-odd"><td>load_balance_type</td>
-<td>What strategy to use for load balancing
-Options are “FixedSize”, “KDTree” or “Knapsack”</td>
-<td>String</td>
-<td>FixedSize</td>
+<tr class="row-odd"><td>max_grid_size_y</td>
+<td>Maximum number of cells at level 0 in each grid in y-direction
+for grids in the ParticleBoxArray if dual_grid is true</td>
+<td>Int</td>
+<td>32</td>
 </tr>
-<tr class="row-even"><td>knapsack_weight_type</td>
-<td>What weighting function to use if using Knapsack load balancing
-Options are “RunTimeCosts” or “NumParticles”“</td>
-<td>String</td>
-<td>RunTimeCosts</td>
+<tr class="row-even"><td>max_grid_size_z</td>
+<td>Maximum number of cells at level 0 in each grid in z-direction
+for grids in the ParticleBoxArray if dual_grid is true.</td>
+<td>Int</td>
+<td>32</td>
 </tr>
 </tbody>
 </table>
+<p>The following inputs must be preceded by “mfix” and determine how we load balance:</p>
 </div>
 
 

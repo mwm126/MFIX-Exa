@@ -1,4 +1,4 @@
-.. _Chap:Inputs:
+.. _Chap:InputsPlotfiles:
 
 Plotfiles
 =========
