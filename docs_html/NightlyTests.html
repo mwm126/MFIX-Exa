@@ -163,6 +163,262 @@
 are compared with the benchmark plotfiles using the AMReX <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fcompare</span></span></code> utility to compare the mesh data
 and :cpp:<a href="#id1"><span class="problematic" id="id2">`</span></a>particle_compare” to compare the particle data.</p>
 <p>The results of these tests can be found at <a class="reference external" href="https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/">https://ccse.lbl.gov/pub/RegressionTesting/MFIX-Exa/</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="6%" />
+<col width="8%" />
+<col width="6%" />
+<col width="6%" />
+<col width="7%" />
+<col width="7%" />
+<col width="6%" />
+<col width="1%" />
+<col width="10%" />
+<col width="1%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Test Name</th>
+<th class="head" colspan="14">nx | ny | nz | bc_x  | bc_y    | bc_z | EB   | Npart  | Ngrids | Nprocs | What does this test?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>BENCH01-Size0001</td>
+<td colspan="11">32 | 32 | 32 | Per   | Per     | Per  | None | 5005   | 1      | 1</td>
+<td colspan="3">Triply periodic</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>BENCH01-Size0001-</dt>
+<dd>replicate</dd>
+</dl>
+</td>
+<td>64</td>
+<td>64</td>
+<td>64</td>
+<td>Per</td>
+<td>Per</td>
+<td>Per</td>
+<td>None</td>
+<td>40040</td>
+<td>8</td>
+<td colspan="2">4</td>
+<td colspan="3">Replicate</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>BENCH01-Size0001</dt>
+<dd>restart</dd>
+</dl>
+</td>
+<td>32</td>
+<td>32</td>
+<td>32</td>
+<td>Per</td>
+<td>Per</td>
+<td>Per</td>
+<td>None</td>
+<td>5005</td>
+<td>8</td>
+<td colspan="2">4</td>
+<td colspan="3">Restart</td>
+</tr>
+<tr class="row-odd"><td>BENCH02-Size0001</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>Per</td>
+<td>NSW</td>
+<td>Per</td>
+<td>None</td>
+<td>1611</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">NSW with periodic</td>
+</tr>
+<tr class="row-even"><td>BENCH03-Size0001</td>
+<td>4</td>
+<td>50</td>
+<td>4</td>
+<td>Per</td>
+<td>MI/PO</td>
+<td>Per</td>
+<td>None</td>
+<td>2500</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">MI/PO with periodic</td>
+</tr>
+<tr class="row-odd"><td>BENCH04-Size0001</td>
+<td>4</td>
+<td>50</td>
+<td>4</td>
+<td>Per</td>
+<td>Per</td>
+<td>Per</td>
+<td>None</td>
+<td>224</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">Triply periodic</td>
+</tr>
+<tr class="row-even"><td>BENCH05-Size0008</td>
+<td>40</td>
+<td>10</td>
+<td>10</td>
+<td>MI/PI</td>
+<td>IG</td>
+<td>IG</td>
+<td>Cyl</td>
+<td>7949
+(Auto)</td>
+<td>4</td>
+<td colspan="2">4</td>
+<td colspan="3">EB – parallel</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>BENCH05-Size0008</dt>
+<dd>serial</dd>
+</dl>
+</td>
+<td>40</td>
+<td>10</td>
+<td>10</td>
+<td>MI/PI</td>
+<td>IG</td>
+<td>IG</td>
+<td>Cyl</td>
+<td>7968
+(Auto)</td>
+<td>4</td>
+<td colspan="2">1</td>
+<td colspan="3">EB – serial</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>BENCH05-Size0008</dt>
+<dd>wide</dd>
+</dl>
+</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>MI/PI</td>
+<td>IG</td>
+<td>IG</td>
+<td>Cyl</td>
+<td>157106
+(Auto)</td>
+<td>16</td>
+<td colspan="2">4</td>
+<td colspan="3">Regrid &amp; dual grid</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>BENCH06-Size0008</dt>
+<dd>serial</dd>
+</dl>
+</td>
+<td>40</td>
+<td>10</td>
+<td>10</td>
+<td>Per</td>
+<td>IG</td>
+<td>IG</td>
+<td>Cyl</td>
+<td>627
+(Auto)</td>
+<td>4</td>
+<td colspan="2">1</td>
+<td colspan="3">EB – serial
+with periodic</td>
+</tr>
+<tr class="row-even"><td>BENCH06-Size0008</td>
+<td>40</td>
+<td>10</td>
+<td>10</td>
+<td>Per</td>
+<td>IG</td>
+<td>IG</td>
+<td>Cyl</td>
+<td>624
+(Auto)</td>
+<td>4</td>
+<td colspan="2">4</td>
+<td colspan="3">EB – parallel
+with periodic</td>
+</tr>
+<tr class="row-odd"><td>DEM01-x_single</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>NSW</td>
+<td>NSW</td>
+<td>NSW</td>
+<td>None</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">Particle  only</td>
+</tr>
+<tr class="row-even"><td>DEM03-z_single</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>Per</td>
+<td>Per</td>
+<td>NSW</td>
+<td>None</td>
+<td>2</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">Particles only</td>
+</tr>
+<tr class="row-odd"><td>DEM04-z_single</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>NSW</td>
+<td>Per</td>
+<td>Per</td>
+<td>None</td>
+<td>1</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">Particle  only</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
+<dt>DEM05-z_single</dt>
+<dd>LSD</dd>
+</dl>
+</td>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>Per</td>
+<td>NSW</td>
+<td>Per</td>
+<td>None</td>
+<td>93</td>
+<td>1</td>
+<td colspan="2">1</td>
+<td colspan="3">Particle  only</td>
+</tr>
+<tr class="row-odd"><td>DEM06-z_multiple</td>
+<td>5</td>
+<td>5</td>
+<td>50</td>
+<td>Per</td>
+<td>Per</td>
+<td>NSW</td>
+<td>None</td>
+<td>1</td>
+<td>10</td>
+<td colspan="2">4</td>
+<td colspan="3">Particle  only</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
