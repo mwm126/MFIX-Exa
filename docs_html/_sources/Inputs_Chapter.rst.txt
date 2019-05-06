@@ -10,7 +10,6 @@ Run-time Inputs
    InputsTimeStepping 
    InputsInitialization 
    InputsLoadBalancing 
-   InputsCheckpoint
    InputsPlotFiles 
    InputsCheckpoint
    InputsVerbosity
