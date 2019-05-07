@@ -60,25 +60,25 @@ interior to the domain boundaries; they also use drag type "BVK2".
 |                   | ny | bc_y  |      |        |    |    |                      |
 |                   | nz | bc_z  |      |        |    |    |                      |
 +===================+====+=======+======+========+====+====+======================+
-| BENCH05           | 40 | MIPO  | Cyl  | 7949   | 4  | 4  | EB in parallel       |
-| Size0008          | 10 | IG    |      | Auto   |    |    |                      |
-|                   | 10 | IG    |      |        |    |    |                      |
+| BENCH05           | 40 | MI/PO | Cyl  | 7949   | 4  | 4  | EB in parallel       |
+| Size0008          | 10 | IGN   |      | Auto   |    |    |                      |
+|                   | 10 | IGN   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH05           | 40 | MI/PO | Cyl  | 7968   | 4  | 1  | EB in serial         |
-| Size0008          | 10 | IG    |      | Auto   |    |    |                      |
-| serial            | 10 | IG    |      |        |    |    |                      |
+| Size0008          | 10 | IGN   |      | Auto   |    |    |                      |
+| serial            | 10 | IGN   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH05           | 40 | MI/PO | Cyl  | 157106 | 16 | 4  | Regrid & dual grid   |
-| Size0008          | 40 | IG    |      | Auto   |    |    |                      |
-| wide              | 40 | IG    |      |        |    |    |                      |
+| Size0008          | 40 | IGN   |      | Auto   |    |    |                      |
+| wide              | 40 | IGN   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH06           | 40 | Per   | Cyl  | 627    | 4  | 1  | EB                   |
-| Size0008          | 10 | IG    |      | Auto   |    |    | with periodic        |
-| serial            | 10 | IG    |      |        |    |    | serial               |
+| Size0008          | 10 | IGN   |      | Auto   |    |    | with periodic        |
+| serial            | 10 | IGN   |      |        |    |    | serial               |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH06           | 40 | Per   | Cyl  | 624    | 4  | 4  | EB                   |
-| Size0008          | 10 | IG    |      | Auto   |    |    | with periodic        |
-|                   | 10 | IG    |      |        |    |    | parallel             |
+| Size0008          | 10 | IGN   |      | Auto   |    |    | with periodic        |
+|                   | 10 | IGN   |      |        |    |    | parallel             |
 +-------------------+----+-------+------+--------+----+----+----------------------+
 
 
