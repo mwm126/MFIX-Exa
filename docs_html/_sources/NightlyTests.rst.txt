@@ -79,7 +79,7 @@ interior to the domain boundaries; they also use drag type "BVK2".
 | BENCH06           | 40 | Per   | Cyl  | 624    | 4  | 4  | EB                   |
 | Size0008          | 10 | IG    |      | Auto   |    |    | with periodic        |
 |                   | 10 | IG    |      |        |    |    | parallel             |
-+-------------------+----+-------+------+--------+----+-----+---------------------+
++-------------------+----+-------+------+--------+----+----+----------------------+
 
 
 This third set of tests is particles-only in rectangular geometries.
