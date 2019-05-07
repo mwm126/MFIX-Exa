@@ -15,7 +15,10 @@ Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
 generator; if "Auto" is not specified the particle data were read in from "particle_input.dat"
 
 These first tests have both fluid and particles and are run in rectangular geometries;
-they all use drag type "BVK2".
+they all use drag type "BVK2". 
+
+"NSW" means "No Slip Wall" and "Per" is "periodic."
+"MI/PO" refers to Mass Inflow at the low end of the domain and Pressure Outflow at the high end.
 
 +-------------------+----+--------+------+-------+----+----+----------------------+
 | Test              | nx | bc_x   | EB   | Npa   | Ng | Np | What does this test? |
@@ -52,8 +55,8 @@ they all use drag type "BVK2".
 +-------------------+----+--------+------+-------+----+----+----------------------+
 
 This second set of tests have both fluid and particles and are run in cylindrial geometries
-interior to the domain boundaries; they also use drag type "BVK2".
-
+interior to the domain boundaries; they also use drag type "BVK2".  Here "IGN" means
+those domain boundaries should be ignored because they are outside the EB boundary.
 
 +-------------------+----+-------+------+--------+----+----+----------------------+
 | Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
