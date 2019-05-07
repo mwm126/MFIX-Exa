@@ -1,21 +1,39 @@
 .. _Chap:InputsPlotfiles:
 
-Plotfiles
-=========
+Plotfiles and Other Output
+==========================
 
 The following inputs must be preceded by "amr" and control frequency and naming of plotfile generation as well
-as which variables will be written out.
+as whether the EB geometry or level set should be written out, and if the particles should be written out in Ascii
+format (for debugging).
 
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
-| plot_int            | Frequency of plotfile output;                                         |    Int      |  -1       |
+| plot_int            | Frequency of plotfile output;                                         |    Int      | -1        |
 |                     | if -1 then no plotfiles will be written                               |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| plotfile_on_restart | Should we write a plotfile when we restart (only used if plot_int>0)  |   Bool      |  False    |
+| plotfile_on_restart | Should we write a plotfile when we restart (only used if plot_int>0)  |   Bool      | False     |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plot_file           | Prefix to use for plotfile output                                     |  String     | plt       |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| write_ls            | Should we write a plotfile holding the level set and volfrac?         |   Bool      | False     |
+|                     | If true, it will only be written once,after initialization or restart |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| write_eb_surface    | Should we write out the EB geometry in vtp format                     |   Bool      | False     |
+|                     | If true, it will only be written once,after initialization or restart |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| par_ascii_file      | Prefix to use for ascii particle output                               |  String     | par       |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| par_ascii_int       | Frequency of ascii particle output;                                   |    Int      | -1        |
+|                     | if -1 then no plotfiles will be written                               |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+
+The following inputs must be preceded by "amr" and control what variables will be written in plotfiles.
+
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+|                     | Description                                                           |   Type      | Default   |
++=====================+=======================================================================+=============+===========+
 | plt_regtest         | Save all variables to plot file (overrides all other IO flags)        |    Int      | 0         |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plt_vel_g           | Save fluid velocity data to plot file                                 |    Int      | 1         |
