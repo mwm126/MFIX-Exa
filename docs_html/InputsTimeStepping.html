@@ -91,7 +91,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Time Stepping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
@@ -234,6 +234,45 @@
 <td>CFL constraint (dt &lt; cfl * dx / u) if fixed_dt not 1</td>
 <td>Real</td>
 <td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by “mfix” and are only relevant if running a problem to steady state.
+Currently, the criterion for setting “steady_state” to true is if “dt” is undefined in mfix.dat</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="60%" />
+<col width="11%" />
+<col width="10%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="2"><dl class="first last docutils">
+<dt>======================-</dt>
+<dd>steady_state_tol</dd>
+</dl>
+</td>
+<td rowspan="2"><blockquote class="first">
+<div>Description</div></blockquote>
+<blockquote class="last">
+<div>Tolerance for checking if we have reached steady state</div></blockquote>
+</td>
+<td rowspan="2"><blockquote class="first">
+<div>Type</div></blockquote>
+<blockquote class="last">
+<div>Real</div></blockquote>
+</td>
+<td rowspan="2"><blockquote class="first">
+<div>Default</div></blockquote>
+<blockquote class="last">
+<div>1.e-5</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td>steady_state_max_iter</td>
+<td>Maximum number of allowed iterations to converge to steady state</td>
+<td>Int</td>
+<td>100000000</td>
 </tr>
 </tbody>
 </table>

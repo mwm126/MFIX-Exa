@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
@@ -187,14 +187,14 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>max_level</td>
-<td>Maximum level of refinement allowed (0 when single-level)</td>
-<td>Int</td>
-<td>None</td>
-</tr>
-<tr class="row-odd"><td>n_cell</td>
+<tr class="row-even"><td>n_cell</td>
 <td>Number of cells at level 0 in each coordinate direction</td>
 <td>Int Int Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>max_level</td>
+<td>Maximum level of refinement allowed (0 when single-level)</td>
+<td>Int</td>
 <td>None</td>
 </tr>
 </tbody>
@@ -238,28 +238,6 @@
 </tbody>
 </table>
 <p>The following inputs must be preceded by “mfix.”</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="18%" />
-<col width="59%" />
-<col width="11%" />
-<col width="12%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>geometry</td>
-<td>Which type of EB geometry are we using?</td>
-<td>String</td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
 <p>Setting basic EB walls can be specified by inputs preceded by “xlo”, “xhi”, “ylo”, “yhi”, “zlo”, and “zhi”</p>
 <table border="1" class="docutils">
 <colgroup>

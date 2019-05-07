@@ -54,4 +54,6 @@ The following inputs must be preceded by "mfix" and determine how we load balanc
 | knapsack_weight_type | What weighting function to use if using Knapsack load balancing       |  String     | RunTimeCosts |
 |                      | Options are "RunTimeCosts" or "NumParticles""                         |             |              |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
+| knapsack_nmax        | Maximum number of grids per MPI process if using knapsack algorithm   |             |              | 
++----------------------+-----------------------------------------------------------------------+-------------+--------------+
 

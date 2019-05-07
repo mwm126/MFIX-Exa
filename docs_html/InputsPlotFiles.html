@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plotfiles &mdash; MFiX-Exa  documentation</title>
+  <title>Plotfiles and Other Output &mdash; MFiX-Exa  documentation</title>
   
 
   
@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotfiles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotfiles and Other Output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
@@ -150,7 +150,7 @@
         
           <li><a href="Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
         
-      <li>Plotfiles</li>
+      <li>Plotfiles and Other Output</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,10 +169,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="plotfiles">
-<span id="chap-inputsplotfiles"></span><h1>Plotfiles<a class="headerlink" href="#plotfiles" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="plotfiles-and-other-output">
+<span id="chap-inputsplotfiles"></span><h1>Plotfiles and Other Output<a class="headerlink" href="#plotfiles-and-other-output" title="Permalink to this headline">¶</a></h1>
 <p>The following inputs must be preceded by “amr” and control frequency and naming of plotfile generation as well
-as which variables will be written out.</p>
+as whether the EB geometry or level set should be written out, and if the particles should be written out in Ascii
+format (for debugging).</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -204,68 +205,104 @@ if -1 then no plotfiles will be written</td>
 <td>String</td>
 <td>plt</td>
 </tr>
-<tr class="row-odd"><td>plt_regtest</td>
+<tr class="row-odd"><td>write_ls</td>
+<td>Should we write a plotfile holding the level set and volfrac?
+If true, it will only be written once,after initialization or restart</td>
+<td>Bool</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>write_eb_surface</td>
+<td>Should we write out the EB geometry in vtp format
+If true, it will only be written once,after initialization or restart</td>
+<td>Bool</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>par_ascii_file</td>
+<td>Prefix to use for ascii particle output</td>
+<td>String</td>
+<td>par</td>
+</tr>
+<tr class="row-even"><td>par_ascii_int</td>
+<td>Frequency of ascii particle output;
+if -1 then no plotfiles will be written</td>
+<td>Int</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by “amr” and control what variables will be written in plotfiles.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>plt_regtest</td>
 <td>Save all variables to plot file (overrides all other IO flags)</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-even"><td>plt_vel_g</td>
+<tr class="row-odd"><td>plt_vel_g</td>
 <td>Save fluid velocity data to plot file</td>
 <td>Int</td>
 <td>1</td>
 </tr>
-<tr class="row-odd"><td>plt_ep_g</td>
+<tr class="row-even"><td>plt_ep_g</td>
 <td>Save fluid volume fraction to plot file</td>
 <td>Int</td>
 <td>1</td>
 </tr>
-<tr class="row-even"><td>plt_p_g</td>
+<tr class="row-odd"><td>plt_p_g</td>
 <td>Save fluid pressure to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_ro_g</td>
+<tr class="row-even"><td>plt_ro_g</td>
 <td>Save fluid density to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-even"><td>plt_mu_g</td>
+<tr class="row-odd"><td>plt_mu_g</td>
 <td>Save fluid viscosity to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_diveu</td>
+<tr class="row-even"><td>plt_diveu</td>
 <td>Save div(ep_g . u) to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-even"><td>plt_volfrac</td>
+<tr class="row-odd"><td>plt_volfrac</td>
 <td>Save Eulerian grid volume fraction (from cut cells) to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_gradp_g</td>
+<tr class="row-even"><td>plt_gradp_g</td>
 <td>Save gradient of pressure filed to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-even"><td>plt_vort</td>
+<tr class="row-odd"><td>plt_vort</td>
 <td>Save vorticity to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_vel_p</td>
+<tr class="row-even"><td>plt_vel_p</td>
 <td>Save particle velocity to plot file</td>
 <td>Int</td>
 <td>1</td>
 </tr>
-<tr class="row-even"><td>plt_radius</td>
+<tr class="row-odd"><td>plt_radius</td>
 <td>Save particle radius to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_volume</td>
-<td>Save particle volume to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
@@ -274,18 +311,8 @@ if -1 then no plotfiles will be written</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_mass</td>
-<td>Save particle mass to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-even"><td>plt_ro_p</td>
-<td>Save particle density to plot file</td>
-<td>Int</td>
-<td>0</td>
-</tr>
-<tr class="row-odd"><td>plt_omoi</td>
-<td>Save (one divided by the) particle momentum of inertia to plot file</td>
+<tr class="row-odd"><td>plt_volume</td>
+<td>Save particle volume to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
@@ -294,22 +321,37 @@ if -1 then no plotfiles will be written</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_omega_p</td>
+<tr class="row-odd"><td>plt_ro_p</td>
+<td>Save particle density to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_omoi</td>
+<td>Save (one divided by the) particle momentum of inertia to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_mass</td>
+<td>Save particle mass to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_omega_p</td>
 <td>Save particle angular velocity to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-even"><td>plt_drag_p</td>
+<tr class="row-odd"><td>plt_drag_p</td>
 <td>Save particle drag force to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>plt_phase</td>
+<tr class="row-even"><td>plt_phase</td>
 <td>Save particle type to plot file</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>

@@ -26,3 +26,14 @@ The following inputs must be preceded by "mfix."
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | cfl                  | CFL constraint (dt < cfl * dx / u) if fixed_dt not 1                  |    Real     |   0.5        |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
+
+The following inputs must be preceded by "mfix" and are only relevant if running a problem to steady state.
+Currently, the criterion for setting "steady_state" to true is if "dt" is undefined in mfix.dat
+
++-----------------------+-----------------------------------------------------------------------+-------------+------------+
+|                       | Description                                                           |   Type      | Default    |
++======================-+=======================================================================+=============+============+
+| steady_state_tol      | Tolerance for checking if we have reached steady state                |   Real      | 1.e-5      |
++-----------------------+-----------------------------------------------------------------------+-------------+------------+
+| steady_state_max_iter | Maximum number of allowed iterations to converge to steady state      |   Int       | 100000000  |
++-----------------------+-----------------------------------------------------------------------+-------------+------------+
