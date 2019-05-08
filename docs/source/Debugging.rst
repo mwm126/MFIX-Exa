@@ -18,7 +18,9 @@ In debug mode, many compiler debugging flags are turned on and all
 when a floating point exception occurs.  One can then examine those
 files to track down the origin of the issue.
 
-Writing a :cpp:`MultiFab` to disk with
+Several other ways to look at the data include:
+
+1) Writing a :cpp:`MultiFab` to disk with
 
 .. highlight:: c++
 
@@ -26,10 +28,9 @@ Writing a :cpp:`MultiFab` to disk with
 
     VisMF::Write(const FabArray<FArrayBox>& mf, const std::string& name);
 
-and examining it with ``Amrvis`` (section :ref:`sec:amrvis` in the AMReX documeintation) 
-can be helpful as well.  
+and examining it with ``Amrvis`` (section :ref:`sec:amrvis` in the AMReX documentation).
 
-You can also use the :cpp:`print_state` routine: 
+2) You can also use the :cpp:`print_state` routine: 
 
 .. highlight:: c++
 
@@ -39,7 +40,21 @@ You can also use the :cpp:`print_state` routine:
 
 which outputs the data for a single cell.
 
-Valgrind is another useful debugging tool.  Note that for runs using
+3) If you want to compare old and new plotfiles, 
+
+.. highlight:: c++
+
+::
+
+    fcompare --infile1 plt00000_run1 --infile2 plt00000_run2 --diffvar u_g
+
+will print out the maximum absolute and relative differences between the two plotfiles
+for each variable and will also create a new plotfile "diffs" that contains the difference
+in u_g (in this case) between the two plotfiles.
+
+The :cpp:`fcompare` executable can be built in AMReX (go to amrex/Tools/Plotfile and type "make").
+
+4) Valgrind is another useful debugging tool.  Note that for runs using
 more than one MPI process, one can tell valgrind to output to different 
 files for different processes.  For example,
 
