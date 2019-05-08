@@ -43,7 +43,7 @@ Assuming the fluid phase is incompressible, :math:`\frac{D \rho_g}{Dt} = 0`, the
 The conservation of fluid momentum is:
 
 .. math:: \frac{ \partial (\varepsilon_g \rho_g U_g)}{\partial t} 
-   + \nabla \cdot (\varepsilon_g \rho_g U_g \otimes U_g) + \nabla p_g 
+   + \nabla \cdot (\varepsilon_g \rho_g U_g U_g) + \varepsilon_g \nabla p_g
    = \nabla \cdot \tau + M_{sg} + \varepsilon_g \rho_g g
 
 where :math:`M_{sg} = - M_{gs}` is the generalized interfacial momentum transfer from 
