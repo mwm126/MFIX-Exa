@@ -167,7 +167,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <p>“Auto” means the particles were generated automatically with the random number
 generator; if “Auto” is not specified the particle data were read in from “particle_input.dat”</p>
 <p>These first tests have both fluid and particles and are run in rectangular geometries;
-they all use drag type “BVK2”.</p>
+all tests except DEM06 use drag type “BVK2”.</p>
 <p>“NSW” means “No Slip Wall” and “Per” is “periodic.”
 “MI/PO” refers to Mass Inflow at the low end of the domain and Pressure Outflow at the high end.</p>
 <table border="1" class="docutils">
@@ -253,9 +253,24 @@ Per</td>
 <td>1611</td>
 <td>1</td>
 <td>1</td>
-<td>&#160;</td>
+<td>Mixed NSW / Per</td>
 </tr>
-<tr class="row-even"><td>BENCH03
+<tr class="row-even"><td>BENCH02
+Size0001
+box</td>
+<td>10
+10
+10</td>
+<td>NSW
+NSW
+NSW</td>
+<td>None</td>
+<td>1611</td>
+<td>1</td>
+<td>1</td>
+<td>NSW on all faces</td>
+</tr>
+<tr class="row-odd"><td>BENCH03
 Size0001</td>
 <td>4
 50
@@ -267,9 +282,9 @@ Per</td>
 <td>2500</td>
 <td>1</td>
 <td>1</td>
-<td>&#160;</td>
+<td>Mixed MI/PO + Per</td>
 </tr>
-<tr class="row-odd"><td>BENCH04
+<tr class="row-even"><td>BENCH04
 Size0001</td>
 <td>4
 50
@@ -283,7 +298,7 @@ Per</td>
 <td>1</td>
 <td>Triply periodic</td>
 </tr>
-<tr class="row-even"><td>DEM06
+<tr class="row-odd"><td>DEM06
 z multiple</td>
 <td>5
 5
@@ -295,7 +310,9 @@ Per</td>
 <td>1</td>
 <td>1</td>
 <td>4</td>
-<td>&#160;</td>
+<td>Single particle
+falling in fluid
+(user_drag)</td>
 </tr>
 </tbody>
 </table>

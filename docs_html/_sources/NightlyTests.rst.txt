@@ -15,7 +15,7 @@ Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
 generator; if "Auto" is not specified the particle data were read in from "particle_input.dat"
 
 These first tests have both fluid and particles and are run in rectangular geometries;
-they all use drag type "BVK2". 
+all tests except DEM06 use drag type "BVK2". 
 
 "NSW" means "No Slip Wall" and "Per" is "periodic."
 "MI/PO" refers to Mass Inflow at the low end of the domain and Pressure Outflow at the high end.
@@ -37,11 +37,15 @@ they all use drag type "BVK2".
 | Size0001          | 32 | Per    |      |       |    |    |                      |
 | restart           | 32 | Per    |      |       |    |    |                      |
 +-------------------+----+--------+------+-------+----+----+----------------------+
-| BENCH02           | 10 | Per    | None | 1611  | 1  | 1  |                      |
+| BENCH02           | 10 | Per    | None | 1611  | 1  | 1  | Mixed NSW / Per      |
 | Size0001          | 10 | NSW    |      |       |    |    |                      |
 |                   | 10 | Per    |      |       |    |    |                      |
 +-------------------+----+--------+------+-------+----+----+----------------------+
-| BENCH03           | 4  | Per    | None | 2500  | 1  | 1  |                      |
+| BENCH02           | 10 | NSW    | None | 1611  | 1  | 1  | NSW on all faces     |
+| Size0001          | 10 | NSW    |      |       |    |    |                      |
+| box               | 10 | NSW    |      |       |    |    |                      |
++-------------------+----+--------+------+-------+----+----+----------------------+
+| BENCH03           | 4  | Per    | None | 2500  | 1  | 1  | Mixed MI/PO + Per    |
 | Size0001          | 50 | MI/PO  |      |       |    |    |                      |
 |                   | 4  | Per    |      |       |    |    |                      |
 +-------------------+----+--------+------+-------+----+----+----------------------+
@@ -49,9 +53,9 @@ they all use drag type "BVK2".
 | Size0001          | 50 | Per    |      |       |    |    |                      |
 |                   | 4  | Per    |      |       |    |    |                      |
 +-------------------+----+--------+------+-------+----+----+----------------------+
-| DEM06             | 5  | Per    | None | 1     | 1  | 4  |                      |
-| z multiple        | 5  | Per    |      |       |    |    |                      |
-|                   | 50 | Per    |      |       |    |    |                      |
+| DEM06             | 5  | Per    | None | 1     | 1  | 4  | Single particle      |
+| z multiple        | 5  | Per    |      |       |    |    | falling in fluid     |
+|                   | 50 | Per    |      |       |    |    | (user_drag)          |
 +-------------------+----+--------+------+-------+----+----+----------------------+
 
 This second set of tests have both fluid and particles and are run in cylindrial geometries
