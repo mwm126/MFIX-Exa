@@ -87,12 +87,10 @@ That is determined by the following calculation:
       * If dt as computed in the compute_dt routine is larger than the user-specified 
         ```mfix.dt_max``` then dt will be set to the minimum of its computed value and dt_max
 
-      * If dt as computed in the compute_dt routine is larger than the user-specified 
-
       * Note that the cfl defaults to 0.5 so it does not have to be set in the inputs file. If neither
-        :cpp:`mfix.cfl` nor :cpp:`fixed_dt` is set, then the default will be the second option here.  
+        :cpp:`mfix.cfl` nor :cpp:`fixed_dt` is set, then default value of cfl will be used.
         If :cpp:`mfix.fixed_dt` is set, then it will override the cfl option whether 
-        :cpp:`mfix.cfl` is set or not in the inputs file.
+        :cpp:`mfix.cfl` is set or not.
 
 These options apply to steady state calculations as well as unsteady runs.  
 
