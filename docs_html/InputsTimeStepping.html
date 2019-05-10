@@ -89,6 +89,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-time-step">Setting the Time Step</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
@@ -171,7 +172,11 @@
             
   <div class="section" id="time-stepping">
 <h1>Time Stepping<a class="headerlink" href="#time-stepping" title="Permalink to this headline">¶</a></h1>
-<p>The following inputs must be preceded by “amr.”</p>
+<p>The following inputs must be preceded by “amr.”   Note that if both are specified, both criteria
+are used and the simulation still stop when the first criterion is hit.  In the case of unsteady flow,
+the simulation will stop when either the number of steps reaches max_step or time reaches stop_time.
+In the case of unsteady flow, the simulation will stop when either the tolerance (difference between
+subsequent steps) is reached or the number of iterations reaches the maximum number specified.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -246,29 +251,19 @@ Currently, the criterion for setting “steady_state” to true is if “dt” i
 <col width="11%" />
 <col width="10%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td rowspan="2"><dl class="first last docutils">
-<dt>======================-</dt>
-<dd>steady_state_tol</dd>
-</dl>
-</td>
-<td rowspan="2"><blockquote class="first">
-<div>Description</div></blockquote>
-<blockquote class="last">
-<div>Tolerance for checking if we have reached steady state</div></blockquote>
-</td>
-<td rowspan="2"><blockquote class="first">
-<div>Type</div></blockquote>
-<blockquote class="last">
-<div>Real</div></blockquote>
-</td>
-<td rowspan="2"><blockquote class="first">
-<div>Default</div></blockquote>
-<blockquote class="last">
-<div>1.e-5</div></blockquote>
-</td>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
 </tr>
-<tr class="row-even"></tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>steady_state_tol</td>
+<td>Tolerance for checking if we have reached steady state</td>
+<td>Real</td>
+<td>1.e-5</td>
+</tr>
 <tr class="row-odd"><td>steady_state_max_iter</td>
 <td>Maximum number of allowed iterations to converge to steady state</td>
 <td>Int</td>
@@ -276,6 +271,35 @@ Currently, the criterion for setting “steady_state” to true is if “dt” i
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="setting-the-time-step">
+<h1>Setting the Time Step<a class="headerlink" href="#setting-the-time-step" title="Permalink to this headline">¶</a></h1>
+<p>There are several ways that the inputs are used to determine what time step
+is used in the evolution of the fluid-particle system in MFiX-Exa.</p>
+<p>1) In a pure particle case, the “mfix.fixed_dt”, if specified, is only used to determine the frequency
+of outputs, it has no effect on the dt used in the particle evaluation.  [WHAT HAPPENS IF FIXED_DT
+NOT SPECIFIED?]</p>
+<p>That is determined by the following calculation:</p>
+<ol class="arabic simple" start="2">
+<li>In a pure fluid case, there are two options:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>If you want to fix the dt, simply set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">XXX</span></span></code> and the fluid time
+step will always be that number.  [SHOULD WE ABORT IF YOU ALSO SET CFL?  OR SPECIFY
+THAT FIXED_DT OVERRIDES CFL?]</li>
+<li>If you want to let the code determine the appropriate time step using the advective CFL
+condition, then set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number float"><span class="pre">0.5</span></span></code> for example, and the fluid time step will
+be computed to be dt = 0.5 * dx / max(vel).</li>
+</ul>
+</div></blockquote>
+<p>Note that these choices apply to steady state calculations as well as unsteady runs.</p>
+<ol class="arabic simple" start="3">
+<li>In a coupled particle-fluid case, dt is set as in the pure-fluid case.  In this case
+the particle time step is first computed as in the particle-only case, then is adjusted
+so that an integral number of particle steps fit into a single fluid time step.</li>
+</ol>
+<p>[HOW ARE DT_MIN AND DT_MAX USED???]</p>
 </div>
 
 
