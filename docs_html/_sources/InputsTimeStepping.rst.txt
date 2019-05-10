@@ -37,7 +37,11 @@ Currently, the criterion for setting "steady_state" to true is if "dt" is undefi
 +-----------------------+-----------------------------------------------------------------------+-------------+------------+
 |                       | Description                                                           |   Type      | Default    |
 +=======================+=======================================================================+=============+============+
-| steady_state_tol      | Tolerance for checking if we have reached steady state                |   Real      | 1.e-5      |
+| steady_state          | Are we running a steady-state calculation?                            |   Int       | 0          |
++-----------------------+-----------------------------------------------------------------------+-------------+------------+
+| steady_state_tol      | Tolerance for checking if we have reached steady state                |   Real      | None       |
+|                       |                                                                       |             |            |
+|                       | (Must be set if steady_state_tol = 1)                                 |             |            |
 +-----------------------+-----------------------------------------------------------------------+-------------+------------+
 | steady_state_max_iter | Maximum number of allowed iterations to converge to steady state      |   Int       | 100000000  |
 +-----------------------+-----------------------------------------------------------------------+-------------+------------+
@@ -50,8 +54,15 @@ There are several ways that the inputs are used to determine what time step
 is used in the evolution of the fluid-particle system in MFiX-Exa.   
 
 1) In a pure particle case, the "mfix.fixed_dt", if specified, is only used to determine the frequency
-of outputs, it has no effect on the dt used in the particle evaluation.  [WHAT HAPPENS IF FIXED_DT 
-NOT SPECIFIED?]
+of outputs, it has no effect on the dt used in the particle evaluation. If you do not specify a positive
+value of "mfix.fixed_dt" then the code will abort.
+
+.. highlight:: c++
+
+::
+
+    amrex::Abort::0::If running particle-only must specify fixed_dt in the inputs file !!!
+
 
 That is determined by the following calculation:
 
