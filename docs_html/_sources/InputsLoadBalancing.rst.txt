@@ -44,8 +44,8 @@ The following inputs must be preceded by "mfix" and determine how we load balanc
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 |                      | Description                                                           |   Type      | Default      |
 +======================+=======================================================================+=============+==============+
-| dual_grid            | If true then use the "dual_grid" approach for load balancing          |   Bool      | False     |
-+----------------------+-----------------------------------------------------------------------+-------------+-----------+
+| dual_grid            | If true then use the "dual_grid" approach for load balancing          |  Bool       | False        |
++----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | load_balance_fluid   | Only relevant if (dual_grid); if so do we also regrid mesh data       |  Int        | 1            |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | load_balance_type    | What strategy to use for load balancing                               |  String     | FixedSize    |

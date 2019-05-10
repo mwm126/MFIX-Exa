@@ -266,6 +266,50 @@ for grids in the ParticleBoxArray if dual_grid is true.</td>
 </tbody>
 </table>
 <p>The following inputs must be preceded by “mfix” and determine how we load balance:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="59%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dual_grid</td>
+<td>If true then use the “dual_grid” approach for load balancing</td>
+<td>Bool</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>load_balance_fluid</td>
+<td>Only relevant if (dual_grid); if so do we also regrid mesh data</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>load_balance_type</td>
+<td>What strategy to use for load balancing
+Options are “FixedSize”, “KDTree” or “Knapsack”</td>
+<td>String</td>
+<td>FixedSize</td>
+</tr>
+<tr class="row-odd"><td>knapsack_weight_type</td>
+<td>What weighting function to use if using Knapsack load balancing
+Options are “RunTimeCosts” or “NumParticles”“</td>
+<td>String</td>
+<td>RunTimeCosts</td>
+</tr>
+<tr class="row-even"><td>knapsack_nmax</td>
+<td>Maximum number of grids per MPI process if using knapsack algorithm</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
