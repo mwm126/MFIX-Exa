@@ -78,11 +78,11 @@ That is determined by the following calculation:
       * If dt as computed in the compute_dt routine is smaller than the user-specified 
         ```mfix.dt_min``` then the code will abort:
 
-.. highlight:: c++
+         .. highlight:: c++
 
-::
+         ::
 
-    amrex::Abort::0::"Current dt is smaller than dt_min !!!
+             amrex::Abort::0::"Current dt is smaller than dt_min !!!
 
       * If dt as computed in the compute_dt routine is larger than the user-specified 
         ```mfix.dt_max``` then dt will be set to the minimum of its computed value and dt_max
