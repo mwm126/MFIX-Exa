@@ -283,13 +283,14 @@ Currently, the criterion for setting “steady_state” to true is if “dt” i
 <h1>Setting the Time Step<a class="headerlink" href="#setting-the-time-step" title="Permalink to this headline">¶</a></h1>
 <p>There are several ways that the inputs are used to determine what time step
 is used in the evolution of the fluid-particle system in MFiX-Exa.</p>
-<p>1) In a pure particle case, the “mfix.fixed_dt”, if specified, is only used to determine the frequency
-of outputs, it has no effect on the dt used in the particle evaluation. If you do not specify a positive
-value of “mfix.fixed_dt” then the code will abort.</p>
+<p>1) In a pure particle case, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span></code>, if specified, is only used to determine the frequency
+of outputs, it has no effect on the “subdt” used in the particle evaluation. If you do not specify a positive
+value of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span></code> then the code will abort.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span><span class="o">::</span><span class="mi">0</span><span class="o">::</span><span class="n">If</span> <span class="n">running</span> <span class="n">particle</span><span class="o">-</span><span class="n">only</span> <span class="n">must</span> <span class="n">specify</span> <span class="n">fixed_dt</span> <span class="n">in</span> <span class="n">the</span> <span class="n">inputs</span> <span class="n">file</span> <span class="o">!!!</span>
 </pre></div>
 </div>
-<p>That is determined by the following calculation:</p>
+<p>The particle time step “subdt” is determined by computing the collision time “tcoll” from particle properties,
+then setting “dtsolid” to be “tcoll / 50”.</p>
 <ol class="arabic simple" start="2">
 <li>In a pure fluid case, there are two options:</li>
 </ol>
@@ -326,9 +327,9 @@ If <code class="code cpp c++ docutils literal notranslate"><span class="name"><s
 </div></blockquote>
 <p>These options apply to steady state calculations as well as unsteady runs.</p>
 <ol class="arabic simple" start="3">
-<li>In a coupled particle-fluid case, dt is set as in the pure-fluid case.  In this case
-the particle time step is first computed as in the particle-only case, then is adjusted
-so that an integral number of particle steps fit into a single fluid time step.</li>
+<li>In a coupled particle-fluid case, dt is determined as in the pure-fluid case.  In this case
+the particle time step “subdt” is first computed as in the particle-only case (“dtsolid”),
+then is adjusted so that an integral number of particle steps fit into a single fluid time step.</li>
 </ol>
 </div>
 

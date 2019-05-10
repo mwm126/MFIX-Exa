@@ -53,9 +53,9 @@ Setting the Time Step
 There are several ways that the inputs are used to determine what time step 
 is used in the evolution of the fluid-particle system in MFiX-Exa.   
 
-1) In a pure particle case, the "mfix.fixed_dt", if specified, is only used to determine the frequency
-of outputs, it has no effect on the dt used in the particle evaluation. If you do not specify a positive
-value of "mfix.fixed_dt" then the code will abort.
+1) In a pure particle case, the :cpp:`mfix.fixed_dt`, if specified, is only used to determine the frequency
+of outputs, it has no effect on the "subdt" used in the particle evaluation. If you do not specify a positive
+value of :cpp:`mfix.fixed_dt` then the code will abort.
 
 .. highlight:: c++
 
@@ -63,8 +63,8 @@ value of "mfix.fixed_dt" then the code will abort.
 
     amrex::Abort::0::If running particle-only must specify fixed_dt in the inputs file !!!
 
-
-That is determined by the following calculation:
+The particle time step "subdt" is determined by computing the collision time "tcoll" from particle properties,
+then setting "dtsolid" to be "tcoll / 50".
 
 2) In a pure fluid case, there are two options:
 
@@ -94,6 +94,6 @@ That is determined by the following calculation:
 
 These options apply to steady state calculations as well as unsteady runs.  
 
-3) In a coupled particle-fluid case, dt is set as in the pure-fluid case.  In this case
-   the particle time step is first computed as in the particle-only case, then is adjusted
-   so that an integral number of particle steps fit into a single fluid time step.
+3) In a coupled particle-fluid case, dt is determined as in the pure-fluid case.  In this case
+   the particle time step "subdt" is first computed as in the particle-only case ("dtsolid"), 
+   then is adjusted so that an integral number of particle steps fit into a single fluid time step.
