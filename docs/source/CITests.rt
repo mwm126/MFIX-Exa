@@ -29,8 +29,8 @@ These first tests have both fluid and particles and are run in rectangular geome
 all tests except DEM06 use drag type "BVK2". 
 
 "NSW" means "No Slip Wall" and "Per" is "periodic."
-"MI/PO" refers to Mass Inflow at the low end of the domain and Pressure Outflow at the high end.
-
+"MI/PO" refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end,
+"PI/PO" refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end,
 
 This third set of tests is particles-only in rectangular geometries.
 
