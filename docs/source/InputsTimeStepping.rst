@@ -69,18 +69,33 @@ That is determined by the following calculation:
 2) In a pure fluid case, there are two options:
 
   * If you want to fix the dt, simply set :cpp:`mfix.fixed_dt = XXX` and the fluid time
-    step will always be that number.  [SHOULD WE ABORT IF YOU ALSO SET CFL?  OR SPECIFY
-    THAT FIXED_DT OVERRIDES CFL?]
+    step will always be that number. 
 
   * If you want to let the code determine the appropriate time step using the advective CFL
-    condition, then set :cpp:`mfix.cfl = 0.5` for example, and the fluid time step will
+    condition, then set :cpp:`mfix.cfl = 0.7` for example, and the fluid time step will
     be computed to be dt = 0.5 * dx / max(vel).
 
-Note that these choices apply to steady state calculations as well as unsteady runs.
+      * If dt as computed in the compute_dt routine is smaller than the user-specified 
+        ```mfix.dt_min``` then the code will abort:
 
+.. highlight:: c++
+
+::
+
+    amrex::Abort::0::"Current dt is smaller than dt_min !!!
+
+      * If dt as computed in the compute_dt routine is larger than the user-specified 
+        ```mfix.dt_max``` then dt will be set to the minimum of its computed value and dt_max
+
+      * If dt as computed in the compute_dt routine is larger than the user-specified 
+
+      * Note that the cfl defaults to 0.5 so it does not have to be set in the inputs file. If neither
+        :cpp:`mfix.cfl` nor :cpp:`fixed_dt` is set, then the default will be the second option here.  
+        If :cpp:`mfix.fixed_dt` is set, then it will override the cfl option whether 
+        :cpp:`mfix.cfl` is set or not in the inputs file.
+
+These options apply to steady state calculations as well as unsteady runs.  
 
 3) In a coupled particle-fluid case, dt is set as in the pure-fluid case.  In this case
    the particle time step is first computed as in the particle-only case, then is adjusted
    so that an integral number of particle steps fit into a single fluid time step.
-
-[HOW ARE DT_MIN AND DT_MAX USED???]
