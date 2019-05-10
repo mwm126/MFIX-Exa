@@ -73,7 +73,7 @@ the level-set creation:
 +-------------------------------+------------------------------------------------+
 |  Parameter                    |  Description                                   |
 +===============================+================================================+
-| ``amr.max_level``             | If greater than 1, MFiX operates in multi-level|
+| ``amr.max_level``             | If greater than 0, MFiX operates in multi-level|
 |                               | mode. The level-set grids follow all other     |
 |                               | grids. If equal to 1, the level-set has two    |
 |                               | levels (one additional level with higher       |
