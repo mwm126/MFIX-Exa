@@ -8,10 +8,3 @@
     max-width: 100%;
     overflow: visible;
 }
-
-/* rtd_theme currently colours code-blocks in the pygments style (ie. green).
- * This overrides this design choice with white. Note: future versions of the
- * sphinx_rtd_theme might not need this HACK. */
-.highlight {
-    background: #ffffff;
-}
