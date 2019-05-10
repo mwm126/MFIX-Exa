@@ -294,22 +294,41 @@ value of “mfix.fixed_dt” then the code will abort.</p>
 <li>In a pure fluid case, there are two options:</li>
 </ol>
 <blockquote>
+<div><ul>
+<li><p class="first">If you want to fix the dt, simply set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">XXX</span></span></code> and the fluid time
+step will always be that number.</p>
+</li>
+<li><p class="first">If you want to let the code determine the appropriate time step using the advective CFL
+condition, then set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number float"><span class="pre">0.7</span></span></code> for example, and the fluid time step will
+be computed to be dt = 0.5 * dx / max(vel).</p>
+<blockquote>
 <div><ul class="simple">
-<li>If you want to fix the dt, simply set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">XXX</span></span></code> and the fluid time
-step will always be that number.  [SHOULD WE ABORT IF YOU ALSO SET CFL?  OR SPECIFY
-THAT FIXED_DT OVERRIDES CFL?]</li>
-<li>If you want to let the code determine the appropriate time step using the advective CFL
-condition, then set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number float"><span class="pre">0.5</span></span></code> for example, and the fluid time step will
-be computed to be dt = 0.5 * dx / max(vel).</li>
+<li>If dt as computed in the compute_dt routine is smaller than the user-specified
+<code class="docutils literal notranslate"><span class="pre">`mfix.dt_min`</span></code> then the code will abort:</li>
 </ul>
 </div></blockquote>
-<p>Note that these choices apply to steady state calculations as well as unsteady runs.</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>amrex::Abort::0::&quot;Current dt is smaller than dt_min !!!
+
+  * If dt as computed in the compute_dt routine is larger than the user-specified
+    ```mfix.dt_max``` then dt will be set to the minimum of its computed value and dt_max
+
+  * If dt as computed in the compute_dt routine is larger than the user-specified
+
+  * Note that the cfl defaults to 0.5 so it does not have to be set in the inputs file. If neither
+    :cpp:`mfix.cfl` nor :cpp:`fixed_dt` is set, then the default will be the second option here.
+    If :cpp:`mfix.fixed_dt` is set, then it will override the cfl option whether
+    :cpp:`mfix.cfl` is set or not in the inputs file.
+</pre></div>
+</div>
+<p>These options apply to steady state calculations as well as unsteady runs.</p>
 <ol class="arabic simple" start="3">
 <li>In a coupled particle-fluid case, dt is set as in the pure-fluid case.  In this case
 the particle time step is first computed as in the particle-only case, then is adjusted
 so that an integral number of particle steps fit into a single fluid time step.</li>
 </ol>
-<p>[HOW ARE DT_MIN AND DT_MAX USED???]</p>
 </div>
 
 
