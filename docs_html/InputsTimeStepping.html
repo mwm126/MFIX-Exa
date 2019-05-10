@@ -302,27 +302,30 @@ step will always be that number.</p>
 condition, then set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number float"><span class="pre">0.7</span></span></code> for example, and the fluid time step will
 be computed to be dt = 0.5 * dx / max(vel).</p>
 <blockquote>
-<div><ul class="simple">
-<li>If dt as computed in the compute_dt routine is smaller than the user-specified
-<code class="docutils literal notranslate"><span class="pre">`mfix.dt_min`</span></code> then the code will abort:</li>
+<div><ul>
+<li><p class="first">If dt as computed in the compute_dt routine is smaller than the user-specified
+<code class="docutils literal notranslate"><span class="pre">`mfix.dt_min`</span></code> then the code will abort:</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span><span class="o">::</span><span class="mi">0</span><span class="o">::</span><span class="s">&quot;Current dt is smaller than dt_min !!!</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">If dt as computed in the compute_dt routine is larger than the user-specified
+<code class="docutils literal notranslate"><span class="pre">`mfix.dt_max`</span></code> then dt will be set to the minimum of its computed value and dt_max</p>
+</li>
+<li><p class="first">If dt as computed in the compute_dt routine is larger than the user-specified</p>
+</li>
+<li><p class="first">Note that the cfl defaults to 0.5 so it does not have to be set in the inputs file. If neither
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span></code> nor <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fixed_dt</span></span></code> is set, then the default will be the second option here.
+If <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span></code> is set, then it will override the cfl option whether
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span></code> is set or not in the inputs file.</p>
+</li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>amrex::Abort::0::&quot;Current dt is smaller than dt_min !!!
-
-  * If dt as computed in the compute_dt routine is larger than the user-specified
-    ```mfix.dt_max``` then dt will be set to the minimum of its computed value and dt_max
-
-  * If dt as computed in the compute_dt routine is larger than the user-specified
-
-  * Note that the cfl defaults to 0.5 so it does not have to be set in the inputs file. If neither
-    :cpp:`mfix.cfl` nor :cpp:`fixed_dt` is set, then the default will be the second option here.
-    If :cpp:`mfix.fixed_dt` is set, then it will override the cfl option whether
-    :cpp:`mfix.cfl` is set or not in the inputs file.
-</pre></div>
-</div>
 <p>These options apply to steady state calculations as well as unsteady runs.</p>
 <ol class="arabic simple" start="3">
 <li>In a coupled particle-fluid case, dt is set as in the pure-fluid case.  In this case
