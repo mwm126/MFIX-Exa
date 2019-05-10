@@ -1,0 +1,81 @@
+.. _Chap:CITesting :
+
+Continuous Integration
+======================
+
+The following regression tests are run every time a commit is pushed to the main
+MFiX-Exa repository on the NETL gitlab.
+
+For each of the tests in the chart below, we have identified the "-x" version
+in the table, but each of the tests also has a "-y" version and a "-z" version.
+
+Similarly -- for many of these tests there are multiple versions, 
+with the following notations:
+
+  * SGS: single grid serial
+
+  * MGS: multiple grid serial 
+
+  * TGS: tiled grid serial 
+
+  * MGP: multiple grid parallel 
+
+Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
+
+"Auto" means the particles were generated automatically with the random number
+generator; if "Auto" is not specified the particle data were read in from "particle_input.dat"
+
+These first tests have both fluid and particles and are run in rectangular geometries;
+all tests except DEM06 use drag type "BVK2". 
+
+"NSW" means "No Slip Wall" and "Per" is "periodic."
+"MI/PO" refers to Mass Inflow at the low end of the domain and Pressure Outflow at the high end.
+
+
+This third set of tests is particles-only in rectangular geometries.
+
++-------------------+----+-------+------+--------+----+----+----------------------+
+| Test              | nx | bc_x  | EB   | Npa    | Ng | Np | What does this test? |
+|                   | ny | bc_y  |      |        |    |    |                      |
+|                   | nz | bc_z  |      |        |    |    |                      |
++===================+====+=======+======+========+====+====+======================+
+| FLD01-x:SGS       | 8  | Per   | None | 0      | 1  | 1  |                      |
+| MGS               | 4  | NSW   |      |        | 2  |    |                      |
+| MGP               | 4  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| FLD02-x:SGS       | 80 | MI/PO | None | 0      | 1  | 1  |                      |
+| MGS               | 16 | NSW   |      |        | 40 |    |                      |
+| MGP               | 16 | NSW   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| FLD03-x:SGS       | 8  | PI/PO | None | 0      | 1  | 1  |                      |
+| MGS               | 8  | NSW   |      |        | 4  |    |                      |
+| MGP               | 4  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM01:SGS         | 2  | NSW   | None | 1      | 1  | 1  | Particle  only       |
+|                   | 5  | Per   |      |        |    |    |                      |
+|                   | 5  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM02:SGS         | 2  | NSW   | None | 1      | 1  | 1  | Particle  only       |
+|                   | 5  | Per   |      |        |    |    |                      |
+|                   | 5  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM03:SGS         | 2  | NSW   | None | 2      | 1  | 1  | Particle  only       |
+|                   | 5  | Per   |      |        |    |    |                      |
+|                   | 5  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM04:SGS         | 4  | NSW   | None | 1      | 1  | 1  | Particle  only       |
+|                   | 4  | Per   |      |        |    |    |                      |
+|                   | 4  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM05:SGS         | 5  | Per   | None | 93     | 1  | 1  | Particle  only       |
+|                   | 2  | Per   |      |        |    |    |                      |
+|                   | 5  | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM06-x:SGS       | 50 | NSW   | None | 1      | 1  | 1  |                      |
+| MGS               | 5  | NSW   |      |        | 10 | 4  |                      |
+| MGP               | 5  | NSW   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
+| DEM07-x           | 20 | Per   | None | 1222   | 1  | 1  |                      |
+| MGS               | 20 | Per   |      |        | 8  |    |                      |
+| MGP               | 20 | Per   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
