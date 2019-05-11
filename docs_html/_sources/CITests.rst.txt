@@ -33,6 +33,8 @@ None of these tests have non-rectangular geometry.
 "MI/PO" refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end.
 "PI/PO" refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end.
 
+Additional detail about these problems is given in tests/README.md
+
 +-------------------+----+-------+--------+----+----+----------------------+
 | Test              | nx | bc_x  | Npa    | Ng | Np | Description          |
 |                   | ny | bc_y  |        |    |    |                      |
@@ -45,9 +47,9 @@ None of these tests have non-rectangular geometry.
 | MGP               | 4  | Per   |        | 2  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | FLD02-x:SGS       | 80 | MI/PO | 0      | 1  | 1  |                      |
-|                   |    |       |        |    |    | Flow in              |
+|                   |    |       |        |    |    | Couette flow in      |
 | MGS               | 16 | NSW   |        | 40 | 1  | rectangular channel  |
-|                   |    |       |        |    |    | with mass inflow     |
+|                   |    |       |        |    |    |                      |
 | MGP               | 16 | NSW   |        | 40 |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | FLD03-x:SGS       | 8  | PI/PO | 0      | 1  | 1  |                      |
@@ -56,43 +58,43 @@ None of these tests have non-rectangular geometry.
 |                   |    |       |        |    |    |    inflow / outflow  |
 | MGP               | 4  | Per   |        | 4  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
-| DEM01:SGS         | 2  | NSW   | 1      | 1  | 1  | Particle  only       |
+| DEM01:SGS         | 2  | NSW   | 1      | 1  | 1  | Freely falling       |
 |                   |    |       |        |    |    |                      |
-|                   | 5  | Per   |        |    |    |                      |
+|                   | 5  | Per   |        |    |    | particle with        |
+|                   |    |       |        |    |    |                      |
+|                   | 5  | Per   |        |    |    | wall collision       |
++-------------------+----+-------+--------+----+----+----------------------+
+| DEM02:SGS         | 2  | NSW   | 1      | 1  | 1  | Multiple bounces     |
+|                   |    |       |        |    |    |                      |
+|                   | 5  | Per   |        |    |    | with bounce height   |
+|                   |    |       |        |    |    |                      |
+|                   | 5  | Per   |        |    |    | measured             |
++-------------------+----+-------+--------+----+----+----------------------+
+| DEM03:SGS         | 2  | NSW   | 2      | 1  | 1  | Two stacked          |
+|                   |    |       |        |    |    |                      |
+|                   | 5  | Per   |        |    |    | compressed particles |
 |                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
-| DEM02:SGS         | 2  | NSW   | 1      | 1  | 1  | Particle  only       |
+| DEM04:SGS         | 4  | NSW   | 1      | 1  | 1  | Single particle      |
 |                   |    |       |        |    |    |                      |
-|                   | 5  | Per   |        |    |    |                      |
+|                   | 4  | Per   |        |    |    | slipping on a        |                      
 |                   |    |       |        |    |    |                      |
-|                   | 5  | Per   |        |    |    |                      |
+|                   | 4  | Per   |        |    |    |  rough surface       |
 +-------------------+----+-------+--------+----+----+----------------------+
-| DEM03:SGS         | 2  | NSW   | 2      | 1  | 1  | Particle  only       |
-|                   |    |       |        |    |    |                      |
-|                   | 5  | Per   |        |    |    |                      |
-|                   |    |       |        |    |    |                      |
-|                   | 5  | Per   |        |    |    |                      |
+| DEM05:SGS         | 5  | Per   | 93     | 1  | 1  | Oblique particle     |
+|                   | 2  | Per   |        |    |    |                       |
+|                   | 5  | Per   |        |    |    | collisions           |
 +-------------------+----+-------+--------+----+----+----------------------+
-| DEM04:SGS         | 4  | NSW   | 1      | 1  | 1  | Particle  only       |
-|                   |    |       |        |    |    |                      |
-|                   | 4  | Per   |        |    |    |                      |
-|                   |    |       |        |    |    |                      |
-|                   | 4  | Per   |        |    |    |                      |
-+-------------------+----+-------+--------+----+----+----------------------+
-| DEM05:SGS         | 5  | Per   | 93     | 1  | 1  | Particle  only       |
-|                   | 2  | Per   |        |    |    |                      |
-|                   | 5  | Per   |        |    |    |                      |
-+-------------------+----+-------+--------+----+----+----------------------+
-| DEM06-x:SGS       | 50 | NSW   | 1      | 1  | 1  |                      |
-|                   |    |       |        |    |    |  Particle collisions |
-| MGS               | 5  | NSW   |        | 10 | 1  |                      |
-|                   |    |       |        |    |    |                      |
+| DEM06-x:SGS       | 50 | NSW   | 1      | 1  | 1  | Single particle      |
+|                   |    |       |        |    |    | falling under        |
+| MGS               | 5  | NSW   |        | 10 | 1  | gravity, reaching    |
+|                   |    |       |        |    |    | terminal velocity    |
 | MGP               | 5  | NSW   |        | 10 |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
-| DEM07-x           | 20 | Per   | 1222   | 1  | 1  |                      |
+| DEM07-x           | 20 | Per   | 1222   | 1  | 1  | Homogeneous          |
 |                   |    |       |        |    |    |                      |
-| MGS               | 20 | Per   |        | 8  | 1  |                      |
+| MGS               | 20 | Per   |        | 8  | 1  | cooling system       |
 |                   |    |       |        |    |    |                      |
 | MGP               | 20 | Per   |        | 8  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
