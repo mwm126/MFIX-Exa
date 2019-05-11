@@ -25,8 +25,8 @@ If the user wishes to use their own drag model, they must
 
   * specify :cpp:`mfix.drag_type = UserDrag` in the inputs file 
 
-  * provide the code in the ComputeDragUser routine in des_drag_K.H to define the coefficient.
-
+  * provide the code in the ComputeDragUser routine in a local usr_drag.cpp file.
+    An example can be found in tests/DEM06-x.
 
 With the variables defined as follows:
 
