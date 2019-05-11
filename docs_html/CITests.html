@@ -179,19 +179,19 @@ with the following notations:</p>
 All the DEM cases are particle-only except for DEM06 and DEM07 which are fluid and particles;
 these both use the “BVK2” drag type.
 In all cases the particle data were read in from “particle_input.dat”</p>
+<p>None of these tests have non-rectangular geometry.</p>
 <p>“NSW” means “No Slip Wall” and “Per” is “periodic.”
 “MI/PO” refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end.
 “PI/PO” refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="26%" />
-<col width="5%" />
-<col width="9%" />
-<col width="8%" />
-<col width="11%" />
-<col width="5%" />
-<col width="5%" />
-<col width="30%" />
+<col width="28%" />
+<col width="6%" />
+<col width="10%" />
+<col width="12%" />
+<col width="6%" />
+<col width="6%" />
+<col width="32%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test</th>
@@ -201,11 +201,10 @@ nz</th>
 <th class="head">bc_x
 bc_y
 bc_z</th>
-<th class="head">EB</th>
 <th class="head">Npa</th>
 <th class="head">Ng</th>
 <th class="head">Np</th>
-<th class="head">What does this test?</th>
+<th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -221,7 +220,6 @@ bc_z</th>
 <p>NSW</p>
 <p class="last">Per</p>
 </td>
-<td>None</td>
 <td>0</td>
 <td><p class="first">1</p>
 <p>2</p>
@@ -230,7 +228,11 @@ bc_z</th>
 <td><p class="first">1</p>
 <p class="last">1</p>
 </td>
-<td>&#160;</td>
+<td><dl class="first last docutils">
+<dt>Poiseuille Flow</dt>
+<dd>(periodic)</dd>
+</dl>
+</td>
 </tr>
 <tr class="row-odd"><td><p class="first">FLD02-x:SGS</p>
 <p>MGS</p>
@@ -244,7 +246,6 @@ bc_z</th>
 <p>NSW</p>
 <p class="last">NSW</p>
 </td>
-<td>None</td>
 <td>0</td>
 <td><p class="first">1</p>
 <p>40</p>
@@ -253,7 +254,9 @@ bc_z</th>
 <td><p class="first">1</p>
 <p class="last">1</p>
 </td>
-<td>&#160;</td>
+<td>Flow in
+rectangular channel
+with mass inflow</td>
 </tr>
 <tr class="row-even"><td><p class="first">FLD03-x:SGS</p>
 <p>MGS</p>
@@ -267,7 +270,6 @@ bc_z</th>
 <p>NSW</p>
 <p class="last">Per</p>
 </td>
-<td>None</td>
 <td>0</td>
 <td><p class="first">1</p>
 <p>4</p>
@@ -276,55 +278,67 @@ bc_z</th>
 <td><p class="first">1</p>
 <p class="last">1</p>
 </td>
-<td>&#160;</td>
+<td><dl class="first last docutils">
+<dt>Poiseuille Flow</dt>
+<dd><dl class="first last docutils">
+<dt>(pressure</dt>
+<dd>inflow / outflow</dd>
+</dl>
+</dd>
+</dl>
+</td>
 </tr>
 <tr class="row-odd"><td>DEM01:SGS</td>
-<td>2
-5
-5</td>
-<td>NSW
-Per
-Per</td>
-<td>None</td>
+<td><p class="first">2</p>
+<p>5</p>
+<p class="last">5</p>
+</td>
+<td><p class="first">NSW</p>
+<p>Per</p>
+<p class="last">Per</p>
+</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 <td>Particle  only</td>
 </tr>
 <tr class="row-even"><td>DEM02:SGS</td>
-<td>2
-5
-5</td>
-<td>NSW
-Per
-Per</td>
-<td>None</td>
+<td><p class="first">2</p>
+<p>5</p>
+<p class="last">5</p>
+</td>
+<td><p class="first">NSW</p>
+<p>Per</p>
+<p class="last">Per</p>
+</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 <td>Particle  only</td>
 </tr>
 <tr class="row-odd"><td>DEM03:SGS</td>
-<td>2
-5
-5</td>
-<td>NSW
-Per
-Per</td>
-<td>None</td>
+<td><p class="first">2</p>
+<p>5</p>
+<p class="last">5</p>
+</td>
+<td><p class="first">NSW</p>
+<p>Per</p>
+<p class="last">Per</p>
+</td>
 <td>2</td>
 <td>1</td>
 <td>1</td>
 <td>Particle  only</td>
 </tr>
 <tr class="row-even"><td>DEM04:SGS</td>
-<td>4
-4
-4</td>
-<td>NSW
-Per
-Per</td>
-<td>None</td>
+<td><p class="first">4</p>
+<p>4</p>
+<p class="last">4</p>
+</td>
+<td><p class="first">NSW</p>
+<p>Per</p>
+<p class="last">Per</p>
+</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -337,52 +351,49 @@ Per</td>
 <td>Per
 Per
 Per</td>
-<td>None</td>
 <td>93</td>
 <td>1</td>
 <td>1</td>
 <td>Particle  only</td>
 </tr>
 <tr class="row-even"><td><p class="first">DEM06-x:SGS</p>
-<p class="last">MGS
-MGP</p>
+<p>MGS</p>
+<p class="last">MGP</p>
 </td>
 <td><p class="first">50</p>
-<p class="last">5
-5</p>
+<p>5</p>
+<p class="last">5</p>
 </td>
 <td><p class="first">NSW</p>
-<p class="last">NSW
-NSW</p>
+<p>NSW</p>
+<p class="last">NSW</p>
 </td>
-<td>None</td>
 <td>1</td>
 <td><p class="first">1</p>
-<p class="last">10
-10</p>
+<p>10</p>
+<p class="last">10</p>
 </td>
 <td><p class="first">1</p>
 <p class="last">1</p>
 </td>
-<td>&#160;</td>
+<td>Particle collisions</td>
 </tr>
 <tr class="row-odd"><td><p class="first">DEM07-x</p>
-<p class="last">MGS
-MGP</p>
+<p>MGS</p>
+<p class="last">MGP</p>
 </td>
 <td><p class="first">20</p>
-<p class="last">20
-20</p>
+<p>20</p>
+<p class="last">20</p>
 </td>
 <td><p class="first">Per</p>
-<p class="last">Per
-Per</p>
+<p>Per</p>
+<p class="last">Per</p>
 </td>
-<td>None</td>
 <td>1222</td>
 <td><p class="first">1</p>
-<p class="last">8
-8</p>
+<p>8</p>
+<p class="last">8</p>
 </td>
 <td><p class="first">1</p>
 <p class="last">1</p>
