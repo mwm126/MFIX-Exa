@@ -33,6 +33,8 @@ None of these tests have non-rectangular geometry.
 "MI/PO" refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end.
 "PI/PO" refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end.
 
+Additional detail about these problems is given in tests/README.md
+
 +-------------------+----+-------+--------+----+----+----------------------+
 | Test              | nx | bc_x  | Npa    | Ng | Np | Description          |
 |                   | ny | bc_y  |        |    |    |                      |
