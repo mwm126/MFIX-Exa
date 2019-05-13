@@ -9,16 +9,16 @@ MFiX-Exa repository on the NETL gitlab.
 For each of the tests in the chart below, we have identified the "-x" version
 in the table, but each of the tests also has a "-y" version and a "-z" version.
 
-Similarly -- for many of these tests there are multiple versions, 
+Similarly -- for many of these tests there are multiple versions,
 with the following notations:
 
   * SGS: single grid serial
 
-  * MGS: multiple grid serial 
+  * MGS: multiple grid serial
 
-  * TGS: tiled grid serial 
+  * TGS: tiled grid serial
 
-  * MGP: multiple grid parallel 
+  * MGP: multiple grid parallel
 
 Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
 
@@ -40,61 +40,44 @@ Additional detail about these problems is given in tests/README.md
 |                   | ny | bc_y  |        |    |    |                      |
 |                   | nz | bc_z  |        |    |    |                      |
 +===================+====+=======+========+====+====+======================+
-| FLD01-x:SGS       | 8  | Per   | 0      | 1  | 1  |                      |
-|                   |    |       |        |    |    |  Poiseuille Flow     |
-| MGS               | 4  | NSW   |        | 2  | 1  |   (periodic)         |
-|                   |    |       |        |    |    |                      |
+| FLD01-x:SGS       | 8  | Per   | 0      | 1  | 1  | Poiseuille Flow      |
+| MGS               | 4  | NSW   |        | 2  | 1  |  (periodic)          |
 | MGP               | 4  | Per   |        | 2  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
-| FLD02-x:SGS       | 80 | MI/PO | 0      | 1  | 1  |                      |
-|                   |    |       |        |    |    | Couette flow in      |
+| FLD02-x:SGS       | 80 | MI/PO | 0      | 1  | 1  | Couette flow in      |
 | MGS               | 16 | NSW   |        | 40 | 1  | rectangular channel  |
-|                   |    |       |        |    |    |                      |
 | MGP               | 16 | NSW   |        | 40 |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
-| FLD03-x:SGS       | 8  | PI/PO | 0      | 1  | 1  |                      |
-|                   |    |       |        |    |    |  Poiseuille Flow     |
-| MGS               | 8  | NSW   |        | 4  | 1  |   (pressure          |
-|                   |    |       |        |    |    |    inflow / outflow  |
-| MGP               | 4  | Per   |        | 4  |    |                      |
+| FLD03-x:SGS       | 8  | PI/PO | 0      | 1  | 1  | Poiseuille Flow      |
+| MGS               | 8  | NSW   |        | 4  | 1  |  (pressure inflow    |
+| MGP               | 4  | Per   |        | 4  |    |   pressure outflow)  |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM01:SGS         | 2  | NSW   | 1      | 1  | 1  | Freely falling       |
-|                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    | particle with        |
-|                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    | wall collision       |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM02:SGS         | 2  | NSW   | 1      | 1  | 1  | Multiple bounces     |
-|                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    | with bounce height   |
-|                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    | measured             |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM03:SGS         | 2  | NSW   | 2      | 1  | 1  | Two stacked          |
-|                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    | compressed particles |
-|                   |    |       |        |    |    |                      |
 |                   | 5  | Per   |        |    |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM04:SGS         | 4  | NSW   | 1      | 1  | 1  | Single particle      |
-|                   |    |       |        |    |    |                      |
-|                   | 4  | Per   |        |    |    | slipping on a        |                      
-|                   |    |       |        |    |    |                      |
-|                   | 4  | Per   |        |    |    |  rough surface       |
+|                   | 4  | Per   |        |    |    | slipping on a        |
+|                   | 4  | Per   |        |    |    | rough surface        |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM05:SGS         | 5  | Per   | 93     | 1  | 1  | Oblique particle     |
-|                   | 2  | Per   |        |    |    |                       |
-|                   | 5  | Per   |        |    |    | collisions           |
+|                   | 2  | Per   |        |    |    | collisions           |
+|                   | 5  | Per   |        |    |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM06-x:SGS       | 50 | NSW   | 1      | 1  | 1  | Single particle      |
-|                   |    |       |        |    |    | falling under        |
-| MGS               | 5  | NSW   |        | 10 | 1  | gravity, reaching    |
-|                   |    |       |        |    |    | terminal velocity    |
-| MGP               | 5  | NSW   |        | 10 |    |                      |
+| MGS               | 5  | NSW   |        | 10 | 1  | falling under        |
+| MGP               | 5  | NSW   |        | 10 | 1  | gravity, reaching    |
+|                   | 5  | NSW   |        | 10 |    | terminal velocity    |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM07-x           | 20 | Per   | 1222   | 1  | 1  | Homogeneous          |
-|                   |    |       |        |    |    |                      |
 | MGS               | 20 | Per   |        | 8  | 1  | cooling system       |
-|                   |    |       |        |    |    |                      |
 | MGP               | 20 | Per   |        | 8  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
