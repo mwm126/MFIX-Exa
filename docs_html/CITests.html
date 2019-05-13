@@ -184,6 +184,207 @@ In all cases the particle data were read in from “particle_input.dat”</p>
 “MI/PO” refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end.
 “PI/PO” refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end.</p>
 <p>Additional detail about these problems is given in tests/README.md</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="6%" />
+<col width="10%" />
+<col width="12%" />
+<col width="6%" />
+<col width="6%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Test</th>
+<th class="head">nx
+ny
+nz</th>
+<th class="head">bc_x
+bc_y
+bc_z</th>
+<th class="head">Npa</th>
+<th class="head">Ng</th>
+<th class="head">Np</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>FLD01-x:SGS
+MGS
+MGP</td>
+<td>8
+4
+4</td>
+<td>Per
+NSW
+Per</td>
+<td>0</td>
+<td>1
+2
+2</td>
+<td>1
+1</td>
+<td><dl class="first last docutils">
+<dt>Poiseuille Flow</dt>
+<dd>(periodic)</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>FLD02-x:SGS
+MGS
+MGP</td>
+<td>80
+16
+16</td>
+<td>MI/PO
+NSW
+NSW</td>
+<td>0</td>
+<td>1
+40
+40</td>
+<td>1
+1</td>
+<td>Couette flow in
+rectangular channel</td>
+</tr>
+<tr class="row-even"><td>FLD03-x:SGS
+MGS
+MGP</td>
+<td>8
+8
+4</td>
+<td>PI/PO
+NSW
+Per</td>
+<td>0</td>
+<td>1
+4
+4</td>
+<td>1
+1</td>
+<td><dl class="first last docutils">
+<dt>Poiseuille Flow</dt>
+<dd><dl class="first last docutils">
+<dt>(pressure inflow</dt>
+<dd>pressure outflow)</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td>DEM01:SGS</td>
+<td>2
+5
+5</td>
+<td>NSW
+Per
+Per</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Freely falling
+particle with
+wall collision</td>
+</tr>
+<tr class="row-even"><td>DEM02:SGS</td>
+<td>2
+5
+5</td>
+<td>NSW
+Per
+Per</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Multiple bounces
+with bounce height
+measured</td>
+</tr>
+<tr class="row-odd"><td>DEM03:SGS</td>
+<td>2
+5
+5</td>
+<td>NSW
+Per
+Per</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Two stacked
+compressed particles</td>
+</tr>
+<tr class="row-even"><td>DEM04:SGS</td>
+<td>4
+4
+4</td>
+<td>NSW
+Per
+Per</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Single particle
+slipping on a
+rough surface</td>
+</tr>
+<tr class="row-odd"><td>DEM05:SGS</td>
+<td>5
+2
+5</td>
+<td>Per
+Per
+Per</td>
+<td>93</td>
+<td>1</td>
+<td>1</td>
+<td>Oblique particle
+collisions</td>
+</tr>
+<tr class="row-even"><td>DEM06-x:SGS
+MGS
+MGP</td>
+<td>50
+5
+5
+5</td>
+<td>NSW
+NSW
+NSW
+NSW</td>
+<td>1</td>
+<td>1
+10
+10
+10</td>
+<td>1
+1
+1</td>
+<td>Single particle
+falling under
+gravity, reaching
+terminal velocity</td>
+</tr>
+<tr class="row-odd"><td>DEM07-x
+MGS
+MGP</td>
+<td>20
+20
+20</td>
+<td>Per
+Per
+Per</td>
+<td>1222</td>
+<td>1
+8
+8</td>
+<td>1
+1</td>
+<td>Homogeneous
+cooling system</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
