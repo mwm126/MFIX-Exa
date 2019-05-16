@@ -102,13 +102,13 @@ Coupled particle/fluid tests:
 |       | SGS |          |                |      | 1  | 1  | Single particle      |
 |       |     |          |                |      |    |    | falling under        |
 |       | MGS |          |                |      | 10 | 1  | gravity, reaching    |
-|       |     |          |                |      |    |    | terminal velocity    |                      |
+|       |     |          |                |      |    |    | terminal velocity    |
 |       | MGP |          |                |      | 10 | X  |                      |
 +-------+-----+----------+----------------+------+----+----+----------------------+
 | DEM07 |     | 20 20 20 | Per Per Per    | 1222 |    |    |                      |
 +-------+-----+----------+----------------+------+----+----+----------------------+
 |       | SGS |          |                |      | 1  | 1  | Homogeneous          |
-|       |     |          |                |      |    |    | cooling system       |                       |
+|       |     |          |                |      |    |    | cooling system       |
 |       | MGS |          |                |      | 8  | 1  |                      |
 |       |     |          |                |      |    |    |                      |
 |       | MGP |          |                |      | 8  | X  |                      |
