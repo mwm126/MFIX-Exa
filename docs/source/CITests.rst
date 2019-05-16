@@ -63,31 +63,29 @@ Fluid-only tests:
 
 Single-grid, single-process (SGS) particle-only tests:
 
-+-------+----+-------+--------+----------------------+
-| Test  | nx | bc_x  | Npa    | Description          |
-|       | ny | bc_y  |        |                      |
-|       | nz | bc_z  |        |                      |
-+-------+----+-------+--------+----------------------+
-| DEM01 | 2  | NSW   | 1      | Freely falling       |
-|       | 5  | Per   |        | particle with        |
-|       | 5  | Per   |        | wall collision       |
-+-------+----+-------+--------+----------------------+
-| DEM02 | 2  | NSW   | 1      | Multiple bounces     |
-|       | 5  | Per   |        | with bounce height   |
-|       | 5  | Per   |        | measured             |
-+-------+----+-------+--------+----------------------+
-| DEM03 | 2  | NSW   | 2      | Two stacked          |
-|       | 5  | Per   |        | compressed particles |
-|       | 5  | Per   |        |                      |
-+-------+----+-------+--------+----------------------+
-| DEM04 | 4  | NSW   | 1      | Single particle      |
-|       | 4  | Per   |        | slipping on a        |
-|       | 4  | Per   |        | rough surface        |
-+-------+----+-------+--------+----------------------+
-| DEM05 | 5  | Per   | 93     | Oblique particle     |
-|       | 2  | Per   |        | collisions           |
-|       | 5  | Per   |        |                      |
-+-------+----+-------+--------+----------------------+
++-------+----------+----------------+-----+--------------------+
+| Test  | nx ny nz | bc_x bc_y bc_z | Npa | Description        |
++-------+----------+----------------+-----+--------------------+
+| DEM01 | 2 5 5    | NSW Per Per    | 1   | Freely falling     |
+|       |          |                |     | particle with      |
+|       |          |                |     | wall collision     |
++-------+----------+----------------+-----+--------------------+
+| DEM02 | 2 5 5    | NSW Per Per    | 1   | Multiple bounces   |
+|       |          |                |     | with bounce height |
+|       |          |                |     | measured           |
++-------+----------+----------------+-----+--------------------+
+| DEM03 | 2 5 5    | NSW Per Per    | 2   | Two stacked        |
+|       |          |                |     | compressed         |
+|       |          |                |     | particles          |
++-------+----------+----------------+-----+--------------------+
+| DEM04 | 4 4 4    | NSW Per Per    | 1   | Single particle    |
+|       |          |                |     | slipping on a      |
+|       |          |                |     | rough surface      |
++-------+----------+----------------+-----+--------------------+
+| DEM05 | 5 2 5    | Per Per Per    | 93  | Oblique particle   |
+|       |          |                |     | collisions         |
+|       |          |                |     |                    |
++-------+----------+----------------+-----+--------------------+
 
 
 Coupled particle/fluid tests:
