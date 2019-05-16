@@ -187,23 +187,17 @@ In all cases the particle data were read in from “particle_input.dat”</p>
 <p>Fluid-only tests:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="13%" />
-<col width="9%" />
+<col width="12%" />
+<col width="17%" />
+<col width="27%" />
 <col width="8%" />
-<col width="13%" />
-<col width="8%" />
-<col width="8%" />
-<col width="42%" />
+<col width="7%" />
+<col width="29%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test</th>
-<th class="head">&#160;</th>
-<th class="head">nx
-ny
-nz</th>
-<th class="head">bc_x
-bc_y
-bc_z</th>
+<th class="head">nx ny nz</th>
+<th class="head">bc_x bc_y bc_z</th>
 <th class="head">Ng</th>
 <th class="head">Np</th>
 <th class="head">Description</th>
@@ -211,74 +205,80 @@ bc_z</th>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>FLD01</td>
+<td>8  4  4</td>
+<td>Per NSW Per</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
 <td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
-<td><p class="first">8</p>
-<p>4</p>
-<p class="last">4</p>
-</td>
-<td><p class="first">Per</p>
-<p>NSW</p>
-<p class="last">Per</p>
-</td>
+<td>&#160;</td>
 <td><p class="first">1</p>
 <p>2</p>
 <p class="last">2</p>
 </td>
 <td><p class="first">1</p>
-<p class="last">1</p>
+<p>1</p>
+<p class="last">X</p>
 </td>
 <td>Poiseuille Flow
 (periodic)</td>
 </tr>
-<tr class="row-odd"><td>FLD02</td>
+<tr class="row-even"><td>FLD02</td>
+<td>80 16 16</td>
+<td>MI/PO NSW NSW</td>
+<td>&#160;</td>
+<td>1</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
 <td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
-<td><p class="first">80</p>
-<p>16</p>
-<p class="last">16</p>
-</td>
-<td><p class="first">MI/PO</p>
-<p>NSW</p>
-<p class="last">NSW</p>
-</td>
+<td>&#160;</td>
 <td><p class="first">1</p>
 <p>40</p>
 <p class="last">40</p>
 </td>
 <td><p class="first">1</p>
-<p class="last">1</p>
+<p>1</p>
+<p class="last">X</p>
 </td>
 <td>Couette flow in
-rectangular channel</td>
+rectangular
+channel</td>
 </tr>
 <tr class="row-even"><td>FLD03</td>
+<td>8  8  4</td>
+<td>PI/PO NSW Per</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
 <td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
-<td><p class="first">8</p>
-<p>8</p>
-<p class="last">4</p>
-</td>
-<td><p class="first">PI/PO</p>
-<p>NSW</p>
-<p class="last">Per</p>
-</td>
+<td>&#160;</td>
 <td><p class="first">1</p>
 <p>4</p>
 <p class="last">4</p>
 </td>
 <td><p class="first">1</p>
-<p class="last">1</p>
+<p>1</p>
+<p class="last">X</p>
 </td>
 <td>Poiseuille Flow
-(pressure inflow
-pressure outflow)</td>
+(pressure
+inflow /
+pressure
+outflow)</td>
 </tr>
 </tbody>
 </table>
@@ -291,13 +291,15 @@ pressure outflow)</td>
 <col width="9%" />
 <col width="34%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Test</td>
-<td>nx ny nz</td>
-<td>bc_x bc_y bc_z</td>
-<td>Npa</td>
-<td>Description</td>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Test</th>
+<th class="head">nx ny nz</th>
+<th class="head">bc_x bc_y bc_z</th>
+<th class="head">Npa</th>
+<th class="head">Description</th>
 </tr>
+</thead>
+<tbody valign="top">
 <tr class="row-even"><td>DEM01</td>
 <td>2 5 5</td>
 <td>NSW Per Per</td>
@@ -340,83 +342,6 @@ collisions</td>
 </tbody>
 </table>
 <p>Coupled particle/fluid tests:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="9%" />
-<col width="7%" />
-<col width="14%" />
-<col width="22%" />
-<col width="8%" />
-<col width="5%" />
-<col width="5%" />
-<col width="30%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Test</td>
-<td>&#160;</td>
-<td>nx ny nz</td>
-<td>bc_x bc_y bc_z</td>
-<td>Npa</td>
-<td>Ng</td>
-<td>Np</td>
-<td>Description</td>
-</tr>
-<tr class="row-even"><td>DEM06</td>
-<td>&#160;</td>
-<td>50 5 5</td>
-<td>NSW NSW NSW</td>
-<td>1</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>Single particle</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><p class="first">SGS</p>
-<p>MGS</p>
-<p class="last">MGP</p>
-</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td><p class="first">1</p>
-<p>10</p>
-<p class="last">10</p>
-</td>
-<td><p class="first">1</p>
-<p class="last">1</p>
-</td>
-<td>falling under
-gravity, reaching
-terminal velocity</td>
-</tr>
-<tr class="row-even"><td>DEM07</td>
-<td>&#160;</td>
-<td>20 20 20</td>
-<td>Per Per Per</td>
-<td>1222</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>Homogeneous</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><p class="first">SGS</p>
-<p>MGS</p>
-<p class="last">MGP</p>
-</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td><p class="first">1</p>
-<p>8</p>
-<p class="last">8</p>
-</td>
-<td><p class="first">1</p>
-<p class="last">1</p>
-</td>
-<td>cooling system</td>
-</tr>
-</tbody>
-</table>
 </div>
 
 
