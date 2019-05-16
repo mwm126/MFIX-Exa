@@ -89,8 +89,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Drag Types</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Time Stepping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#setting-the-time-step">Setting the Time Step</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time Stepping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-the-time-step">Setting the Time Step</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
@@ -280,9 +282,8 @@ Currently, the criterion for setting “steady_state” to true is if “dt” i
 </tr>
 </tbody>
 </table>
-</div>
 <div class="section" id="setting-the-time-step">
-<h1>Setting the Time Step<a class="headerlink" href="#setting-the-time-step" title="Permalink to this headline">¶</a></h1>
+<h2>Setting the Time Step<a class="headerlink" href="#setting-the-time-step" title="Permalink to this headline">¶</a></h2>
 <p>There are several ways that the inputs are used to determine what time step
 is used in the evolution of the fluid-particle system in MFiX-Exa.</p>
 <p>1) In a pure particle case, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">mfix</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">fixed_dt</span></span></code>, if specified, is only used to determine the frequency
@@ -333,6 +334,7 @@ If <code class="code cpp c++ docutils literal notranslate"><span class="name"><s
 the particle time step “subdt” is first computed as in the particle-only case (“dtsolid”),
 then is adjusted so that an integral number of particle steps fit into a single fluid time step.</li>
 </ol>
+</div>
 </div>
 
 
