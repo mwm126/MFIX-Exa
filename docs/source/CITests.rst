@@ -90,7 +90,7 @@ Single-grid, single-process (SGS) particle-only tests:
 
 Coupled particle/fluid tests:
 
-+-------+-----+----------+----------------+------+---+----+-----------------------+
++-------+-----+----------+----------------+------+----+----+----------------------+
 | Test  |     | nx ny nz | bc_x bc_y bc_z | Npa  | Ng | Np | Description          |
 +-------+-----+----------+----------------+------+----+----+----------------------+
 | DEM06 |     | 50 5 5   | NSW NSW NSW    | 1    |    |    | Single particle      |
