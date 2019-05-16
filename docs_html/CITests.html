@@ -162,10 +162,10 @@
 <span id="chap-citesting"></span><h1>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h1>
 <p>The following regression tests are run every time a commit is pushed to the main
 MFiX-Exa repository on the NETL gitlab.</p>
-<p>For each of the tests in the chart below, we have identified the “-x” version
-in the table, but each of the tests also has a “-y” version and a “-z” version.</p>
-<p>Similarly – for many of these tests there are multiple versions,
-with the following notations:</p>
+<p>For each of the tests in the chart below, there are
+three directional variations; these are identified in the repository as,
+for example, FLD01-x, FLD01-y, and FLD01-z.</p>
+<p>For each direction, where appropriate, there are multiple versions, with the following notations:</p>
 <blockquote>
 <div><ul class="simple">
 <li>SGS: single grid serial</li>
@@ -184,32 +184,34 @@ In all cases the particle data were read in from “particle_input.dat”</p>
 “MI/PO” refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end.
 “PI/PO” refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end.</p>
 <p>Additional detail about these problems is given in tests/README.md</p>
+<p>Fluid-only tests:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
-<col width="6%" />
-<col width="10%" />
-<col width="12%" />
-<col width="6%" />
-<col width="6%" />
-<col width="32%" />
+<col width="13%" />
+<col width="9%" />
+<col width="8%" />
+<col width="13%" />
+<col width="8%" />
+<col width="8%" />
+<col width="42%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test</th>
+<th class="head">&#160;</th>
 <th class="head">nx
 ny
 nz</th>
 <th class="head">bc_x
 bc_y
 bc_z</th>
-<th class="head">Npa</th>
 <th class="head">Ng</th>
 <th class="head">Np</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><p class="first">FLD01-x:SGS</p>
+<tr class="row-even"><td>FLD01</td>
+<td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
@@ -221,7 +223,6 @@ bc_z</th>
 <p>NSW</p>
 <p class="last">Per</p>
 </td>
-<td>0</td>
 <td><p class="first">1</p>
 <p>2</p>
 <p class="last">2</p>
@@ -232,7 +233,8 @@ bc_z</th>
 <td>Poiseuille Flow
 (periodic)</td>
 </tr>
-<tr class="row-odd"><td><p class="first">FLD02-x:SGS</p>
+<tr class="row-odd"><td>FLD02</td>
+<td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
@@ -244,7 +246,6 @@ bc_z</th>
 <p>NSW</p>
 <p class="last">NSW</p>
 </td>
-<td>0</td>
 <td><p class="first">1</p>
 <p>40</p>
 <p class="last">40</p>
@@ -255,7 +256,8 @@ bc_z</th>
 <td>Couette flow in
 rectangular channel</td>
 </tr>
-<tr class="row-even"><td><p class="first">FLD03-x:SGS</p>
+<tr class="row-even"><td>FLD03</td>
+<td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
@@ -267,7 +269,6 @@ rectangular channel</td>
 <p>NSW</p>
 <p class="last">Per</p>
 </td>
-<td>0</td>
 <td><p class="first">1</p>
 <p>4</p>
 <p class="last">4</p>
@@ -279,21 +280,41 @@ rectangular channel</td>
 (pressure inflow
 pressure outflow)</td>
 </tr>
-<tr class="row-odd"><td>DEM01:SGS</td>
+</tbody>
+</table>
+<p>Single-grid, single-process (SGS) particle-only tests:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="15%" />
+<col width="17%" />
+<col width="46%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Test</td>
+<td>nx
+ny
+nz</td>
+<td>bc_x
+bc_y
+bc_z</td>
+<td>Npa</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>DEM01</td>
 <td>2
 5
 5</td>
 <td>NSW
 Per
 Per</td>
-<td>1</td>
-<td>1</td>
 <td>1</td>
 <td>Freely falling
 particle with
 wall collision</td>
 </tr>
-<tr class="row-even"><td>DEM02:SGS</td>
+<tr class="row-odd"><td>DEM02</td>
 <td>2
 5
 5</td>
@@ -301,13 +322,11 @@ wall collision</td>
 Per
 Per</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
 <td>Multiple bounces
 with bounce height
 measured</td>
 </tr>
-<tr class="row-odd"><td>DEM03:SGS</td>
+<tr class="row-even"><td>DEM03</td>
 <td>2
 5
 5</td>
@@ -315,12 +334,10 @@ measured</td>
 Per
 Per</td>
 <td>2</td>
-<td>1</td>
-<td>1</td>
 <td>Two stacked
 compressed particles</td>
 </tr>
-<tr class="row-even"><td>DEM04:SGS</td>
+<tr class="row-odd"><td>DEM04</td>
 <td>4
 4
 4</td>
@@ -328,13 +345,11 @@ compressed particles</td>
 Per
 Per</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
 <td>Single particle
 slipping on a
 rough surface</td>
 </tr>
-<tr class="row-odd"><td>DEM05:SGS</td>
+<tr class="row-even"><td>DEM05</td>
 <td>5
 2
 5</td>
@@ -342,12 +357,39 @@ rough surface</td>
 Per
 Per</td>
 <td>93</td>
-<td>1</td>
-<td>1</td>
 <td>Oblique particle
 collisions</td>
 </tr>
-<tr class="row-even"><td><p class="first">DEM06-x:SGS</p>
+</tbody>
+</table>
+<p>Coupled particle/fluid tests:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="8%" />
+<col width="7%" />
+<col width="12%" />
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="37%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Test</td>
+<td>&#160;</td>
+<td>nx
+ny
+nz</td>
+<td>bc_x
+bc_y
+bc_z</td>
+<td>Npa</td>
+<td>Ng</td>
+<td>Np</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>DEM06</td>
+<td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
@@ -365,7 +407,6 @@ collisions</td>
 <p class="last">10</p>
 </td>
 <td><p class="first">1</p>
-<p>1</p>
 <p class="last">1</p>
 </td>
 <td>Single particle
@@ -373,7 +414,8 @@ falling under
 gravity, reaching
 terminal velocity</td>
 </tr>
-<tr class="row-odd"><td><p class="first">DEM07-x</p>
+<tr class="row-odd"><td>DEM07</td>
+<td><p class="first">SGS</p>
 <p>MGS</p>
 <p class="last">MGP</p>
 </td>
