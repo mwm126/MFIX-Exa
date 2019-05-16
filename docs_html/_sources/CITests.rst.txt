@@ -41,16 +41,22 @@ Additional detail about these problems is given in tests/README.md
 |                   | nz | bc_z  |        |    |    |                      |
 +===================+====+=======+========+====+====+======================+
 | FLD01-x:SGS       | 8  | Per   | 0      | 1  | 1  | Poiseuille Flow      |
-| MGS               | 4  | NSW   |        | 2  | 1  | (periodic)           |
+|                   |    |       |        |    |    | (periodic)           |
+| MGS               | 4  | NSW   |        | 2  | 1  |                      |
+|                   |    |       |        |    |    |                      |
 | MGP               | 4  | Per   |        | 2  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | FLD02-x:SGS       | 80 | MI/PO | 0      | 1  | 1  | Couette flow in      |
-| MGS               | 16 | NSW   |        | 40 | 1  | rectangular channel  |
+|                   |    |       |        |    |    | rectangular channel  |
+| MGS               | 16 | NSW   |        | 40 | 1  |                      |
+|                   |    |       |        |    |    |                      |
 | MGP               | 16 | NSW   |        | 40 |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | FLD03-x:SGS       | 8  | PI/PO | 0      | 1  | 1  | Poiseuille Flow      |
-| MGS               | 8  | NSW   |        | 4  | 1  | (pressure inflow     |
-| MGP               | 4  | Per   |        | 4  |    | pressure outflow)    |
+|                   |    |       |        |    |    | (pressure inflow     |
+| MGS               | 8  | NSW   |        | 4  | 1  | pressure outflow)    |
+|                   |    |       |        |    |    |                      |
+| MGP               | 4  | Per   |        | 4  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM01:SGS         | 2  | NSW   | 1      | 1  | 1  | Freely falling       |
 |                   | 5  | Per   |        |    |    | particle with        |
@@ -73,15 +79,14 @@ Additional detail about these problems is given in tests/README.md
 |                   | 5  | Per   |        |    |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM06-x:SGS       | 50 | NSW   | 1      | 1  | 1  | Single particle      |
-|                   |    |       |        |    |    |                      |
-| MGS               | 5  | NSW   |        | 10 | 1  | falling under        |
-|                   |    |       |        |    |    |                      |
-| MGP               | 5  | NSW   |        | 10 | 1  | gravity, reaching    |
+|                   |    |       |        |    |    | falling under        |
+| MGS               | 5  | NSW   |        | 10 | 1  | gravity, reaching    |
 |                   |    |       |        |    |    | terminal velocity    |
+| MGP               | 5  | NSW   |        | 10 | 1  |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
 | DEM07-x           | 20 | Per   | 1222   | 1  | 1  | Homogeneous          |
-|                   |    |       |        |    |    |                      |
-| MGS               | 20 | Per   |        | 8  | 1  | cooling system       |
+|                   |    |       |        |    |    | cooling system       |
+| MGS               | 20 | Per   |        | 8  | 1  |                      |
 |                   |    |       |        |    |    |                      |
 | MGP               | 20 | Per   |        | 8  |    |                      |
 +-------------------+----+-------+--------+----+----+----------------------+
