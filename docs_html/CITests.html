@@ -274,15 +274,17 @@ collisions</td>
 <p>Fluid-only tests:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="11%" />
-<col width="8%" />
+<col width="10%" />
+<col width="7%" />
 <col width="6%" />
 <col width="6%" />
 <col width="6%" />
-<col width="24%" />
-<col width="8%" />
+<col width="10%" />
+<col width="9%" />
+<col width="9%" />
+<col width="7%" />
 <col width="6%" />
-<col width="26%" />
+<col width="25%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test</th>
@@ -290,10 +292,11 @@ collisions</td>
 <th class="head">nx</th>
 <th class="head">ny</th>
 <th class="head">nz</th>
-<th class="head">bc_x bc_y bc_z</th>
+<th class="head">bc_x</th>
+<th class="head">bc_y</th>
+<th class="head">bc_z</th>
 <th class="head">Ng</th>
-<th class="head">Np</th>
-<th class="head">Description</th>
+<th class="head" colspan="2">Np</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -302,81 +305,81 @@ collisions</td>
 <td>8</td>
 <td>4</td>
 <td>4</td>
-<td>Per NSW Per</td>
+<td>Per</td>
+<td>NSW</td>
+<td>Per</td>
 <td colspan="3">Poiseuille flow (periodic)</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
-<td><p class="first">SGS</p>
-<p>MGS</p>
-<p class="last">MGP</p>
-</td>
+<td>SGS
+MGS
+MGP</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
-<td><p class="first">1</p>
-<p>2</p>
-<p class="last">2</p>
-</td>
-<td><p class="first">1</p>
-<p>1</p>
-<p class="last">X</p>
-</td>
 <td>&#160;</td>
+<td>&#160;</td>
+<td>1
+2
+2</td>
+<td colspan="2">1
+1
+X</td>
 </tr>
 <tr class="row-even"><td>FLD02</td>
 <td>&#160;</td>
 <td>80</td>
 <td>16</td>
 <td>16</td>
-<td>MI/PO NSW NSW</td>
+<td>MI/PO</td>
+<td>NSW</td>
+<td>NSW</td>
 <td colspan="3">Couette flow - rectangular</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
-<td><p class="first">SGS</p>
-<p>MGS</p>
-<p class="last">MGP</p>
-</td>
+<td>SGS
+MGS
+MGP</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
-<td><p class="first">1</p>
-<p>40</p>
-<p class="last">40</p>
-</td>
-<td><p class="first">1</p>
-<p>1</p>
-<p class="last">X</p>
-</td>
 <td>&#160;</td>
+<td>&#160;</td>
+<td>1
+40
+40</td>
+<td colspan="2">1
+1
+X</td>
 </tr>
 <tr class="row-even"><td>FLD03</td>
 <td>&#160;</td>
 <td>8</td>
 <td>8</td>
 <td>4</td>
-<td>PI/PO NSW Per</td>
+<td>PI/PO</td>
+<td>NSW</td>
+<td>Per</td>
 <td colspan="3">Poiseuille Flow  (pi / po)</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
-<td><p class="first">SGS</p>
-<p>MGS</p>
-<p class="last">MGP</p>
-</td>
+<td>SGS
+MGS
+MGP</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
 <td>&#160;</td>
-<td><p class="first">1</p>
-<p>4</p>
-<p class="last">4</p>
-</td>
-<td><p class="first">1</p>
-<p>1</p>
-<p class="last">X</p>
-</td>
 <td>&#160;</td>
+<td>&#160;</td>
+<td>1
+4
+4</td>
+<td colspan="2">1
+1
+X</td>
 </tr>
 </tbody>
 </table>
@@ -393,8 +396,7 @@ collisions</td>
 <col width="8%" />
 <col width="8%" />
 <col width="6%" />
-<col width="6%" />
-<col width="21%" />
+<col width="28%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Test</th>
@@ -408,7 +410,6 @@ collisions</td>
 <th class="head">Npa</th>
 <th class="head">Ng</th>
 <th class="head">Np</th>
-<th class="head">&#160;</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -421,7 +422,7 @@ collisions</td>
 <td>NSW</td>
 <td>NSW</td>
 <td>1</td>
-<td colspan="3">Single particle falling
+<td colspan="2">Single particle falling
 under gravity</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
@@ -441,7 +442,6 @@ MGP</td>
 <td>1
 1
 X</td>
-<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>DEM07</td>
 <td>&#160;</td>
@@ -452,7 +452,7 @@ X</td>
 <td>Per</td>
 <td>Per</td>
 <td>1222</td>
-<td colspan="3">Homogeneous cooling
+<td colspan="2">Homogeneous cooling
 system</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
@@ -472,7 +472,6 @@ MGP</td>
 <td>1
 1
 X</td>
-<td>&#160;</td>
 </tr>
 </tbody>
 </table>
