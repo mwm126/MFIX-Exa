@@ -46,9 +46,8 @@ Currently, the criterion for setting "steady_state" to true is if "dt" is undefi
 | steady_state_max_iter | Maximum number of allowed iterations to converge to steady state      |   Int       | 100000000  |
 +-----------------------+-----------------------------------------------------------------------+-------------+------------+
 
-
 Setting the Time Step 
-=====================
+---------------------
 
 There are several ways that the inputs are used to determine what time step 
 is used in the evolution of the fluid-particle system in MFiX-Exa.   
