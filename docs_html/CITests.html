@@ -184,7 +184,6 @@ In all cases the particle data were read in from “particle_input.dat”</p>
 “MI/PO” refers to Mass     Inflow at the low end of the domain and Pressure Outflow at the high end.
 “PI/PO” refers to Pressure Inflow at the low end of the domain and Pressure Outflow at the high end.</p>
 <p>Additional detail about these problems is given in tests/README.md</p>
-<p>Fluid-only tests:</p>
 <p>Single-grid, single-process (SGS) particle-only tests:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -269,6 +268,115 @@ rough surface</td>
 <td>93</td>
 <td>Oblique particle
 collisions</td>
+</tr>
+</tbody>
+</table>
+<p>Fluid-only tests:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="8%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="24%" />
+<col width="8%" />
+<col width="6%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Test</th>
+<th class="head">&#160;</th>
+<th class="head">nx</th>
+<th class="head">ny</th>
+<th class="head">nz</th>
+<th class="head">bc_x bc_y bc_z</th>
+<th class="head">Ng</th>
+<th class="head">Np</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>FLD01</td>
+<td>&#160;</td>
+<td>8</td>
+<td>4</td>
+<td>4</td>
+<td>Per NSW Per</td>
+<td colspan="3">Poiseuille flow (periodic)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><p class="first">SGS</p>
+<p>MGS</p>
+<p class="last">MGP</p>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><p class="first">1</p>
+<p>2</p>
+<p class="last">2</p>
+</td>
+<td><p class="first">1</p>
+<p>1</p>
+<p class="last">X</p>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>FLD02</td>
+<td>&#160;</td>
+<td>80</td>
+<td>16</td>
+<td>16</td>
+<td>MI/PO NSW NSW</td>
+<td colspan="3">Couette flow - rectangular</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><p class="first">SGS</p>
+<p>MGS</p>
+<p class="last">MGP</p>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><p class="first">1</p>
+<p>40</p>
+<p class="last">40</p>
+</td>
+<td><p class="first">1</p>
+<p>1</p>
+<p class="last">X</p>
+</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>FLD03</td>
+<td>&#160;</td>
+<td>8</td>
+<td>8</td>
+<td>4</td>
+<td>PI/PO NSW Per</td>
+<td colspan="3">Poiseuille Flow  (pi / po)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><p class="first">SGS</p>
+<p>MGS</p>
+<p class="last">MGP</p>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><p class="first">1</p>
+<p>4</p>
+<p class="last">4</p>
+</td>
+<td><p class="first">1</p>
+<p>1</p>
+<p class="last">X</p>
+</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
