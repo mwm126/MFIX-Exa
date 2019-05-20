@@ -53,9 +53,9 @@ all tests except DEM06 use drag type "BVK2".
 | Size0001          | 50 | Per    |      |       |    |    |                      |
 |                   | 4  | Per    |      |       |    |    |                      |
 +-------------------+----+--------+------+-------+----+----+----------------------+
-| DEM06             | 5  | Per    | None | 1     | 1  | 4  | Single particle      |
+| DEM06             | 5  | Per    | None | 1     | 10 | 4  | Single particle      |
 | z multiple        | 5  | Per    |      |       |    |    | falling in fluid     |
-|                   | 50 | Per    |      |       |    |    | (user_drag)          |
+|                   | 50 | MI/PO  |      |       |    |    | (user_drag)          |
 +-------------------+----+--------+------+-------+----+----+----------------------+
 
 This second set of tests have both fluid and particles and are run in cylindrial geometries
@@ -96,19 +96,15 @@ This third set of tests is particles-only in rectangular geometries.
 |                   | ny | bc_y  |      |        |    |    |                      |
 |                   | nz | bc_z  |      |        |    |    |                      |
 +===================+====+=======+======+========+====+====+======================+
-| DEM01             |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
-| x single          |  4 |  NSW  |      |        |    |    |                      |
-|                   |  4 |  NSW  |      |        |    |    |                      |
+| DEM01             | 4  | NSW   | None |   1    | 1  | 1  | Particle  only       |
+| x single          | 4  | NSW   |      |        |    |    |                      |
+|                   | 4  | NSW   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM03             |  5 |  Per  | None |   2    | 1  | 1  | Particles only       |
-| z single          |  5 |  Per  |      |        |    |    |                      |
-|                   |  2 |  NSW  |      |        |    |    |                      |
+| DEM03             | 5  | Per   | None |   2    | 1  | 1  | Particles only       |
+| z single          | 5  | Per   |      |        |    |    |                      |
+|                   | 2  | NSW   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM04             |  4 |  NSW  | None |   1    | 1  | 1  | Particle  only       |
-| z single          |  4 |  Per  |      |        |    |    |                      |
-|                   |  4 |  Per  |      |        |    |    |                      |
-+-------------------+----+-------+------+--------+----+----+----------------------+
-| DEM05             |  5 |  Per  | None |   93   | 1  | 1  | Particle  only       |
-| z single          |  2 |  Per  |      |        |    |    |                      |
-|                   |  5 |  Per  |      |        |    |    |                      |
+| DEM04             | 4  | NSW   | None |   1    | 1  | 1  | Particles only       |
+| z single          | 4  | Per   |      |        |    |    |                      |
+|                   | 4  | Per   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
