@@ -22,7 +22,7 @@ For each direction, where appropriate, there are multiple versions, with the fol
 
 Below Ng = number of grids, Npa = number of particles, Np = number of MPI ranks.
 
-All the FLD cases are fluid-only.
+All the FLD cases are fluid-only and steady state.
 All the DEM cases are particle-only except for DEM06 and DEM07 which are fluid and particles;
 these both use the "BVK2" drag type.
 In all cases the particle data were read in from "particle_input.dat"
@@ -62,7 +62,7 @@ Single-grid, single-process (SGS) particle-only tests:
 +-------+----+----+----+------+------+-------+-----+--------------------+
 
 
-Fluid-only tests:
+Steady-state fluid-only tests:
 
 +-------+-----+----+----+----+-------+------+------+-----+----------------------+
 | Test  |     | nx | ny | nz | bc_x  | bc_y | bc_z | Ng  | Np                   |
