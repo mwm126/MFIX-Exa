@@ -75,6 +75,10 @@ those domain boundaries should be ignored because they are outside the EB bounda
 | Size0008          | 10 | IGN   |      | Auto   |    |    |                      |
 | serial            | 10 | IGN   |      |        |    |    |                      |
 +-------------------+----+-------+------+--------+----+----+----------------------+
+| BENCH05           | 40 | MI/PO | Cyl  | 36672  | 16 | 4  | Regrid & dual grid   |
+| Size0008          | 20 | IGN   |      | Auto   |    |    |                      |
+| medium            | 20 | IGN   |      |        |    |    |                      |
++-------------------+----+-------+------+--------+----+----+----------------------+
 | BENCH05           | 40 | MI/PO | Cyl  | 157106 | 16 | 4  | Regrid & dual grid   |
 | Size0008          | 40 | IGN   |      | Auto   |    |    |                      |
 | wide              | 40 | IGN   |      |        |    |    |                      |
