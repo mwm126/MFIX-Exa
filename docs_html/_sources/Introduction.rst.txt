@@ -30,7 +30,7 @@ time discretizations differ.  Specifically,
 
 -  Plotfile format supported by AmrVis, VisIt, ParaView, and yt.
 
-MFiX-Exa is being developed at NETL and LBNL as part of the U.S. Department of Energy'x
+MFiX-Exa is being developed at NETL and LBNL as part of the U.S. Department of Energy's
 Exascale Computing Project (ECP).
 
 MFiX-Exa heavily leverages AMReX (see https://amrex-codes.github.io/) which is also supported by 
