@@ -23,7 +23,7 @@ These control the nodal projection and must be preceded by "mfix":
 | mg_maxiter              |  Maximum number of iterations in the nodal projection                 |    Int      |              | 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | mg_cg_maxiter           |  Maximum number of iterations in the nodal projection                 |    Int      |              | 
-|                         |    bottom solver if using bicg, cg, bicgcg or cgbicg                  |             |              |
+|                         |  bottom solver if using bicg, cg, bicgcg or c  gbicg                  |             |              |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | mg_max_coarsening_level |  Maximum number of coarser levels to allowin the nodal projection     |    Int      |              | 
 |                         |  If set to 0, the bottom solver will be called at the current level   |             |              |
@@ -48,9 +48,9 @@ These control the MAC projection and must be preceded by "mac":
 | mg_maxiter              |  Maximum number of iterations in the MAC projection                   |    Int      |              | 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | mg_cg_maxiter           |  Maximum number of iterations in the MAC projection                   |    Int      |              | 
-|                         |    bottom solver if using bicg, cg, bicgcg or cgbicg                  |             |              |
+|                         |  bottom solver if using bicg, cg, bicgcg or cgbicg                    |             |              |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
-| mg_max_coarsening_level |  Maximum number of coarser levels to allowin the nodal projection     |    Int      |              | 
+| mg_max_coarsening_level |  Maximum number of coarser levels to allow in the nodal projection    |    Int      |              | 
 |                         |  If set to 0, the bottom solver will be called at the current level   |             |              |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | bottom_solver_type      |  Which bottom solver to use in the MAC projection                     |  String     |   bicgcg     |
