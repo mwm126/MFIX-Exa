@@ -10,7 +10,7 @@ differnt solvers called by MFiX-Exa.
 These control the nodal projection and must be preceded by "mfix":
 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
-|                         | Description                                                           |   Type      | Default      |
+|                         |  Description                                                          |   Type      | Default      |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | mg_verbose              |  Verbosity of multigrid solver in nodal projection                    |    Int      |   0          |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
@@ -23,7 +23,7 @@ These control the nodal projection and must be preceded by "mfix":
 | mg_maxiter              |  Maximum number of iterations in the nodal projection                 |    Int      |              | 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | mg_cg_maxiter           |  Maximum number of iterations in the nodal projection                 |    Int      |              | 
-|                         |  bottom solver if using bicg, cg, bicgcg or c  gbicg                  |             |              |
+|                         |  bottom solver if using bicg, cg, bicgcg or cgbicg                    |             |              |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | mg_max_coarsening_level |  Maximum number of coarser levels to allowin the nodal projection     |    Int      |              | 
 |                         |  If set to 0, the bottom solver will be called at the current level   |             |              |
