@@ -11,7 +11,7 @@ Run-time Inputs
    InputsTimeStepping 
    InputsInitialization 
    InputsLoadBalancing 
-   InputsMultiGrid
+   InputsMultigrid
    InputsPlotFiles 
    InputsCheckpoint
    InputsMonitors
