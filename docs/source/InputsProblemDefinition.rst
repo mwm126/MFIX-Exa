@@ -27,12 +27,12 @@ The following inputs must be preceded by "geometry."
 
 The following inputs must be preceded by "mfix."
 
-+----------------------+-------------------------------------------------------------------------+-------------+--------+
++----------------------+-------------------------------------------------------------------------+----------+-----------+
 |                      | Description                                                             |   Type   | Default   |
 +======================+=========================================================================+==========+===========+
 | geometry             | Which type of EB geometry are we using?                                 |   String |           |
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
-| levelset__refinement | Refinement factor of levelset resolution relative to level 0 resolution |   Int    | 1         !
+| levelset__refinement | Refinement factor of levelset resolution relative to level 0 resolution |   Int    | 1         |
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
 
 Setting basic EB walls can be specified by inputs preceded by "xlo", "xhi", "ylo", "yhi", "zlo", and "zhi"
