@@ -24,11 +24,13 @@ The following inputs must be preceded by "mfix."
 +======================+=======================================================================+=============+==============+
 | fixed_dt             | Should we use a fixed timestep?                                       |    Int      |   0          |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
+| cfl                  | CFL constraint (dt < cfl * dx / u) if fixed_dt not 1                  |    Real     |   0.5        |
++----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | dt_min               | Abort if dt gets smaller than this value                              |    Real     |  1.e-6       |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | dt_max               | Maximum value of dt if calculating with cfl                           |    Real     |  1.e14       |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
-| cfl                  | CFL constraint (dt < cfl * dx / u) if fixed_dt not 1                  |    Real     |   0.5        |
+| tcoll_ratio          | DEM timestep equals the min collision time divided by this value      |    Real     |   50.0       |
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 
 The following inputs must be preceded by "mfix" and are only relevant if running a problem to steady state.
