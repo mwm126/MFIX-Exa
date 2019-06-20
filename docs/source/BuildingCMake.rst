@@ -167,17 +167,21 @@ AMReX development is outside the scope of this document. Run ``git status`` in
 the top-level MFix-Exa repo to see whether the AMReX submodule has new commits,
 modified files, or untracked files.
 
-To update the AMReX submodule reference by MFiX-Exa:
+The CMake variables ``AMREX_GIT_COMMIT_DEVELOP`` and
+``AMREX_GIT_COMMIT_DEVELOP`` have been removed. Instead, to update the AMReX
+submodule referenced by MFiX-Exa:
 
 .. code:: shell
 
+    > git -C subprojects/amrex checkout UPDATED_AMREX_COMMIT_SHA1
     > git add subprojects/amrex
     > git commit -m 'Updating AMReX version'
 
 This will only update the AMReX SHA-1 referenced by MFiX-Exa. Uncommitted AMReX
 changes and untracked AMReX files under ``subprojects/amrex`` are not added by
-``git add subprojects/amrex``. Change directories to ``subprojects/amrex`` and
-commit any AMReX changes first before ``git add subprojects/amrex``.
+``git add subprojects/amrex``. (To commit to the AMReX repo, change directories
+to ``subprojects/amrex`` and run Git commands there, before ``git add
+subprojects/amrex``.)
 
 .. note::
 
