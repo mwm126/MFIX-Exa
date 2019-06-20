@@ -230,20 +230,25 @@ subsequent steps) is reached or the number of iterations reaches the maximum num
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>dt_min</td>
-<td>Abort if dt gets smaller than this value</td>
-<td>Real</td>
-<td>1.e-6</td>
-</tr>
-<tr class="row-even"><td>dt_max</td>
-<td>Maximum value of dt if calculating with cfl</td>
-<td>Real</td>
-<td>1.e14</td>
-</tr>
 <tr class="row-odd"><td>cfl</td>
 <td>CFL constraint (dt &lt; cfl * dx / u) if fixed_dt not 1</td>
 <td>Real</td>
 <td>0.5</td>
+</tr>
+<tr class="row-even"><td>dt_min</td>
+<td>Abort if dt gets smaller than this value</td>
+<td>Real</td>
+<td>1.e-6</td>
+</tr>
+<tr class="row-odd"><td>dt_max</td>
+<td>Maximum value of dt if calculating with cfl</td>
+<td>Real</td>
+<td>1.e14</td>
+</tr>
+<tr class="row-even"><td>tcoll_ratio</td>
+<td>DEM timestep equals the min collision time divided by this value</td>
+<td>Real</td>
+<td>50.0</td>
 </tr>
 </tbody>
 </table>
