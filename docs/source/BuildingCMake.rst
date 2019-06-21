@@ -22,20 +22,108 @@ If the option ``CMAKE_BUILD_TYPE`` is omitted,
 
 There are two modes to build MFiX-Exa with cmake:
 
+o **SUPERBUILD (recommended):** AMReX is downloaded and built as part
+of the MFiX-Exa build process. This method is strongly encouraged as it
+ensures that the configuration options for MFiX-Exa and AMReX are consistent.
+
 o **STANDALONE:** MFiX-Exa source code is built separately and linked to an existing
 AMReX installation. This is ideal for continuous integration severs (CI)
 and regression testing applications. AMReX library version and configuration options
 must meet MFiX-Exa requirements.
 
-o **SUPERBUILD (recommended):** AMReX is downloaded and built as part
-of the MFiX-Exa build process. This method is strongly encouraged as it
-ensures that the configuration options for MFiX-Exa and AMReX are consistent.
 
+
+.. note::
+   **MFiX-Exa requires CMake 3.14 or higher.**
+
+
+SUPERBUILD Instructions (recommended)
+-------------------------------------
+
+By default MFiX-Exa CMake looks for an existing AMReX installation on the system. If none is found, it falls back to **SUPERBUILD** mode.
+In this mode, MFiX-Exa CMake inherents AMReX CMake targets and configuration options, that is, MFiX-Exa and AMReX are configured and built as a single entity
+
+Assuming no valid AMReX installation is present on the target system, and ``AMReX_ROOT`` is not set (see :ref:`sec:build:standalone`), the following code will build MFiX-Exa in **SUPERBUILD** mode:
+
+.. code:: shell
+
+    > git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
+    > cd mfix
+    > mkdir build
+    > cd build
+    > cmake [amrex options] -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] ..
+    > make -j
+
+``[amrex options]`` in the snippet above is a list of any of the AMReX configuration options listed in the `AMReX user guide <https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake>`_
+
+
+Working with the AMReX submodule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**SUPERBUILD** mode relies on a git submodule to checkout the AMReX git repository.
+If the AMReX submodule is not initialized, **SUPERBUILD** mode will initialize it and checkout 
+the AMReX commit the submodule is pointing to.
+Instead, if the AMReX submodule has already been manually initialized and a custom commit has been checked out,
+**SUPERBUILD** mode will use that commit. For MFiX-Exa development or testing, you may need to build with a different
+branch or release of AMReX.
+
+The ``subprojects/amrex`` directory is a Git repo, so use all standard Git
+commands. Either ``cd subprojects/amrex`` to run Git commands in the ``amrex``
+directory, or use ``git -C subprojects/amrex`` in the MFiX-Exa repo. For
+instance, to build with the ``my-amrex-branch`` branch of the AMReX repo:
+
+.. code:: shell
+
+    > git -C subprojects/amrex checkout my-amrex-branch
+    > git status
+    ...
+    modified:   subprojects/amrex (new commits)
+
+The branch ``my-amrex-branch`` will then be used when building MFiX-Exa.
+
+To revert to the default version of the AMReX submodule, run ``git submodule
+update``:
+
+.. code:: shell
+
+    > git submodule update
+    > git status
+    ...
+    nothing to commit, working tree clean
+
+You can edit, commit, pull, and push AMReX changes from ``subprojects/amrex``.
+AMReX development is outside the scope of this document. Run ``git status`` in
+the top-level MFix-Exa repo to see whether the AMReX submodule has new commits,
+modified files, or untracked files.
+
+The CMake variables ``AMREX_GIT_COMMIT_DEVELOP`` and
+``AMREX_GIT_COMMIT_DEVELOP`` have been removed. Instead, to update the AMReX
+submodule referenced by MFiX-Exa:
+
+.. code:: shell
+
+    > git -C subprojects/amrex checkout UPDATED_AMREX_COMMIT_SHA1
+    > git add subprojects/amrex
+    > git commit -m 'Updating AMReX version'
+
+This will only update the AMReX SHA-1 referenced by MFiX-Exa. Uncommitted AMReX
+changes and untracked AMReX files under ``subprojects/amrex`` are not added by
+``git add subprojects/amrex``. (To commit to the AMReX repo, change directories
+to ``subprojects/amrex`` and run Git commands there, before ``git add
+subprojects/amrex``.)
+
+.. note::
+
+    Only update the AMReX submodule reference in coordination with the other
+    MFiX-Exa developers!
+
+   
+.. _sec:build:standalone:
 
 **STANDALONE** instructions
 ---------------------------------------------------------------------
 
-Build AMReX Library
+Building AMReX 
 ~~~~~~~~~~~~~~~~~~~
 
 Clone AMReX from the official Git repository and checkout the
@@ -111,82 +199,6 @@ for an available AMReX installation.
 +-----------------+------------------------------+------------------+-------------+
 
 
-SUPERBUILD Instructions (recommended)
--------------------------------------
-
-If no AMReX installation is found on the system, or if one is found but does not meet MFiX-Exa requirements, MFiX-Exa CMake falls back to **SUPERBUILD** mode.
-When building in **SUPERBUILD** mode, the AMReX git repo is checked out via a git submodule before AMReX CMake build system is included into MFiX-Exa CMake infrastructure. Consequently, MFiX-Exa CMake inherents AMReX's CMake targets and configuration options, that is, MFiX-Exa and AMReX are configured and built as a single entity.
-
-
-Assuming no valid AMReX installation is present on the target system, and ``AMReX_ROOT`` is not set in the environment, the following code will build  MFiX-Exa in **SUPERBUILD** mode:
-
-.. code:: shell
-
-    > git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
-    > cd mfix
-    > mkdir build
-    > cd build
-    > cmake [amrex options] -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] ..
-    > make -j
-
-``[amrex options]`` is a list of any of the AMReX configuration options listed in the `AMReX user guide <https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake>`_
-
-
-Working with the AMReX submodule
---------------------------------
-
-For MFiX-Exa development or testing, you may need to build with a different
-branch or release of AMReX.
-
-The ``subprojects/amrex`` directory is a Git repo, so use all standard Git
-commands. Either ``cd subprojects/amrex`` to run Git commands in the ``amrex``
-directory, or use ``git -C subprojects/amrex`` in the MFiX-Exa repo. For
-instance, to build with the ``my-amrex-branch`` branch of the AMReX repo:
-
-.. code:: shell
-
-    > git -C subprojects/amrex checkout my-amrex-branch
-    > git status
-    ...
-    modified:   subprojects/amrex (new commits)
-
-The branch ``my-amrex-branch`` will then be used when building MFiX-Exa.
-
-To revert to the default version of the AMReX submodule, run ``git submodule
-update``:
-
-.. code:: shell
-
-    > git submodule update
-    > git status
-    ...
-    nothing to commit, working tree clean
-
-You can edit, commit, pull, and push AMReX changes from ``subprojects/amrex``.
-AMReX development is outside the scope of this document. Run ``git status`` in
-the top-level MFix-Exa repo to see whether the AMReX submodule has new commits,
-modified files, or untracked files.
-
-The CMake variables ``AMREX_GIT_COMMIT_DEVELOP`` and
-``AMREX_GIT_COMMIT_DEVELOP`` have been removed. Instead, to update the AMReX
-submodule referenced by MFiX-Exa:
-
-.. code:: shell
-
-    > git -C subprojects/amrex checkout UPDATED_AMREX_COMMIT_SHA1
-    > git add subprojects/amrex
-    > git commit -m 'Updating AMReX version'
-
-This will only update the AMReX SHA-1 referenced by MFiX-Exa. Uncommitted AMReX
-changes and untracked AMReX files under ``subprojects/amrex`` are not added by
-``git add subprojects/amrex``. (To commit to the AMReX repo, change directories
-to ``subprojects/amrex`` and run Git commands there, before ``git add
-subprojects/amrex``.)
-
-.. note::
-
-    Only update the AMReX submodule reference in coordination with the other
-    MFiX-Exa developers!
 
 
 Few more notes on building MFiX-Exa
