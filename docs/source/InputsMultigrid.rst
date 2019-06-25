@@ -29,7 +29,7 @@ These control the nodal projection and must be preceded by "mfix":
 |                         |  If set to 0, the bottom solver will be called at the current level   |             |              |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | bottom_solver_type      |  Which bottom solver to use in the nodal projection                   |  String     |   bicgcg     |
-|                         |  Options are bicgstab, cg, cgbicg, smoother or hypre                  |             |              | 
+|                         |  Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre          |             |              | 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 
 These control the MAC projection and must be preceded by "mac":
@@ -54,7 +54,7 @@ These control the MAC projection and must be preceded by "mac":
 |                         |  If set to 0, the bottom solver will be called at the current level   |             |              |
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 | bottom_solver_type      |  Which bottom solver to use in the MAC projection                     |  String     |   bicgcg     |
-|                         |  Options are bicgstab, cg, cgbicg, smoother or hypre                  |             |              | 
+|                         |  Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre          |             |              | 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 
 These control the diffusion solver and must be preceded by "diff":
@@ -72,5 +72,5 @@ The following inputs must be preceded by "diff"
 | mg_atol              |  Absolute tolerance in diffusion solve                                |    Real     |   1.e-14     | 
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
 | bottom_solver_type   |  Which bottom solver to use in the diffusion solve                    |  String     |   bicgcg     |
-|                      |  Options are bicgstab, cg, cgbicg, smoother or hypre                  |             |              | 
+|                      |  Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre          |             |              | 
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
