@@ -214,19 +214,19 @@ different solvers called by MFiX-Exa.</p>
 <tr class="row-even"><td>mg_maxiter</td>
 <td>Maximum number of iterations in the nodal projection</td>
 <td>Int</td>
-<td>&#160;</td>
+<td>100</td>
 </tr>
 <tr class="row-odd"><td>mg_cg_maxiter</td>
 <td>Maximum number of iterations in the nodal projection
 bottom solver if using bicg, cg, bicgcg or cgbicg</td>
 <td>Int</td>
-<td>&#160;</td>
+<td>100</td>
 </tr>
 <tr class="row-even"><td>mg_max_coarsening_level</td>
 <td>Maximum number of coarser levels to allowin the nodal projection
 If set to 0, the bottom solver will be called at the current level</td>
 <td>Int</td>
-<td>&#160;</td>
+<td>100</td>
 </tr>
 <tr class="row-odd"><td>bottom_solver_type</td>
 <td>Which bottom solver to use in the nodal projection
@@ -275,19 +275,19 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 <tr class="row-even"><td>mg_maxiter</td>
 <td>Maximum number of iterations in the MAC projection</td>
 <td>Int</td>
-<td>&#160;</td>
+<td>200</td>
 </tr>
 <tr class="row-odd"><td>mg_cg_maxiter</td>
 <td>Maximum number of iterations in the MAC projection
 bottom solver if using bicg, cg, bicgcg or cgbicg</td>
 <td>Int</td>
-<td>&#160;</td>
+<td>200</td>
 </tr>
 <tr class="row-even"><td>mg_max_coarsening_level</td>
-<td>Maximum number of coarser levels to allow in the nodal projection
+<td>Maximum number of coarser levels to allow in the MAC projection
 If set to 0, the bottom solver will be called at the current level</td>
 <td>Int</td>
-<td>&#160;</td>
+<td>100</td>
 </tr>
 <tr class="row-odd"><td>bottom_solver_type</td>
 <td>Which bottom solver to use in the MAC projection
@@ -301,10 +301,10 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 The following inputs must be preceded by “diff”</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="59%" />
+<col width="20%" />
+<col width="58%" />
 <col width="11%" />
-<col width="12%" />
+<col width="11%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -334,7 +334,24 @@ The following inputs must be preceded by “diff”</p>
 <td>Real</td>
 <td>1.e-14</td>
 </tr>
-<tr class="row-even"><td>bottom_solver_type</td>
+<tr class="row-even"><td>mg_maxiter</td>
+<td>Maximum number of iterations in diffusion solve</td>
+<td>Int</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>mg_cg_maxiter</td>
+<td>Maximum number of iterations in diffusion solve
+bottom solver if using bicg, cg, bicgcg or cgbicg</td>
+<td>Int</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>mg_max_coarsening_level</td>
+<td>Maximum number of coarser levels to allow in diffusion solve
+If set to 0, the bottom solver will be called at the current level</td>
+<td>Int</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>bottom_solver_type</td>
 <td>Which bottom solver to use in the diffusion solve
 Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 <td>String</td>
