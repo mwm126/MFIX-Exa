@@ -5,6 +5,6 @@ var searchData=
   ['deprecated_5for_5funknown',['deprecated_or_unknown',['../namespacedeprecated__or__unknown__module.html#a1b4aaebd08a512e37d9660862a012f2e',1,'deprecated_or_unknown_module']]],
   ['deprecated_5for_5funknown_5fmodule',['deprecated_or_unknown_module',['../namespacedeprecated__or__unknown__module.html',1,'']]],
   ['desnamelist_2einc',['desnamelist.inc',['../desnamelist_8inc.html',1,'']]],
-  ['drag_5fusr',['drag_usr',['../usr__drag_8f90.html#a6d86dd1dad6f84fc15f7c63a30ad375b',1,'usr_drag.f90']]],
+  ['dragtype',['DragType',['../mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200ae',1,'mfix.H']]],
   ['dummy_5fdp',['dummy_dp',['../namespaceusr.html#a8d02e2b886291e288f054d875f725370',1,'usr']]]
 ];

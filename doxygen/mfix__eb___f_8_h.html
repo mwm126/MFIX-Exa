@@ -117,10 +117,8 @@ Functions</h2></td></tr>
 <tr class="separator:a6e0d817a11a7582fdb0f311a97e458b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506d9fbccbe0153b06ed441c30ca58b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a506d9fbccbe0153b06ed441c30ca58b9">ls_has_walls</a> (int *has_wall, const amrex_real *phi, const int *phlo, const int *phhi, const amrex_real *tol)</td></tr>
 <tr class="separator:a506d9fbccbe0153b06ed441c30ca58b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16006fc6139e8b5896fdd0894a4eae83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a16006fc6139e8b5896fdd0894a4eae83">calc_wall_collisions_ls</a> (void *rparticles, const int *ntot, const int *nrp, amrex_real *tow, amrex_real *fc, amrex_real *subdt, const int *valid, const int *vlo, const int *vhi, const amrex_real *phi, const int *phlo, const int *phhi, const amrex_real *dx, const int *n_refine)</td></tr>
-<tr class="separator:a16006fc6139e8b5896fdd0894a4eae83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f84d30b210073f2125ab9067e3f0ddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a0f84d30b210073f2125ab9067e3f0ddc">rm_wall_collisions_eb</a> (void *rparticle, const int *nrp, const amrex_real *phi, const int *phlo, const int *phhi, const void *flags, const int *flo, const int *fhi, const amrex_real *plo, const amrex_real *dx, const int *n_refine)</td></tr>
-<tr class="separator:a0f84d30b210073f2125ab9067e3f0ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e78289a912caf2f0baa433b78fe8320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__eb___f_8_h.html#a4e78289a912caf2f0baa433b78fe8320">calc_wall_collisions</a> (void *rparticles, const int *ntot, const int *nrp, amrex_real *tow, amrex_real *fc, amrex_real *subdt, const int *valid, const int *vlo, const int *vhi, const amrex_real *phi, const int *phlo, const int *phhi, const amrex_real *dx, const int *n_refine)</td></tr>
+<tr class="separator:a4e78289a912caf2f0baa433b78fe8320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="acb6d48305132f6aa2ad69f1aaa78e4c6"></a>
@@ -136,12 +134,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a16006fc6139e8b5896fdd0894a4eae83"></a>
+<a class="anchor" id="a4e78289a912caf2f0baa433b78fe8320"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void calc_wall_collisions_ls </td>
+          <td class="memname">void calc_wall_collisions </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>rparticles</em>, </td>
@@ -569,86 +567,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Referenced by <a class="el" href="classmfix.html#a01e0c3185b7857e040ffe726062c5892">mfix::WriteEBSurface()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0f84d30b210073f2125ab9067e3f0ddc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rm_wall_collisions_eb </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>rparticle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>nrp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex_real *&#160;</td>
-          <td class="paramname"><em>phi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>phlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>phhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>flags</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>flo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>fhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex_real *&#160;</td>
-          <td class="paramname"><em>plo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex_real *&#160;</td>
-          <td class="paramname"><em>dx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>n_refine</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

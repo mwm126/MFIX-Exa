@@ -98,6 +98,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#few-more-notes-on-building-mfix-exa">Few more notes on building MFiX-Exa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-mfix-exa-for-cori-nersc">Building MFiX-Exa for Cori (NERSC)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#standard-build">Standard build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpu-build">GPU build</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#building-mfix-exa-for-summit-olcf">Building MFiX-Exa for Summit (OLCF)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
@@ -208,7 +214,7 @@ must meet MFiX-Exa requirements.</p>
 <p class="last"><strong>MFiX-Exa requires CMake 3.14 or higher.</strong></p>
 </div>
 <div class="section" id="superbuild-instructions-recommended">
-<h2>SUPERBUILD Instructions (recommended)<a class="headerlink" href="#superbuild-instructions-recommended" title="Permalink to this headline">¶</a></h2>
+<span id="sec-build-superbuild"></span><h2>SUPERBUILD Instructions (recommended)<a class="headerlink" href="#superbuild-instructions-recommended" title="Permalink to this headline">¶</a></h2>
 <p>By default MFiX-Exa CMake looks for an existing AMReX installation on the system. If none is found, it falls back to <strong>SUPERBUILD</strong> mode.
 In this mode, MFiX-Exa CMake inherents AMReX CMake targets and configuration options, that is, MFiX-Exa and AMReX are configured and built as a single entity</p>
 <p>Assuming no valid AMReX installation is present on the target system, and <code class="docutils literal notranslate"><span class="pre">AMReX_ROOT</span></code> is not set (see <a class="reference internal" href="#sec-build-standalone"><span class="std std-ref">STANDALONE instructions</span></a>), the following code will build MFiX-Exa in <strong>SUPERBUILD</strong> mode:</p>
@@ -385,6 +391,82 @@ the above command (with full path to the compilers) or the following:</p>
 <p>MFiX-Exa uses the same compiler flags used to build AMReX, unless
 <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> is explicitly provided, or
 the environmental variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/<code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> are set.</p>
+</div>
+<div class="section" id="building-mfix-exa-for-cori-nersc">
+<h2>Building MFiX-Exa for Cori (NERSC)<a class="headerlink" href="#building-mfix-exa-for-cori-nersc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="standard-build">
+<h3>Standard build<a class="headerlink" href="#standard-build" title="Permalink to this headline">¶</a></h3>
+<p>For the Cori cluster at NERSC, you first need to load/unload modules required to build MFIX-Exa.</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module unload altd
+<span class="gp">&gt;</span> module unload darshan
+<span class="gp">&gt;</span> module load cmake/3.14.0
+</pre></div>
+</div>
+<p>The default options for Cori are the <strong>Haswell</strong> architecture and <strong>Intel</strong> compiler, if you want to compile with the <strong>Knight’s Landing (KNL)</strong> architecture:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module swap craype-haswell craype-mic-knl
+</pre></div>
+</div>
+<p>Or use the <strong>GNU</strong> compiler:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module swap PrgEnv-intel PrgEnv-gnu
+</pre></div>
+</div>
+<p>Now MFIX-Exa can be built following the <a class="reference internal" href="#sec-build-superbuild"><span class="std std-ref">SUPERBUILD Instructions (recommended)</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The load/unload modules options could be saved in the <cite>~/.bash_profile.ext</cite></p>
+</div>
+</div>
+<div class="section" id="gpu-build">
+<h3>GPU build<a class="headerlink" href="#gpu-build" title="Permalink to this headline">¶</a></h3>
+<p>To compile on the GPU nodes in Cori, you first need to purge your modules, most of which won’t work on the GPU nodes</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module purge
+</pre></div>
+</div>
+<p>Then, you need to load the following modules:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load modules esslurm gcc cuda openmpi/3.1.0-ucx cmake/3.14.0
+</pre></div>
+</div>
+<p>Currently, you need to use OpenMPI; mvapich2 seems not to work.</p>
+<p>Then, you need to use slurm to request access to a GPU node:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> salloc -N <span class="m">1</span> -t <span class="m">02</span>:00:00 -c <span class="m">80</span> -C gpu -A m1759 --gres<span class="o">=</span>gpu:8 --exclusive
+</pre></div>
+</div>
+<p>This reservers an entire GPU node for your job. Note that you can’t cross-compile for the GPU nodes - you have to log on to one and then build your software.</p>
+<p>Finally, navigate to the base of the MFIX-Exa repository and compile in GPU mode:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">cd</span> mfix
+<span class="gp">&gt;</span> mdkir build
+<span class="gp">&gt;</span> <span class="nb">cd</span> build
+<span class="gp">&gt;</span> cmake -DENABLE_CUDA<span class="o">=</span>yes -DAMREX_CUDA_ARCH<span class="o">=</span>Volta -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran ..
+<span class="gp">&gt;</span> make -j
+</pre></div>
+</div>
+<p>For more information about GPU nodes in Cori – <a class="reference external" href="https://docs-dev.nersc.gov/cgpu/">https://docs-dev.nersc.gov/cgpu/</a></p>
+</div>
+</div>
+<div class="section" id="building-mfix-exa-for-summit-olcf">
+<h2>Building MFiX-Exa for Summit (OLCF)<a class="headerlink" href="#building-mfix-exa-for-summit-olcf" title="Permalink to this headline">¶</a></h2>
+<p>For the Summit cluster at OLCF, you first need to load/unload modules required to build MFIX-Exa.</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module unload xalt
+<span class="gp">&gt;</span> module unload darshan
+<span class="gp">&gt;</span> module load gcc
+<span class="gp">&gt;</span> module load cmake/3.14.0
+</pre></div>
+</div>
+<p>Now MFIX-Exa can be built following the <a class="reference internal" href="#sec-build-superbuild"><span class="std std-ref">SUPERBUILD Instructions (recommended)</span></a>.</p>
+<p>To build MFIX-Exa for GPUs, you need to load cuda module:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load cuda/10.1.105
+</pre></div>
+</div>
+<p>To compile for GPUs:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">cd</span> mfix
+<span class="gp">&gt;</span> mdkir build
+<span class="gp">&gt;</span> <span class="nb">cd</span> build
+<span class="gp">&gt;</span> cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran -DENABLE_CUDA<span class="o">=</span>yes
+<span class="gp">&gt;</span> make -j
+</pre></div>
+</div>
+<p>An example of a <em>submission_script</em> for GPUs can be found in the repo <code class="docutils literal notranslate"><span class="pre">mfix/tests/GPU_test/script.sh</span></code>.
+For more information about Summit cluster: <a class="reference external" href="https://www.olcf.ornl.gov/for-users/system-user-guides/summit/">https://www.olcf.ornl.gov/for-users/system-user-guides/summit/</a></p>
 </div>
 </div>
 

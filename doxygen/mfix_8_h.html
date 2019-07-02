@@ -86,13 +86,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">mfix.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;AMReX_AmrCore.H&gt;</code><br />
 <code>#include &lt;AMReX_iMultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_BLProfiler.H&gt;</code><br />
@@ -107,14 +109,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;AMReX_EB_levelset.H&gt;</code><br />
 <code>#include &lt;AMReX_EB_LSCore.H&gt;</code><br />
 <code>#include &lt;MFIXParticleContainer.H&gt;</code><br />
-<code>#include &lt;MacProjection.H&gt;</code><br />
+<code>#include &lt;mfix_des_F.H&gt;</code><br />
+<code>#include &lt;AMReX_MLMG.H&gt;</code><br />
+<code>#include &lt;AMReX_MLNodeLaplacian.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="mfix__eb__if_8_h.html">mfix_eb_if.H</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html">mfix</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aff6a4c5ab7182d5999dc15d5edf200ae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200ae">DragType</a> { <br />
+&#160;&#160;<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeae962ea8b0b3a376575ad0e616eeac474">Invalid</a> =-1, 
+<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426">WenYu</a>, 
+<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea6fff5fe02e9754eb2b8f3aa0894fc12b">Gidaspow</a>, 
+<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194">BVK2</a>, 
+<br />
+&#160;&#160;<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa">UserDrag</a>
+<br />
+ }</td></tr>
+<tr class="separator:aff6a4c5ab7182d5999dc15d5edf200ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200ae">DragType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aeae962ea8b0b3a376575ad0e616eeac474"></a>Invalid&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426"></a>WenYu&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aea6fff5fe02e9754eb2b8f3aa0894fc12b"></a>Gidaspow&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194"></a>BVK2&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa"></a>UserDrag&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
