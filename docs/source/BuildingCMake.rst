@@ -36,6 +36,7 @@ must meet MFiX-Exa requirements.
 .. note::
    **MFiX-Exa requires CMake 3.14 or higher.**
 
+.. _sec:build:superbuild:
 
 SUPERBUILD Instructions (recommended)
 -------------------------------------
@@ -220,3 +221,107 @@ the above command (with full path to the compilers) or the following:
 MFiX-Exa uses the same compiler flags used to build AMReX, unless
 ``CMAKE_Fortran_FLAGS``/``CMAKE_CXX_FLAGS`` is explicitly provided, or
 the environmental variables ``FFLAGS``/``CXXFLAGS`` are set.
+
+
+Building MFiX-Exa for Cori (NERSC)
+-----------------------------------
+
+Standard build 
+~~~~~~~~~~~~~~~~~~~
+
+For the Cori cluster at NERSC, you first need to load/unload modules required to build MFIX-Exa.
+
+.. code:: shell
+
+    > module unload altd
+    > module unload darshan
+    > module load cmake/3.14.0
+
+The default options for Cori are the **Haswell** architecture and **Intel** compiler, if you want to compile with the **Knight's Landing (KNL)** architecture:
+
+.. code:: shell
+
+    > module swap craype-haswell craype-mic-knl
+
+Or use the **GNU** compiler:
+
+.. code:: shell
+
+    > module swap PrgEnv-intel PrgEnv-gnu
+
+Now MFIX-Exa can be built following the :ref:`sec:build:superbuild`.
+
+.. note::
+
+    The load/unload modules options could be saved in the `~/.bash_profile.ext` 
+
+
+GPU build 
+~~~~~~~~~~~~~~~~~~~
+
+To compile on the GPU nodes in Cori, you first need to purge your modules, most of which won't work on the GPU nodes
+
+.. code:: shell
+
+    > module purge
+
+Then, you need to load the following modules:
+
+.. code:: shell
+
+    > module load modules esslurm gcc cuda openmpi/3.1.0-ucx cmake/3.14.0
+
+Currently, you need to use OpenMPI; mvapich2 seems not to work.
+
+Then, you need to use slurm to request access to a GPU node:
+
+.. code:: shell
+
+    > salloc -N 1 -t 02:00:00 -c 80 -C gpu -A m1759 --gres=gpu:8 --exclusive
+
+This reservers an entire GPU node for your job. Note that you can’t cross-compile for the GPU nodes - you have to log on to one and then build your software.
+
+Finally, navigate to the base of the MFIX-Exa repository and compile in GPU mode:
+
+.. code:: shell
+
+    > cd mfix
+    > mdkir build
+    > cd build
+    > cmake -DENABLE_CUDA=yes -DAMREX_CUDA_ARCH=Volta -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran ..
+    > make -j
+
+For more information about GPU nodes in Cori -- `<https://docs-dev.nersc.gov/cgpu/>`_
+
+Building MFiX-Exa for Summit (OLCF)
+-----------------------------------
+
+For the Summit cluster at OLCF, you first need to load/unload modules required to build MFIX-Exa.
+
+.. code:: shell
+
+    > module unload xalt
+    > module unload darshan
+    > module load gcc
+    > module load cmake/3.14.0
+
+Now MFIX-Exa can be built following the :ref:`sec:build:superbuild`.
+
+To build MFIX-Exa for GPUs, you need to load cuda module:
+
+.. code:: shell
+
+    > module load cuda/10.1.105
+
+To compile for GPUs:
+
+.. code:: shell
+
+    > cd mfix
+    > mdkir build
+    > cd build
+    > cmake -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran -DENABLE_CUDA=yes 
+    > make -j
+
+An example of a *submission_script* for GPUs can be found in the repo ``mfix/tests/GPU_test/script.sh``.
+For more information about Summit cluster: `<https://www.olcf.ornl.gov/for-users/system-user-guides/summit/>`_ 
