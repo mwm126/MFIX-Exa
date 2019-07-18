@@ -45,7 +45,7 @@ Currently, the criterion for setting "steady_state" to true is if "dt" is undefi
 |                       |                                                                       |             |            |
 |                       | (Must be set if steady_state_tol = 1)                                 |             |            |
 +-----------------------+-----------------------------------------------------------------------+-------------+------------+
-| steady_state_max_iter | Maximum number of allowed iterations to converge to steady state      |   Int       | 100000000  |
+| steady_state_maxiter  | Maximum number of allowed iterations to converge to steady state      |   Int       | 100000000  |
 +-----------------------+-----------------------------------------------------------------------+-------------+------------+
 
 Setting the Time Step 
