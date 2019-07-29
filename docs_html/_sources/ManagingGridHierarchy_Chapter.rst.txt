@@ -25,7 +25,7 @@ by setting :cpp:`amr.dual_grid = 1` in the inputs file.
 See :ref:`sec:dual_grid` for more about this approach.
 
 When running on multicore machines with OpenMP, we can also control the distribution of 
-work by setting the size of grid tiles (by defining :cpp:`fabarray_mfiter.tile_size`), and if relevant, of 
+work by setting the size of grid tiles (by defining :cpp:`fabarray.mfiter_tile_size`), and if relevant, of 
 particle tiles (by defining :cpp:`particle.tile_size`).  We can also specify the strategy for assigning 
 tiles to OpenMP threads.  See :ref:`sec:basics:mfiter:tiling:` for more about tiling.
 

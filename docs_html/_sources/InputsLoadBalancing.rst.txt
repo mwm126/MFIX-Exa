@@ -24,20 +24,32 @@ The following inputs must be preceded by "amr" and determine how we create the g
 | blocking_factor_z    | Each grid must be divisible by blocking_factor_z in z-direction       |    Int      |  8        |
 +----------------------+-----------------------------------------------------------------------+-------------+-----------+
 
+The following inputs must be preceded by "fabarray_mfiter" and determine how we create the logical tiles:
+
++----------------------+-----------------------------------------------------------------------+----------+-------------+
+|                      | Description                                                           | Type     | Default     |
++======================+=======================================================================+==========+=============+
+| tile_size            | Maximum number of cells in each direction for (logical) tiles         | IntVect  | 1024000     |
+|                      |        (3D CPU-only)                                                  |          | 1024000,8,8 |
++----------------------+-----------------------------------------------------------------------+----------+-------------+
+
 The following inputs must be preceded by "particles"
 
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-|                   | Description                                                           |   Type      | Default   |
-+===================+=======================================================================+=============+===========+
-| max_grid_size_x   | Maximum number of cells at level 0 in each grid in x-direction        |    Int      | 32        |
-|                   | for grids in the ParticleBoxArray if dual_grid is true                |             |           |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_y   | Maximum number of cells at level 0 in each grid in y-direction        |    Int      | 32        |
-|                   | for grids in the ParticleBoxArray if dual_grid is true                |             |           |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
-| max_grid_size_z   | Maximum number of cells at level 0 in each grid in z-direction        |    Int      | 32        |
-|                   | for grids in the ParticleBoxArray if dual_grid is true.               |             |           |
-+-------------------+-----------------------------------------------------------------------+-------------+-----------+
++-------------------+-----------------------------------------------------------------------+-------------+--------------+
+|                   | Description                                                           |   Type      | Default      |
++===================+=======================================================================+=============+==============+
+| max_grid_size_x   | Maximum number of cells at level 0 in each grid in x-direction        |    Int      | 32           |
+|                   | for grids in the ParticleBoxArray if dual_grid is true                |             |              |
++-------------------+-----------------------------------------------------------------------+-------------+--------------+
+| max_grid_size_y   | Maximum number of cells at level 0 in each grid in y-direction        |    Int      | 32           |
+|                   | for grids in the ParticleBoxArray if dual_grid is true                |             |              |
++-------------------+-----------------------------------------------------------------------+-------------+--------------+
+| max_grid_size_z   | Maximum number of cells at level 0 in each grid in z-direction        |    Int      | 32           |
+|                   | for grids in the ParticleBoxArray if dual_grid is true.               |             |              |
++-------------------+-----------------------------------------------------------------------+-------------+--------------+
+| tile_size         | Maximum number of cells in each direction for (logical) tiles         |  IntVect    | 1024000,8,8  |
+|                   | in the ParticleBoxArray if dual_grid is true.                         |             |              |
++-------------------+-----------------------------------------------------------------------+-------------+--------------+
 
 The following inputs must be preceded by "mfix" and determine how we load balance:
 

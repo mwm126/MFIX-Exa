@@ -228,13 +228,41 @@ if regrid_int = -1 then no regridding will occur</td>
 </tr>
 </tbody>
 </table>
+<p>The following inputs must be preceded by “fabarray_mfiter” and determine how we create the logical tiles:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="61%" />
+<col width="9%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>tile_size</td>
+<td><dl class="first last docutils">
+<dt>Maximum number of cells in each direction for (logical) tiles</dt>
+<dd>(3D CPU-only)</dd>
+</dl>
+</td>
+<td>IntVect</td>
+<td>1024000
+1024000,8,8</td>
+</tr>
+</tbody>
+</table>
 <p>The following inputs must be preceded by “particles”</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="17%" />
-<col width="62%" />
+<col width="16%" />
+<col width="61%" />
 <col width="11%" />
-<col width="10%" />
+<col width="12%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -261,6 +289,12 @@ for grids in the ParticleBoxArray if dual_grid is true</td>
 for grids in the ParticleBoxArray if dual_grid is true.</td>
 <td>Int</td>
 <td>32</td>
+</tr>
+<tr class="row-odd"><td>tile_size</td>
+<td>Maximum number of cells in each direction for (logical) tiles
+in the ParticleBoxArray if dual_grid is true.</td>
+<td>IntVect</td>
+<td>1024000,8,8</td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +332,7 @@ Options are “FixedSize”, “KDTree” or “Knapsack”</td>
 </tr>
 <tr class="row-odd"><td>knapsack_weight_type</td>
 <td>What weighting function to use if using Knapsack load balancing
-Options are “RunTimeCosts” or “NumParticles”“</td>
+Options are “RunTimeCosts” or “NumParticles””</td>
 <td>String</td>
 <td>RunTimeCosts</td>
 </tr>
