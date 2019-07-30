@@ -177,17 +177,17 @@
             
   <div class="section" id="time-stepping">
 <h1>Time Stepping<a class="headerlink" href="#time-stepping" title="Permalink to this headline">¶</a></h1>
-<p>The following inputs must be preceded by “amr.”   Note that if both are specified, both criteria
+<p>The following inputs must be preceded by “mfix.”   Note that if both are specified, both criteria
 are used and the simulation still stop when the first criterion is hit.  In the case of unsteady flow,
 the simulation will stop when either the number of steps reaches max_step or time reaches stop_time.
 In the case of unsteady flow, the simulation will stop when either the tolerance (difference between
 subsequent steps) is reached or the number of iterations reaches the maximum number specified.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="63%" />
+<col width="18%" />
+<col width="59%" />
+<col width="11%" />
 <col width="12%" />
-<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -207,24 +207,6 @@ subsequent steps) is reached or the number of iterations reaches the maximum num
 <td>Real</td>
 <td>-1.0</td>
 </tr>
-</tbody>
-</table>
-<p>The following inputs must be preceded by “mfix.”</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="18%" />
-<col width="59%" />
-<col width="11%" />
-<col width="12%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">Description</th>
-<th class="head">Type</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
 <tr class="row-even"><td>fixed_dt</td>
 <td>Should we use a fixed timestep?</td>
 <td>Int</td>
