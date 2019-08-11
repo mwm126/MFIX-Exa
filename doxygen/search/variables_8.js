@@ -1,6 +1,7 @@
 var searchData=
 [
   ['m_5fbc_5fep_5fg',['m_bc_ep_g',['../classmfix.html#a869250d11acbb3de4de8c693ccee8af2',1,'mfix']]],
+  ['m_5fbc_5fp_5fg',['m_bc_p_g',['../classmfix.html#ab7eb228904f4979b5a44ed852b2c228b',1,'mfix']]],
   ['m_5fbc_5ft_5fg',['m_bc_t_g',['../classmfix.html#a9fc4d0e62bc540e55d299811a3fb6e97',1,'mfix']]],
   ['m_5fbc_5fu_5fg',['m_bc_u_g',['../classmfix.html#a04568631cd4683be5967c29cbb9560d9',1,'mfix']]],
   ['m_5fbc_5fv_5fg',['m_bc_v_g',['../classmfix.html#aae5716edac5aa52c0eda670a39799daa',1,'mfix']]],

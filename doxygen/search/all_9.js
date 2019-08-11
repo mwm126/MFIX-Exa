@@ -2,6 +2,7 @@ var searchData=
 [
   ['mfix_2dexa_3a_20a_20multi_2dphase_20flow_20simulation_20tool_20based_20on_20mfix_2dclassic_2c_20incorporating_20the_20massively_20parallel_2c_20block_2dstructured_20adaptive_20mesh_20refinement_20_28amr_29_20functionality_20of_20amrex_2e',['MFiX-Exa: A multi-phase flow simulation tool based on MFiX-Classic, incorporating the massively parallel, block-structured adaptive mesh refinement (AMR) functionality of AMReX.',['../index.html',1,'']]],
   ['m_5fbc_5fep_5fg',['m_bc_ep_g',['../classmfix.html#a869250d11acbb3de4de8c693ccee8af2',1,'mfix']]],
+  ['m_5fbc_5fp_5fg',['m_bc_p_g',['../classmfix.html#ab7eb228904f4979b5a44ed852b2c228b',1,'mfix']]],
   ['m_5fbc_5ft_5fg',['m_bc_t_g',['../classmfix.html#a9fc4d0e62bc540e55d299811a3fb6e97',1,'mfix']]],
   ['m_5fbc_5fu_5fg',['m_bc_u_g',['../classmfix.html#a04568631cd4683be5967c29cbb9560d9',1,'mfix']]],
   ['m_5fbc_5fv_5fg',['m_bc_v_g',['../classmfix.html#aae5716edac5aa52c0eda670a39799daa',1,'mfix']]],
@@ -20,7 +21,8 @@ var searchData=
   ['mfix_2ecpp',['mfix.cpp',['../mfix_8cpp.html',1,'']]],
   ['mfix_2eh',['mfix.H',['../mfix_8_h.html',1,'']]],
   ['mfix_5fadd_5fargument',['mfix_add_argument',['../mfix___f_8_h.html#a0f4826065b743cd78f528abc911bde41',1,'mfix_F.H']]],
-  ['mfix_5fadd_5fdrag_5fterms',['mfix_add_drag_terms',['../classmfix.html#a53ec9f9f5c3f294ea7d7325b94929a75',1,'mfix']]],
+  ['mfix_5fadd_5fdrag_5fexplicit',['mfix_add_drag_explicit',['../classmfix.html#a5f57c4a45cfc724ef0a2dade2873e6a8',1,'mfix']]],
+  ['mfix_5fadd_5fdrag_5fimplicit',['mfix_add_drag_implicit',['../classmfix.html#a73d747ef6277443fe1013d34d81289ef',1,'mfix']]],
   ['mfix_5fadd_5fgravity_5fand_5fgp',['mfix_add_gravity_and_gp',['../classmfix.html#af60d45b2af1db8c13524573be20a47b5',1,'mfix']]],
   ['mfix_5fadvance_2ecpp',['mfix_advance.cpp',['../mfix__advance_8cpp.html',1,'']]],
   ['mfix_5fapply_5fprojection',['mfix_apply_projection',['../classmfix.html#aaf6395f0ffe1c9b07534eec323c3784c',1,'mfix']]],
