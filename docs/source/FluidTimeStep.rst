@@ -20,7 +20,8 @@ In the predictor
 
 -  Project :math:`U_g^{\ast}` by solving
 
-.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} (\varepsilon_g  U_g)^{\ast}+ {\varepsilon_g}{\rho_g} \nabla {p_g}^{n-1/2} \right)
+.. math:: \nabla \cdot \frac{\varepsilon_g}{\rho_g} \nabla \phi = \nabla \cdot \left( \frac{1}{\Delta t} 
+          (\varepsilon_g  U_g)^{\ast}+ \frac{\varepsilon_g}{\rho_g} \nabla {p_g}^{n-1/2} \right)
 
 then defining
 
