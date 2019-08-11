@@ -24,7 +24,7 @@ In the predictor
 
 then defining
 
-.. math:: U_g^{\ast \ast} = U_g^{\ast} - \frac{1}{\rho_g} \nabla \phi
+.. math:: U_g^{\ast \ast} = U_g^{\ast} - \frac{\Delta t}{\rho_g} \nabla \phi
 
 and 
 
@@ -45,7 +45,7 @@ In the corrector
 
 then defining
 
-.. math:: U_g^{n+1} = U_g^{\ast \ast \ast} - \frac{1}{\rho_g} \nabla \phi
+.. math:: U_g^{n+1} = U_g^{\ast \ast \ast} - \frac{\Delta t}{\rho_g} \nabla \phi
 
 and 
 
