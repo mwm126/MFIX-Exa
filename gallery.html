@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+    Transit by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+  -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AMReX: Gallery</title>
+    <link rel="icon" href="web_icon.ico" type="image/x-icon">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="css/skel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">AMReX</a></h1>
+      <nav id="nav">
+	<ul>
+	  <li><a href="overview.html">Overview</a></li>
+	  <li><a href="science.html">Science</a></li>
+	  <li><a href="gallery.html">Gallery</a></li>
+	  <li><a href="help.html" class="button special">Get Help</a></li>
+	</ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      
+      <div class="container">
+
+	<header class="major">
+          <p>
+            If you would like to contribute to our gallery, 
+            <a href="mailto:AJNonaka@lbl.gov?subject=AMReX Gallery">please contact us</a>.
+          </p>
+	</header>
+
+        <header class="major">
+          <h2>Microstructure Evolution Using Solid Mechanics</h2>
+          <p>Simulation of microstructure evolution in a polycrystalline solid using Alamo</p>
+        </header>
+        <div class="row 50% uniform">
+          <div class="4u 12u(small)">
+            <center>
+              <a href="./gallery_images/Runnels.gif">
+              <img src="./gallery_images/Runnels_small.gif" style="width: 251px; height: 234px" alt="" >
+              </a>
+              <br>
+              <a href="./gallery_images/Runnels.gif"> CLICK to enlarge </a>
+            </center>
+          </div>
+          <div class="8u$ 12u(small)">
+            In this simulation,
+            the multiphase field method is used and the evolution equation is integrated explicitly.
+            Microstructure evolution is driven by boundary curvature (as in high temperature annealing) which causes coarsening.
+            The microstructure is initialized using a Voronoi tesselation with 40 initial grains.
+            The simulation has three levels of mesh refinement,
+            and was run on the Texas Advanced Computing Center Stampede2 computer with 512 MPI processes for 10 hours. <p><p>
+
+              Image courtesy of <a href="https://solids.uccs.edu/people/brunnels.php">Brandon Runnels</a>,
+              Multiscale Materials Modeling Group, University of Colorado, Colorado Springs, CO.
+
+            </p>
+          </div>
+        </div>
+        <p>
+
+
+          <header class="major">
+            <h2>Detonation Propagation and Failure</h2>
+            <p>Modeling Compressible Reactive Gas Dynamics</p>
+          </header>
+          <div class="row 50% uniform">
+            <div class="6u 12u(small)">
+              Simulation of detonation propagation and failure by diffraction with HyBurn. The detonation is initiated in a reactant layer bounded by high-temperature products that have a very low acoustic impedance.  The simulation used with 6 levels of refinement with a refinement ratio of 256 between the finest and coarsest levels.  The detonation is initiated by a series of high-pressure, high-temperature spots. The detonation propagates steadily until it encounters a step change in the height of the reactant layer.  The leading shock of the detonation weakens as it diffracts around the step, resulting in a decoupled shock and flame.  The movie shows the temperature field and follows the detonation. <p><p>
+                
+                Image courtesy Brayden Roque, Hsiao-Chi Li, and Ryan Houim
+            </div>
+            <div class="6u 12u(small)">
+              <center>
+                <a href="./gallery_images/Layerd_Detonation.mp4">
+                  <img src="gallery_images/Layerd_Detonation.gif" style="width: 400px; height: 237px" alt="" >
+                </a>
+                <br>
+                <a href="./gallery_images/Layerd_Detonation.mp4"> CLICK to enlarge </a>
+              </center>
+            </div>
+          </div>
+</p>
+
+      </div>
+      <!-- End Container -->
+
+    </section>
+    <!-- End Main -->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+	<section class="ack">
+	  MFiX-Exa is developed at 
+          <a href="http://www.lbl.gov/"> LBNL </a>, and
+          <a href="https://www.netl.gov/"> NETL </a>
+          as part of the MFiX-Exa Project in DOE's Exascale Computing Project.
+	</section>
+	<div class="row">
+	  <div class="8u 12u$(medium)">
+	    <ul class="copyright">
+	      <li>&copy; MFiX-Exa development team. All rights reserved.</li>
+	      <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+	    </ul>
+	  </div>
+	</div>
+      </div>
+    </footer>
+
+  </body>
+</html>
