@@ -34,6 +34,8 @@ The following inputs must be preceded by "mfix."
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
 | levelset__refinement | Refinement factor of levelset resolution relative to level 0 resolution |   Int    | 1         |
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
+| po_no_par_out        | Let particles exit (default) or bounce-back at pressure outflows        |   Int    | 0         |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
 
 Setting basic EB walls can be specified by inputs preceded by "xlo", "xhi", "ylo", "yhi", "zlo", and "zhi"
 
