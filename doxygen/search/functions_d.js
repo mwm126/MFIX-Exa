@@ -16,7 +16,7 @@ var searchData=
   ['set_5fp0',['set_p0',['../classmfix.html#ab746f7d69678eee1c5ee6e99e066b221',1,'mfix']]],
   ['set_5fps',['set_ps',['../mfix___f_8_h.html#a62c62266341f8bb1e0abafa836898877',1,'mfix_F.H']]],
   ['set_5fptr_5fto_5fmfix',['set_ptr_to_mfix',['../main_8cpp.html#ab5005daeff7426cdfe38c15865dd6a9d',1,'main.cpp']]],
-  ['set_5fscalar_5fbcs',['set_scalar_bcs',['../classmfix.html#a26cc74abd7635060cba139169178992c',1,'mfix']]],
+  ['set_5fscalar_5fbcs',['set_scalar_bcs',['../classmfix.html#ae2e4d998cdcdc005adbb50416337c372',1,'mfix']]],
   ['set_5fvec_5fbcs',['set_vec_bcs',['../classmfix.html#aa289302a10486c918130a618f2b963ed',1,'mfix']]],
   ['set_5fvelocity_5fbcs',['set_velocity_bcs',['../classmfix.html#a615d9472399e7e51459d284076a8ec52',1,'mfix']]],
   ['show_5fcall_5ftree',['show_call_tree',['../namespaceerror__manager.html#ac15fbbe0c6dc28ff8f766b3f744901c2',1,'error_manager']]]

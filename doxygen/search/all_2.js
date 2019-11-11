@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['calc_5falpha',['calc_alpha',['../namespaceeb__to__vtk.html#aa3b6da67303e6da9e06a1634b42b6f2e',1,'eb_to_vtk']]],
-  ['calc_5fhesse',['calc_hesse',['../namespaceeb__to__vtk.html#ad9288ae5037a3088f418eb5466338df1',1,'eb_to_vtk']]],
-  ['calc_5fintercects',['calc_intercects',['../namespaceeb__to__vtk.html#ab02e4d455b745b21f541b393494f7f8a',1,'eb_to_vtk']]],
   ['calc_5fwall_5fcollisions',['calc_wall_collisions',['../mfix__eb___f_8_h.html#a4e78289a912caf2f0baa433b78fe8320',1,'mfix_eb_F.H']]],
   ['check_5fbc_5fflow',['check_bc_flow',['../mfix___f_8_h.html#aba3554e09f2c12da70f62d5ccd2bb899',1,'check_bc_flow():&#160;check_bc_flow.f90'],['../namespacecheck__bc__flow__module.html#a91470744fb3cae41c5755890648e4a09',1,'check_bc_flow_module::check_bc_flow()']]],
   ['check_5fbc_5fflow_2ef90',['check_bc_flow.f90',['../check__bc__flow_8f90.html',1,'']]],
@@ -57,6 +54,5 @@ var searchData=
   ['compute_5fdiveu_2ecpp',['compute_diveu.cpp',['../compute__diveu_8cpp.html',1,'']]],
   ['compute_5fdt_2ecpp',['compute_dt.cpp',['../compute__dt_8cpp.html',1,'']]],
   ['computeaveragefluidvars',['ComputeAverageFluidVars',['../classmfix.html#adb35e604465670ae06e29d3696cb4083',1,'mfix']]],
-  ['connectivity',['connectivity',['../namespaceeb__to__vtk.html#a069503eead7c58af1120d91ce45d7286',1,'eb_to_vtk']]],
   ['contains_5febs',['contains_ebs',['../classmfix.html#ab4be855aec82e09d63d73eb163cffc7d',1,'mfix']]]
 ];

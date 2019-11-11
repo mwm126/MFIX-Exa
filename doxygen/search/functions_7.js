@@ -10,7 +10,6 @@ var searchData=
   ['initparams',['InitParams',['../classmfix.html#ad68f5231c2df0f77c8523626ba3ca5a4',1,'mfix']]],
   ['intersect_5fls_5fwalls',['intersect_ls_walls',['../classmfix.html#ab8956439d97557edad97bfbd17a2875e',1,'mfix']]],
   ['intersectioncif',['IntersectionCIF',['../class_intersection_c_i_f.html#abf356bbe64e8979330be6f8b3417a100',1,'IntersectionCIF::IntersectionCIF(const F1 &amp;f1, const F2 &amp;f2)'],['../class_intersection_c_i_f.html#afbc1eaa42b79f62bb29534390c06faa8',1,'IntersectionCIF::IntersectionCIF(const IntersectionCIF &amp;rhs)=default'],['../class_intersection_c_i_f.html#a3d50130842126f8ebda87e72a3f6cc69',1,'IntersectionCIF::IntersectionCIF(IntersectionCIF &amp;&amp;rhs)=default']]],
-  ['intersects',['intersects',['../namespaceeb__to__vtk.html#a2394c7bbad14e1d79388ced6344a0ee6',1,'eb_to_vtk']]],
   ['is_5factive',['is_active',['../class_c_i_f.html#a751f7102c6a0695e91e366f7a53e78c3',1,'CIF::is_active()'],['../class_union_c_i_f.html#aa8738132e679050e64529590e41dcd07',1,'UnionCIF::is_active()'],['../class_intersection_c_i_f.html#a1c69abc55cebc3bd723d5314d90ae150',1,'IntersectionCIF::is_active()']]],
   ['is_5fempty',['is_empty',['../class_union_list_i_f.html#a5603f599fe4c4c2053a5edd28dd91007',1,'UnionListIF']]],
   ['issteadystate',['IsSteadyState',['../classmfix.html#a01ce5505768ad95b820b1bae864b05de',1,'mfix']]],

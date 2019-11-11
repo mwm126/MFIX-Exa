@@ -123,8 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9c82151b4df0be5e06327771b1c2502e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52305d4ebc18467e4a8add34cd1e6c71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a52305d4ebc18467e4a8add34cd1e6c71">mfix_setup_nodal_solver</a> ()</td></tr>
 <tr class="separator:a52305d4ebc18467e4a8add34cd1e6c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4575a777b840ba4dbeab7f531296cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ad4575a777b840ba4dbeab7f531296cd4">PostInit</a> (Real &amp;dt, Real time, int nstep, int restart_flag, Real <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>)</td></tr>
-<tr class="separator:ad4575a777b840ba4dbeab7f531296cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d04156be5eace63ddee05af61627ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a63d04156be5eace63ddee05af61627ab">PostInit</a> (Real &amp;dt, Real time, int restart_flag, Real <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>)</td></tr>
+<tr class="separator:a63d04156be5eace63ddee05af61627ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a731534b6e2c99ab9c074bbde3294e7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8">ResizeArrays</a> ()</td></tr>
 <tr class="separator:a731534b6e2c99ab9c074bbde3294e7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25a86618c33533a2a62d72ff8199df45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a25a86618c33533a2a62d72ff8199df45">WriteCheckPointFile</a> (std::string &amp;check_file_name, int nstep=0, Real dt=0.0, Real time=0.0) const </td></tr>
@@ -179,28 +179,34 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a863a7218399e0f3db03a1b4f12840c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad86bee6bc7dcaa36df9328d24ad0446"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; EB2::IntersectionIF&lt; EB2::PlaneIF, EB2::PlaneIF, EB2::PlaneIF &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aad86bee6bc7dcaa36df9328d24ad0446">make_wall</a> (int dir, Real position, Real height, Real width)</td></tr>
 <tr class="separator:aad86bee6bc7dcaa36df9328d24ad0446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01e0c3185b7857e040ffe726062c5892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a01e0c3185b7857e040ffe726062c5892">WriteEBSurface</a> ()</td></tr>
-<tr class="separator:a01e0c3185b7857e040ffe726062c5892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd6acb0e74d9d1f4240364507b1543f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a1fd6acb0e74d9d1f4240364507b1543f">WriteMyEBSurface</a> ()</td></tr>
+<tr class="separator:a1fd6acb0e74d9d1f4240364507b1543f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5f2767b5a831949c3e40641c7c320d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa5f2767b5a831949c3e40641c7c320d3">InitIOChkData</a> ()</td></tr>
 <tr class="separator:aa5f2767b5a831949c3e40641c7c320d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a681b3467531d32aa99c88480264e3380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a681b3467531d32aa99c88480264e3380">InitIOPltData</a> ()</td></tr>
 <tr class="separator:a681b3467531d32aa99c88480264e3380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad260b451d4abfd2d9c60182f9eab70a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ad260b451d4abfd2d9c60182f9eab70a1">mfix_compute_vort</a> ()</td></tr>
 <tr class="separator:ad260b451d4abfd2d9c60182f9eab70a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2355274ae658d6c497b78ea5e598c8a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2355274ae658d6c497b78ea5e598c8a0">mfix_compute_dt</a> (int nstep, Real time, Real <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, Real &amp;dt)</td></tr>
+<tr class="separator:a2355274ae658d6c497b78ea5e598c8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f57c4a45cfc724ef0a2dade2873e6a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a5f57c4a45cfc724ef0a2dade2873e6a8">mfix_add_drag_explicit</a> (Real dt)</td></tr>
 <tr class="separator:a5f57c4a45cfc724ef0a2dade2873e6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73d747ef6277443fe1013d34d81289ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a73d747ef6277443fe1013d34d81289ef">mfix_add_drag_implicit</a> (Real dt)</td></tr>
 <tr class="separator:a73d747ef6277443fe1013d34d81289ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa116d8d6868c35189b1de811c695d000"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa116d8d6868c35189b1de811c695d000">mfix_calc_drag_particle</a> (Real time)</td></tr>
+<tr class="separator:aa116d8d6868c35189b1de811c695d000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af60d45b2af1db8c13524573be20a47b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af60d45b2af1db8c13524573be20a47b5">mfix_add_gravity_and_gp</a> (Real dt)</td></tr>
 <tr class="separator:af60d45b2af1db8c13524573be20a47b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add815e9b8d1d7594a811fff474227043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#add815e9b8d1d7594a811fff474227043">mfix_compute_MAC_velocity_at_faces</a> (Real time, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;vel, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w_mac)</td></tr>
 <tr class="separator:add815e9b8d1d7594a811fff474227043"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a615d9472399e7e51459d284076a8ec52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a615d9472399e7e51459d284076a8ec52">set_velocity_bcs</a> (Real *time, const int lev, FArrayBox &amp;vel_fab, const Box &amp;domain, const int *extrap_dir_bcs)</td></tr>
-<tr class="separator:a615d9472399e7e51459d284076a8ec52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26cc74abd7635060cba139169178992c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a26cc74abd7635060cba139169178992c">set_scalar_bcs</a> (MFIter *mfi, const int lev, const Box &amp;domain)</td></tr>
-<tr class="separator:a26cc74abd7635060cba139169178992c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746cba154f6a599a9e9299536c69d8d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a746cba154f6a599a9e9299536c69d8d5">mfix_set_velocity_bcs</a> (Real time, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;vel, int extrap_dir_bcs)</td></tr>
 <tr class="separator:a746cba154f6a599a9e9299536c69d8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37992c2b1b7db129b240178995d4c054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a37992c2b1b7db129b240178995d4c054">mfix_set_scalar_bcs</a> (Real time, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;ro_g, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;trac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;ep_g, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;mu_g)</td></tr>
+<tr class="separator:a37992c2b1b7db129b240178995d4c054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a615d9472399e7e51459d284076a8ec52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a615d9472399e7e51459d284076a8ec52">set_velocity_bcs</a> (Real *time, const int lev, FArrayBox &amp;vel_fab, const Box &amp;domain, const int *extrap_dir_bcs)</td></tr>
+<tr class="separator:a615d9472399e7e51459d284076a8ec52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e4d998cdcdc005adbb50416337c372"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ae2e4d998cdcdc005adbb50416337c372">set_scalar_bcs</a> (Real *time, const int lev, FArrayBox &amp;scal_fab, const int comp, const Box &amp;domain)</td></tr>
+<tr class="separator:ae2e4d998cdcdc005adbb50416337c372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa289302a10486c918130a618f2b963ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa289302a10486c918130a618f2b963ed">set_vec_bcs</a> (const int lev, FArrayBox &amp;vec_fab, const Box &amp;domain)</td></tr>
 <tr class="separator:aa289302a10486c918130a618f2b963ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dfc4b869c78ac2ed49b51fd27308114"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs</a> (const Box &amp;bx, const int lev, FArrayBox &amp;gp_fab, Box &amp;domain)</td></tr>
@@ -209,8 +215,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aabfcfb79b5b52e11f60f4a007db6938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33fdc3516944f0c22451ecb4b7b8df3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a33fdc3516944f0c22451ecb4b7b8df3a">set_ls_inflow</a> (const int lev, FArrayBox &amp;ls_phi_fab, const Box &amp;domain, const int *levelset_nghost, const int &amp;nref, const Real *dx)</td></tr>
 <tr class="separator:a33fdc3516944f0c22451ecb4b7b8df3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43be3f63949771cf0b6be9aff29bf94d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a43be3f63949771cf0b6be9aff29bf94d">mfix_compute_velocity_slopes</a> (int lev, Real time, MultiFab &amp;vel)</td></tr>
-<tr class="separator:a43be3f63949771cf0b6be9aff29bf94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74e76d1312b54cbaa212a5e6c38bdca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa74e76d1312b54cbaa212a5e6c38bdca">mfix_compute_slopes</a> (int lev, Real time, MultiFab &amp;Sborder, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;xslopes_in, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;yslopes_in, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;zslopes_in, int slopes_comp)</td></tr>
+<tr class="separator:aa74e76d1312b54cbaa212a5e6c38bdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68b2be0a216a8480334e5acd35b64063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a68b2be0a216a8480334e5acd35b64063">set_bc0</a> (const Box &amp;sbx, MFIter *mfi, const int lev, const Box &amp;domain)</td></tr>
 <tr class="separator:a68b2be0a216a8480334e5acd35b64063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab746f7d69678eee1c5ee6e99e066b221"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ab746f7d69678eee1c5ee6e99e066b221">set_p0</a> (const Box &amp;bx, MFIter *mfi, const int lev, const Box &amp;domain, const Real xlen, const Real ylen, const Real zlen, const int delp_dir_in)</td></tr>
@@ -222,10 +228,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abca6188dabb518b918ad6706a684e7bd"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:abca6188dabb518b918ad6706a684e7bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#abca6188dabb518b918ad6706a684e7bd">mfix_calc_particle_beta</a> (F DragFunc, Real time)</td></tr>
 <tr class="separator:abca6188dabb518b918ad6706a684e7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8187b00487c87c7fa91465ef47f44c8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a8187b00487c87c7fa91465ef47f44c8c">mfix_compute_ugradu</a> (Box &amp;bx, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;conv, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;vel, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w_mac, MFIter *mfi, Box &amp;domain, const int lev)</td></tr>
-<tr class="separator:a8187b00487c87c7fa91465ef47f44c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8132640f1344aed80510568c0e43f288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a8132640f1344aed80510568c0e43f288">mfix_compute_ugradu_eb</a> (Box &amp;bx, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;conv, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;vel, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w_mac, MFIter *mfi, Array&lt; const MultiCutFab *, AMREX_SPACEDIM &gt; &amp;areafrac, Array&lt; const MultiCutFab *, AMREX_SPACEDIM &gt; &amp;facecent, const amrex::MultiFab *volfrac, const amrex::MultiCutFab *bndrycent, Box &amp;domain, const EBCellFlagFab &amp;flags, const int lev)</td></tr>
-<tr class="separator:a8132640f1344aed80510568c0e43f288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed93a300442c4cb8c48bd4440f4b5c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a0ed93a300442c4cb8c48bd4440f4b5c1">mfix_compute_ugradu</a> (Box &amp;bx, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;conv, const int conv_comp, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;state, const int state_comp, const int n_comp, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;xslopes, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;yslopes, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;zslopes, const int slopes_comp, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w_mac, MFIter *mfi, Box &amp;domain, const int lev, const bool is_conservative)</td></tr>
+<tr class="separator:a0ed93a300442c4cb8c48bd4440f4b5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036aaf2c0f556ba7b3ce97bd6f62ca61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a036aaf2c0f556ba7b3ce97bd6f62ca61">mfix_compute_ugradu_eb</a> (Box &amp;bx, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;conv, const int conv_comp, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;state, const int state_comp, const int n_comp, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;xslopes, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;yslopes, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;zslopes, const int slopes_comp, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v_mac, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w_mac, MFIter *mfi, Array&lt; const MultiCutFab *, AMREX_SPACEDIM &gt; &amp;areafrac, Array&lt; const MultiCutFab *, AMREX_SPACEDIM &gt; &amp;facecent, const amrex::MultiFab *volfrac, const amrex::MultiCutFab *bndrycent, Box &amp;domain, const EBCellFlagFab &amp;flags, const int lev, const bool is_conservative)</td></tr>
+<tr class="separator:a036aaf2c0f556ba7b3ce97bd6f62ca61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b2718a4590e4cc43c4581550db4c94b"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2b2718a4590e4cc43c4581550db4c94b">volWgtSum</a> (int lev, const MultiFab &amp;mf, int comp, bool local=false)</td></tr>
 <tr class="separator:a2b2718a4590e4cc43c4581550db4c94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -290,22 +296,22 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aaf6395f0ffe1c9b07534eec323c3784c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6bf8bcc02ce364d7c37c448ac1cdb83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ab6bf8bcc02ce364d7c37c448ac1cdb83">apply_MAC_projection</a> (Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;ep, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;ro, Real time, int steady_state)</td></tr>
 <tr class="separator:ab6bf8bcc02ce364d7c37c448ac1cdb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0f993bf58e775a94193a8503622ab2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#afe0f993bf58e775a94193a8503622ab2">mfix_set_scalar_bcs</a> ()</td></tr>
-<tr class="separator:afe0f993bf58e775a94193a8503622ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cc83df5c958923b125a918331983546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2cc83df5c958923b125a918331983546">set_MC_velocity_bcs</a> (int lev, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;u, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;v, Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;w, Real time)</td></tr>
 <tr class="separator:a2cc83df5c958923b125a918331983546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44ef0e4659e294b49166203d849f07f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a44ef0e4659e294b49166203d849f07f5">FillPatchVel</a> (int lev, Real time, MultiFab &amp;mf, int icomp, int ncomp, const Vector&lt; BCRec &gt; &amp;bcr)</td></tr>
 <tr class="separator:a44ef0e4659e294b49166203d849f07f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a002a147739f724011d078e2c67e36181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a002a147739f724011d078e2c67e36181">GetDataVel</a> (int lev, Real time, Vector&lt; MultiFab * &gt; &amp;data, Vector&lt; Real &gt; &amp;datatime)</td></tr>
 <tr class="separator:a002a147739f724011d078e2c67e36181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a176d4cf397dc91d93bbc18b864ff291a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a176d4cf397dc91d93bbc18b864ff291a">FillPatchScalar</a> (int lev, Real time, MultiFab &amp;mf, int icomp, const Vector&lt; BCRec &gt; &amp;bcr)</td></tr>
+<tr class="separator:a176d4cf397dc91d93bbc18b864ff291a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5af73231e323e0bd7fb8efd11199ec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af5af73231e323e0bd7fb8efd11199ec5">GetDataScalar</a> (int lev, Real time, Vector&lt; MultiFab * &gt; &amp;data, int icomp, Vector&lt; Real &gt; &amp;datatime)</td></tr>
+<tr class="separator:af5af73231e323e0bd7fb8efd11199ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa10c6dc0b0e92dd89060301259a81527"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction</a> (Real &amp;sum_vol)</td></tr>
 <tr class="separator:aa10c6dc0b0e92dd89060301259a81527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf07beed78031f7628e7ecaccf4182e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#abf07beed78031f7628e7ecaccf4182e6">mfix_calc_particle_beta</a> (Real time)</td></tr>
 <tr class="separator:abf07beed78031f7628e7ecaccf4182e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57857475d707a911eab1079313374fba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid</a> (Real time)</td></tr>
 <tr class="separator:a57857475d707a911eab1079313374fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa116d8d6868c35189b1de811c695d000"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa116d8d6868c35189b1de811c695d000">mfix_calc_drag_particle</a> (Real time)</td></tr>
-<tr class="separator:aa116d8d6868c35189b1de811c695d000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21a3514cf1dc90dc85e98ca85c59378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa21a3514cf1dc90dc85e98ca85c59378">AllocateArrays</a> (int lev)</td></tr>
 <tr class="separator:aa21a3514cf1dc90dc85e98ca85c59378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9c9aa7bf1f3b642695eb55627b6810"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2d9c9aa7bf1f3b642695eb55627b6810">RegridArrays</a> (int lev)</td></tr>
@@ -317,8 +323,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a55eff5fc223b1a0658b5850c1a2588ad"><td class="memItemLeft" align="right" valign="top">const BcList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a55eff5fc223b1a0658b5850c1a2588ad">bc_list</a></td></tr>
-<tr class="separator:a55eff5fc223b1a0658b5850c1a2588ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8472fbea32af825a277dfecccda9995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bc_list.html">BcList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ab8472fbea32af825a277dfecccda9995">bc_list</a></td></tr>
+<tr class="separator:ab8472fbea32af825a277dfecccda9995"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04568631cd4683be5967c29cbb9560d9"><td class="memItemLeft" align="right" valign="top">amrex::Cuda::ManagedVector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a04568631cd4683be5967c29cbb9560d9">m_bc_u_g</a></td></tr>
 <tr class="separator:a04568631cd4683be5967c29cbb9560d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5716edac5aa52c0eda670a39799daa"><td class="memItemLeft" align="right" valign="top">amrex::Cuda::ManagedVector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aae5716edac5aa52c0eda670a39799daa">m_bc_v_g</a></td></tr>
@@ -528,7 +534,7 @@ template&lt;class F &gt; </div>
 </div><div class="memdoc">
 <p>Construct EB levels from Geometry shop. This builds each EB level and saves a pointer to each level into <code>eb_levels</code>. </p>
 
-<p>References <a class="el" href="classmfix.html#a26b3bd1a93137928e659c59990896a12">get_input_bcs()</a>, <a class="el" href="classmfix.html#aaa3a991bb1e035138c1e37b9c6817758">get_load_balance_type()</a>, <a class="el" href="classmfix.html#a863a7218399e0f3db03a1b4f12840c89">get_poly()</a>, <a class="el" href="classmfix.html#ad8aacc935155605d657bb18b5c45778e">get_real_walls()</a>, <a class="el" href="classmfix.html#a8a486d621b1f5ff4373e88481c35cdd4">get_walls()</a>, <a class="el" href="classmfix.html#aa5f2767b5a831949c3e40641c7c320d3">InitIOChkData()</a>, <a class="el" href="classmfix.html#a681b3467531d32aa99c88480264e3380">InitIOPltData()</a>, <a class="el" href="classmfix.html#a9336a622559125102a27548d6d570821">levelset__refinement</a>, <a class="el" href="classmfix.html#aad86bee6bc7dcaa36df9328d24ad0446">make_wall()</a>, <a class="el" href="classmfix.html#a48aafc287ea0cc7b3a74b105ee531db5">set_input_bcs()</a>, and <a class="el" href="classmfix.html#a01e0c3185b7857e040ffe726062c5892">WriteEBSurface()</a>.</p>
+<p>References <a class="el" href="classmfix.html#a26b3bd1a93137928e659c59990896a12">get_input_bcs()</a>, <a class="el" href="classmfix.html#aaa3a991bb1e035138c1e37b9c6817758">get_load_balance_type()</a>, <a class="el" href="classmfix.html#a863a7218399e0f3db03a1b4f12840c89">get_poly()</a>, <a class="el" href="classmfix.html#ad8aacc935155605d657bb18b5c45778e">get_real_walls()</a>, <a class="el" href="classmfix.html#a8a486d621b1f5ff4373e88481c35cdd4">get_walls()</a>, <a class="el" href="classmfix.html#aa5f2767b5a831949c3e40641c7c320d3">InitIOChkData()</a>, <a class="el" href="classmfix.html#a681b3467531d32aa99c88480264e3380">InitIOPltData()</a>, <a class="el" href="classmfix.html#a9336a622559125102a27548d6d570821">levelset__refinement</a>, <a class="el" href="classmfix.html#aad86bee6bc7dcaa36df9328d24ad0446">make_wall()</a>, <a class="el" href="classmfix.html#a48aafc287ea0cc7b3a74b105ee531db5">set_input_bcs()</a>, and <a class="el" href="classmfix.html#a1fd6acb0e74d9d1f4240364507b1543f">WriteMyEBSurface()</a>.</p>
 
 </div>
 </div>
@@ -672,7 +678,7 @@ template&lt;class F &gt; </div>
 
 <p>References <a class="el" href="mfix___f_8_h.html#a14c37d33f9b6bb83c591374d1ea78080">mfix_collect_fluid()</a>.</p>
 
-<p>Referenced by <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">IsSteadyState()</a>, and <a class="el" href="classmfix.html#a12c6bd8edac252878df59e4293e2de59">WriteAverageRegions()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">IsSteadyState()</a>.</p>
 
 </div>
 </div>
@@ -788,6 +794,58 @@ template&lt;class F &gt; </div>
 <p>References <a class="el" href="classmfix.html#ab4be855aec82e09d63d73eb163cffc7d">contains_ebs</a>, <a class="el" href="classmfix.html#ab8956439d97557edad97bfbd17a2875e">intersect_ls_walls()</a>, <a class="el" href="classmfix.html#a103e49314e475a60a1e3f745d7bdb30e">levelset__eb_pad</a>, <a class="el" href="classmfix.html#ae2fd463c93bad7de8b17964bd7ad03ff">levelset__eb_refinement</a>, <a class="el" href="classmfix.html#aaba3e3295e9046e13d1e4fe191bcc213">levelset__pad</a>, and <a class="el" href="classmfix.html#a9336a622559125102a27548d6d570821">levelset__refinement</a>.</p>
 
 <p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="classmfix.html#ac29f2300fd6730443ab90114c1b8a795">output()</a>, and <a class="el" href="classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a">Restart()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a176d4cf397dc91d93bbc18b864ff291a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::FillPatchScalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>icomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector&lt; BCRec &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bcr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -955,9 +1013,61 @@ template&lt;class F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="get__eb__walls_8f90.html#a523b508443ed2e18775445cab6f329bd">mfix_get_walls()</a>.</p>
+<p>References <a class="el" href="get__eb__walls_8f90.html#ae84e74227424e328ba227d77d2cd1e9b">mfix_get_walls()</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#ad786e20f8a6805c3f758d12e832a734f">build_eb_levels()</a>, and <a class="el" href="classmfix.html#ab8956439d97557edad97bfbd17a2875e">intersect_ls_walls()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5af73231e323e0bd7fb8efd11199ec5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::GetDataScalar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>icomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>datatime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1151,7 +1261,7 @@ template&lt;class F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="classmfix.html#adb35e604465670ae06e29d3696cb4083">ComputeAverageFluidVars()</a>, <a class="el" href="classmfix.html#a5ba2deb02486ce1b854232b5e9d8db38">Evolve()</a>, <a class="el" href="classmfix.html#ab4d74f8257289bacf721e701a923db14">Init()</a>, <a class="el" href="classmfix.html#a9c82151b4df0be5e06327771b1c2502e">InitLevelData()</a>, <a class="el" href="classmfix.html#a52305d4ebc18467e4a8add34cd1e6c71">mfix_setup_nodal_solver()</a>, <a class="el" href="classmfix.html#aa87c08b7cbabff67608387125b5e9555">mfix_usr1_cpp()</a>, <a class="el" href="classmfix.html#ad4575a777b840ba4dbeab7f531296cd4">PostInit()</a>, <a class="el" href="classmfix.html#ade9fe369f6b58b374cc706a5160c29b3">Regrid()</a>, <a class="el" href="classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8">ResizeArrays()</a>, <a class="el" href="classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a">Restart()</a>, <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, <a class="el" href="classmfix.html#ac095ec43d22c6aa409dec1e9d6c42a85">usr3()</a>, <a class="el" href="classmfix.html#a12c6bd8edac252878df59e4293e2de59">WriteAverageRegions()</a>, <a class="el" href="classmfix.html#a25a86618c33533a2a62d72ff8199df45">WriteCheckPointFile()</a>, <a class="el" href="classmfix.html#a6c776d1d2c7529954640639b74053b73">WriteParticleAscii()</a>, <a class="el" href="classmfix.html#a179f0c0c9b2adbae1b42a7e7960565b0">WritePlotFile()</a>, and <a class="el" href="classmfix.html#a1d987a83d92b398216e87657e7d50d14">WriteStaticPlotFile()</a>.</p>
+<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="classmfix.html#adb35e604465670ae06e29d3696cb4083">ComputeAverageFluidVars()</a>, <a class="el" href="classmfix.html#a5ba2deb02486ce1b854232b5e9d8db38">Evolve()</a>, <a class="el" href="classmfix.html#ab4d74f8257289bacf721e701a923db14">Init()</a>, <a class="el" href="classmfix.html#a9c82151b4df0be5e06327771b1c2502e">InitLevelData()</a>, <a class="el" href="classmfix.html#a52305d4ebc18467e4a8add34cd1e6c71">mfix_setup_nodal_solver()</a>, <a class="el" href="classmfix.html#aa87c08b7cbabff67608387125b5e9555">mfix_usr1_cpp()</a>, <a class="el" href="classmfix.html#a63d04156be5eace63ddee05af61627ab">PostInit()</a>, <a class="el" href="classmfix.html#ade9fe369f6b58b374cc706a5160c29b3">Regrid()</a>, <a class="el" href="classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8">ResizeArrays()</a>, <a class="el" href="classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a">Restart()</a>, <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, <a class="el" href="classmfix.html#ac095ec43d22c6aa409dec1e9d6c42a85">usr3()</a>, <a class="el" href="classmfix.html#a12c6bd8edac252878df59e4293e2de59">WriteAverageRegions()</a>, <a class="el" href="classmfix.html#a25a86618c33533a2a62d72ff8199df45">WriteCheckPointFile()</a>, <a class="el" href="classmfix.html#a6c776d1d2c7529954640639b74053b73">WriteParticleAscii()</a>, <a class="el" href="classmfix.html#a179f0c0c9b2adbae1b42a7e7960565b0">WritePlotFile()</a>, and <a class="el" href="classmfix.html#a1d987a83d92b398216e87657e7d50d14">WriteStaticPlotFile()</a>.</p>
 
 <p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 
@@ -1424,14 +1534,13 @@ template&lt;class F &gt; </div>
 
 <p>References <a class="el" href="classmfix.html#abca6188dabb518b918ad6706a684e7bd">mfix_calc_particle_beta()</a>.</p>
 
+<p>Referenced by <a class="el" href="classmfix.html#a76863396f351825313d843434fe8eb55">mfix_initial_iterations()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa116d8d6868c35189b1de811c695d000"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mfix::mfix_calc_drag_particle </td>
@@ -1441,14 +1550,9 @@ template&lt;class F &gt; </div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a36f53f522fc00c1bde017d9e794a8079">gp0</a>, <a class="el" href="classmfix.html#a746cba154f6a599a9e9299536c69d8d5">mfix_set_velocity_bcs()</a>, <a class="el" href="namespaceeb__to__vtk.html#aa64db3c9a72c59fd44f1bb5bba4dfba9">eb_to_vtk::np</a>, and <a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs()</a>.</p>
+<p>References <a class="el" href="classmfix.html#a36f53f522fc00c1bde017d9e794a8079">gp0</a>, <a class="el" href="classmfix.html#a746cba154f6a599a9e9299536c69d8d5">mfix_set_velocity_bcs()</a>, and <a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs()</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#a5ba2deb02486ce1b854232b5e9d8db38">Evolve()</a>.</p>
 
@@ -1479,8 +1583,6 @@ template&lt;typename F &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>References <a class="el" href="namespaceeb__to__vtk.html#aa64db3c9a72c59fd44f1bb5bba4dfba9">eb_to_vtk::np</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#abf07beed78031f7628e7ecaccf4182e6">mfix_calc_particle_beta()</a>.</p>
 
@@ -1534,9 +1636,49 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a55eff5fc223b1a0658b5850c1a2588ad">bc_list</a>, and <a class="el" href="classmfix.html#a2b2718a4590e4cc43c4581550db4c94b">volWgtSum()</a>.</p>
+<p>References <a class="el" href="classmfix.html#ab8472fbea32af825a277dfecccda9995">bc_list</a>, and <a class="el" href="classmfix.html#a2b2718a4590e4cc43c4581550db4c94b">volWgtSum()</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#a5ba2deb02486ce1b854232b5e9d8db38">Evolve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2355274ae658d6c497b78ea5e598c8a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::mfix_compute_dt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nstep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>stop_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real &amp;&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Referenced by <a class="el" href="classmfix.html#a76863396f351825313d843434fe8eb55">mfix_initial_iterations()</a>.</p>
 
 </div>
 </div>
@@ -1584,7 +1726,63 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8187b00487c87c7fa91465ef47f44c8c"></a>
+<a class="anchor" id="aa74e76d1312b54cbaa212a5e6c38bdca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::mfix_compute_slopes </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>Sborder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>xslopes_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>yslopes_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>zslopes_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>slopes_comp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0ed93a300442c4cb8c48bd4440f4b5c1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1603,8 +1801,50 @@ template&lt;typename F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>conv_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vel</em>, </td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>state_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xslopes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>yslopes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zslopes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>slopes_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1640,7 +1880,13 @@ template&lt;typename F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>lev</em>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>is_conservative</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1652,7 +1898,7 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8132640f1344aed80510568c0e43f288"></a>
+<a class="anchor" id="a036aaf2c0f556ba7b3ce97bd6f62ca61"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1671,8 +1917,50 @@ template&lt;typename F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>conv_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vel</em>, </td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>state_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xslopes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>yslopes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zslopes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>slopes_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1738,39 +2026,13 @@ template&lt;typename F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>lev</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a43be3f63949771cf0b6be9aff29bf94d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mfix::mfix_compute_velocity_slopes </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>lev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>vel</em>&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>is_conservative</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1873,7 +2135,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a73d747ef6277443fe1013d34d81289ef">mfix_add_drag_implicit()</a>, <a class="el" href="classmfix.html#af60d45b2af1db8c13524573be20a47b5">mfix_add_gravity_and_gp()</a>, <a class="el" href="classmfix.html#aaf6395f0ffe1c9b07534eec323c3784c">mfix_apply_projection()</a>, <a class="el" href="classmfix.html#afe0f993bf58e775a94193a8503622ab2">mfix_set_scalar_bcs()</a>, and <a class="el" href="classmfix.html#a746cba154f6a599a9e9299536c69d8d5">mfix_set_velocity_bcs()</a>.</p>
+<p>References <a class="el" href="classmfix.html#a73d747ef6277443fe1013d34d81289ef">mfix_add_drag_implicit()</a>, <a class="el" href="classmfix.html#af60d45b2af1db8c13524573be20a47b5">mfix_add_gravity_and_gp()</a>, <a class="el" href="classmfix.html#aaf6395f0ffe1c9b07534eec323c3784c">mfix_apply_projection()</a>, <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, <a class="el" href="classmfix.html#a2355274ae658d6c497b78ea5e598c8a0">mfix_compute_dt()</a>, <a class="el" href="classmfix.html#a37992c2b1b7db129b240178995d4c054">mfix_set_scalar_bcs()</a>, and <a class="el" href="classmfix.html#a746cba154f6a599a9e9299536c69d8d5">mfix_set_velocity_bcs()</a>.</p>
 
 </div>
 </div>
@@ -2108,25 +2370,46 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afe0f993bf58e775a94193a8503622ab2"></a>
+<a class="anchor" id="a37992c2b1b7db129b240178995d4c054"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mfix::mfix_set_scalar_bcs </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ro_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>trac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ep_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mu_g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Referenced by <a class="el" href="classmfix.html#a76863396f351825313d843434fe8eb55">mfix_initial_iterations()</a>.</p>
@@ -2258,7 +2541,7 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad4575a777b840ba4dbeab7f531296cd4"></a>
+<a class="anchor" id="a63d04156be5eace63ddee05af61627ab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2273,12 +2556,6 @@ template&lt;typename F &gt; </div>
           <td></td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nstep</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2603,7 +2880,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a0dba789004c8389423db67a48b4132ac">mfix_set_bc_mod()</a>, and <a class="el" href="classmfix.html#a04dc41398603188e610e451684ad5319">mfix_set_bc_mod_add_mi()</a>.</p>
+<p>References <a class="el" href="classmfix.html#ab8472fbea32af825a277dfecccda9995">bc_list</a>, <a class="el" href="class_bc_list.html#a5bfcf8c4913df5f7aa54b1473ee1ea12">BcList::get_ig()</a>, <a class="el" href="class_bc_list.html#ac8ed3c2123d49f5c028b0afbff99fbb0">BcList::get_minf()</a>, <a class="el" href="class_bc_list.html#ab89cee3e8cade4d7cb5f44e3d70afa44">BcList::get_nsw()</a>, <a class="el" href="class_bc_list.html#a267eb68148b562272e0df770105a20cf">BcList::get_pinf()</a>, <a class="el" href="class_bc_list.html#a911960b9b877d29d73f0ee9369e6da9a">BcList::get_pout()</a>, <a class="el" href="class_bc_list.html#adb37c8e483532d12462380b33266aee1">BcList::get_undefined()</a>, <a class="el" href="classmfix.html#a0dba789004c8389423db67a48b4132ac">mfix_set_bc_mod()</a>, and <a class="el" href="classmfix.html#a04dc41398603188e610e451684ad5319">mfix_set_bc_mod_add_mi()</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#ad786e20f8a6805c3f758d12e832a734f">build_eb_levels()</a>, and <a class="el" href="classmfix.html#a26b3bd1a93137928e659c59990896a12">get_input_bcs()</a>.</p>
 
@@ -2835,21 +3112,33 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a26cc74abd7635060cba139169178992c"></a>
+<a class="anchor" id="ae2e4d998cdcdc005adbb50416337c372"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void mfix::set_scalar_bcs </td>
           <td>(</td>
-          <td class="paramtype">MFIter *&#160;</td>
-          <td class="paramname"><em>mfi</em>, </td>
+          <td class="paramtype">Real *&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FArrayBox &amp;&#160;</td>
+          <td class="paramname"><em>scal_fab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3032,8 +3321,6 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#adb35e604465670ae06e29d3696cb4083">ComputeAverageFluidVars()</a>.</p>
-
 <p>Referenced by <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">IsSteadyState()</a>, and <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 
 </div>
@@ -3080,20 +3367,18 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a01e0c3185b7857e040ffe726062c5892"></a>
+<a class="anchor" id="a1fd6acb0e74d9d1f4240364507b1543f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mfix::WriteEBSurface </td>
+          <td class="memname">void mfix::WriteMyEBSurface </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>References <a class="el" href="mfix__eb___f_8_h.html#a6e0d817a11a7582fdb0f311a97e458b5">mfix_eb_grid_coverage()</a>, <a class="el" href="mfix__eb___f_8_h.html#ae5a0161a2f2781bb78bb6424ef272669">mfix_eb_to_polygon()</a>, <a class="el" href="mfix__eb___f_8_h.html#a019cab5e8f49979d87cb0329a9754861">mfix_write_eb_vtp()</a>, and <a class="el" href="mfix__eb___f_8_h.html#a0bf1f31b1129a86f93a1a89ccda681ef">mfix_write_pvtp()</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#ad786e20f8a6805c3f758d12e832a734f">build_eb_levels()</a>, and <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 
@@ -3187,7 +3472,7 @@ template&lt;typename F &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a55eff5fc223b1a0658b5850c1a2588ad"></a>
+<a class="anchor" id="ab8472fbea32af825a277dfecccda9995"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -3195,7 +3480,7 @@ template&lt;typename F &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const BcList mfix::bc_list</td>
+          <td class="memname"><a class="el" href="class_bc_list.html">BcList</a> mfix::bc_list</td>
         </tr>
       </table>
   </td>
@@ -3205,7 +3490,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>, and <a class="el" href="classmfix.html#a48aafc287ea0cc7b3a74b105ee531db5">set_input_bcs()</a>.</p>
 
 </div>
 </div>
@@ -3568,6 +3853,7 @@ template&lt;typename F &gt; </div>
 <li>mfix/src/eb/<a class="el" href="mfix__eb__cylinder_8cpp.html">mfix_eb_cylinder.cpp</a></li>
 <li>mfix/src/eb/<a class="el" href="mfix__eb__general_8cpp.html">mfix_eb_general.cpp</a></li>
 <li>mfix/src/eb/<a class="el" href="mfix__eb__hopper_8cpp.html">mfix_eb_hopper.cpp</a></li>
+<li>mfix/src/eb/<a class="el" href="mfix__eb__proto__clr_8cpp.html">mfix_eb_proto_clr.cpp</a></li>
 <li>mfix/src/eb/<a class="el" href="mfix__eb__regular_8cpp.html">mfix_eb_regular.cpp</a></li>
 <li>mfix/src/eb/<a class="el" href="write_e_bsurface_8cpp.html">writeEBsurface.cpp</a></li>
 <li>mfix/src/io/<a class="el" href="mfix__chk_8cpp.html">mfix_chk.cpp</a></li>

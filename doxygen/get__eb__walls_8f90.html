@@ -94,8 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:a523b508443ed2e18775445cab6f329bd"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__eb__walls_8f90.html#a523b508443ed2e18775445cab6f329bd">mfix_get_walls</a> (bcv, exists, normal, center)</td></tr>
-<tr class="separator:a523b508443ed2e18775445cab6f329bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84e74227424e328ba227d77d2cd1e9b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__eb__walls_8f90.html#ae84e74227424e328ba227d77d2cd1e9b">mfix_get_walls</a> (bcv, exists, normal, center, po_noParOut)</td></tr>
+<tr class="separator:ae84e74227424e328ba227d77d2cd1e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2bb49a3f2d2ad3f9f26c47219c83f0"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__eb__walls_8f90.html#a1c2bb49a3f2d2ad3f9f26c47219c83f0">mfix_get_real_walls</a> (bcv, exists, normal, center)</td></tr>
 <tr class="separator:a1c2bb49a3f2d2ad3f9f26c47219c83f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -140,7 +140,7 @@ Functions/Subroutines</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a523b508443ed2e18775445cab6f329bd"></a>
+<a class="anchor" id="ae84e74227424e328ba227d77d2cd1e9b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -166,7 +166,13 @@ Functions/Subroutines</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">real(rt), dimension(3), intent(out)&#160;</td>
-          <td class="paramname"><em>center</em>&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(c_int), intent(in)&#160;</td>
+          <td class="paramname"><em>po_noParOut</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

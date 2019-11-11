@@ -29,6 +29,7 @@ the master branch at the beginning of each month.
    EB
    CITests
    NightlyTests
+   qb/index
    Debugging
 
 Notice

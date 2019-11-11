@@ -8,7 +8,6 @@ var searchData=
   ['remakelevel',['RemakeLevel',['../classmfix.html#a4f5686f0fcbcb6d0abfaf50eda54e24c',1,'mfix']]],
   ['remove_5fcomment',['remove_comment',['../namespaceremove__comment__module.html#a7675622b5a86425903209e799e547bf5',1,'remove_comment_module']]],
   ['remove_5fpar_5fblanks',['remove_par_blanks',['../namespaceremove__comment__module.html#ac42dcbf728022b5792546792621f34d7',1,'remove_comment_module']]],
-  ['reorder_5fpolygon',['reorder_polygon',['../namespaceeb__to__vtk.html#ae9f015cd5db02ee6b08ca3391dafeac1',1,'eb_to_vtk']]],
   ['resizearrays',['ResizeArrays',['../classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8',1,'mfix']]],
   ['restart',['Restart',['../classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a',1,'mfix']]]
 ];

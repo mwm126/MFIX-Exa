@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['set_5factive',['set_active',['../class_c_i_f.html#a76d1ac8079f53130cbc9f3367a149823',1,'CIF']]],
-  ['set_5fbc0',['set_bc0',['../classmfix.html#a68b2be0a216a8480334e5acd35b64063',1,'mfix']]],
-  ['set_5fbc_5fmod',['set_bc_mod',['../mfix___f_8_h.html#a644a754b4ed1c904eb1a91fe2d6669ca',1,'mfix_F.H']]],
-  ['set_5fbc_5fmod_5fadd_5fmi',['set_bc_mod_add_mi',['../mfix___f_8_h.html#aa61109e0122d75756a200b7018e53e0a',1,'mfix_F.H']]],
-  ['set_5fbc_5ftype',['set_bc_type',['../mfix___f_8_h.html#a0dcbf60a2755658850bc1064b98a5642',1,'mfix_F.H']]],
-  ['set_5fdelp_5fdir',['set_delp_dir',['../mfix___f_8_h.html#acdc80be6b2fbf42677a6e3b60fca8672',1,'mfix_F.H']]],
-  ['set_5fgp0',['set_gp0',['../mfix___f_8_h.html#a771740a79ff80048af4d13dbb5a05d81',1,'mfix_F.H']]],
-  ['set_5fgradp_5fbcs',['set_gradp_bcs',['../classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114',1,'mfix']]],
-  ['set_5finput_5fbcs',['set_input_bcs',['../classmfix.html#a48aafc287ea0cc7b3a74b105ee531db5',1,'mfix']]],
-  ['set_5fkeyword',['set_keyword',['../read__namelist_8f90.html#ae7b7ebfa05dc098146b74703257a4893',1,'read_namelist.f90']]],
-  ['set_5fls_5finflow',['set_ls_inflow',['../classmfix.html#a33fdc3516944f0c22451ecb4b7b8df3a',1,'mfix']]],
-  ['set_5fmac_5fvelocity_5fbcs',['set_mac_velocity_bcs',['../classmfix.html#aabfcfb79b5b52e11f60f4a007db6938c',1,'mfix']]],
-  ['set_5fmc_5fvelocity_5fbcs',['set_MC_velocity_bcs',['../classmfix.html#a2cc83df5c958923b125a918331983546',1,'mfix']]],
-  ['set_5fp0',['set_p0',['../classmfix.html#ab746f7d69678eee1c5ee6e99e066b221',1,'mfix']]],
-  ['set_5fps',['set_ps',['../mfix___f_8_h.html#a62c62266341f8bb1e0abafa836898877',1,'mfix_F.H']]],
-  ['set_5fptr_5fto_5fmfix',['set_ptr_to_mfix',['../main_8cpp.html#ab5005daeff7426cdfe38c15865dd6a9d',1,'main.cpp']]],
-  ['set_5fscalar_5fbcs',['set_scalar_bcs',['../classmfix.html#a26cc74abd7635060cba139169178992c',1,'mfix']]],
-  ['set_5fvec_5fbcs',['set_vec_bcs',['../classmfix.html#aa289302a10486c918130a618f2b963ed',1,'mfix']]],
-  ['set_5fvelocity_5fbcs',['set_velocity_bcs',['../classmfix.html#a615d9472399e7e51459d284076a8ec52',1,'mfix']]],
-  ['show_5fcall_5ftree',['show_call_tree',['../namespaceerror__manager.html#ac15fbbe0c6dc28ff8f766b3f744901c2',1,'error_manager']]],
-  ['species_2einc',['species.inc',['../species_8inc.html',1,'']]],
-  ['species_5findices_2einc',['species_indices.inc',['../species__indices_8inc.html',1,'']]],
-  ['static_5fplt_5ffile',['static_plt_file',['../main_8cpp.html#a8feeca870bfe4b5e333ac8c98f512188',1,'main.cpp']]],
-  ['stol',['stol',['../namespaceeb__to__vtk.html#a6a2cf175b787124e39ed44002c759734',1,'eb_to_vtk']]],
-  ['stop_5ftime',['stop_time',['../main_8cpp.html#aab25691aed85f542bcbb91921bad750f',1,'main.cpp']]]
+  ['tcoll_5fratio',['tcoll_ratio',['../classmfix.html#a088e0cbb1ddad82a6d418a849f980423',1,'mfix']]]
 ];
