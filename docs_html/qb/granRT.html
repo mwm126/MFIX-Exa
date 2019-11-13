@@ -208,12 +208,12 @@ The particles are assumed monodisperse with a constant diameter of
 <span class="math notranslate nohighlight">\(d_p = 140\)</span> microns (<span class="math notranslate nohighlight">\(dx^* \approx 1.8\)</span>) and density of
 <span class="math notranslate nohighlight">\(\rho_p = 1050\)</span> kg/m<sup>3</sup> . The resitution and sliding friction
 coefficients are set to 0.9 and 0.25, which are believed to be representative
-of the polystyrene material. The Wen and Yu drag law <a class="reference internal" href="refs.html#wy66" id="id4">[WY66]</a> is applied.
-1.12M particles are initially randomly distributed throughout the domain.
-The gravity force on the particles is modified by <span class="math notranslate nohighlight">\(\tanh 100(t - 2)\)</span>
-so that the particles initially settle upwards, and then the body force is
-quickly inverted around <span class="math notranslate nohighlight">\(t = 2\)</span> s, causing the particles to fall
-downward into the quiescent air.</p>
+of the polystyrene material. The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WenYu</span></span></code> drag law of Wen and Yu drag
+<a class="reference internal" href="refs.html#wy66" id="id4">[WY66]</a> is applied. 1.12M particles are initially randomly distributed
+throughout the domain. The gravity force on the particles is modified by
+<span class="math notranslate nohighlight">\(\tanh 100(t - 2)\)</span> so that the particles initially settle upwards,
+and then the body force is quickly inverted around <span class="math notranslate nohighlight">\(t = 2\)</span> s,
+causing the particles to fall downward into the quiescent air.</p>
 <div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/granRT_1908_small.png"><img alt="Sim comparison to granular Rayleigh-Taylor experiment" src="../_images/granRT_1908_small.png" style="width: 16cm;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Progression of the granular Rayleigh-Taylor instability in the experiments

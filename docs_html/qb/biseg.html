@@ -171,8 +171,36 @@
             
   <div class="section" id="bidisperse-segregation">
 <span id="chap-qb-biseg"></span><h1>Bidisperse Segregation<a class="headerlink" href="#bidisperse-segregation" title="Permalink to this headline">¶</a></h1>
-<p>wdf TODO ASAP</p>
-<div class="figure align-center" id="id1">
+<p>In this simple test conducted at NETL, a uniform, random mixture
+of nylon
+(<span class="math notranslate nohighlight">\(d_p = 3.19\)</span> mm, <span class="math notranslate nohighlight">\(\rho_p = 1130\)</span> kg/m<sup>3</sup> )
+and ceramic
+(<span class="math notranslate nohighlight">\(d_p = 4.25\)</span> mm, <span class="math notranslate nohighlight">\(\rho_p = 2580\)</span> kg/m<sup>3</sup> )
+particles. When fluidized, the smaller, lighter nylon particles
+(<span class="math notranslate nohighlight">\(U_{mf} ~ 1.1\)</span> m/s) segregate out of the mixture to the top,
+with the larger, heavier ceramic particles  (<span class="math notranslate nohighlight">\(U_{mf} ~ 1.8\)</span> m/s)
+remaining at the bottom. The batch segregation test was conducted in
+a small bed with a square cross-section of side length 60.325 mm.
+Similar to previous observations of fluidized segregation of
+bidisperse mixtures <a class="reference internal" href="refs.html#glmk03" id="id1">[GLMK03]</a>, the optimal separation was found to
+occur just above the larger of the two  minimum fluidization velocities.
+Below the larger <span class="math notranslate nohighlight">\(U_{mf}\)</span>, lack of fluidization inhibits particle
+movement and too much above <span class="math notranslate nohighlight">\(U_{mf}\)</span> vigorous bubbling promotes
+mixture in the bed.</p>
+<p>The optimal batch segregation experiment is simulated with MFiX-Exa 19.08
+discretized onto a <span class="math notranslate nohighlight">\(8 \times 24 \times 8\)</span> mesh. No-slip walls are
+set at vertical domain extents with a mass inflow and pressure outflow at
+bottom and top, respectively. The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gidaspow</span></span></code> drag law is applied.
+A defluidization curve of all ceramic particles was traced to find
+<span class="math notranslate nohighlight">\(U_{mf} \approx 1.9\)</span> m/s, close to the experimental value. The inflow
+velocity is set to <cite>2.0</cite> m/s. The image below shows the simulated segregation
+(inset) occurs much more rapidly than observed experimentally. In this case,
+as the nylon particles begin to leave the mixture, the ceramic particles
+defluidize. In the final state, the ceramic particles are essentially static
+with a fluidized layer of nylon particles floating on top, in contrast to the
+experiment, in which the full bed showed signs of fluidization. Investigation
+into the over-segregation in this case is on-going.</p>
+<div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/netl_biseg_1908_small.png"><img alt="Sim comparison to bidisperse segregation experiment at NETL" src="../_images/netl_biseg_1908_small.png" style="width: 16cm;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Comparison of experiment and MFiX-Exa simulaton for rapid segregation
 of a bi-disperse particle mixture.</span></p>

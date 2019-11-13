@@ -7,6 +7,10 @@ References
    Kuipers. Drag force of intermediate Reynolds number flow past mono- 
    and bidisperse arrays of spheres. *AIChE Journal*, **53**, 489--501 (2007).
 
+.. [GLMK03] M.J.V. Goldschmidt, J.M. Link, S. Mellema, and J.A.M. Kuipers. 
+   Digital image analysis measurements of bed expansion and segregation dynamics 
+   in dense gas-fluidised beds. *Powder Technology*, **138** (2-3), 135--159 (2003).
+
 .. [BPLPM19] C.M. Boyce, A. Penn, M. Lehnert, K.P. Pruessmann, and C.R. Müller. 
    Magnetic resonance imaging of single bubbles injected into incipiently 
    fluidized beds. *Chemical Engineering Science*, **200**, 147--166 (2019).
