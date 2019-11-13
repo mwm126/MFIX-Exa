@@ -37,7 +37,7 @@ applied in all cases.
 
 
 A separate defluidization simulation was first carried out first to determine
-:math:`U_{mf} \approx 0.66` m/s using the `WenYu` [WY66]_ drag law, slightly 
+:math:`U_{mf} \approx 0.66` m/s using the :cpp:`WenYu` [WY66]_ drag law, slightly 
 below the experimentally measured value of :math:`U_{mf} = 0.7` m/s. The bed 
 was prepared with two initialization simulations. First, the particle initial
 condition is fluidized above :math:`U_{mf}` at :math:`0.8` m/s for one second 

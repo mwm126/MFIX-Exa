@@ -47,7 +47,7 @@ In order to avoid the region near critical stability, we use a significnatly
 larger system size: :math:`L^*_x = L^*_y = 256`. The system is thin in the 
 depth dimension, :math:`L^*_z = 8` in order to highlight the clustering 
 phenomena. Therefore, :math:`N_p = 50000`. Because the system is hypothetical, 
-the ideal ``BVK2`` DNS drag law is applied, see [BvK07]_, [TPKKv15]_.
+the ideal :cpp:`BVK2` DNS drag law is applied, see [BvK07]_, [TPKKv15]_.
 
 
 .. figure:: figs/hcs_ke_1908.png

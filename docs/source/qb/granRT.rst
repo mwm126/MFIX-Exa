@@ -43,12 +43,12 @@ The particles are assumed monodisperse with a constant diameter of
 :math:`d_p = 140` microns (:math:`dx^* \approx 1.8`) and density of 
 :math:`\rho_p = 1050` kg/m\ :sup:`3` \. The resitution and sliding friction 
 coefficients are set to 0.9 and 0.25, which are believed to be representative 
-of the polystyrene material. The Wen and Yu drag law [WY66]_ is applied. 
-1.12M particles are initially randomly distributed throughout the domain. 
-The gravity force on the particles is modified by :math:`\tanh 100(t - 2)` 
-so that the particles initially settle upwards, and then the body force is 
-quickly inverted around :math:`t = 2` s, causing the particles to fall 
-downward into the quiescent air. 
+of the polystyrene material. The :cpp:`WenYu` drag law of Wen and Yu drag 
+[WY66]_ is applied. 1.12M particles are initially randomly distributed 
+throughout the domain. The gravity force on the particles is modified by 
+:math:`\tanh 100(t - 2)` so that the particles initially settle upwards, 
+and then the body force is quickly inverted around :math:`t = 2` s, 
+causing the particles to fall downward into the quiescent air. 
 
 
 .. figure:: figs/granRT_1908_small.png
