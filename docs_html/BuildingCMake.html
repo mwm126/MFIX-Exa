@@ -437,7 +437,7 @@ the environmental variables <code class="docutils literal notranslate"><span cla
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">cd</span> mfix
 <span class="gp">&gt;</span> mdkir build
 <span class="gp">&gt;</span> <span class="nb">cd</span> build
-<span class="gp">&gt;</span> cmake -DENABLE_CUDA<span class="o">=</span>yes -DAMREX_CUDA_ARCH<span class="o">=</span>Volta -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran ..
+<span class="gp">&gt;</span> cmake -DENABLE_CUDA<span class="o">=</span>yes -DCUDA_ARCH<span class="o">=</span>Volta -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran ..
 <span class="gp">&gt;</span> make -j
 </pre></div>
 </div>
