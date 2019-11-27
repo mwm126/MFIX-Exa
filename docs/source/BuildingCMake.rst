@@ -288,7 +288,7 @@ Finally, navigate to the base of the MFIX-Exa repository and compile in GPU mode
     > cd mfix
     > mdkir build
     > cd build
-    > cmake -DENABLE_CUDA=yes -DAMREX_CUDA_ARCH=Volta -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran ..
+    > cmake -DENABLE_CUDA=yes -DCUDA_ARCH=Volta -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran ..
     > make -j
 
 For more information about GPU nodes in Cori -- `<https://docs-dev.nersc.gov/cgpu/>`_
