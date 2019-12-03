@@ -42,7 +42,7 @@ with the following non-dimensional parameters:
   * solids concentration: :math:`\phi = \pi N_p / 6 L^*_x L^*_y L^*_z \approx 0.05`
 
 While not specifically studied by Fullmer et al. [FLYH18]_, their results 
-indicate that :math:`L_c^*` may be as large as 50 to 70 at these conditions. 
+indicate that :math:`L_c^*` may be as large as 100 at these conditions. 
 In order to avoid the region near critical stability, we use a significnatly
 larger system size: :math:`L^*_x = L^*_y = 256`. The system is thin in the 
 depth dimension, :math:`L^*_z = 8` in order to highlight the clustering 
