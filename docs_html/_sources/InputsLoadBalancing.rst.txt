@@ -51,6 +51,11 @@ The following inputs must be preceded by "particles"
 |                   | in the ParticleBoxArray if dual_grid is true.                         |             |              |
 +-------------------+-----------------------------------------------------------------------+-------------+--------------+
 
+Note that when running a granular simulation, i.e., no fluid phase, :cpp:`mfix.dual_grid` must be 0. Hence, 
+the :cpp:`particles.max_grid_size` (in each direction) have no meaning. Therefore the fluid grid and tile 
+sizes should be set for particle load balancing. It may also be necessary to set the blocking factors to 1. 
+
+
 The following inputs must be preceded by "mfix" and determine how we load balance:
 
 +----------------------+-----------------------------------------------------------------------+-------------+--------------+
