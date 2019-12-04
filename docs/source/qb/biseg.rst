@@ -9,8 +9,8 @@ of nylon
 and ceramic 
 (:math:`d_p = 4.25` mm, :math:`\rho_p = 2580` kg/m\ :sup:`3` \)
 particles. When fluidized, the smaller, lighter nylon particles 
-(:math:`U_{mf} ~ 1.1` m/s) segregate out of the mixture to the top, 
-with the larger, heavier ceramic particles  (:math:`U_{mf} ~ 1.8` m/s)
+(:math:`U_{mf} \approx 1.1` m/s) segregate out of the mixture to the top, 
+with the larger, heavier ceramic particles  (:math:`U_{mf} \approx 1.8` m/s)
 remaining at the bottom. The batch segregation test was conducted in 
 a small bed with a square cross-section of side length 60.325 mm. 
 Similar to previous observations of fluidized segregation of 
