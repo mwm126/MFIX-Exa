@@ -272,6 +272,11 @@
 <td>Int</td>
 <td>0</td>
 </tr>
+<tr class="row-odd"><td>gravity</td>
+<td>Gravity vector (e.g., mfix.gravity = -9.81  0.0  0.0) [requried]</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
 </tbody>
 </table>
 <p>Setting basic EB walls can be specified by inputs preceded by “xlo”, “xhi”, “ylo”, “yhi”, “zlo”, and “zhi”</p>
@@ -329,6 +334,56 @@ xlo.zlo =            0.25
 xlo.zhi =            0.75
 </pre></div>
 </div>
+<p>The following inputs must be preceded by “fluid.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="63%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>solve</td>
+<td>Flag to enable (1) or disable (0) the fluid solver [required]</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density_model</td>
+<td><dl class="first last docutils">
+<dt>Specify which density model to use for fluid [requried]</dt>
+<dd>“constant” – constant density</dd>
+</dl>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>constant_density</td>
+<td>Value of constant fluid density [required if density_model= “constant”</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>viscosity_model</td>
+<td><dl class="first last docutils">
+<dt>Specify which viscosity model to use for fluid [requried]</dt>
+<dd>“constant” – constant viscosity</dd>
+</dl>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>constant_viscosity</td>
+<td colspan="2">Value of constant fluid viscosity [required if viscosity_model=”constant”|  Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
