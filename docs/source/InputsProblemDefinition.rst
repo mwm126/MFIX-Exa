@@ -36,6 +36,9 @@ The following inputs must be preceded by "mfix."
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
 | po_no_par_out        | Let particles exit (default) or bounce-back at pressure outflows        |   Int    | 0         |
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
+| gravity              | Gravity vector (e.g., mfix.gravity = -9.81  0.0  0.0) [requried]        |  Reals   |  None     |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
+
 
 Setting basic EB walls can be specified by inputs preceded by "xlo", "xhi", "ylo", "yhi", "zlo", and "zhi"
 
@@ -68,3 +71,22 @@ To specify multiple mass inflows (e.g., define a jet and uniform background flow
    xlo.yhi =            0.75
    xlo.zlo =            0.25
    xlo.zhi =            0.75
+
+
+The following inputs must be preceded by "fluid."
+
++----------------------+-------------------------------------------------------------------------+----------+-----------+
+|                      | Description                                                             |   Type   | Default   |
++======================+=========================================================================+==========+===========+
+| solve                | Flag to enable (1) or disable (0) the fluid solver [required]           |   Int    |  None     |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
+| density_model        | Specify which density model to use for fluid [requried]                 | String   |  None     |
+|                      |   "constant" -- constant density                                        |          |           |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
+| constant_density     | Value of constant fluid density [required if density_model= "constant"  |  Real    |  None     |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
+| viscosity_model      | Specify which viscosity model to use for fluid [requried]               | String   |  None     |
+|                      |   "constant" -- constant viscosity                                      |          |           |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
+| constant_viscosity   | Value of constant fluid viscosity [required if viscosity_model="constant"|  Real   |  None     |
++----------------------+-------------------------------------------------------------------------+----------+-----------+
