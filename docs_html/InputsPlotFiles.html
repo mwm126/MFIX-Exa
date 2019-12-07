@@ -193,40 +193,58 @@ format (for debugging).</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>plot_int</td>
+<tr class="row-even"><td><p class="first">plot_int</p>
+<p>plot_per_exact</p>
+<p class="last">plot_per_approx</p>
+</td>
 <td>Frequency of plotfile output;
-if -1 then no plotfiles will be written</td>
-<td>Int</td>
-<td>-1</td>
+if -1 then no plotfiles will be written at this frequency
+Time period of plotfile output (exact); will modify dt
+if -1 then no plotfiles will be written at this frequency
+Time period of plotfile output (approximate); does not modify dt
+if -1 then no plotfiles will be written at this frequency</td>
+<td><p class="first">Int</p>
+<p>Real</p>
+<p class="last">Real</p>
+</td>
+<td><p class="first">-1</p>
+<p>-1</p>
+<p class="last">-1</p>
+</td>
 </tr>
-<tr class="row-odd"><td>plotfile_on_restart</td>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>plotfile_on_restart</td>
 <td>Should we write a plotfile when we restart (only used if plot_int&gt;0)</td>
 <td>Bool</td>
 <td>False</td>
 </tr>
-<tr class="row-even"><td>plot_file</td>
+<tr class="row-odd"><td>plot_file</td>
 <td>Prefix to use for plotfile output</td>
 <td>String</td>
 <td>plt</td>
 </tr>
-<tr class="row-odd"><td>write_ls</td>
+<tr class="row-even"><td>write_ls</td>
 <td>Should we write a plotfile holding the level set and volfrac?
 If true, it will only be written once,after initialization or restart</td>
 <td>Bool</td>
 <td>False</td>
 </tr>
-<tr class="row-even"><td>write_eb_surface</td>
+<tr class="row-odd"><td>write_eb_surface</td>
 <td>Should we write out the EB geometry in vtp format
 If true, it will only be written once,after initialization or restart</td>
 <td>Bool</td>
 <td>False</td>
 </tr>
-<tr class="row-odd"><td>par_ascii_file</td>
+<tr class="row-even"><td>par_ascii_file</td>
 <td>Prefix to use for ascii particle output</td>
 <td>String</td>
 <td>par</td>
 </tr>
-<tr class="row-even"><td>par_ascii_int</td>
+<tr class="row-odd"><td>par_ascii_int</td>
 <td>Frequency of ascii particle output;
 if -1 then no plotfiles will be written</td>
 <td>Int</td>
