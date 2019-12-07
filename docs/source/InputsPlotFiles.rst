@@ -11,7 +11,12 @@ format (for debugging).
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
 | plot_int            | Frequency of plotfile output;                                         |    Int      | -1        |
-|                     | if -1 then no plotfiles will be written                               |             |           |
+|                     | if -1 then no plotfiles will be written at this frequency             |             |           |
+| plot_per_exact      | Time period of plotfile output (exact); will modify dt                |    Real     | -1        |
+|                     | if -1 then no plotfiles will be written at this frequency             |             |           |
+| plot_per_approx     | Time period of plotfile output (approximate); does not modify dt      |    Real     | -1        |
+|                     | if -1 then no plotfiles will be written at this frequency             |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | plotfile_on_restart | Should we write a plotfile when we restart (only used if plot_int>0)  |   Bool      | False     |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
