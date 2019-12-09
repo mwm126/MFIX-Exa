@@ -180,7 +180,7 @@ set them via the MFiX-Exa routines because we may want different inputs for the
 different solvers called by MFiX-Exa.
 NOTE: the nodal solver settings are read in directly by AMReX,
 the MAC and diffusion settings by MFiX.</p>
-<p>These control the nodal projection and must be preceded by “projection”:</p>
+<p>These control the nodal projection and must be preceded by “nodal_proj”:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
@@ -194,12 +194,12 @@ the MAC and diffusion settings by MFiX.</p>
 <td>Type</td>
 <td>Default</td>
 </tr>
-<tr class="row-even"><td>mg_verbose</td>
+<tr class="row-even"><td>verbose</td>
 <td>Verbosity of multigrid solver in nodal projection</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>mg_cg_verbose</td>
+<tr class="row-odd"><td>bottom_verbose</td>
 <td>Verbosity of BiCGStab solver in nodal projection</td>
 <td>Int</td>
 <td>0</td>
@@ -214,12 +214,12 @@ the MAC and diffusion settings by MFiX.</p>
 <td>Real</td>
 <td>1.e-14</td>
 </tr>
-<tr class="row-even"><td>mg_maxiter</td>
+<tr class="row-even"><td>maxiter</td>
 <td>Maximum number of iterations in the nodal projection</td>
 <td>Int</td>
 <td>100</td>
 </tr>
-<tr class="row-odd"><td>mg_cg_maxiter</td>
+<tr class="row-odd"><td>bottom_maxiter</td>
 <td>Maximum number of iterations in the nodal projection
 bottom solver if using bicg, cg, bicgcg or cgbicg</td>
 <td>Int</td>
@@ -231,7 +231,7 @@ If set to 0, the bottom solver will be called at the current level</td>
 <td>Int</td>
 <td>100</td>
 </tr>
-<tr class="row-odd"><td>bottom_solver_type</td>
+<tr class="row-odd"><td>bottom_solver</td>
 <td>Which bottom solver to use in the nodal projection
 Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 <td>String</td>
@@ -239,7 +239,7 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 </tr>
 </tbody>
 </table>
-<p>These control the MAC projection and must be preceded by “mac”:</p>
+<p>These control the MAC projection and must be preceded by “mac_proj”:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
@@ -255,12 +255,12 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>mg_verbose</td>
+<tr class="row-even"><td>verbose</td>
 <td>Verbosity of multigrid solver in MAC projection</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>mg_cg_verbose</td>
+<tr class="row-odd"><td>bottom_verbose</td>
 <td>Verbosity of BiCGStab solver in MAC projection</td>
 <td>Int</td>
 <td>0</td>
@@ -275,12 +275,12 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 <td>Real</td>
 <td>1.e-14</td>
 </tr>
-<tr class="row-even"><td>mg_maxiter</td>
+<tr class="row-even"><td>maxiter</td>
 <td>Maximum number of iterations in the MAC projection</td>
 <td>Int</td>
 <td>200</td>
 </tr>
-<tr class="row-odd"><td>mg_cg_maxiter</td>
+<tr class="row-odd"><td>bottom_maxiter</td>
 <td>Maximum number of iterations in the MAC projection
 bottom solver if using bicg, cg, bicgcg or cgbicg</td>
 <td>Int</td>
@@ -292,7 +292,7 @@ If set to 0, the bottom solver will be called at the current level</td>
 <td>Int</td>
 <td>100</td>
 </tr>
-<tr class="row-odd"><td>bottom_solver_type</td>
+<tr class="row-odd"><td>bottom_solver</td>
 <td>Which bottom solver to use in the MAC projection
 Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 <td>String</td>
@@ -300,8 +300,7 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 </tr>
 </tbody>
 </table>
-<p>These control the diffusion solver and must be preceded by “diff”:
-The following inputs must be preceded by “diff”</p>
+<p>These control the diffusion solver and must be preceded by “diffusion”:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
@@ -317,12 +316,12 @@ The following inputs must be preceded by “diff”</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>mg_verbose</td>
+<tr class="row-even"><td>verbose</td>
 <td>Verbosity of linear solver for diffusion solve</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>mg_cg_verbose</td>
+<tr class="row-odd"><td>bottom_verbose</td>
 <td>Verbosity of BiCGStab solver in diffusion solve</td>
 <td>Int</td>
 <td>0</td>
@@ -337,12 +336,12 @@ The following inputs must be preceded by “diff”</p>
 <td>Real</td>
 <td>1.e-14</td>
 </tr>
-<tr class="row-even"><td>mg_maxiter</td>
+<tr class="row-even"><td>maxiter</td>
 <td>Maximum number of iterations in diffusion solve</td>
 <td>Int</td>
 <td>100</td>
 </tr>
-<tr class="row-odd"><td>mg_cg_maxiter</td>
+<tr class="row-odd"><td>bottom_maxiter</td>
 <td>Maximum number of iterations in diffusion solve
 bottom solver if using bicg, cg, bicgcg or cgbicg</td>
 <td>Int</td>
@@ -354,7 +353,7 @@ If set to 0, the bottom solver will be called at the current level</td>
 <td>Int</td>
 <td>100</td>
 </tr>
-<tr class="row-odd"><td>bottom_solver_type</td>
+<tr class="row-odd"><td>bottom_solver</td>
 <td>Which bottom solver to use in the diffusion solve
 Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</td>
 <td>String</td>
