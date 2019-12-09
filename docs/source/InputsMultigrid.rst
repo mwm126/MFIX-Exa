@@ -5,9 +5,11 @@ Multigrid Inputs
 
 The following inputs can be set directly in the AMReX solver classes but we 
 set them via the MFiX-Exa routines because we may want different inputs for the 
-different solvers called by MFiX-Exa.
+different solvers called by MFiX-Exa. 
+NOTE: the nodal solver settings are read in directly by AMReX, 
+the MAC and diffusion settings by MFiX. 
 
-These control the nodal projection and must be preceded by "mfix":
+These control the nodal projection and must be preceded by "projection": 
 
 +-------------------------+-----------------------------------------------------------------------+-------------+--------------+
 |                         |  Description                                                          |   Type      | Default      |
