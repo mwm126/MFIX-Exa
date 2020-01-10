@@ -85,7 +85,8 @@ To specify multiple mass inflows (e.g., define a jet and uniform background flow
    xlo.zhi =            0.75
 
 
-## Fluid model settings ##
+Fluid model settings
+--------------------
 
 Enabling the fluid solver and specifying fluid model options.
 
@@ -98,6 +99,7 @@ Enabling the fluid solver and specifying fluid model options.
 
 
 The following inputs must be preceded by the given to the fluid solver e.g., "fluid."
+
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
 |                      | Description                                                             |   Type   | Default   |
 +======================+=========================================================================+==========+===========+
@@ -126,8 +128,8 @@ Below is an example for specifying fluid solver model options.
 
 
 
-## DEM model settings ##
-
+DEM model settings
+------------------
 
 Enabling the DEM solver and specifying model options.
 
@@ -160,6 +162,7 @@ Enabling the DEM solver and specifying model options.
 
 The following inputs use the DEM type names specified using the `dem.solve` input to define restitution coefficients and
 are proceeded with `dem.restitution_coeff`. These must be defined for all solid-solid and solid-wall combinations.
+
 +-------------------------+-------------------------------------------------------------------------+----------+-----------+
 |                         | Description                                                             |   Type   | Default   |
 +=========================+=========================================================================+==========+===========+
@@ -196,7 +199,8 @@ Below is an example for specifying the inputs for two DEM solids.
    dem.restitution_coeff.char.wall =  0.89
 
 
-## Region definitions ##
+Region definitions
+------------------
 
 Regions are used to define sections of the domain. They may be either boxes, planes or points. They are used in building initial condition regions.
 
@@ -224,10 +228,12 @@ Below is an example for specifying two regions.
 
 
 
-## Initial Conditions ##
+Initial Conditions
+------------------
 
 Initial conditions are build from defined regions. The input names are built using the prefix `ic.`, the name of the
 region to apply the IC, and the name of the phase (e.g., `myfuild`).
+
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
@@ -235,6 +241,7 @@ region to apply the IC, and the name of the phase (e.g., `myfuild`).
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 For a fluid phase, the following inputs can be defined.
+
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
@@ -249,6 +256,7 @@ For a fluid phase, the following inputs can be defined.
 
 
 The name of the DEM phases to be defined in the IC region and the packing must be defined.
+
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
@@ -263,6 +271,7 @@ The name of the DEM phases to be defined in the IC region and the packing must b
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 For each solid, the following inputs may be defined.
+
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
