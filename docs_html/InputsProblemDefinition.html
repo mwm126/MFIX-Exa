@@ -87,7 +87,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Problem Definition</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Problem Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fluid-model-settings">Fluid model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dem-model-settings">DEM model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#region-definitions">Region definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-conditions">Initial Conditions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Drag Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
@@ -363,7 +369,8 @@ xlo.zlo =            0.25
 xlo.zhi =            0.75
 </pre></div>
 </div>
-<p>## Fluid model settings ##</p>
+<div class="section" id="fluid-model-settings">
+<h2>Fluid model settings<a class="headerlink" href="#fluid-model-settings" title="Permalink to this headline">¶</a></h2>
 <p>Enabling the fluid solver and specifying fluid model options.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -388,20 +395,51 @@ name assigned to the fluid solver is used to specify fluid inputs.</td>
 </tr>
 </tbody>
 </table>
-<p>The following inputs must be preceded by the given to the fluid solver e.g., “fluid.”
-+———————-+————————————————————————-+———-+———–+
-|                      | Description                                                             |   Type   | Default   |
-+======================+=========================================================================+==========+===========+
-| density              | Specify which density model to use for fluid [required]                 | String   |  None     |
-|                      |   “constant” – constant density                                        |          |           |
-+———————-+————————————————————————-+———-+———–+
-| density.constant     | Value of constant fluid density [required if density_model= “constant”  |  Real    |  None     |
-+———————-+————————————————————————-+———-+———–+
-| viscosity            | Specify which viscosity model to use for fluid [required]               | String   |  None     |
-|                      |   “constant” – constant viscosity                                      |          |           |
-+———————-+————————————————————————-+———-+———–+
-| viscosity.constant   | Value of constant fluid viscosity [required if viscosity_model=”constant”|  Real   |  None     |
-+———————-+————————————————————————-+———-+———–+</p>
+<p>The following inputs must be preceded by the given to the fluid solver e.g., “fluid.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="63%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>density</td>
+<td><dl class="first last docutils">
+<dt>Specify which density model to use for fluid [required]</dt>
+<dd>“constant” – constant density</dd>
+</dl>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density.constant</td>
+<td>Value of constant fluid density [required if density_model= “constant”</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>viscosity</td>
+<td><dl class="first last docutils">
+<dt>Specify which viscosity model to use for fluid [required]</dt>
+<dd>“constant” – constant viscosity</dd>
+</dl>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>viscosity.constant</td>
+<td colspan="2">Value of constant fluid viscosity [required if viscosity_model=”constant”|  Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <p>Below is an example for specifying fluid solver model options.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fluid.solve = myfluid
 
@@ -412,7 +450,9 @@ myfluid.viscosity = constant
 myfluid.viscosity.constant = 1.8e-5
 </pre></div>
 </div>
-<p>## DEM model settings ##</p>
+</div>
+<div class="section" id="dem-model-settings">
+<h2>DEM model settings<a class="headerlink" href="#dem-model-settings" title="Permalink to this headline">¶</a></h2>
 <p>Enabling the DEM solver and specifying model options.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -482,16 +522,36 @@ damping coefficient :: particle to wall collisions [required]</td>
 </tbody>
 </table>
 <p>The following inputs use the DEM type names specified using the <cite>dem.solve</cite> input to define restitution coefficients and
-are proceeded with <cite>dem.restitution_coeff</cite>. These must be defined for all solid-solid and solid-wall combinations.
-+————————-+————————————————————————-+———-+———–+
-|                         | Description                                                             |   Type   | Default   |
-+=========================+=========================================================================+==========+===========+
-| [solid0].[solid1]       | Specifies the restitution coefficient between solid0 and solid1. Here   | Real     |  None     |
-|                         | the order is not important and could be defined as [solid1].[solid0]    |          |           |
-+————————-+————————————————————————-+———-+———–+
-| [solid0].wall           | Specifies the restitution coefficient between solid0 and the wall.      | Real     |  None     |
-|                         | Order is not important and this could be defined as wall.[solid0]       |          |           |
-+————————-+————————————————————————-+———-+———–+</p>
+are proceeded with <cite>dem.restitution_coeff</cite>. These must be defined for all solid-solid and solid-wall combinations.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="61%" />
+<col width="8%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[solid0].[solid1]</td>
+<td>Specifies the restitution coefficient between solid0 and solid1. Here
+the order is not important and could be defined as [solid1].[solid0]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>[solid0].wall</td>
+<td>Specifies the restitution coefficient between solid0 and the wall.
+Order is not important and this could be defined as wall.[solid0]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <p>Below is an example for specifying the inputs for two DEM solids.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dem.solve = sand  char
 
@@ -515,7 +575,9 @@ dem.restitution_coeff.sand.wall =  0.85
 dem.restitution_coeff.char.wall =  0.89
 </pre></div>
 </div>
-<p>## Region definitions ##</p>
+</div>
+<div class="section" id="region-definitions">
+<h2>Region definitions<a class="headerlink" href="#region-definitions" title="Permalink to this headline">¶</a></h2>
 <p>Regions are used to define sections of the domain. They may be either boxes, planes or points. They are used in building initial condition regions.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -559,81 +621,205 @@ regions.riser.lo       = 0.0000  0.0000  0.0000
 regions.riser.hi       = 0.1000  0.2784  0.2784
 </pre></div>
 </div>
-<p>## Initial Conditions ##</p>
+</div>
+<div class="section" id="initial-conditions">
+<h2>Initial Conditions<a class="headerlink" href="#initial-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Initial conditions are build from defined regions. The input names are built using the prefix <cite>ic.</cite>, the name of the
-region to apply the IC, and the name of the phase (e.g., <cite>myfuild</cite>).
-+———————+———————————————————————–+————-+———–+
-|                     | Description                                                           |   Type      | Default   |
-+=====================+=======================================================================+=============+===========+
-| ic.regions          | Regions used to define initial conditions.                            | String      | None      |
-+———————+———————————————————————–+————-+———–+</p>
-<p>For a fluid phase, the following inputs can be defined.
-+———————+———————————————————————–+————-+———–+
-|                     | Description                                                           |   Type      | Default   |
-+=====================+=======================================================================+=============+===========+
-| volfrac             | Volume fraction [required]                                            | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| pressure            | Fluid pressure                                                        | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| temperature         | Fluid temperature                                                     | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| velocity            | Velocity components                                                   | Reals       | None      |
-+———————+———————————————————————–+————-+———–+</p>
-<p>The name of the DEM phases to be defined in the IC region and the packing must be defined.
-+———————+———————————————————————–+————-+———–+
-|                     | Description                                                           |   Type      | Default   |
-+=====================+=======================================================================+=============+===========+
-| ic.[region].solids  | List of solids                                                        | Strings     | None      |
-+———————+———————————————————————–+————-+———–+
-| ic.[region].packing | Specifies how auto-generated particles are placed in the IC region:   | String      | None      |
-|                     | * hcp - Hex-centered packing                                          |             |           |
-|                     | * random                                                              |             |           |
-|                     | * pseudo_random                                                       |             |           |
-|                     | * oneper – one particle per cell                                     |             |           |
-|                     | * eightper – eight particles per cell                                |             |           |
-+———————+———————————————————————–+————-+———–+</p>
-<p>For each solid, the following inputs may be defined.
-+———————+———————————————————————–+————-+———–+
-|                     | Description                                                           |   Type      | Default   |
-+=====================+=======================================================================+=============+===========+
-| volfrac             | Volume fraction                                                       | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| temperature         | Fluid temperature                                                     | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| velocity            | Velocity components                                                   | Reals       | None      |
-+———————+———————————————————————–+————-+———–+
-| diameter            | Method to specify particle diameter in the IC region. This is         | String      | None      |
-|                     | only used for auto-generated particles.                               |             |           |
-|                     | * constant  – specified constant                                     |             |           |
-|                     | * uniform   – uniform distribution                                   |             |           |
-|                     | * normal    – normal distribution                                    |             |           |
-+———————+———————————————————————–+————-+———–+
-| diameter.constant   | Value of specified constant particle density                          | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| diameter.mean       | Distribution mean                                                     | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| diameter.std        | Distribution standard deviation                                       | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| diameter.min        | Minimum diameter to clip distribution                                 | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| diameter.max        | Maximum diameter to clip distribution                                 | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| density             | Method to specify particle density in the IC region. This is          | String      | None      |
-|                     | only used for auto-generated particles.                               |             |           |
-|                     | * constant  – specified constant                                     |             |           |
-|                     | * uniform   – uniform distribution                                   |             |           |
-|                     | * normal    – normal distribution                                    |             |           |
-+———————+———————————————————————–+————-+———–+
-| density.constant    | Value of specified constant particle density                          | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| density.mean        | Distribution mean                                                     | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| density.std         | Distribution standard deviation                                       | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| density.min         | Minimum density to clip distribution                                  | Real        | None      |
-+———————+———————————————————————–+————-+———–+
-| density.max         | Maximum density to clip distribution                                  | Real        | None      |
-+———————+———————————————————————–+————-+———–+</p>
+region to apply the IC, and the name of the phase (e.g., <cite>myfuild</cite>).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ic.regions</td>
+<td>Regions used to define initial conditions.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For a fluid phase, the following inputs can be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volfrac</td>
+<td>Volume fraction [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>pressure</td>
+<td>Fluid pressure</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>temperature</td>
+<td>Fluid temperature</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>velocity</td>
+<td>Velocity components</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The name of the DEM phases to be defined in the IC region and the packing must be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ic.[region].solids</td>
+<td>List of solids</td>
+<td>Strings</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>ic.[region].packing</td>
+<td>Specifies how auto-generated particles are placed in the IC region:
+* hcp - Hex-centered packing
+* random
+* pseudo_random
+* oneper – one particle per cell
+* eightper – eight particles per cell</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For each solid, the following inputs may be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volfrac</td>
+<td>Volume fraction</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>temperature</td>
+<td>Fluid temperature</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>velocity</td>
+<td>Velocity components</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>diameter</td>
+<td>Method to specify particle diameter in the IC region. This is
+only used for auto-generated particles.
+* constant  – specified constant
+* uniform   – uniform distribution
+* normal    – normal distribution</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>diameter.constant</td>
+<td>Value of specified constant particle density</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>diameter.mean</td>
+<td>Distribution mean</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>diameter.std</td>
+<td>Distribution standard deviation</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>diameter.min</td>
+<td>Minimum diameter to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>diameter.max</td>
+<td>Maximum diameter to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density</td>
+<td>Method to specify particle density in the IC region. This is
+only used for auto-generated particles.
+* constant  – specified constant
+* uniform   – uniform distribution
+* normal    – normal distribution</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>density.constant</td>
+<td>Value of specified constant particle density</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density.mean</td>
+<td>Distribution mean</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>density.std</td>
+<td>Distribution standard deviation</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density.min</td>
+<td>Minimum density to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>density.max</td>
+<td>Maximum density to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <p>Below is an example for specifying an initial condition for a fluid (fluid) and one DEM solid (solid0).</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ic.regions  = bed
 
@@ -654,6 +840,7 @@ ic.bed.solid0.diameter.constant =  100.0e-6
 ic.bed.solid0.density  = constant
 ic.bed.solid0.density.constant  = 1000.0
 </pre></div>
+</div>
 </div>
 </div>
 
