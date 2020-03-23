@@ -1,5 +1,5 @@
 var searchData=
 [
   ['bc_5flist',['bc_list',['../classmfix.html#ab8472fbea32af825a277dfecccda9995',1,'mfix']]],
-  ['bcoeff_5fcc',['bcoeff_cc',['../classmfix.html#a23282537d10ec65140a8d3b0cf639868',1,'mfix']]]
+  ['bcoeff',['bcoeff',['../classmfix.html#a3be6b18f19d961aa108de0efda2fce6e',1,'mfix']]]
 ];

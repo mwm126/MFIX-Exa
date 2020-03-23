@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['_7ecif',['~CIF',['../class_c_i_f.html#a15f8a574e08575279f11b0f3d47c4ddb',1,'CIF']]],
-  ['_7eintersectioncif',['~IntersectionCIF',['../class_intersection_c_i_f.html#a5500d81c2a9e7bc93b10eb15ac33f098',1,'IntersectionCIF']]],
-  ['_7emfix',['~mfix',['../classmfix.html#abfb54f75af118fd5411d4b5239baabd1',1,'mfix']]],
-  ['_7eunioncif',['~UnionCIF',['../class_union_c_i_f.html#a15627d761c5b01de3ca6ef092fe80018',1,'UnionCIF']]],
-  ['_7eunionlistif',['~UnionListIF',['../class_union_list_i_f.html#abc8548bfe62d850c3104d33375b5de0d',1,'UnionListIF']]]
+  ['velx',['velx',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4afbd77824ffff1683f4cb01664b433442',1,'realData']]],
+  ['vely',['vely',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6c3644185908a4ba59cb581df665bf2a',1,'realData']]],
+  ['velz',['velz',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a069e38644b938e403dacd110296a8e0c',1,'realData']]],
+  ['volepswgtsum',['volEpsWgtSum',['../classmfix.html#a3905451e8ec8fc25acc98bb8555fbbf7',1,'mfix']]],
+  ['volume',['volume',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ada202f06a57217487b5502675d245413',1,'realData']]],
+  ['volwgtsum',['volWgtSum',['../classmfix.html#a2b2718a4590e4cc43c4581550db4c94b',1,'mfix']]]
 ];

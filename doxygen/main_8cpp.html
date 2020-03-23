@@ -101,15 +101,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;AMReX_buildInfo.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="mfix_8_h.html">mfix.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mfix___f_8_h.html">mfix_F.H</a>&gt;</code><br />
+<code>#include &lt;MFIX_DEM_Parms.H&gt;</code><br />
+<code>#include &lt;MFIX_FLUID_Parms.H&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab5005daeff7426cdfe38c15865dd6a9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab5005daeff7426cdfe38c15865dd6a9d">set_ptr_to_mfix</a> (<a class="el" href="classmfix.html">mfix</a> &amp;my_mfix)</td></tr>
-<tr class="separator:ab5005daeff7426cdfe38c15865dd6a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf173e8197226b65a3a123ef8c0a46e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abf173e8197226b65a3a123ef8c0a46e0">set_ptr_to_mfix</a> (<a class="el" href="classmfix.html">mfix</a> &amp;<a class="el" href="classmfix.html">mfix</a>)</td></tr>
+<tr class="separator:abf173e8197226b65a3a123ef8c0a46e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dadee4542acb523551406a24ef24cd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4dadee4542acb523551406a24ef24cd3">writeBuildInfo</a> ()</td></tr>
 <tr class="separator:a4dadee4542acb523551406a24ef24cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc41eb96c44ce93645711a46e9dba63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters</a> ()</td></tr>
 <tr class="separator:acdc41eb96c44ce93645711a46e9dba63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a3b7021962714fdc5f5ca8e49734b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow</a> (int nstep, Real time, Real dt, <a class="el" href="classmfix.html">mfix</a> &amp;<a class="el" href="classmfix.html">mfix</a>)</td></tr>
+<tr class="separator:aa0a3b7021962714fdc5f5ca8e49734b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -139,10 +143,6 @@ Variables</h2></td></tr>
 <tr class="separator:a5cd632ab74de8e0245f5a2178c201f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8fe90db9d4098f047738fc14ace066a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad8fe90db9d4098f047738fc14ace066a">check_file</a> {&quot;chk&quot;}</td></tr>
 <tr class="separator:ad8fe90db9d4098f047738fc14ace066a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc5d75350394f01cf87df584b41985af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afc5d75350394f01cf87df584b41985af">plot_int</a> = -1</td></tr>
-<tr class="separator:afc5d75350394f01cf87df584b41985af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee16314b34c5b526eed398702755eb16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aee16314b34c5b526eed398702755eb16">last_plt</a> = -1</td></tr>
-<tr class="separator:aee16314b34c5b526eed398702755eb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac996c6d099eb228866a60f97bd4e7cd7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7">plot_file</a> {&quot;plt&quot;}</td></tr>
 <tr class="separator:ac996c6d099eb228866a60f97bd4e7cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8feeca870bfe4b5e333ac8c98f512188"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8feeca870bfe4b5e333ac8c98f512188">static_plt_file</a> {&quot;plt_ls&quot;}</td></tr>
@@ -189,7 +189,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="main_8cpp.html#ae2de83dc859497ea7a70940233c7e4ed">avg_int</a>, <a class="el" href="main_8cpp.html#ad8fe90db9d4098f047738fc14ace066a">check_file</a>, <a class="el" href="mfix___f_8_h.html#a844b0e3ccc178c5fbda9add38d4bc519">check_inputs()</a>, <a class="el" href="main_8cpp.html#a22133c8a54a94e52d76a118e94645fd1">check_int</a>, <a class="el" href="classmfix.html#a5ba2deb02486ce1b854232b5e9d8db38">mfix::Evolve()</a>, <a class="el" href="classmfix.html#ac3b06a482506fcb19ee29d1f660f34b9">mfix::fill_eb_levelsets()</a>, <a class="el" href="classmfix.html#a26b3bd1a93137928e659c59990896a12">mfix::get_input_bcs()</a>, <a class="el" href="classmfix.html#ab4d74f8257289bacf721e701a923db14">mfix::Init()</a>, <a class="el" href="classmfix.html#a9c82151b4df0be5e06327771b1c2502e">mfix::InitLevelData()</a>, <a class="el" href="classmfix.html#ad68f5231c2df0f77c8523626ba3ca5a4">mfix::InitParams()</a>, <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">mfix::IsSteadyState()</a>, <a class="el" href="main_8cpp.html#a6690d99f826ebcbd6ba52a39b77d5fc2">last_avg</a>, <a class="el" href="main_8cpp.html#a5cd632ab74de8e0245f5a2178c201f06">last_chk</a>, <a class="el" href="main_8cpp.html#a507d8d626ecea74d1239af27d080d00b">last_par_ascii</a>, <a class="el" href="main_8cpp.html#aee16314b34c5b526eed398702755eb16">last_plt</a>, <a class="el" href="classmfix.html#abc60aaa0c711739304e810b3e46fb0b1">mfix::levelset__restart</a>, <a class="el" href="classmfix.html#a797fb4bc2402876efa162c238b83070b">mfix::make_eb_factories()</a>, <a class="el" href="classmfix.html#a550c4421e9d8d45d23ab052947477aae">mfix::make_eb_geometry()</a>, <a class="el" href="main_8cpp.html#ab1478e19b7573acb8ec580b9dbca151f">max_step</a>, <a class="el" href="mfix___f_8_h.html#a0f4826065b743cd78f528abc911bde41">mfix_add_argument()</a>, <a class="el" href="classmfix.html#ad260b451d4abfd2d9c60182f9eab70a1">mfix::mfix_compute_vort()</a>, <a class="el" href="main_8cpp.html#a90bddbd1fcb1cb19302d702bc20327f1">mfix_dat</a>, <a class="el" href="mfix___f_8_h.html#a7feb8e0bfff84bb237cabb9d8197a408">mfix_get_data()</a>, <a class="el" href="classmfix.html#a52305d4ebc18467e4a8add34cd1e6c71">mfix::mfix_setup_nodal_solver()</a>, <a class="el" href="classmfix.html#aa87c08b7cbabff67608387125b5e9555">mfix::mfix_usr1_cpp()</a>, <a class="el" href="main_8cpp.html#a650ddf5c9531578726535b9eef5e512e">par_ascii_file</a>, <a class="el" href="main_8cpp.html#aa8d2ef7478a6c2755f73f8f84fde54a0">par_ascii_int</a>, <a class="el" href="main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7">plot_file</a>, <a class="el" href="main_8cpp.html#afc5d75350394f01cf87df584b41985af">plot_int</a>, <a class="el" href="main_8cpp.html#a16c9ca98aab5cd759635a846c540d926">plotfile_on_restart</a>, <a class="el" href="classmfix.html#a63d04156be5eace63ddee05af61627ab">mfix::PostInit()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, <a class="el" href="classmfix.html#ade9fe369f6b58b374cc706a5160c29b3">mfix::Regrid()</a>, <a class="el" href="main_8cpp.html#aed66e4c49c0e22be40df88d6e67bb63e">regrid_int</a>, <a class="el" href="main_8cpp.html#a3f6452399c601a7784c0c2a5578e5a51">repl_x</a>, <a class="el" href="main_8cpp.html#ac4e3f414220fd172cd356b7b1821a764">repl_y</a>, <a class="el" href="main_8cpp.html#a91276953768f7c18c8dbd5f7b3a939c1">repl_z</a>, <a class="el" href="classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8">mfix::ResizeArrays()</a>, <a class="el" href="classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a">mfix::Restart()</a>, <a class="el" href="main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5">restart_file</a>, <a class="el" href="main_8cpp.html#ab5005daeff7426cdfe38c15865dd6a9d">set_ptr_to_mfix()</a>, <a class="el" href="main_8cpp.html#a8feeca870bfe4b5e333ac8c98f512188">static_plt_file</a>, <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, <a class="el" href="classmfix.html#ac095ec43d22c6aa409dec1e9d6c42a85">mfix::usr3()</a>, <a class="el" href="main_8cpp.html#a62f1a7d2fc76eb601715c98d4782493c">write_eb_surface</a>, <a class="el" href="main_8cpp.html#a5a1a4625cd08de48bb0b08bb8c0f5678">write_ls</a>, <a class="el" href="classmfix.html#a12c6bd8edac252878df59e4293e2de59">mfix::WriteAverageRegions()</a>, <a class="el" href="main_8cpp.html#a4dadee4542acb523551406a24ef24cd3">writeBuildInfo()</a>, <a class="el" href="classmfix.html#a25a86618c33533a2a62d72ff8199df45">mfix::WriteCheckPointFile()</a>, <a class="el" href="classmfix.html#a1fd6acb0e74d9d1f4240364507b1543f">mfix::WriteMyEBSurface()</a>, <a class="el" href="classmfix.html#a6c776d1d2c7529954640639b74053b73">mfix::WriteParticleAscii()</a>, <a class="el" href="classmfix.html#a179f0c0c9b2adbae1b42a7e7960565b0">mfix::WritePlotFile()</a>, and <a class="el" href="classmfix.html#a1d987a83d92b398216e87657e7d50d14">mfix::WriteStaticPlotFile()</a>.</p>
+<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="main_8cpp.html#ae2de83dc859497ea7a70940233c7e4ed">avg_int</a>, <a class="el" href="main_8cpp.html#ad8fe90db9d4098f047738fc14ace066a">check_file</a>, <a class="el" href="main_8cpp.html#a22133c8a54a94e52d76a118e94645fd1">check_int</a>, <a class="el" href="classmfix.html#a5ba2deb02486ce1b854232b5e9d8db38">mfix::Evolve()</a>, <a class="el" href="classmfix.html#ac3b06a482506fcb19ee29d1f660f34b9">mfix::fill_eb_levelsets()</a>, <a class="el" href="classmfix.html#ab4d74f8257289bacf721e701a923db14">mfix::Init()</a>, <a class="el" href="classmfix.html#a9c82151b4df0be5e06327771b1c2502e">mfix::InitLevelData()</a>, <a class="el" href="classmfix.html#a4b296b0c3b376de6f8c90b4d34b74f77">mfix::InitParams()</a>, <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">mfix::IsSteadyState()</a>, <a class="el" href="main_8cpp.html#a6690d99f826ebcbd6ba52a39b77d5fc2">last_avg</a>, <a class="el" href="main_8cpp.html#a5cd632ab74de8e0245f5a2178c201f06">last_chk</a>, <a class="el" href="main_8cpp.html#a507d8d626ecea74d1239af27d080d00b">last_par_ascii</a>, <a class="el" href="classmfix.html#a31643089a173158b8c159842b8bf54f4">mfix::levelset_restart</a>, <a class="el" href="classmfix.html#a797fb4bc2402876efa162c238b83070b">mfix::make_eb_factories()</a>, <a class="el" href="classmfix.html#a550c4421e9d8d45d23ab052947477aae">mfix::make_eb_geometry()</a>, <a class="el" href="main_8cpp.html#ab1478e19b7573acb8ec580b9dbca151f">max_step</a>, <a class="el" href="classmfix.html#ad260b451d4abfd2d9c60182f9eab70a1">mfix::mfix_compute_vort()</a>, <a class="el" href="classmfix.html#aff88fd30b06aef7e713c21757864df3d">mfix::mfix_init_solvers()</a>, <a class="el" href="classmfix.html#a52adb9d70c2b0a2fadb1e2a80040a572">mfix::mfix_usr1_cpp()</a>, <a class="el" href="main_8cpp.html#a650ddf5c9531578726535b9eef5e512e">par_ascii_file</a>, <a class="el" href="main_8cpp.html#aa8d2ef7478a6c2755f73f8f84fde54a0">par_ascii_int</a>, <a class="el" href="main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7">plot_file</a>, <a class="el" href="classmfix.html#aca2e5893004d857ab5a70b167a6c951a">mfix::plot_int</a>, <a class="el" href="classmfix.html#a09aa9dfc4df89879569e1514a34a73c6">mfix::plot_per_approx</a>, <a class="el" href="classmfix.html#a0bced74e039628fef12228e4d073f88b">mfix::plot_per_exact</a>, <a class="el" href="main_8cpp.html#a16c9ca98aab5cd759635a846c540d926">plotfile_on_restart</a>, <a class="el" href="classmfix.html#a63d04156be5eace63ddee05af61627ab">mfix::PostInit()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, <a class="el" href="classmfix.html#ade9fe369f6b58b374cc706a5160c29b3">mfix::Regrid()</a>, <a class="el" href="main_8cpp.html#aed66e4c49c0e22be40df88d6e67bb63e">regrid_int</a>, <a class="el" href="main_8cpp.html#a3f6452399c601a7784c0c2a5578e5a51">repl_x</a>, <a class="el" href="main_8cpp.html#ac4e3f414220fd172cd356b7b1821a764">repl_y</a>, <a class="el" href="main_8cpp.html#a91276953768f7c18c8dbd5f7b3a939c1">repl_z</a>, <a class="el" href="classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8">mfix::ResizeArrays()</a>, <a class="el" href="classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a">mfix::Restart()</a>, <a class="el" href="main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5">restart_file</a>, <a class="el" href="main_8cpp.html#abf173e8197226b65a3a123ef8c0a46e0">set_ptr_to_mfix()</a>, <a class="el" href="main_8cpp.html#a8feeca870bfe4b5e333ac8c98f512188">static_plt_file</a>, <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, <a class="el" href="classmfix.html#ac095ec43d22c6aa409dec1e9d6c42a85">mfix::usr3()</a>, <a class="el" href="main_8cpp.html#a62f1a7d2fc76eb601715c98d4782493c">write_eb_surface</a>, <a class="el" href="main_8cpp.html#a5a1a4625cd08de48bb0b08bb8c0f5678">write_ls</a>, <a class="el" href="classmfix.html#a03391a94d7f0ce86e573601c67e11e94">mfix::WriteAverageRegions()</a>, <a class="el" href="main_8cpp.html#a4dadee4542acb523551406a24ef24cd3">writeBuildInfo()</a>, <a class="el" href="classmfix.html#af5022963e29e710f6d6aa8a7b2cf7245">mfix::WriteCheckPointFile()</a>, <a class="el" href="classmfix.html#a1fd6acb0e74d9d1f4240364507b1543f">mfix::WriteMyEBSurface()</a>, <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>, <a class="el" href="classmfix.html#a6c776d1d2c7529954640639b74053b73">mfix::WriteParticleAscii()</a>, <a class="el" href="classmfix.html#a1983d3aa2139d90c715686d691639217">mfix::WritePlotFile()</a>, and <a class="el" href="classmfix.html#a1d987a83d92b398216e87657e7d50d14">mfix::WriteStaticPlotFile()</a>.</p>
 
 </div>
 </div>
@@ -206,13 +206,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="main_8cpp.html#ae2de83dc859497ea7a70940233c7e4ed">avg_int</a>, <a class="el" href="main_8cpp.html#ad8fe90db9d4098f047738fc14ace066a">check_file</a>, <a class="el" href="main_8cpp.html#a22133c8a54a94e52d76a118e94645fd1">check_int</a>, <a class="el" href="main_8cpp.html#ab1478e19b7573acb8ec580b9dbca151f">max_step</a>, <a class="el" href="main_8cpp.html#a90bddbd1fcb1cb19302d702bc20327f1">mfix_dat</a>, <a class="el" href="main_8cpp.html#a650ddf5c9531578726535b9eef5e512e">par_ascii_file</a>, <a class="el" href="main_8cpp.html#aa8d2ef7478a6c2755f73f8f84fde54a0">par_ascii_int</a>, <a class="el" href="main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7">plot_file</a>, <a class="el" href="main_8cpp.html#afc5d75350394f01cf87df584b41985af">plot_int</a>, <a class="el" href="main_8cpp.html#a16c9ca98aab5cd759635a846c540d926">plotfile_on_restart</a>, <a class="el" href="main_8cpp.html#aed66e4c49c0e22be40df88d6e67bb63e">regrid_int</a>, <a class="el" href="main_8cpp.html#a3f6452399c601a7784c0c2a5578e5a51">repl_x</a>, <a class="el" href="main_8cpp.html#ac4e3f414220fd172cd356b7b1821a764">repl_y</a>, <a class="el" href="main_8cpp.html#a91276953768f7c18c8dbd5f7b3a939c1">repl_z</a>, <a class="el" href="main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5">restart_file</a>, <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, <a class="el" href="main_8cpp.html#a62f1a7d2fc76eb601715c98d4782493c">write_eb_surface</a>, and <a class="el" href="main_8cpp.html#a5a1a4625cd08de48bb0b08bb8c0f5678">write_ls</a>.</p>
+<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="main_8cpp.html#ae2de83dc859497ea7a70940233c7e4ed">avg_int</a>, <a class="el" href="main_8cpp.html#ad8fe90db9d4098f047738fc14ace066a">check_file</a>, <a class="el" href="main_8cpp.html#a22133c8a54a94e52d76a118e94645fd1">check_int</a>, <a class="el" href="main_8cpp.html#ab1478e19b7573acb8ec580b9dbca151f">max_step</a>, <a class="el" href="main_8cpp.html#a90bddbd1fcb1cb19302d702bc20327f1">mfix_dat</a>, <a class="el" href="main_8cpp.html#a650ddf5c9531578726535b9eef5e512e">par_ascii_file</a>, <a class="el" href="main_8cpp.html#aa8d2ef7478a6c2755f73f8f84fde54a0">par_ascii_int</a>, <a class="el" href="main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7">plot_file</a>, <a class="el" href="main_8cpp.html#a16c9ca98aab5cd759635a846c540d926">plotfile_on_restart</a>, <a class="el" href="main_8cpp.html#aed66e4c49c0e22be40df88d6e67bb63e">regrid_int</a>, <a class="el" href="main_8cpp.html#a3f6452399c601a7784c0c2a5578e5a51">repl_x</a>, <a class="el" href="main_8cpp.html#ac4e3f414220fd172cd356b7b1821a764">repl_y</a>, <a class="el" href="main_8cpp.html#a91276953768f7c18c8dbd5f7b3a939c1">repl_z</a>, <a class="el" href="main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5">restart_file</a>, <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, <a class="el" href="main_8cpp.html#a62f1a7d2fc76eb601715c98d4782493c">write_eb_surface</a>, and <a class="el" href="main_8cpp.html#a5a1a4625cd08de48bb0b08bb8c0f5678">write_ls</a>.</p>
 
 <p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab5005daeff7426cdfe38c15865dd6a9d"></a>
+<a class="anchor" id="abf173e8197226b65a3a123ef8c0a46e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -220,7 +220,7 @@ Variables</h2></td></tr>
           <td class="memname">void set_ptr_to_mfix </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmfix.html">mfix</a> &amp;&#160;</td>
-          <td class="paramname"><em>my_mfix</em></td><td>)</td>
+          <td class="paramname"><em>mfix</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -247,6 +247,48 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa0a3b7021962714fdc5f5ca8e49734b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeNow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nstep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmfix.html">mfix</a> &amp;&#160;</td>
+          <td class="paramname"><em>mfix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="main_8cpp.html#af7385c255b2716f220f9f52a901f6720">avg_file</a>, <a class="el" href="main_8cpp.html#ae2de83dc859497ea7a70940233c7e4ed">avg_int</a>, <a class="el" href="main_8cpp.html#ad8fe90db9d4098f047738fc14ace066a">check_file</a>, <a class="el" href="main_8cpp.html#a22133c8a54a94e52d76a118e94645fd1">check_int</a>, <a class="el" href="main_8cpp.html#a6690d99f826ebcbd6ba52a39b77d5fc2">last_avg</a>, <a class="el" href="main_8cpp.html#a5cd632ab74de8e0245f5a2178c201f06">last_chk</a>, <a class="el" href="main_8cpp.html#a507d8d626ecea74d1239af27d080d00b">last_par_ascii</a>, <a class="el" href="classmfix.html#ad260b451d4abfd2d9c60182f9eab70a1">mfix::mfix_compute_vort()</a>, <a class="el" href="main_8cpp.html#a650ddf5c9531578726535b9eef5e512e">par_ascii_file</a>, <a class="el" href="main_8cpp.html#aa8d2ef7478a6c2755f73f8f84fde54a0">par_ascii_int</a>, <a class="el" href="main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7">plot_file</a>, <a class="el" href="classmfix.html#aca2e5893004d857ab5a70b167a6c951a">mfix::plot_int</a>, <a class="el" href="classmfix.html#a09aa9dfc4df89879569e1514a34a73c6">mfix::plot_per_approx</a>, <a class="el" href="classmfix.html#a0bced74e039628fef12228e4d073f88b">mfix::plot_per_exact</a>, <a class="el" href="classmfix.html#a03391a94d7f0ce86e573601c67e11e94">mfix::WriteAverageRegions()</a>, <a class="el" href="classmfix.html#af5022963e29e710f6d6aa8a7b2cf7245">mfix::WriteCheckPointFile()</a>, <a class="el" href="classmfix.html#a6c776d1d2c7529954640639b74053b73">mfix::WriteParticleAscii()</a>, and <a class="el" href="classmfix.html#a1983d3aa2139d90c715686d691639217">mfix::WritePlotFile()</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="af7385c255b2716f220f9f52a901f6720"></a>
 <div class="memitem">
@@ -258,7 +300,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">mfix::IsSteadyState()</a>, <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a01ce5505768ad95b820b1bae864b05de">mfix::IsSteadyState()</a>, <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -272,7 +314,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -286,7 +328,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -300,7 +342,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -314,7 +356,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -328,7 +370,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -342,21 +384,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aee16314b34c5b526eed398702755eb16"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int last_plt = -1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -384,7 +412,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
 
 </div>
 </div>
@@ -398,7 +426,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -412,7 +440,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>
@@ -426,21 +454,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afc5d75350394f01cf87df584b41985af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int plot_int = -1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>.</p>
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, <a class="el" href="main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63">ReadParameters()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
 </div>
 </div>

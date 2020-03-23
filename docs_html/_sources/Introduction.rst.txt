@@ -16,7 +16,7 @@ time discretizations differ.  Specifically,
 -  The advection algorithm includes an intermediate MAC projection for face-centered advection velocities
 
 -  Incompressibility of the fluid is imposed through the use of a projection at the
-   end of the time step rather than through SIMPLE iterations
+   end of the time step 
 
 -  The representation of the complex geometry includes mesh refinement around the 
    fluid-solid interface, which is represented used the embedded boundary, or

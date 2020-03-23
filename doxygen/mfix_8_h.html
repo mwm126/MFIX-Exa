@@ -96,24 +96,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;AMReX_AmrCore.H&gt;</code><br />
-<code>#include &lt;AMReX_iMultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_BLProfiler.H&gt;</code><br />
-<code>#include &lt;AMReX_PhysBCFunct.H&gt;</code><br />
-<code>#include &lt;AMReX_EBFabFactory.H&gt;</code><br />
-<code>#include &lt;AMReX_EBFArrayBox.H&gt;</code><br />
 <code>#include &lt;AMReX_EB2.H&gt;</code><br />
+<code>#include &lt;AMReX_EB2_IF_Intersection.H&gt;</code><br />
 <code>#include &lt;AMReX_EB2_IF_Plane.H&gt;</code><br />
 <code>#include &lt;AMReX_EB2_IF_Polynomial.H&gt;</code><br />
 <code>#include &lt;AMReX_EB2_IF_Translation.H&gt;</code><br />
-<code>#include &lt;AMReX_EB2_IF_Intersection.H&gt;</code><br />
+<code>#include &lt;AMReX_EBMultiFabUtil.H&gt;</code><br />
+<code>#include &lt;AMReX_EBFabFactory.H&gt;</code><br />
+<code>#include &lt;AMReX_EBFArrayBox.H&gt;</code><br />
 <code>#include &lt;AMReX_EB_levelset.H&gt;</code><br />
 <code>#include &lt;AMReX_EB_LSCore.H&gt;</code><br />
-<code>#include &lt;MFIXParticleContainer.H&gt;</code><br />
-<code>#include &lt;mfix_des_F.H&gt;</code><br />
+<code>#include &lt;AMReX_iMultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_MLMG.H&gt;</code><br />
 <code>#include &lt;AMReX_MLNodeLaplacian.H&gt;</code><br />
-<code>#include &lt;<a class="el" href="mfix__eb__if_8_h.html">mfix_eb_if.H</a>&gt;</code><br />
+<code>#include &lt;AMReX_NodalProjector.H&gt;</code><br />
+<code>#include &lt;AMReX_PhysBCFunct.H&gt;</code><br />
+<code>#include &lt;DiffusionOp.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="_m_f_i_x_particle_container_8_h.html">MFIXParticleContainer.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_m_f_i_x___bc_list_8_h.html">MFIX_BcList.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mfix__des___f_8_h.html">mfix_des_F.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mfix__eb__if_8_h.html">mfix_eb_if.H</a>&gt;</code><br />
+<code>#include &lt;MFIX_DEM_Parms.H&gt;</code><br />
+<code>#include &lt;MFIX_LevelData.H&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -132,8 +137,36 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:aff6a4c5ab7182d5999dc15d5edf200ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acede667a9165d99ef8427c6793130b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130b">DepositionScheme</a> { <a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130baacccaf2c1202c2b8284106d48862da20">trilinear</a>, 
+<a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130bae2b3f365860d0dd2b5d31195690bdcf1">square_dpvm</a>, 
+<a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130baa150e9b4884937f241400250bb804597">true_dpvm</a>, 
+<a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130ba6fb78ba59773ac48c2709d20df1ebefd">centroid</a>
+ }</td></tr>
+<tr class="separator:a0acede667a9165d99ef8427c6793130b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a0acede667a9165d99ef8427c6793130b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130b">DepositionScheme</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a0acede667a9165d99ef8427c6793130baacccaf2c1202c2b8284106d48862da20"></a>trilinear&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0acede667a9165d99ef8427c6793130bae2b3f365860d0dd2b5d31195690bdcf1"></a>square_dpvm&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0acede667a9165d99ef8427c6793130baa150e9b4884937f241400250bb804597"></a>true_dpvm&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a0acede667a9165d99ef8427c6793130ba6fb78ba59773ac48c2709d20df1ebefd"></a>centroid&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200ae"></a>
 <div class="memitem">
 <div class="memproto">

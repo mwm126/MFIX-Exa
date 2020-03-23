@@ -1,23 +1,6 @@
 var searchData=
 [
-  ['read_5fnamelist',['read_namelist',['../namespaceread__namelist__module.html#ab1f88323b4f2250beaa9eb6b86dcefc7',1,'read_namelist_module']]],
-  ['read_5fnamelist_2ef90',['read_namelist.f90',['../read__namelist_8f90.html',1,'']]],
-  ['read_5fnamelist_5fmodule',['read_namelist_module',['../namespaceread__namelist__module.html',1,'']]],
-  ['readparameters',['ReadParameters',['../main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63',1,'main.cpp']]],
-  ['regrid',['Regrid',['../classmfix.html#ade9fe369f6b58b374cc706a5160c29b3',1,'mfix']]],
-  ['regrid_5fint',['regrid_int',['../main_8cpp.html#aed66e4c49c0e22be40df88d6e67bb63e',1,'main.cpp']]],
-  ['regridarrays',['RegridArrays',['../classmfix.html#a2d9c9aa7bf1f3b642695eb55627b6810',1,'mfix']]],
-  ['regridlevelsetarray',['RegridLevelSetArray',['../classmfix.html#aca2909a32f815ba00cc1af72e90dfe6b',1,'mfix']]],
-  ['remakelevel',['RemakeLevel',['../classmfix.html#a4f5686f0fcbcb6d0abfaf50eda54e24c',1,'mfix']]],
-  ['remove_5fcomment',['remove_comment',['../namespaceremove__comment__module.html#a7675622b5a86425903209e799e547bf5',1,'remove_comment_module']]],
-  ['remove_5fcomment_2ef90',['remove_comment.f90',['../remove__comment_8f90.html',1,'']]],
-  ['remove_5fcomment_5fmodule',['remove_comment_module',['../namespaceremove__comment__module.html',1,'']]],
-  ['remove_5fpar_5fblanks',['remove_par_blanks',['../namespaceremove__comment__module.html#ac42dcbf728022b5792546792621f34d7',1,'remove_comment_module']]],
-  ['repl_5fx',['repl_x',['../main_8cpp.html#a3f6452399c601a7784c0c2a5578e5a51',1,'main.cpp']]],
-  ['repl_5fy',['repl_y',['../main_8cpp.html#ac4e3f414220fd172cd356b7b1821a764',1,'main.cpp']]],
-  ['repl_5fz',['repl_z',['../main_8cpp.html#a91276953768f7c18c8dbd5f7b3a939c1',1,'main.cpp']]],
-  ['resizearrays',['ResizeArrays',['../classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8',1,'mfix']]],
-  ['restart',['Restart',['../classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a',1,'mfix']]],
-  ['restart_5ffile',['restart_file',['../main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5',1,'main.cpp']]],
-  ['run_5fcontrol_2einc',['run_control.inc',['../run__control_8inc.html',1,'']]]
+  ['nodal_5fprojector',['nodal_projector',['../classmfix.html#a844bb064fc5c2d2c12dfa7cea72e921a',1,'mfix']]],
+  ['nor_5frno',['nor_rno',['../class_particles_generator.html#a13abedf72353e658567e1c6cb9014e41',1,'ParticlesGenerator']]],
+  ['numberofparticles',['NumberOfParticles',['../class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b',1,'MFIXParticleContainer']]]
 ];

@@ -1,25 +1,7 @@
 var searchData=
 [
-  ['wenyu',['WenYu',['../mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426',1,'mfix.H']]],
-  ['write_5feb_5fsurface',['write_eb_surface',['../main_8cpp.html#a62f1a7d2fc76eb601715c98d4782493c',1,'main.cpp']]],
-  ['write_5ferror',['write_error',['../namespacewrite__error__module.html#a18320e3b4e8fe16b0f245014e3f54baf',1,'write_error_module']]],
-  ['write_5ferror_2ef90',['write_error.f90',['../write__error_8f90.html',1,'']]],
-  ['write_5ferror_5fmodule',['write_error_module',['../namespacewrite__error__module.html',1,'']]],
-  ['write_5fls',['write_ls',['../main_8cpp.html#a5a1a4625cd08de48bb0b08bb8c0f5678',1,'main.cpp']]],
-  ['write_5fout0',['write_out0',['../mfix___f_8_h.html#a6a5e1713d10f4cdde99f53c101fbcbe1',1,'write_out0(amrex::Real *time, amrex::Real *dx, amrex::Real *dy, amrex::Real *dz, amrex::Real *xlength, amrex::Real *ylength, amrex::Real *zlength, const int *domlo, const int *domhi):&#160;mfix_F.H'],['../write__out0_8f90.html#a447e31d9b766b7733dc20adbc92b5326',1,'write_out0(time, dx, dy, dz, xlength, ylength, zlength,:&#160;write_out0.f90']]],
-  ['write_5fout0_2ef90',['write_out0.f90',['../write__out0_8f90.html',1,'']]],
-  ['write_5ftable',['write_table',['../write__out0_8f90.html#a32669331edd8d7d536b2097a5d57b134',1,'write_out0.f90']]],
-  ['write_5fuser_2ef90',['write_user.f90',['../write__user_8f90.html',1,'']]],
-  ['write_5fusr0',['write_usr0',['../mfix___f_8_h.html#a083e679ede4dac8f817adbdb26d81b49',1,'write_usr0():&#160;write_usr0.f90'],['../write__usr0_8f90.html#abac9d127bf0a716afb204a88955e6663',1,'write_usr0():&#160;write_usr0.f90']]],
-  ['write_5fusr0_2ef90',['write_usr0.f90',['../write__usr0_8f90.html',1,'']]],
-  ['write_5fusr1',['write_usr1',['../write__usr1_8f90.html#a7534930dce0a6d5377c590727808dc26',1,'write_usr1.f90']]],
-  ['write_5fusr1_2ef90',['write_usr1.f90',['../write__usr1_8f90.html',1,'']]],
-  ['writeaverageregions',['WriteAverageRegions',['../classmfix.html#a12c6bd8edac252878df59e4293e2de59',1,'mfix']]],
-  ['writebuildinfo',['writeBuildInfo',['../main_8cpp.html#a4dadee4542acb523551406a24ef24cd3',1,'writeBuildInfo():&#160;mfix_build_info.cpp'],['../mfix__build__info_8cpp.html#a4dadee4542acb523551406a24ef24cd3',1,'writeBuildInfo():&#160;mfix_build_info.cpp']]],
-  ['writecheckpointfile',['WriteCheckPointFile',['../classmfix.html#a25a86618c33533a2a62d72ff8199df45',1,'mfix']]],
-  ['writeebsurface_2ecpp',['writeEBsurface.cpp',['../write_e_bsurface_8cpp.html',1,'']]],
-  ['writemyebsurface',['WriteMyEBSurface',['../classmfix.html#a1fd6acb0e74d9d1f4240364507b1543f',1,'mfix']]],
-  ['writeparticleascii',['WriteParticleAscii',['../classmfix.html#a6c776d1d2c7529954640639b74053b73',1,'mfix']]],
-  ['writeplotfile',['WritePlotFile',['../classmfix.html#a179f0c0c9b2adbae1b42a7e7960565b0',1,'mfix']]],
-  ['writestaticplotfile',['WriteStaticPlotFile',['../classmfix.html#a1d987a83d92b398216e87657e7d50d14',1,'mfix']]]
+  ['tcoll_5fratio',['tcoll_ratio',['../classmfix.html#a088e0cbb1ddad82a6d418a849f980423',1,'mfix']]],
+  ['trilinear',['trilinear',['../mfix_8_h.html#a0acede667a9165d99ef8427c6793130baacccaf2c1202c2b8284106d48862da20',1,'mfix.H']]],
+  ['trilinear_5finterp',['trilinear_interp',['../mfix__drag___k_8_h.html#a67e1e918c1ab02397911f3290f5ed160',1,'mfix_drag_K.H']]],
+  ['true_5fdpvm',['true_dpvm',['../mfix_8_h.html#a0acede667a9165d99ef8427c6793130baa150e9b4884937f241400250bb804597',1,'mfix.H']]]
 ];
