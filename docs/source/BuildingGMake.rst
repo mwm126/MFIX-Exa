@@ -10,17 +10,12 @@ cloned amrex into a local directory:
 
     > git clone https://github.com/amrex-codes/amrex
 
-If you want to run MFIX-Exa using the SIMPLE algorithm or the projection
-method with normal velocity components defined on faces, then the easiest
-way to build it is:
+Then
 
 .. code:: shell
 
     > git clone http://mfix.netl.doe.gov/gitlab/exa/mfix.git
     > cd mfix/exec
-
-(If you want to run MFIX-Exa using the projection method with cell-centered
-velocity components, replace exec above with exec_cc)
 
 Edit the GNUmakefile to set AMREX_HOME to be the path to the directory
 where you have put amrex.  Other options that you can set include
