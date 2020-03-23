@@ -1,7 +1,6 @@
 Particles on GPUs
 ==========================
 
-The particle components of MFIX-Exa are a natural candidate for offloading to the GPU. 
 The particle kernels are compute-intensive and can in principle be processed asynchronously with parts of the fluid advance.
 The core components of the particle method in MFIX-Exa are:
 
@@ -55,12 +54,7 @@ The above algorithm deals with constructing a neighbor list for the particles on
 
 Once the neighbor list has been constructed, collisions with both particles and walls can easily be processed. 
 
-We have created a GPU branch of MFIX that is capable of running with GPU support. As of this writing, the following operations in MFIX have been offloaded:
-
-- Neighbor particles / neighbor list construction
-- Particle-particle collisions
-- Particle-wall collisions
-- PIC Deposition (used in putting the drag force and solids volume fraction on the grid)
+MFiX-Exa currently runs on both CPU-only and hybrid CPU/GPU architectures.
 
 
 
