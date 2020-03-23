@@ -169,8 +169,7 @@
             
   <div class="section" id="particles-on-gpus">
 <h1>Particles on GPUs<a class="headerlink" href="#particles-on-gpus" title="Permalink to this headline">¶</a></h1>
-<p>The particle components of MFIX-Exa are a natural candidate for offloading to the GPU.
-The particle kernels are compute-intensive and can in principle be processed asynchronously with parts of the fluid advance.
+<p>The particle kernels are compute-intensive and can in principle be processed asynchronously with parts of the fluid advance.
 The core components of the particle method in MFIX-Exa are:</p>
 <ul class="simple">
 <li>Neighbor List Construction</li>
@@ -217,13 +216,7 @@ and then performing the N<sup>2</sup> distance check only on the particles in ne
 <p>Note that, because of our use of managed memory to store the particle data and the neighbor list, the above code will work when compiled for either CPU or GPU.</p>
 <p>The above algorithm deals with constructing a neighbor list for the particles on a single grid. When domain decomposition is used, one must also make copies of particles on adjacent grids, potentially performing the necessary MPI communication for grids associated with other processes. The routines <cite>fillNeighbors</cite>, which computes which particles needed to be ghosted to which grid, and <cite>updateNeighbors</cite>, which copies up-to-date data for particles that have already been ghosted, have also been offloaded to the GPU, using techniques similar to AMReX’s <cite>Redistribute</cite> routine. The important thing for users is that calling these functions does not trigger copying data off the GPU.</p>
 <p>Once the neighbor list has been constructed, collisions with both particles and walls can easily be processed.</p>
-<p>We have created a GPU branch of MFIX that is capable of running with GPU support. As of this writing, the following operations in MFIX have been offloaded:</p>
-<ul class="simple">
-<li>Neighbor particles / neighbor list construction</li>
-<li>Particle-particle collisions</li>
-<li>Particle-wall collisions</li>
-<li>PIC Deposition (used in putting the drag force and solids volume fraction on the grid)</li>
-</ul>
+<p>MFiX-Exa currently runs on both CPU-only and hybrid CPU/GPU architectures.</p>
 </div>
 
 
