@@ -116,7 +116,7 @@ The following inputs must be preceded by the given to the species solver e.g., "
 |                               |   [required if diffusivity_model="constant"]                   |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 
-Below is an example for specifying fluid solver model options.
+Below is an example for specifying species solver model options.
 
 .. code-block:: none
 
@@ -190,8 +190,8 @@ Below is an example for specifying fluid solver model options.
    myfluid.specific_heat = constant
    myfluid.specific_heat.constant = 918
 
-   myfluid.conductivity = constant
-   myfluid.conductivity.constant = 0.024
+   myfluid.thermal_conductivity = constant
+   myfluid.thermal_conductivity.constant = 0.024
 
    myfluid.species = O2 H2O He N2 CO
 
@@ -430,11 +430,11 @@ The type of the boundary conditions in the BC region must be defined.
 +=====================+=======================================================================+=============+===========+
 | bc.[region]         | Used to define boundary condition type. Available options include:    |  String     |  None     |
 |                     |                                                                       |             |           |
-|                     | * 'pi'  or 'pressure_inflow'                                          |             |           |
-|                     | * 'po'  or 'pressure_outflow'                                         |             |           |
-|                     | * 'mi'  or 'mass_inflow'                                              |             |           |
-|                     | * 'nsw' or 'no_slip_wall'                                             |             |           |
-|                     | * 'eb'  or 'embedded boundary'                                        |             |           |
+|                     | * 'pi'  for pressure inflow BC type                                   |             |           |
+|                     | * 'po'  for pressure outflow BC type                                  |             |           |
+|                     | * 'mi'  for mass inflow BC type                                       |             |           |
+|                     | * 'nsw' for no-slip wall BC type                                      |             |           |
+|                     | * 'eb'  for setting BCs on the embedded boundary                      |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 For a fluid phase, the following inputs can be defined.
@@ -455,7 +455,7 @@ For a fluid phase, the following inputs can be defined.
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | eb_temperature      | Inhomogeneous Dirichlet BC value for temperature on EBs contained in  | Real        | None      |
 |                     | the (tridimensional) region                                           |             |           |
-|                     |   [required if advect_enthalpy=1 and (bc_region_type="eb"]            |             |           |
+|                     |   [required if advect_enthalpy and bc_region_type="eb"]               |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 
@@ -463,7 +463,7 @@ Below is an example for specifying boundary conditions for a fluid `myfluid`.
 
 .. code-block:: none
 
-   bc.regions = full-domain inflow outflow hot-wall
+   bc.regions = inflow outflow hot-wall
 
    bc.inflow = mi
    bc.inflow.myfluid.volfrac     =  1.0
