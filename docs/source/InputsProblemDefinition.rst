@@ -120,7 +120,7 @@ Below is an example for specifying species solver model options.
 
 .. code-block:: none
 
-   species.solve = O2 H20 He
+   species.solve = O2 H2O He
 
    species.diffusivity = constant
 
@@ -159,14 +159,15 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 | viscosity.constant            | Value of constant fluid viscosity                              |  Real    |  None     |
 |                               |   [required if viscosity_model="constant"]                     |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| specific_heat                 | Specify which specific heat model to use for fluid [required]  | String   |  None     |
+| specific_heat                 | Specify which specific heat model to use for fluid             | String   |  None     |
+|                               |   [required if advect_enthalpy]                                |          |           |
 |                               |   "constant" -- constant specific heat                         |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | specific_heat.constant        | Value of constant fluid specific heat                          |  Real    |  None     |
 |                               |   [required if specific_heat_model="constant"]                 |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | thermal_conductivity          | Specify which thermal conductivity model to use                | String   |  None     |
-|                               | for fluid [required]                                           |          |           |
+|                               | for fluid [required if advect_enthalpy]                        |          |           |
 |                               |   "constant" -- constant thermal conductivity                  |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | thermal_conductivity.constant | Value of constant fluid thermal conductivity                   |  Real    |  None     |
