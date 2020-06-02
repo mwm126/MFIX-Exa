@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['static_5fplt_5ffile',['static_plt_file',['../main_8cpp.html#a8feeca870bfe4b5e333ac8c98f512188',1,'main.cpp']]],
-  ['stop_5ftime',['stop_time',['../main_8cpp.html#aab25691aed85f542bcbb91921bad750f',1,'main.cpp']]]
+  ['write_5feb_5fsurface',['write_eb_surface',['../main_8cpp.html#a62f1a7d2fc76eb601715c98d4782493c',1,'main.cpp']]],
+  ['write_5fls',['write_ls',['../main_8cpp.html#a5a1a4625cd08de48bb0b08bb8c0f5678',1,'main.cpp']]]
 ];

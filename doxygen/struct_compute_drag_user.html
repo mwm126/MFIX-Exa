@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -85,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_compute_drag_user-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ComputeDragUser Struct Reference</div>  </div>
@@ -95,10 +95,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b72bc694b5700f46f622386648c40fa"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compute_drag_user.html#a2b72bc694b5700f46f622386648c40fa">operator()</a> (amrex::Real EPg, amrex::Real Mug, amrex::Real ROPg, amrex::Real vrel, amrex::Real DPM, amrex::Real DPA, amrex::Real PHIS, amrex::Real fvelx, amrex::Real fvely, amrex::Real fvelz, int i, int j, int k, int pid) const </td></tr>
+<tr class="memitem:ae556ab4c952cb6e0a24adeb98972a7e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compute_drag_user.html#ae556ab4c952cb6e0a24adeb98972a7e1">ComputeDragUser</a> (amrex::Real small_, amrex::Real large_, amrex::Real eps_)</td></tr>
+<tr class="separator:ae556ab4c952cb6e0a24adeb98972a7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b72bc694b5700f46f622386648c40fa"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_EXTERNAL AMREX_GPU_HOST_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compute_drag_user.html#a2b72bc694b5700f46f622386648c40fa">operator()</a> (amrex::Real EPg, amrex::Real Mug, amrex::Real ROPg, amrex::Real vrel, amrex::Real DPM, amrex::Real DPA, amrex::Real PHIS, amrex::Real fvelx, amrex::Real fvely, amrex::Real fvelz, int i, int j, int k, int pid) const </td></tr>
 <tr class="memdesc:a2b72bc694b5700f46f622386648c40fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns: the calculated drag coefficient.  <a href="#a2b72bc694b5700f46f622386648c40fa">More...</a><br /></td></tr>
 <tr class="separator:a2b72bc694b5700f46f622386648c40fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a40e3fb2e80bf01a67545108f105a333a"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compute_drag_user.html#a40e3fb2e80bf01a67545108f105a333a">small_number</a></td></tr>
+<tr class="separator:a40e3fb2e80bf01a67545108f105a333a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8359195de3b538e433fdcefa425c321a"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compute_drag_user.html#a8359195de3b538e433fdcefa425c321a">large_number</a></td></tr>
+<tr class="separator:a8359195de3b538e433fdcefa425c321a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6085950d86a5455295d365ee46e6ec90"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_compute_drag_user.html#a6085950d86a5455295d365ee46e6ec90">eps</a></td></tr>
+<tr class="separator:a6085950d86a5455295d365ee46e6ec90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae556ab4c952cb6e0a24adeb98972a7e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ComputeDragUser::ComputeDragUser </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>small_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>large_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>eps_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="struct_compute_drag_wen_yu.html#a1d3d0f21dfbbae9f197c806262bd3b7c">ComputeDragWenYu::operator()()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a2b72bc694b5700f46f622386648c40fa"></a>
 <div class="memitem">
@@ -197,7 +251,44 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns: the calculated drag coefficient. </p>
-<p>Inputs: EPg - gas volume fraction Mug - gas laminar viscosity ROpg - gas density * EP_g vrel - magnitude of gas-solids relative velocity DPM - particle diamater of solids phase M DPA - average particle diameter PHIS - solids volume fraction of solids phases fvelx - x component of the fluid velocity at the particle position fvely - y component of the fluid velocity at the particle position fvelz - z component of the fluid velocity at the particle position i, j, k - particle cell indices pid - particle id number </p>
+<p>Inputs: EPg - gas volume fraction Mug - gas laminar viscosity ROpg - gas density * EP_g vrel - magnitude of gas-solids relative velocity DPM - particle diameter of solids phase M DPA - average particle diameter PHIS - solids volume fraction of solids phases fvelx - x component of the fluid velocity at the particle position fvely - y component of the fluid velocity at the particle position fvelz - z component of the fluid velocity at the particle position i, j, k - particle cell indices pid - particle id number </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6085950d86a5455295d365ee46e6ec90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real ComputeDragUser::eps</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8359195de3b538e433fdcefa425c321a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real ComputeDragUser::large_number</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a40e3fb2e80bf01a67545108f105a333a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real ComputeDragUser::small_number</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

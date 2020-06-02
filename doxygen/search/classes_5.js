@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['realdata',['realData',['../structreal_data.html',1,'']]]
+  ['unioncif',['UnionCIF',['../class_union_c_i_f.html',1,'']]],
+  ['unionlistif',['UnionListIF',['../class_union_list_i_f.html',1,'']]]
 ];

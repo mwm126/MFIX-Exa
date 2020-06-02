@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -85,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_m_f_i_x_check_pair-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MFIXCheckPair Struct Reference</div>  </div>
@@ -95,13 +95,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0453a9b9d4bb871cd273708b229803a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_f_i_x_check_pair.html#a0453a9b9d4bb871cd273708b229803a7">MFIXCheckPair</a> (amrex::Real neighborhood_)</td></tr>
+<tr class="separator:a0453a9b9d4bb871cd273708b229803a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a784a59a3715ec362b99e6d63a9a8a117"><td class="memTemplParams" colspan="2">template&lt;class P &gt; </td></tr>
 <tr class="memitem:a784a59a3715ec362b99e6d63a9a8a117"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct_m_f_i_x_check_pair.html#a784a59a3715ec362b99e6d63a9a8a117">operator()</a> (const P &amp;p1, const P &amp;p2) const </td></tr>
 <tr class="separator:a784a59a3715ec362b99e6d63a9a8a117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:adfa114566d46fcf6c161866e92a0dbb3"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_f_i_x_check_pair.html#adfa114566d46fcf6c161866e92a0dbb3">neighborhood</a></td></tr>
+<tr class="separator:adfa114566d46fcf6c161866e92a0dbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>We add a particle to the neighbor list if its center is within 3 particle radii </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0453a9b9d4bb871cd273708b229803a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MFIXCheckPair::MFIXCheckPair </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>neighborhood_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a784a59a3715ec362b99e6d63a9a8a117"></a>
 <div class="memitem">
 <div class="memproto">
@@ -134,6 +166,19 @@ template&lt;class P &gt; </div>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="adfa114566d46fcf6c161866e92a0dbb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real MFIXCheckPair::neighborhood</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

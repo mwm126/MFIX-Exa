@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['intdata',['intData',['../structint_data.html',1,'']]],
-  ['intersectioncif',['IntersectionCIF',['../class_intersection_c_i_f.html',1,'']]]
+  ['mfix',['mfix',['../classmfix.html',1,'']]],
+  ['mfixcheckpair',['MFIXCheckPair',['../struct_m_f_i_x_check_pair.html',1,'']]],
+  ['mfixparticlecontainer',['MFIXParticleContainer',['../class_m_f_i_x_particle_container.html',1,'']]]
 ];

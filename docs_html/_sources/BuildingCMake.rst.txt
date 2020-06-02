@@ -313,14 +313,14 @@ To build MFIX-Exa for GPUs, you need to load cuda module:
 
     > module load cuda/10.1.105
 
-To compile for GPUs:
+To compile:
 
 .. code:: shell
 
     > cd mfix
     > mdkir build
     > cd build
-    > cmake -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran -DENABLE_CUDA=yes 
+    > cmake -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran -DENABLE_CUDA=[no|yes]
     > make -j
 
 An example of a *submission_script* for GPUs can be found in the repo ``mfix/tests/GPU_test/script.sh``.

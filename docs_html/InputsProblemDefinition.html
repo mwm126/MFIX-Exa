@@ -88,10 +88,12 @@
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Problem Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#species-model-settings">Species model settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluid-model-settings">Fluid model settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dem-model-settings">DEM model settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#region-definitions">Region definitions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#initial-conditions">Initial Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Drag Types</a></li>
@@ -186,7 +188,7 @@
 <colgroup>
 <col width="17%" />
 <col width="62%" />
-<col width="11%" />
+<col width="12%" />
 <col width="10%" />
 </colgroup>
 <thead valign="bottom">
@@ -199,7 +201,7 @@
 <tbody valign="top">
 <tr class="row-even"><td>n_cell</td>
 <td>Number of cells at level 0 in each coordinate direction</td>
-<td>Int Int Int</td>
+<td>Ints</td>
 <td>None</td>
 </tr>
 <tr class="row-odd"><td>max_level</td>
@@ -312,6 +314,17 @@ should also be periodic.</td>
 <td>Reals</td>
 <td>None</td>
 </tr>
+<tr class="row-even"><td>advect_enthalpy</td>
+<td>Switch for turning ON (1) or OFF (0) fluid temperature evolution</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>advect_fluid_species</td>
+<td>Switch for turning ON (1) or OFF (0) fluid species mass fraction
+evolution</td>
+<td>Int</td>
+<td>0</td>
+</tr>
 </tbody>
 </table>
 <p>Setting basic EB walls can be specified by inputs preceded by “xlo”, “xhi”, “ylo”, “yhi”, “zlo”, and “zhi”</p>
@@ -363,11 +376,85 @@ should also be periodic.</td>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xlo.type = &quot;mi&quot;
 xlo.velocity = 0.01  0.10
 
-xlo.ylo =            0.25
-xlo.yhi =            0.75
-xlo.zlo =            0.25
-xlo.zhi =            0.75
+xlo.ylo = 0.25
+xlo.yhi = 0.75
+xlo.zlo = 0.25
+xlo.zhi = 0.75
 </pre></div>
+</div>
+<div class="section" id="species-model-settings">
+<h2>Species model settings<a class="headerlink" href="#species-model-settings" title="Permalink to this headline">¶</a></h2>
+<p>Enabling the species mass fraction solver and specifying species model options.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="63%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>species.solve</td>
+<td>Specified name of the species or None to disable the species solver.
+The name assigned to the species solver is used to specify species
+inputs.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by the given to the species solver e.g., “species.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="55%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>diffusivity</td>
+<td><dl class="first last docutils">
+<dt>Specify which diffusivity model to use for species [required]</dt>
+<dd>“constant” – constant diffusivity</dd>
+</dl>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>[specie0].diffusivity</td>
+<td><dl class="first last docutils">
+<dt>Value of constant species diffusivity</dt>
+<dd>[required if diffusivity_model=”constant”]</dd>
+</dl>
+</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying species solver model options.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>species.solve = O2 H2O He
+
+species.diffusivity = constant
+
+species.O2.diffusivity = 1.9e-5
+species.H2O.diffusivity = 2.4e-5
+species.He.diffusivity = 7.1e-5
+</pre></div>
+</div>
 </div>
 <div class="section" id="fluid-model-settings">
 <h2>Fluid model settings<a class="headerlink" href="#fluid-model-settings" title="Permalink to this headline">¶</a></h2>
@@ -398,8 +485,8 @@ name assigned to the fluid solver is used to specify fluid inputs.</td>
 <p>The following inputs must be preceded by the given to the fluid solver e.g., “fluid.”</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="63%" />
+<col width="27%" />
+<col width="55%" />
 <col width="9%" />
 <col width="9%" />
 </colgroup>
@@ -421,7 +508,11 @@ name assigned to the fluid solver is used to specify fluid inputs.</td>
 <td>None</td>
 </tr>
 <tr class="row-odd"><td>density.constant</td>
-<td>Value of constant fluid density [required if density_model= “constant”</td>
+<td><dl class="first last docutils">
+<dt>Value of constant fluid density</dt>
+<dd>[required if density_model=”constant”]</dd>
+</dl>
+</td>
 <td>Real</td>
 <td>None</td>
 </tr>
@@ -435,7 +526,54 @@ name assigned to the fluid solver is used to specify fluid inputs.</td>
 <td>None</td>
 </tr>
 <tr class="row-odd"><td>viscosity.constant</td>
-<td colspan="2">Value of constant fluid viscosity [required if viscosity_model=”constant”|  Real</td>
+<td><dl class="first last docutils">
+<dt>Value of constant fluid viscosity</dt>
+<dd>[required if viscosity_model=”constant”]</dd>
+</dl>
+</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>specific_heat</td>
+<td><dl class="first last docutils">
+<dt>Specify which specific heat model to use for fluid</dt>
+<dd>[required if advect_enthalpy]
+“constant” – constant specific heat</dd>
+</dl>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>specific_heat.constant</td>
+<td><dl class="first last docutils">
+<dt>Value of constant fluid specific heat</dt>
+<dd>[required if specific_heat_model=”constant”]</dd>
+</dl>
+</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>thermal_conductivity</td>
+<td><p class="first">Specify which thermal conductivity model to use
+for fluid [required if advect_enthalpy]</p>
+<blockquote class="last">
+<div>“constant” – constant thermal conductivity</div></blockquote>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>thermal_conductivity.constant</td>
+<td><dl class="first last docutils">
+<dt>Value of constant fluid thermal conductivity</dt>
+<dd>[required if thermal_conductivity_model=”constant”]</dd>
+</dl>
+</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>species</td>
+<td>Specify which species can constitute the fluid phase</td>
+<td>String</td>
 <td>None</td>
 </tr>
 </tbody>
@@ -448,6 +586,14 @@ myfluid.density.constant = 1.0
 
 myfluid.viscosity = constant
 myfluid.viscosity.constant = 1.8e-5
+
+myfluid.specific_heat = constant
+myfluid.specific_heat.constant = 918
+
+myfluid.thermal_conductivity = constant
+myfluid.thermal_conductivity.constant = 0.024
+
+myfluid.species = O2 H2O He N2 CO
 </pre></div>
 </div>
 </div>
@@ -581,10 +727,10 @@ dem.restitution_coeff.char.wall =  0.89
 <p>Regions are used to define sections of the domain. They may be either boxes, planes or points. They are used in building initial condition regions.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="61%" />
-<col width="11%" />
-<col width="9%" />
+<col width="19%" />
+<col width="59%" />
+<col width="12%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -600,12 +746,20 @@ dem.restitution_coeff.char.wall =  0.89
 <td>None</td>
 </tr>
 <tr class="row-odd"><td>regions.[region].lo</td>
-<td>Low corner of physical region (physical not index space)</td>
+<td><dl class="first last docutils">
+<dt>Low corner of physical region</dt>
+<dd>(physical, not index space)</dd>
+</dl>
+</td>
 <td>Reals</td>
 <td>None</td>
 </tr>
 <tr class="row-even"><td>regions.[region].hi</td>
-<td>High corner of physical region (physical not index space)</td>
+<td><dl class="first last docutils">
+<dt>High corner of physical region</dt>
+<dd>(physical, not index space)</dd>
+</dl>
+</td>
 <td>Reals</td>
 <td>None</td>
 </tr>
@@ -624,8 +778,8 @@ regions.riser.hi       = 0.1000  0.2784  0.2784
 </div>
 <div class="section" id="initial-conditions">
 <h2>Initial Conditions<a class="headerlink" href="#initial-conditions" title="Permalink to this headline">¶</a></h2>
-<p>Initial conditions are build from defined regions. The input names are built using the prefix <cite>ic.</cite>, the name of the
-region to apply the IC, and the name of the phase (e.g., <cite>myfuild</cite>).</p>
+<p>Initial conditions are built from defined regions. The input names are built using the prefix <cite>ic.</cite>, the name of the
+region to apply the IC, and the name of the phase (e.g., <cite>myfluid</cite>).</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -689,10 +843,10 @@ region to apply the IC, and the name of the phase (e.g., <cite>myfuild</cite>).<
 <p>The name of the DEM phases to be defined in the IC region and the packing must be defined.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="61%" />
-<col width="11%" />
-<col width="9%" />
+<col width="19%" />
+<col width="59%" />
+<col width="12%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -708,7 +862,8 @@ region to apply the IC, and the name of the phase (e.g., <cite>myfuild</cite>).<
 <td>None</td>
 </tr>
 <tr class="row-odd"><td>ic.[region].packing</td>
-<td>Specifies how auto-generated particles are placed in the IC region:
+<td>Specifies how auto-generated particles are placed
+in the IC region:
 * hcp - Hex-centered packing
 * random
 * pseudo_random
@@ -839,6 +994,139 @@ ic.bed.solid0.diameter.constant =  100.0e-6
 
 ic.bed.solid0.density  = constant
 ic.bed.solid0.density.constant  = 1000.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="boundary-conditions">
+<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Boundary conditions are built from defined regions. The input names are built using the prefix <cite>bc.</cite>, the name of the
+region to apply the BC, and the name of the phase (e.g., <cite>myfluid</cite>).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bc.regions</td>
+<td>Regions used to define boundary conditions.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The type of the boundary conditions in the BC region must be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bc.[region]</td>
+<td><p class="first">Used to define boundary condition type. Available options include:</p>
+<ul class="last simple">
+<li>‘pi’  for pressure inflow BC type</li>
+<li>‘po’  for pressure outflow BC type</li>
+<li>‘mi’  for mass inflow BC type</li>
+<li>‘nsw’ for no-slip wall BC type</li>
+<li>‘eb’  for setting BCs on the embedded boundary</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For a fluid phase, the following inputs can be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volfrac</td>
+<td>Volume fraction [required if bc_region_type=”mi”]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>pressure</td>
+<td>Fluid pressure [required if bc_region_type=”po” or “pi”]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>temperature</td>
+<td>Fluid temperature [required if bc_region_type=”mi” or “pi”]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>velocity</td>
+<td>Velocity components [required if bc_region_type=”mi”]</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>species.[specie0]</td>
+<td><dl class="first last docutils">
+<dt>Specie [specie0] mass fraction</dt>
+<dd>[required if advect_fluid_species and bc_region_type=”mi” or “pi”]</dd>
+</dl>
+</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>eb_temperature</td>
+<td><p class="first">Inhomogeneous Dirichlet BC value for temperature on EBs contained in
+the (tridimensional) region</p>
+<blockquote class="last">
+<div>[required if advect_enthalpy and bc_region_type=”eb”]</div></blockquote>
+</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying boundary conditions for a fluid <cite>myfluid</cite>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bc.regions = inflow outflow hot-wall
+
+bc.inflow = mi
+bc.inflow.myfluid.volfrac     =  1.0
+bc.inflow.myfluid.velocity    =  0.015  0.0  0.0
+bc.inflow.myfluid.temperature =  300
+bc.inflow.myfluid.species.O2  =  0.0
+bc.inflow.myfluid.species.CO  =  0.5
+bc.inflow.myfluid.species.H2O =  0.0
+bc.inflow.myfluid.species.He  =  0.5
+
+bc.outflow = po
+bc.outflow.myfluid.pressure =  0.0
+
+bc.hot-walls = eb
+bc.hot-walls.myfluid.eb_temperature = 800
 </pre></div>
 </div>
 </div>

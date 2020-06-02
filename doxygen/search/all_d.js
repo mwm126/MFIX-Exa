@@ -1,11 +1,19 @@
 var searchData=
 [
-  ['omegax',['omegax',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ac1d5ee2d0b126e2458e76f21e2c9ccb3',1,'realData']]],
-  ['omegay',['omegay',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a852edb23a58e36c564ad4eb02c7c98cb',1,'realData']]],
-  ['omegaz',['omegaz',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a19cfa2d07ec3fba66d6fcbe3da724a10',1,'realData']]],
-  ['one_5fper_5ffill',['one_per_fill',['../class_particles_generator.html#a73fba0e14a0949d207db06f129367d26',1,'ParticlesGenerator']]],
-  ['oneoveri',['oneOverI',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a68950273e38a8a42e722859692d4fc23',1,'realData']]],
-  ['operator_28_29',['operator()',['../struct_compute_drag_wen_yu.html#a1d3d0f21dfbbae9f197c806262bd3b7c',1,'ComputeDragWenYu::operator()()'],['../struct_compute_drag_gidaspow.html#aa830ec7b9f1d6a9eccb2eceafd1bb82d',1,'ComputeDragGidaspow::operator()()'],['../struct_compute_drag_b_v_k2.html#aa45f36fca48608716a5b8a2427973328',1,'ComputeDragBVK2::operator()()'],['../struct_compute_drag_user.html#a2b72bc694b5700f46f622386648c40fa',1,'ComputeDragUser::operator()()'],['../struct_m_f_i_x_check_pair.html#a784a59a3715ec362b99e6d63a9a8a117',1,'MFIXCheckPair::operator()()'],['../class_union_list_i_f.html#a2c1cdbf67f7a85987e3d90f05379b21b',1,'UnionListIF::operator()()'],['../class_union_c_i_f.html#ad23f6ba2205e2246211a8649ce4ba4ae',1,'UnionCIF::operator()()'],['../class_intersection_c_i_f.html#aaf1355cbf4031b43e18d0f9237b4a5cc',1,'IntersectionCIF::operator()()']]],
-  ['operator_3d',['operator=',['../class_union_list_i_f.html#a843bb2f55f6b82bf109ff2609d37c1e6',1,'UnionListIF::operator=(const UnionListIF &amp;rhs)=default'],['../class_union_list_i_f.html#ab92b409d80a4fafb0e47229800eaf0f8',1,'UnionListIF::operator=(UnionListIF &amp;&amp;rhs)=default'],['../class_c_i_f.html#aa92ae7f8c7e1e3b05913912c14cd563b',1,'CIF::operator=(const CIF &amp;rhs)=default'],['../class_c_i_f.html#a0abdac97843b3f73d82a31b1831f17e6',1,'CIF::operator=(CIF &amp;&amp;rhs)=default'],['../class_union_c_i_f.html#a80348b91b25ded6d92276a198493d906',1,'UnionCIF::operator=(const UnionCIF &amp;rhs)=default'],['../class_union_c_i_f.html#a466fbade35909a1bdbf64d5bb2eb2446',1,'UnionCIF::operator=(UnionCIF &amp;&amp;rhs)=default'],['../class_intersection_c_i_f.html#ae7bfcaf3ef685b2ba23765f184c81539',1,'IntersectionCIF::operator=(const IntersectionCIF &amp;rhs)=default'],['../class_intersection_c_i_f.html#a220a055598d127317e877d035492f2b8',1,'IntersectionCIF::operator=(IntersectionCIF &amp;&amp;rhs)=default']]],
-  ['output',['output',['../classmfix.html#ac29f2300fd6730443ab90114c1b8a795',1,'mfix::output()'],['../class_m_f_i_x_particle_container.html#a6efbaee6988a17ac164bd875854ed355',1,'MFIXParticleContainer::output()']]]
+  ['par_5fascii_5ffile',['par_ascii_file',['../main_8cpp.html#a650ddf5c9531578726535b9eef5e512e',1,'main.cpp']]],
+  ['par_5fascii_5fint',['par_ascii_int',['../main_8cpp.html#aa8d2ef7478a6c2755f73f8f84fde54a0',1,'main.cpp']]],
+  ['particle_5fgenerator_2ecpp',['particle_generator.cpp',['../particle__generator_8cpp.html',1,'']]],
+  ['particle_5fgenerator_2eh',['particle_generator.H',['../particle__generator_8_h.html',1,'']]],
+  ['particlesgenerator',['ParticlesGenerator',['../class_particles_generator.html',1,'ParticlesGenerator'],['../class_particles_generator.html#a15499730e862a766692c7027f7e93bd4',1,'ParticlesGenerator::ParticlesGenerator()']]],
+  ['particletiletype',['ParticleTileType',['../class_particles_generator.html#ab377c5d448041aa742daa6c3866bdf72',1,'ParticlesGenerator']]],
+  ['particletype',['ParticleType',['../class_particles_generator.html#a178ae75d0bb05c8155409415db183bd4',1,'ParticlesGenerator']]],
+  ['phase',['phase',['../structint_data.html#afc461a7ca1bd635901df4c55e6d768c0a081e64fd42cd3bec8bc59964d2ca495c',1,'intData']]],
+  ['plot_5ffile',['plot_file',['../main_8cpp.html#ac996c6d099eb228866a60f97bd4e7cd7',1,'main.cpp']]],
+  ['plot_5fint',['plot_int',['../classmfix.html#aca2e5893004d857ab5a70b167a6c951a',1,'mfix']]],
+  ['plot_5fper_5fapprox',['plot_per_approx',['../classmfix.html#a09aa9dfc4df89879569e1514a34a73c6',1,'mfix']]],
+  ['plot_5fper_5fexact',['plot_per_exact',['../classmfix.html#a0bced74e039628fef12228e4d073f88b',1,'mfix']]],
+  ['plotfile_5fon_5frestart',['plotfile_on_restart',['../main_8cpp.html#a16c9ca98aab5cd759635a846c540d926',1,'main.cpp']]],
+  ['postinit',['PostInit',['../classmfix.html#a63d04156be5eace63ddee05af61627ab',1,'mfix']]],
+  ['printparticlecounts',['PrintParticleCounts',['../class_m_f_i_x_particle_container.html#a90c96ffddffb87ca088257b9fdc8faed',1,'MFIXParticleContainer']]],
+  ['printparticles',['printParticles',['../class_m_f_i_x_particle_container.html#a309a037ea4e7722dce01c768b8c876f7',1,'MFIXParticleContainer']]]
 ];

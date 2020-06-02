@@ -1,9 +1,6 @@
 var searchData=
 [
   ['init',['Init',['../classmfix.html#ab4d74f8257289bacf721e701a923db14',1,'mfix']]],
-  ['init_5fcollision',['init_collision',['../mfix___f_8_h.html#aa840ac1cd1d9f6a33ae9ba8c8a05da7f',1,'init_collision(const int *mmax, amrex::Real *min_dp, amrex::Real *min_roi, amrex::Real *max_dp, amrex::Real *max_roi, amrex::Real *sum_dp, amrex::Real *sum_roi, const amrex::Real &amp;tcoll_ratio, amrex::Real *etan, amrex::Real *etan_w, amrex::Real *etat, amrex::Real *etat_w, amrex::Real *neighborhood):&#160;mfix_F.H'],['../init__collision_8f90.html#a5850ced854576b67b7bb5e88244b1c87',1,'init_collision(mmax, min_dp_in, min_ro_in, max_dp_in, max_ro_in, avg_dp_in, avg_ro_in, tcoll_ratio, etan_out, etan_w_out, etat_out, etat_w_out, neighborhood):&#160;init_collision.f90']]],
-  ['init_5fcollision_2ef90',['init_collision.f90',['../init__collision_8f90.html',1,'']]],
-  ['init_5fcollision_5flsd',['init_collision_lsd',['../init__collision_8f90.html#ac1409c2ae44d4cc51e936667fe579542',1,'init_collision.f90']]],
   ['initdata',['InitData',['../class_m_f_i_x_particle_container.html#abcacb7be500705cd627ef0aaee459840',1,'MFIXParticleContainer']]],
   ['initial_5fconditions_2einc',['initial_conditions.inc',['../initial__conditions_8inc.html',1,'']]],
   ['initiochkdata',['InitIOChkData',['../classmfix.html#aa5f2767b5a831949c3e40641c7c320d3',1,'mfix']]],

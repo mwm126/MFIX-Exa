@@ -458,11 +458,11 @@ the environmental variables <code class="docutils literal notranslate"><span cla
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> module load cuda/10.1.105
 </pre></div>
 </div>
-<p>To compile for GPUs:</p>
+<p>To compile:</p>
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">cd</span> mfix
 <span class="gp">&gt;</span> mdkir build
 <span class="gp">&gt;</span> <span class="nb">cd</span> build
-<span class="gp">&gt;</span> cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran -DENABLE_CUDA<span class="o">=</span>yes
+<span class="gp">&gt;</span> cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran -DENABLE_CUDA<span class="o">=[</span>no<span class="p">|</span>yes<span class="o">]</span>
 <span class="gp">&gt;</span> make -j
 </pre></div>
 </div>
