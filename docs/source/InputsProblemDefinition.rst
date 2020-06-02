@@ -41,7 +41,7 @@ units.
 +----------------------------+-----------------------------------------+
 | diffusivity                | [:math:`m^2 \cdot s^{-1}`]              |
 +----------------------------+-----------------------------------------+
-| specific heat capacity     | [:math:`J \cdot Kg^{-1} \cdot K^{-1}`]  |
+| specific heat capacity     | [:math:`J \cdot kg^{-1} \cdot K^{-1}`]  |
 +----------------------------+-----------------------------------------+
 | thermal conductivity       | [:math:`W \cdot m^{-1} \cdot K^{-1}`]   |
 +----------------------------+-----------------------------------------+
@@ -186,7 +186,7 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 | specific_heat                 | Specify which specific heat model to use for fluid [required   | String   |  None     |
 |                               | if advect_enthalpy]. Available options include:                |          |           |
 |                               |                                                                |          |           |
-|                               | * 'constant' for constant density model                        |          |           |
+|                               | * 'constant' for constant specific heat model                  |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | specific_heat.constant        | Value of constant fluid specific heat [required if             |  Real    |  None     |
 |                               | specific_heat_model='constant'].                               |          |           |
@@ -194,7 +194,7 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 | thermal_conductivity          | Specify which thermal conductivity model to use for fluid      | String   |  None     |
 |                               | [required if advect_enthalpy=1]. available options include:    |          |           |
 |                               |                                                                |          |           |
-|                               | * 'constant' for constant density model                        |          |           |
+|                               | * 'constant' for constant thermal conductivity model           |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | thermal_conductivity.constant | Value of constant fluid thermal conductivity [required if      |  Real    |  None     |
 |                               | thermal_conductivity_model='constant'].                        |          |           |
