@@ -1,7 +1,60 @@
 Problem Definition
 ==================
 
-The following inputs must be preceded by "amr."
+In this section it is described how the input file can be configured in order to
+specify the settings of the problem at hand. The input file must be
+passed as first argument to the MFIX-Exa executable.
+
+
+System of Units
+---------------
+
+MFIX-Exa adopts the International System of Units (SI). Simulations have to be
+set up accordingly. In the following table we provide a list of some of the
+physical quantities we can specify in the input file and their correspondent
+units.
+
++----------------------------+-----------------------------------------+
+| Physical quantity          | MFIX-Exa SI unit                        |
++============================+=========================================+
+| length                     | meter [:math:`m`]                       |
++----------------------------+-----------------------------------------+
+| mass                       | kilogram [:math:`kg`]                   |
++----------------------------+-----------------------------------------+
+| time                       | second [:math:`s`]                      |
++----------------------------+-----------------------------------------+
+| force                      | Newton [:math:`N`]                      |
++----------------------------+-----------------------------------------+
+| temperature                | Kelvin [:math:`K`]                      |
++----------------------------+-----------------------------------------+
+| pressure                   | Pascal [:math:`Pa`]                     |
++----------------------------+-----------------------------------------+
+| energy                     | Joule [:math:`J`]                       |
++----------------------------+-----------------------------------------+
+| power                      | Watt [:math:`W`]                        |
++----------------------------+-----------------------------------------+
+| density                    | [:math:`kg \cdot m^{-3}`]               |
++----------------------------+-----------------------------------------+
+| velocity                   | [:math:`m \cdot s^{-1}`]                |
++----------------------------+-----------------------------------------+
+| dynamic viscosity          | [:math:`Pa \cdot s`]                    |
++----------------------------+-----------------------------------------+
+| diffusivity                | [:math:`m^2 \cdot s^{-1}`]              |
++----------------------------+-----------------------------------------+
+| specific heat capacity     | [:math:`J \cdot Kg^{-1} \cdot K^{-1}`]  |
++----------------------------+-----------------------------------------+
+| thermal conductivity       | [:math:`W \cdot m^{-1} \cdot K^{-1}`]   |
++----------------------------+-----------------------------------------+
+| spring coefficient         | [:math:`N \cdot m^{-1}`]                |
++----------------------------+-----------------------------------------+
+
+
+Mesh settings
+-------------
+
+There are some settings we can specify for the mesh and the automatic mesh
+refinement algorithm. These settings must be preceded by "amr." in the input
+file.
 
 +-------------------+---------------------------------------------------------------------+-------------+-----------+
 |                   | Description                                                         |   Type      | Default   |
@@ -10,6 +63,11 @@ The following inputs must be preceded by "amr."
 +-------------------+---------------------------------------------------------------------+-------------+-----------+
 | max_level         | Maximum level of refinement allowed (0 when single-level)           |    Int      | None      |
 +-------------------+---------------------------------------------------------------------+-------------+-----------+
+
+
+Geometry settings
+-----------------
+
 
 The following inputs must be preceded by "geometry."
 
@@ -25,16 +83,9 @@ The following inputs must be preceded by "geometry."
 | prob_hi         | High corner of physical domain (physical not index space)             |   Reals     | None      |
 +-----------------+-----------------------------------------------------------------------+-------------+-----------+
 
-The following inputs must be preceded by "bc."
 
-+-----------------+-----------------------------------------------------------------------+-------------+-----------+
-|                 | Description                                                           |   Type      | Default   |
-+=================+=======================================================================+=============+===========+
-| delp_dir        | Direction for specified pressure drop. Note that this direction       |   Int       |   0       |
-|                 | should also be periodic.                                              |             |           |
-+-----------------+-----------------------------------------------------------------------+-------------+-----------+
-| delp            | Pressure drop (Pa)                                                    |   Real      |   0.0     |
-+-----------------+-----------------------------------------------------------------------+-------------+-----------+
+MFIX-Exa settings
+-----------------
 
 
 The following inputs must be preceded by "mfix."
@@ -57,39 +108,6 @@ The following inputs must be preceded by "mfix."
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
 
 
-Setting basic EB walls can be specified by inputs preceded by "xlo", "xhi", "ylo", "yhi", "zlo", and "zhi"
-
-+--------------------+---------------------------------------------------------------------------+-------------+-----------+
-|                    | Description                                                               |   Type      | Default   |
-+====================+===========================================================================+=============+===========+
-| type               | Used to define boundary type. Available options include:                  |  String     |  None     |
-|                    |                                                                           |             |           |
-|                    | * 'pi'  or 'pressure_inflow'                                              |             |           |
-|                    | * 'po'  or 'pressure_outflow'                                             |             |           |
-|                    | * 'mi'  or 'mass_inflow'                                                  |             |           |
-|                    | * 'nsw' or 'no_slip_wall'                                                 |             |           |
-+--------------------+---------------------------------------------------------------------------+-------------+-----------+
-| pressure           | Sets boundary pressure for pressure inflows, outflows and mass inflows    |    Real     |  None     |
-+--------------------+---------------------------------------------------------------------------+-------------+-----------+
-| velocity           | Sets boundary velocity for mass inflows                                   |    Real     |  None     |
-+--------------------+---------------------------------------------------------------------------+-------------+-----------+
-| location           | Specifies an offset from the domain boundary for no-slip walls            |    Real     |  None     |
-+--------------------+---------------------------------------------------------------------------+-------------+-----------+
-
-To specify multiple mass inflows (e.g., define a jet and uniform background flow), provide multiple velocities for the region and define the physical extents of the sub-region. The first velocity is applied to the entire flow plane. Subsequent velocities are successively applied to the specified sub-regions. If multiple sub-regions overlap, the velocity of last specified region is used. An example of a uniform mass inflow with a square-jet centered at (0.5x0.5) is given below.
-
-
-.. code-block:: none
-
-   xlo.type = "mi"
-   xlo.velocity = 0.01  0.10
-
-   xlo.ylo = 0.25
-   xlo.yhi = 0.75
-   xlo.zlo = 0.25
-   xlo.zhi = 0.75
-
-
 Species model settings
 --------------------
 
@@ -109,11 +127,13 @@ The following inputs must be preceded by the given to the species solver e.g., "
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 |                               | Description                                                    |   Type   | Default   |
 +===============================+================================================================+==========+===========+
-| diffusivity                   | Specify which diffusivity model to use for species [required]  | String   |  None     |
-|                               |   "constant" -- constant diffusivity                           |          |           |
+| diffusivity                   | Specify which diffusivity model to use for species [required]. | String   |  None     |
+|                               | Available options include:                                     |          |           |
+|                               |                                                                |          |           |
+|                               | * 'constant' for constant diffusivity model                    |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| [specie0].diffusivity         | Value of constant species diffusivity                          |  Real    |  None     |
-|                               |   [required if diffusivity_model="constant"]                   |          |           |
+| [specie0].diffusivity         | Value of constant species diffusivity. [required if            |  Real    |  None     |
+|                               | diffusivity_model='constant'].                                 |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 
 Below is an example for specifying species solver model options.
@@ -147,31 +167,37 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 |                               | Description                                                    |   Type   | Default   |
 +===============================+================================================================+==========+===========+
-| density                       | Specify which density model to use for fluid [required]        | String   |  None     |
-|                               |   "constant" -- constant density                               |          |           |
+| density                       | Specify which density model to use for fluid [required].       | String   |  None     |
+|                               | Available options include:                                     |          |           |
+|                               |                                                                |          |           |
+|                               | * 'constant' for constant density model                        |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| density.constant              | Value of constant fluid density                                |  Real    |  None     |
-|                               |   [required if density_model="constant"]                       |          |           |
+| density.constant              | Value of constant fluid density [required if density_model=    |  Real    |  None     |
+|                               | 'constant'].                                                   |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| viscosity                     | Specify which viscosity model to use for fluid [required]      | String   |  None     |
-|                               |   "constant" -- constant viscosity                             |          |           |
+| viscosity                     | Specify which viscosity model to use for fluid [required].     | String   |  None     |
+|                               | Available options include:                                     |          |           |
+|                               |                                                                |          |           |
+|                               | * 'constant' for constant viscosity model                      |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| viscosity.constant            | Value of constant fluid viscosity                              |  Real    |  None     |
-|                               |   [required if viscosity_model="constant"]                     |          |           |
+| viscosity.constant            | Value of constant fluid viscosity [required if                 |  Real    |  None     |
+|                               | viscosity_model='constant'].                                   |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| specific_heat                 | Specify which specific heat model to use for fluid             | String   |  None     |
-|                               |   [required if advect_enthalpy]                                |          |           |
-|                               |   "constant" -- constant specific heat                         |          |           |
+| specific_heat                 | Specify which specific heat model to use for fluid [required   | String   |  None     |
+|                               | if advect_enthalpy]. Available options include:                |          |           |
+|                               |                                                                |          |           |
+|                               | * 'constant' for constant density model                        |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| specific_heat.constant        | Value of constant fluid specific heat                          |  Real    |  None     |
-|                               |   [required if specific_heat_model="constant"]                 |          |           |
+| specific_heat.constant        | Value of constant fluid specific heat [required if             |  Real    |  None     |
+|                               | specific_heat_model='constant'].                               |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| thermal_conductivity          | Specify which thermal conductivity model to use                | String   |  None     |
-|                               | for fluid [required if advect_enthalpy]                        |          |           |
-|                               |   "constant" -- constant thermal conductivity                  |          |           |
+| thermal_conductivity          | Specify which thermal conductivity model to use for fluid      | String   |  None     |
+|                               | [required if advect_enthalpy=1]. available options include:    |          |           |
+|                               |                                                                |          |           |
+|                               | * 'constant' for constant density model                        |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| thermal_conductivity.constant | Value of constant fluid thermal conductivity                   |  Real    |  None     |
-|                               |    [required if thermal_conductivity_model="constant"]         |          |           |
+| thermal_conductivity.constant | Value of constant fluid thermal conductivity [required if      |  Real    |  None     |
+|                               | thermal_conductivity_model='constant'].                        |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | species                       | Specify which species can constitute the fluid phase           | String   |  None     |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
@@ -273,17 +299,15 @@ Region definitions
 
 Regions are used to define sections of the domain. They may be either boxes, planes or points. They are used in building initial condition regions.
 
-+---------------------+-----------------------------------------------------------------+-------------+-----------+
-|                     | Description                                                     |   Type      | Default   |
-+=====================+=================================================================+=============+===========+
-| mfix.regions        | Names given to regions.                                         | String      | None      |
-+---------------------+-----------------------------------------------------------------+-------------+-----------+
-| regions.[region].lo | Low corner of physical region                                   |   Reals     | None      |
-|                     |    (physical, not index space)                                  |             |           |
-+---------------------+-----------------------------------------------------------------+-------------+-----------+
-| regions.[region].hi | High corner of physical region                                  |   Reals     | None      |
-|                     |    (physical, not index space)                                  |             |           |
-+---------------------+-----------------------------------------------------------------+-------------+-----------+
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+|                     | Description                                                           |   Type      | Default   |
++=====================+=======================================================================+=============+===========+
+| mfix.regions        | Names given to regions.                                               | String      | None      |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| regions.[region].lo | Low corner of physical region (physical, not index space)             |   Reals     | None      |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| regions.[region].hi | High corner of physical region (physical, not index space)            |   Reals     | None      |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 Below is an example for specifying two regions.
 
@@ -333,10 +357,11 @@ The name of the DEM phases to be defined in the IC region and the packing must b
 +=====================+================================================================+=============+===========+
 | ic.[region].solids  | List of solids                                                 | Strings     | None      |
 +---------------------+----------------------------------------------------------------+-------------+-----------+
-| ic.[region].packing | Specifies how auto-generated particles are placed              | String      | None      |
-|                     | in the IC region:                                              |             |           |
-|                     | * hcp - Hex-centered packing                                   |             |           |
-|                     | * random                                                       |             |           |
+| ic.[region].packing | Specifies how auto-generated particles are placed in the IC    | String      | None      |
+|                     | region:                                                        |             |           |
+|                     |                                                                |             |           |
+|                     | * hcp -- hex-centered packing                                  |             |           |
+|                     | * random -- random packing                                     |             |           |
 |                     | * pseudo_random                                                |             |           |
 |                     | * oneper -- one particle per cell                              |             |           |
 |                     | * eightper -- eight particles per cell                         |             |           |
@@ -354,10 +379,11 @@ For each solid, the following inputs may be defined.
 | velocity            | Velocity components                                                   | Reals       | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | diameter            | Method to specify particle diameter in the IC region. This is         | String      | None      |
-|                     | only used for auto-generated particles.                               |             |           |
-|                     | * constant  -- specified constant                                     |             |           |
-|                     | * uniform   -- uniform distribution                                   |             |           |
-|                     | * normal    -- normal distribution                                    |             |           |
+|                     | only used for auto-generated particles. Available options include:    |             |           |
+|                     |                                                                       |             |           |
+|                     | * 'constant'  -- specified constant                                   |             |           |
+|                     | * 'uniform'   -- uniform distribution                                 |             |           |
+|                     | * 'normal'    -- normal distribution                                  |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | diameter.constant   | Value of specified constant particle density                          | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -370,10 +396,11 @@ For each solid, the following inputs may be defined.
 | diameter.max        | Maximum diameter to clip distribution                                 | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | density             | Method to specify particle density in the IC region. This is          | String      | None      |
-|                     | only used for auto-generated particles.                               |             |           |
-|                     | * constant  -- specified constant                                     |             |           |
-|                     | * uniform   -- uniform distribution                                   |             |           |
-|                     | * normal    -- normal distribution                                    |             |           |
+|                     | only used for auto-generated particles. Available options include:    |             |           |
+|                     |                                                                       |             |           |
+|                     | * 'constant'  -- specified constant                                   |             |           |
+|                     | * 'uniform'   -- uniform distribution                                 |             |           |
+|                     | * 'normal'    -- normal distribution                                  |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | density.constant    | Value of specified constant particle density                          | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -435,7 +462,7 @@ The type of the boundary conditions in the BC region must be defined.
 |                     | * 'po'  for pressure outflow BC type                                  |             |           |
 |                     | * 'mi'  for mass inflow BC type                                       |             |           |
 |                     | * 'nsw' for no-slip wall BC type                                      |             |           |
-|                     | * 'eb'  for setting BCs on the embedded boundary                      |             |           |
+|                     | * 'eb'  for setting inhomogeneous Dirichlet BCs on the contained EBs  |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 For a fluid phase, the following inputs can be defined.
@@ -443,22 +470,26 @@ For a fluid phase, the following inputs can be defined.
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 |                     | Description                                                           |   Type      | Default   |
 +=====================+=======================================================================+=============+===========+
-| volfrac             | Volume fraction [required if bc_region_type="mi"]                     | Real        | None      |
+| volfrac             | Volume fraction [required if bc_region_type='mi']                     | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| pressure            | Fluid pressure [required if bc_region_type="po" or "pi"]              | Real        | None      |
+| pressure            | Fluid pressure [required if bc_region_type='po' or 'pi']              | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| temperature         | Fluid temperature [required if bc_region_type="mi" or "pi"]           | Real        | None      |
+| temperature         | Fluid temperature [required if bc_region_type='mi' or 'pi']           | Real        | 0.0       |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| velocity            | Velocity components [required if bc_region_type="mi"]                 | Reals       | None      |
+| velocity            | Velocity components [required if bc_region_type='mi']                 | Reals       | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| species.[specie0]   | Specie [specie0] mass fraction                                        | Real        | None      |
-|                     |   [required if advect_fluid_species and bc_region_type="mi" or "pi"]  |             |           |
+| delp_dir            | Direction for specified pressure drop. Note that this direction       | Int         | 0         |
+|                     | should also be periodic.                                              |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| eb_temperature      | Inhomogeneous Dirichlet BC value for temperature on EBs contained in  | Real        | None      |
-|                     | the (tridimensional) region                                           |             |           |
-|                     |   [required if advect_enthalpy and bc_region_type="eb"]               |             |           |
+| delp                | Pressure drop (Pa)                                                    | Real        | 0.0       |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-
+| species.[specie0]   | Specie [specie0] mass fraction [required if advect_fluid_species=1    | Real        | None      |
+|                     | and bc_region_type='mi' or 'pi'].                                     |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| eb_temperature      | Inhomogeneous Dirichlet BC value for temperature on EBs contained in  | Real        | 0.0       |
+|                     | the (tridimensional) region [required if advect_enthalpy=1 and        |             |           |
+|                     | bc_region_type='eb'].                                                 |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 Below is an example for specifying boundary conditions for a fluid `myfluid`.
 
