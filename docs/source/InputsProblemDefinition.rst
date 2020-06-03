@@ -486,10 +486,6 @@ For a fluid phase, the following inputs can be defined.
 | species.[specie0]   | Specie [specie0] mass fraction [required if advect_fluid_species=1    | Real        | None      |
 |                     | and bc_region_type='mi' or 'pi'].                                     |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| eb_temperature      | Inhomogeneous Dirichlet BC value for temperature on EBs contained in  | Real        | 0.0       |
-|                     | the (tridimensional) region [required if advect_enthalpy=1 and        |             |           |
-|                     | bc_region_type='eb'].                                                 |             |           |
-+---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 Below is an example for specifying boundary conditions for a fluid `myfluid`.
 
