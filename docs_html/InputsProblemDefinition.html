@@ -98,6 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#region-definitions">Region definitions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#initial-conditions">Initial Conditions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-conditions-on-embedded-boundaries">Boundary Conditions on Embedded Boundaries</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Drag Types</a></li>
@@ -1096,17 +1097,10 @@ and bc_region_type=’mi’ or ‘pi’].</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>eb_temperature</td>
-<td>Inhomogeneous Dirichlet BC value for temperature on EBs contained in
-the (tridimensional) region [required if advect_enthalpy=1 and
-bc_region_type=’eb’].</td>
-<td>Real</td>
-<td>0.0</td>
-</tr>
 </tbody>
 </table>
 <p>Below is an example for specifying boundary conditions for a fluid <cite>myfluid</cite>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bc.regions = inflow outflow hot-wall
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bc.regions = inflow outflow
 
 bc.inflow = mi
 bc.inflow.myfluid.volfrac     =  1.0
@@ -1119,9 +1113,48 @@ bc.inflow.myfluid.species.He  =  0.5
 
 bc.outflow = po
 bc.outflow.myfluid.pressure =  0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="boundary-conditions-on-embedded-boundaries">
+<h2>Boundary Conditions on Embedded Boundaries<a class="headerlink" href="#boundary-conditions-on-embedded-boundaries" title="Permalink to this headline">¶</a></h2>
+<p>In MFIX-Exa it is possible to set boundary conditions on the embedded
+boundaries. For instance, it is possible to set inhomogeneous Dirichlet boundary
+conditions for the fluid temperature variable on the subpart of the embedded
+boundaries which is contained in the BC region (which in this case has to be
+tridimensional). We recall that, on the remaining part of the EBs, homogeneous
+Neumann boundary conditions are assumed by default.</p>
+<p>In the following table there is a list of the possible entries for EB boundary
+conditions. Each entry must be preceeded by <cite>bc.[region0].</cite></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>eb.temperature</td>
+<td>Inhomogeneous Dirichlet BC value for temperature on EBs contained in
+the (tridimensional) region [required if advect_enthalpy=1 and
+bc_region_type=’eb’].</td>
+<td>Real</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying boundary conditions for a fluid <cite>myfluid</cite>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bc.regions = hot-wall
 
 bc.hot-walls = eb
-bc.hot-walls.myfluid.eb_temperature = 800
+bc.hot-walls.eb.temperature = 800
 </pre></div>
 </div>
 </div>

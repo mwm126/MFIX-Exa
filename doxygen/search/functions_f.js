@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scalardeposition',['ScalarDeposition',['../class_m_f_i_x_particle_container.html#af0e3c47877c38039b5744c0e69725163',1,'MFIXParticleContainer::ScalarDeposition(int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)'],['../class_m_f_i_x_particle_container.html#aa0115a1036dca00b99cf16d68e7cc8f5',1,'MFIXParticleContainer::ScalarDeposition(FB WeightFunc, int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)']]],
   ['set_5factive',['set_active',['../class_c_i_f.html#a76d1ac8079f53130cbc9f3367a149823',1,'CIF']]],
   ['set_5fbc0',['set_bc0',['../classmfix.html#a68b2be0a216a8480334e5acd35b64063',1,'mfix']]],
   ['set_5fdensity_5fbcs',['set_density_bcs',['../classmfix.html#abca80a90e42476792eb06da7bedf8683',1,'mfix']]],
@@ -21,5 +20,6 @@ var searchData=
   ['set_5ftracer_5fbcs',['set_tracer_bcs',['../classmfix.html#a57ca892bcd877661827902ed4a4b2552',1,'mfix']]],
   ['set_5fvec_5fbcs',['set_vec_bcs',['../classmfix.html#a1da19af6a7da88e4748c33f294a11e23',1,'mfix']]],
   ['set_5fvelocity_5fbcs',['set_velocity_bcs',['../classmfix.html#ac2daba9a75155d3bc28c069038c0febf',1,'mfix']]],
-  ['set_5fviscosity_5fbcs',['set_viscosity_bcs',['../classmfix.html#a9aa0a9e30cbf2dd63c536ca3b9973561',1,'mfix']]]
+  ['set_5fviscosity_5fbcs',['set_viscosity_bcs',['../classmfix.html#a9aa0a9e30cbf2dd63c536ca3b9973561',1,'mfix']]],
+  ['solidsvolumedeposition',['SolidsVolumeDeposition',['../class_m_f_i_x_particle_container.html#a5fd5c15e16c46e851c37f050fe0c20e0',1,'MFIXParticleContainer::SolidsVolumeDeposition(int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)'],['../class_m_f_i_x_particle_container.html#a058f46f36a070510616a0bde748245bb',1,'MFIXParticleContainer::SolidsVolumeDeposition(FB WeightFunc, int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)']]]
 ];

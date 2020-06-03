@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scalardeposition',['ScalarDeposition',['../class_m_f_i_x_particle_container.html#af0e3c47877c38039b5744c0e69725163',1,'MFIXParticleContainer::ScalarDeposition(int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)'],['../class_m_f_i_x_particle_container.html#aa0115a1036dca00b99cf16d68e7cc8f5',1,'MFIXParticleContainer::ScalarDeposition(FB WeightFunc, int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)']]],
   ['set_5factive',['set_active',['../class_c_i_f.html#a76d1ac8079f53130cbc9f3367a149823',1,'CIF']]],
   ['set_5fbc0',['set_bc0',['../classmfix.html#a68b2be0a216a8480334e5acd35b64063',1,'mfix']]],
   ['set_5fdensity_5fbcs',['set_density_bcs',['../classmfix.html#abca80a90e42476792eb06da7bedf8683',1,'mfix']]],
@@ -22,7 +21,8 @@ var searchData=
   ['set_5fvec_5fbcs',['set_vec_bcs',['../classmfix.html#a1da19af6a7da88e4748c33f294a11e23',1,'mfix']]],
   ['set_5fvelocity_5fbcs',['set_velocity_bcs',['../classmfix.html#ac2daba9a75155d3bc28c069038c0febf',1,'mfix']]],
   ['set_5fviscosity_5fbcs',['set_viscosity_bcs',['../classmfix.html#a9aa0a9e30cbf2dd63c536ca3b9973561',1,'mfix']]],
-  ['small_5fnumber',['small_number',['../struct_compute_drag_wen_yu.html#a617a2cf13cb10fbcbea43ab4d5038675',1,'ComputeDragWenYu::small_number()'],['../struct_compute_drag_gidaspow.html#ac95a6bcb4a66b7406c21a72d40268705',1,'ComputeDragGidaspow::small_number()'],['../struct_compute_drag_b_v_k2.html#a3aacd4efcb6047685f23ac519fe49fdc',1,'ComputeDragBVK2::small_number()'],['../struct_compute_drag_user.html#a40e3fb2e80bf01a67545108f105a333a',1,'ComputeDragUser::small_number()']]],
+  ['small_5fnumber',['small_number',['../struct_compute_convection_coeff___ranz_marshall.html#ad62c73a1dcf824002440570db4692882',1,'ComputeConvectionCoeff_RanzMarshall::small_number()'],['../struct_compute_drag_wen_yu.html#a617a2cf13cb10fbcbea43ab4d5038675',1,'ComputeDragWenYu::small_number()'],['../struct_compute_drag_gidaspow.html#ac95a6bcb4a66b7406c21a72d40268705',1,'ComputeDragGidaspow::small_number()'],['../struct_compute_drag_b_v_k2.html#a3aacd4efcb6047685f23ac519fe49fdc',1,'ComputeDragBVK2::small_number()'],['../struct_compute_drag_user.html#a40e3fb2e80bf01a67545108f105a333a',1,'ComputeDragUser::small_number()']]],
+  ['solidsvolumedeposition',['SolidsVolumeDeposition',['../class_m_f_i_x_particle_container.html#a5fd5c15e16c46e851c37f050fe0c20e0',1,'MFIXParticleContainer::SolidsVolumeDeposition(int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)'],['../class_m_f_i_x_particle_container.html#a058f46f36a070510616a0bde748245bb',1,'MFIXParticleContainer::SolidsVolumeDeposition(FB WeightFunc, int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)']]],
   ['square_5fdpvm',['square_dpvm',['../mfix_8_h.html#a0acede667a9165d99ef8427c6793130bae2b3f365860d0dd2b5d31195690bdcf1',1,'mfix.H']]],
   ['state',['state',['../structint_data.html#afc461a7ca1bd635901df4c55e6d768c0a51f36a58e49d1b9d84e18f5264d3c866',1,'intData']]],
   ['static_5fplt_5ffile',['static_plt_file',['../main_8cpp.html#a8feeca870bfe4b5e333ac8c98f512188',1,'main.cpp']]],

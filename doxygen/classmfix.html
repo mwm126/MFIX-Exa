@@ -194,12 +194,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad260b451d4abfd2d9c60182f9eab70a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d9103e08314dcb38dcdbb2c8fcc7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a02d9103e08314dcb38dcdbb2c8fcc7e8">mfix_compute_dt</a> (int nstep, Real time, Real <a class="el" href="main_8cpp.html#aab25691aed85f542bcbb91921bad750f">stop_time</a>, Real &amp;dt, Real &amp;prev_dt)</td></tr>
 <tr class="separator:a02d9103e08314dcb38dcdbb2c8fcc7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f57c4a45cfc724ef0a2dade2873e6a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a5f57c4a45cfc724ef0a2dade2873e6a8">mfix_add_drag_explicit</a> (Real dt)</td></tr>
-<tr class="separator:a5f57c4a45cfc724ef0a2dade2873e6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73d747ef6277443fe1013d34d81289ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a73d747ef6277443fe1013d34d81289ef">mfix_add_drag_implicit</a> (Real dt)</td></tr>
-<tr class="separator:a73d747ef6277443fe1013d34d81289ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa116d8d6868c35189b1de811c695d000"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa116d8d6868c35189b1de811c695d000">mfix_calc_drag_particle</a> (Real time)</td></tr>
-<tr class="separator:aa116d8d6868c35189b1de811c695d000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a8c8bda6e937a5df1895209aa8e740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af7a8c8bda6e937a5df1895209aa8e740">mfix_add_txfr_explicit</a> (Real dt)</td></tr>
+<tr class="separator:af7a8c8bda6e937a5df1895209aa8e740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249fe44af1c4582ea4e4d177b8612b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a249fe44af1c4582ea4e4d177b8612b87">mfix_add_txfr_implicit</a> (Real dt)</td></tr>
+<tr class="separator:a249fe44af1c4582ea4e4d177b8612b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008fa6828d16cd599cff5e5638f5ca66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a008fa6828d16cd599cff5e5638f5ca66">mfix_calc_txfr_particle</a> (Real time)</td></tr>
+<tr class="separator:a008fa6828d16cd599cff5e5638f5ca66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a515f799e9cdf931fb50071dfa7e48a3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a515f799e9cdf931fb50071dfa7e48a3a">mfix_predict_vels_on_faces</a> (int lev, Real time, Vector&lt; MultiFab * &gt; const &amp;vel, Vector&lt; MultiFab * &gt; const &amp;ep_u_mac, Vector&lt; MultiFab * &gt; const &amp;ep_v_mac, Vector&lt; MultiFab * &gt; const &amp;ep_w_mac, Vector&lt; MultiFab * &gt; const &amp;ep_g)</td></tr>
 <tr class="separator:a515f799e9cdf931fb50071dfa7e48a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af27ac40064dc61aefcd201ab1e6f7d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af27ac40064dc61aefcd201ab1e6f7d43">mfix_correct_small_cells</a> (Vector&lt; MultiFab * &gt; vel_in)</td></tr>
@@ -260,9 +260,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab6e10dd4dfc76f7925474c6fa2a4b24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76174c4718fe580c33398f6817354fe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a76174c4718fe580c33398f6817354fe7">set_gp0</a> (const int lev, const Box &amp;domain)</td></tr>
 <tr class="separator:a76174c4718fe580c33398f6817354fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca6188dabb518b918ad6706a684e7bd"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:abca6188dabb518b918ad6706a684e7bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#abca6188dabb518b918ad6706a684e7bd">mfix_calc_particle_beta</a> (F DragFunc, Real time)</td></tr>
-<tr class="separator:abca6188dabb518b918ad6706a684e7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6f1342aa95091eb6f12cc594913a03"><td class="memTemplParams" colspan="2">template&lt;typename F1 , typename F2 &gt; </td></tr>
+<tr class="memitem:a1c6f1342aa95091eb6f12cc594913a03"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#a1c6f1342aa95091eb6f12cc594913a03">mfix_calc_transfer_coeffs</a> (F1 DragFunc, F2 ConvectionCoeff)</td></tr>
+<tr class="separator:a1c6f1342aa95091eb6f12cc594913a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa10c6dc0b0e92dd89060301259a81527"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction</a> (Real &amp;sum_vol)</td></tr>
 <tr class="separator:aa10c6dc0b0e92dd89060301259a81527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40aecb4948a5458a2a1d2dc889e95dc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs</a> (int lev, amrex::MultiFab &amp;filled_mf)</td></tr>
@@ -383,10 +383,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:af5af73231e323e0bd7fb8efd11199ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa89e0e370f44c51039ba9dc19adf1d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa89e0e370f44c51039ba9dc19adf1d39">GetDataSpecies</a> (int lev, Real time, Vector&lt; MultiFab * &gt; &amp;data, int icomp, Vector&lt; Real &gt; &amp;datatime)</td></tr>
 <tr class="separator:aa89e0e370f44c51039ba9dc19adf1d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf07beed78031f7628e7ecaccf4182e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#abf07beed78031f7628e7ecaccf4182e6">mfix_calc_particle_beta</a> (Real time)</td></tr>
-<tr class="separator:abf07beed78031f7628e7ecaccf4182e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57857475d707a911eab1079313374fba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid</a> (Real time)</td></tr>
-<tr class="separator:a57857475d707a911eab1079313374fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cae5d89ef4d5fd9ad9fe72f0772e50f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2cae5d89ef4d5fd9ad9fe72f0772e50f">mfix_calc_transfer_coeffs</a> ()</td></tr>
+<tr class="separator:a2cae5d89ef4d5fd9ad9fe72f0772e50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a73375233c0b3038f4584a242daa2b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid</a> (Real time)</td></tr>
+<tr class="separator:a0a73375233c0b3038f4584a242daa2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21a3514cf1dc90dc85e98ca85c59378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa21a3514cf1dc90dc85e98ca85c59378">AllocateArrays</a> (int lev)</td></tr>
 <tr class="separator:aa21a3514cf1dc90dc85e98ca85c59378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9c9aa7bf1f3b642695eb55627b6810"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2d9c9aa7bf1f3b642695eb55627b6810">RegridArrays</a> (int lev)</td></tr>
@@ -1585,12 +1585,12 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5f57c4a45cfc724ef0a2dade2873e6a8"></a>
+<a class="anchor" id="af7a8c8bda6e937a5df1895209aa8e740"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mfix::mfix_add_drag_explicit </td>
+          <td class="memname">void mfix::mfix_add_txfr_explicit </td>
           <td>(</td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dt</em></td><td>)</td>
@@ -1601,12 +1601,12 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a73d747ef6277443fe1013d34d81289ef"></a>
+<a class="anchor" id="a249fe44af1c4582ea4e4d177b8612b87"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mfix::mfix_add_drag_implicit </td>
+          <td class="memname">void mfix::mfix_add_txfr_implicit </td>
           <td>(</td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dt</em></td><td>)</td>
@@ -1829,67 +1829,23 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a57857475d707a911eab1079313374fba"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mfix::mfix_calc_drag_fluid </td>
-          <td>(</td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>References <a class="el" href="classmfix.html#a30565da22d0363a7045d12e16897614c">diffusion_op</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a2333c9d70df4aa53e2f26e4006144c8e">MFIXParticleContainer::FluidDragForceDeposition()</a>, <a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="classmfix.html#abca6188dabb518b918ad6706a684e7bd">mfix_calc_particle_beta()</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, and <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa116d8d6868c35189b1de811c695d000"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mfix::mfix_calc_drag_particle </td>
-          <td>(</td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>References <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="classmfix.html#ab0dd9a81ff59a5c8b1214e6548c6310c">gp0</a>, <a class="el" href="classmfix.html#a66a58745a2f93f95ee33b5bb2afcb7c0">mfix_set_velocity_bcs()</a>, <a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abca6188dabb518b918ad6706a684e7bd"></a>
+<a class="anchor" id="a1c6f1342aa95091eb6f12cc594913a03"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename F &gt; </div>
+template&lt;typename F1 , typename F2 &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void mfix::mfix_calc_particle_beta </td>
+          <td class="memname">void mfix::mfix_calc_transfer_coeffs </td>
           <td>(</td>
-          <td class="paramtype">F&#160;</td>
+          <td class="paramtype">F1&#160;</td>
           <td class="paramname"><em>DragFunc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramtype">F2&#160;</td>
+          <td class="paramname"><em>ConvectionCoeff</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1899,13 +1855,11 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="mfix__des___k_8_h.html#a18492510ee9046cc326749e6cc6b9e62">dot_product()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4acf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
-
-<p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#abf07beed78031f7628e7ecaccf4182e6">mfix_calc_particle_beta()</a>.</p>
+<p>References <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="mfix__des___k_8_h.html#a18492510ee9046cc326749e6cc6b9e62">dot_product()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4acf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abf07beed78031f7628e7ecaccf4182e6"></a>
+<a class="anchor" id="a2cae5d89ef4d5fd9ad9fe72f0772e50f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1913,7 +1867,34 @@ template&lt;typename F &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mfix::mfix_calc_particle_beta </td>
+          <td class="memname">void mfix::mfix_calc_transfer_coeffs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194">BVK2</a>, <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea6fff5fe02e9754eb2b8f3aa0894fc12b">Gidaspow</a>, <a class="el" href="classmfix.html#a57e3d3d05c0c61dd63d4d166a3175b82">m_drag_type</a>, <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa">UserDrag</a>, and <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426">WenYu</a>.</p>
+
+<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a73375233c0b3038f4584a242daa2b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::mfix_calc_txfr_fluid </td>
           <td>(</td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>time</em></td><td>)</td>
@@ -1927,7 +1908,25 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194">BVK2</a>, <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea6fff5fe02e9754eb2b8f3aa0894fc12b">Gidaspow</a>, <a class="el" href="classmfix.html#a57e3d3d05c0c61dd63d4d166a3175b82">m_drag_type</a>, <a class="el" href="classmfix.html#abca6188dabb518b918ad6706a684e7bd">mfix_calc_particle_beta()</a>, <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa">UserDrag</a>, and <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426">WenYu</a>.</p>
+<p>References <a class="el" href="classmfix.html#a30565da22d0363a7045d12e16897614c">diffusion_op</a>, <a class="el" href="class_m_f_i_x_particle_container.html#ae21bddcf7ba98315c4331b8241e9b210">MFIXParticleContainer::InterphaseTxfrDeposition()</a>, <a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="classmfix.html#a2cae5d89ef4d5fd9ad9fe72f0772e50f">mfix_calc_transfer_coeffs()</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, and <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a008fa6828d16cd599cff5e5638f5ca66"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::mfix_calc_txfr_particle </td>
+          <td>(</td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="classmfix.html#ab0dd9a81ff59a5c8b1214e6548c6310c">gp0</a>, <a class="el" href="classmfix.html#a66a58745a2f93f95ee33b5bb2afcb7c0">mfix_set_velocity_bcs()</a>, <a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
 
 </div>
 </div>
@@ -1945,7 +1944,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a30565da22d0363a7045d12e16897614c">diffusion_op</a>, <a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#af0e3c47877c38039b5744c0e69725163">MFIXParticleContainer::ScalarDeposition()</a>, and <a class="el" href="classmfix.html#a006b846e24e9be868f228ef0fa9ac6cd">volWgtSum()</a>.</p>
+<p>References <a class="el" href="classmfix.html#a30565da22d0363a7045d12e16897614c">diffusion_op</a>, <a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a5fd5c15e16c46e851c37f050fe0c20e0">MFIXParticleContainer::SolidsVolumeDeposition()</a>, and <a class="el" href="classmfix.html#a006b846e24e9be868f228ef0fa9ac6cd">volWgtSum()</a>.</p>
 
 </div>
 </div>
@@ -2520,7 +2519,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
 
 </div>
 </div>
@@ -2744,7 +2743,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
 
 </div>
 </div>
@@ -2893,7 +2892,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#abca6188dabb518b918ad6706a684e7bd">mfix_calc_particle_beta()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a1c6f1342aa95091eb6f12cc594913a03">mfix_calc_transfer_coeffs()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
 
 </div>
 </div>
@@ -3123,7 +3122,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#aa116d8d6868c35189b1de811c695d000">mfix_calc_drag_particle()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a008fa6828d16cd599cff5e5638f5ca66">mfix_calc_txfr_particle()</a>.</p>
 
 </div>
 </div>
@@ -3795,7 +3794,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#aa116d8d6868c35189b1de811c695d000">mfix_calc_drag_particle()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a008fa6828d16cd599cff5e5638f5ca66">mfix_calc_txfr_particle()</a>.</p>
 
 </div>
 </div>
@@ -4628,7 +4627,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
 
 </div>
 </div>
@@ -4650,7 +4649,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#aa116d8d6868c35189b1de811c695d000">mfix_calc_drag_particle()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a008fa6828d16cd599cff5e5638f5ca66">mfix_calc_txfr_particle()</a>.</p>
 
 </div>
 </div>
@@ -4903,7 +4902,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
 
 </div>
 </div>
@@ -4965,7 +4964,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#abf07beed78031f7628e7ecaccf4182e6">mfix_calc_particle_beta()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a2cae5d89ef4d5fd9ad9fe72f0772e50f">mfix_calc_transfer_coeffs()</a>.</p>
 
 </div>
 </div>
@@ -4987,7 +4986,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="classmfix.html#a57857475d707a911eab1079313374fba">mfix_calc_drag_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>, and <a class="el" href="classmfix.html#aa10c6dc0b0e92dd89060301259a81527">mfix_calc_volume_fraction()</a>.</p>
 
 </div>
 </div>
@@ -5094,9 +5093,9 @@ template&lt;typename F &gt; </div>
 <li>mfix/src/<a class="el" href="mfix_8cpp.html">mfix.cpp</a></li>
 <li>mfix/src/<a class="el" href="mfix__compute__diveu_8cpp.html">mfix_compute_diveu.cpp</a></li>
 <li>mfix/src/<a class="el" href="mfix__regrid_8cpp.html">mfix_regrid.cpp</a></li>
-<li>mfix/src/des/<a class="el" href="mfix__calc__particle__beta_8cpp.html">mfix_calc_particle_beta.cpp</a></li>
+<li>mfix/src/des/<a class="el" href="mfix__calc__transfer__coeffs_8cpp.html">mfix_calc_transfer_coeffs.cpp</a></li>
+<li>mfix/src/des/<a class="el" href="mfix__calc__txfr_8cpp.html">mfix_calc_txfr.cpp</a></li>
 <li>mfix/src/des/<a class="el" href="mfix__calc__volume__fraction_8cpp.html">mfix_calc_volume_fraction.cpp</a></li>
-<li>mfix/src/des/<a class="el" href="mfix__drag_8cpp.html">mfix_drag.cpp</a></li>
 <li>mfix/src/des/<a class="el" href="mfix__set__gradp__bcs_8cpp.html">mfix_set_gradp_bcs.cpp</a></li>
 <li>mfix/src/eb/<a class="el" href="get__walls_8cpp.html">get_walls.cpp</a></li>
 <li>mfix/src/eb/<a class="el" href="mfix__eb_8cpp.html">mfix_eb.cpp</a></li>

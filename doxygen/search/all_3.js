@@ -2,6 +2,7 @@ var searchData=
 [
   ['density',['density',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a883072905063cc2829c9ceba0c67cf28',1,'realData']]],
   ['depositionscheme',['DepositionScheme',['../mfix_8_h.html#a0acede667a9165d99ef8427c6793130b',1,'mfix.H']]],
+  ['des_5fconv_5fcoeff_5fk_2eh',['des_conv_coeff_K.H',['../des__conv__coeff___k_8_h.html',1,'']]],
   ['des_5fdrag_5fk_2eh',['des_drag_K.H',['../des__drag___k_8_h.html',1,'']]],
   ['diffusion_5fop',['diffusion_op',['../classmfix.html#a30565da22d0363a7045d12e16897614c',1,'mfix']]],
   ['dot_5fproduct',['dot_product',['../mfix__des___k_8_h.html#a18492510ee9046cc326749e6cc6b9e62',1,'mfix_des_K.H']]],
