@@ -486,16 +486,12 @@ For a fluid phase, the following inputs can be defined.
 | species.[specie0]   | Specie [specie0] mass fraction [required if advect_fluid_species=1    | Real        | None      |
 |                     | and bc_region_type='mi' or 'pi'].                                     |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| eb_temperature      | Inhomogeneous Dirichlet BC value for temperature on EBs contained in  | Real        | 0.0       |
-|                     | the (tridimensional) region [required if advect_enthalpy=1 and        |             |           |
-|                     | bc_region_type='eb'].                                                 |             |           |
-+---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 Below is an example for specifying boundary conditions for a fluid `myfluid`.
 
 .. code-block:: none
 
-   bc.regions = inflow outflow hot-wall
+   bc.regions = inflow outflow
 
    bc.inflow = mi
    bc.inflow.myfluid.volfrac     =  1.0
@@ -509,5 +505,33 @@ Below is an example for specifying boundary conditions for a fluid `myfluid`.
    bc.outflow = po
    bc.outflow.myfluid.pressure =  0.0
 
+
+Boundary Conditions on Embedded Boundaries
+------------------------------------------
+
+In MFIX-Exa it is possible to set boundary conditions on the embedded
+boundaries. For instance, it is possible to set inhomogeneous Dirichlet boundary
+conditions for the fluid temperature variable on the subpart of the embedded
+boundaries which is contained in the BC region (which in this case has to be
+tridimensional). We recall that, on the remaining part of the EBs, homogeneous
+Neumann boundary conditions are assumed by default.
+
+In the following table there is a list of the possible entries for EB boundary
+conditions. Each entry must be preceeded by `bc.[region0].`
+
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+|                     | Description                                                           |   Type      | Default   |
++=====================+=======================================================================+=============+===========+
+| eb.temperature      | Inhomogeneous Dirichlet BC value for temperature on EBs contained in  | Real        | 0.0       |
+|                     | the (tridimensional) region [required if advect_enthalpy=1 and        |             |           |
+|                     | bc_region_type='eb'].                                                 |             |           |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+
+Below is an example for specifying boundary conditions for a fluid `myfluid`.
+
+.. code-block:: none
+
+   bc.regions = hot-wall
+
    bc.hot-walls = eb
-   bc.hot-walls.myfluid.eb_temperature = 800
+   bc.hot-walls.eb.temperature = 800
