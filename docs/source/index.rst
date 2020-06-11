@@ -9,28 +9,40 @@ Welcome to MFiX-EXA's documentation!
 MFiX-Exa is a new multiphase modeling tool for the exascale.  It
 combines kernels from the existing MFiX code with the AMReX framework.
 
-MFiX-Exa is under active development as part of the MFiX-Exa 
-application project in DOE's Exascale Computing Project. 
+MFiX-Exa is under active development as part of the MFiX-Exa
+application project in DOE's Exascale Computing Project.
 
-All of MFiX-Exa's development is done in the NETL gitlab repository, with 
+All of MFiX-Exa's development is done in the NETL gitlab repository, with
 active development in the develop branch. Changes are merged into
 the master branch at the beginning of each month.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: User guide:
 
    Introduction
-   GettingStarted
+   GettingStarted_Chapter
    Inputs_Chapter
    ManagingGridHierarchy_Chapter
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Reference:
+
    Fluids_Chapter
    Particles_Chapter
-   EB
+   EB_Chapter
+   Debugging
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tests and Benchmarks:
+
+   RunningTestSuite
+   RegressionTesting
    CITests
    NightlyTests
    qb/index
-   Debugging
 
 Notice
 ------
