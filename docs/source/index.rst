@@ -10,6 +10,8 @@ from the existing `MFiX <https://mfix.netl.doe.gov/>`_ code with the
 `AMReX <https://amrex-codes.github.io/amrex/>`_ framework, creating the next
 generation, high performance, multiphase CFD workhorse.
 
+.. image:: /images/particle_banner.png
+
 MFiX-Exa is under active development as part of the MFiX-Exa
 application project in DOE's
 `Exascale Computing Project (ECP) <https://www.exascaleproject.org/>`_. All of
