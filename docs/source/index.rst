@@ -1,20 +1,32 @@
-.. MFiX-EXA documentation master file, created by
-   sphinx-quickstart on Thu Aug  2 12:19:39 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. MFiX-EXA documentation master file, created Thu Aug  2 12:19:39 2018.
 
 Welcome to MFiX-EXA's documentation!
 ====================================
 
-MFiX-Exa is a new multiphase modeling tool for the exascale.  It
-combines kernels from the existing MFiX code with the AMReX framework.
+MFiX-Exa is a new multiphase computational fluid dynamics (CFD) modeling tool
+that can take advantage of massively parallel high performance computers (HPC)
+with the goal of scaling well at exascale.  It combines the underlying physics
+from the existing `MFiX <https://mfix.netl.doe.gov/>`_ code with the
+`AMReX <https://amrex-codes.github.io/amrex/>`_ framework, creating the next
+generation, high performance, multiphase CFD workhorse.
 
 MFiX-Exa is under active development as part of the MFiX-Exa
-application project in DOE's Exascale Computing Project.
-
-All of MFiX-Exa's development is done in the NETL gitlab repository, with
+application project in DOE's
+`Exascale Computing Project (ECP) <https://www.exascaleproject.org/>`_. All of
+MFiX-Exa's development is done in the
+`NETL gitlab repository <https://mfix.netl.doe.gov/gitlab/exa/mfix>`_, with
 active development in the develop branch. Changes are merged into
 the master branch at the beginning of each month.
+
+When mature, this project will provide a modern multi-level multi-grid fluid
+solver with chemistry, heat transfer, complex geometry, and two particle models:
+
+1. **Discrete particle method (DEM)** - Each particle is modeled as a sphere,
+   resolving all particle collisions
+2. **Particle in cell method (PIC)** - Particles are group in parcels and see
+   other parcels through a stress gradient.
+
+To get started with MFiX-Exa, follow the user guide sections:
 
 .. toctree::
    :maxdepth: 1
@@ -25,6 +37,9 @@ the master branch at the beginning of each month.
    Inputs_Chapter
    ManagingGridHierarchy_Chapter
 
+
+To learn more about the implementation, follow the following reference sections:
+
 .. toctree::
    :maxdepth: 1
    :caption: Reference:
@@ -33,6 +48,9 @@ the master branch at the beginning of each month.
    Particles_Chapter
    EB_Chapter
    Debugging
+
+The following section detail the testing and benchmarks used to ensure solutions
+and performance:
 
 .. toctree::
    :maxdepth: 1
