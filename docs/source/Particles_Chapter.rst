@@ -23,7 +23,7 @@ particle-particle, particle-fluid, and particle-wall interactions.
    :maxdepth: 1
    :caption: Contents:
 
-   ParticleBasics
-   ParticleFluid
-   ParticleWalls
-   ParticlesOnGpus
+   particles/ParticleBasics
+   particles/ParticleFluid
+   particles/ParticleWalls
+   particles/ParticlesOnGpus

@@ -13,4 +13,4 @@ refining the computational meshes near walls.
    :maxdepth: 1
    :caption: Contents:
 
-   EBWalls
+   eb/EBWalls

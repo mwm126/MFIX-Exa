@@ -109,7 +109,7 @@ The following inputs must be preceded by "mfix."
 
 
 Species model settings
---------------------
+----------------------
 
 Enabling the species mass fraction solver and specifying species model options.
 
