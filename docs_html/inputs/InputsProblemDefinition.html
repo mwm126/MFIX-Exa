@@ -1,0 +1,1220 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Problem Definition &mdash; MFiX-Exa  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Drag Types" href="InputsDrag.html" />
+    <link rel="prev" title="Run-time Inputs" href="../Inputs_Chapter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MFiX-Exa
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User guide:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Units, mesh, geometry, species, fluid, DEM, regions, inital and boundary conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-of-units">System of Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mesh-settings">Mesh settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geometry-settings">Geometry settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mfix-exa-settings">MFIX-Exa settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#species-model-settings">Species model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fluid-model-settings">Fluid model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dem-model-settings">DEM model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#region-definitions">Region definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-conditions">Initial Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-conditions-on-embedded-boundaries">Boundary Conditions on Embedded Boundaries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Particle drag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsMultigrid.html">Multigrid Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Fluids_Chapter.html">Solving the Fluid Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Particles_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Debugging.html">Debugging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tests and Benchmarks:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RegressionTesting.html">Regression testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CITests.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NightlyTests.html">Nightly Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qb/index.html">Qualitative Benchmarks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MFiX-Exa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
+        
+      <li>Problem Definition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/inputs/InputsProblemDefinition.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="problem-definition">
+<h1>Problem Definition<a class="headerlink" href="#problem-definition" title="Permalink to this headline">¶</a></h1>
+<p>In this section it is described how the input file can be configured in order to
+specify the settings of the problem at hand. The input file must be
+passed as first argument to the MFIX-Exa executable.</p>
+<div class="section" id="system-of-units">
+<h2>System of Units<a class="headerlink" href="#system-of-units" title="Permalink to this headline">¶</a></h2>
+<p>MFIX-Exa adopts the International System of Units (SI). Simulations have to be
+set up accordingly. In the following table we provide a list of some of the
+physical quantities we can specify in the input file and their correspondent
+units.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Physical quantity</th>
+<th class="head">MFIX-Exa SI unit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>length</td>
+<td>meter [<span class="math notranslate nohighlight">\(m\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>mass</td>
+<td>kilogram [<span class="math notranslate nohighlight">\(kg\)</span>]</td>
+</tr>
+<tr class="row-even"><td>time</td>
+<td>second [<span class="math notranslate nohighlight">\(s\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>force</td>
+<td>Newton [<span class="math notranslate nohighlight">\(N\)</span>]</td>
+</tr>
+<tr class="row-even"><td>temperature</td>
+<td>Kelvin [<span class="math notranslate nohighlight">\(K\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>pressure</td>
+<td>Pascal [<span class="math notranslate nohighlight">\(Pa\)</span>]</td>
+</tr>
+<tr class="row-even"><td>energy</td>
+<td>Joule [<span class="math notranslate nohighlight">\(J\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>power</td>
+<td>Watt [<span class="math notranslate nohighlight">\(W\)</span>]</td>
+</tr>
+<tr class="row-even"><td>density</td>
+<td>[<span class="math notranslate nohighlight">\(kg \cdot m^{-3}\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>velocity</td>
+<td>[<span class="math notranslate nohighlight">\(m \cdot s^{-1}\)</span>]</td>
+</tr>
+<tr class="row-even"><td>dynamic viscosity</td>
+<td>[<span class="math notranslate nohighlight">\(Pa \cdot s\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>diffusivity</td>
+<td>[<span class="math notranslate nohighlight">\(m^2 \cdot s^{-1}\)</span>]</td>
+</tr>
+<tr class="row-even"><td>specific heat capacity</td>
+<td>[<span class="math notranslate nohighlight">\(J \cdot kg^{-1} \cdot K^{-1}\)</span>]</td>
+</tr>
+<tr class="row-odd"><td>thermal conductivity</td>
+<td>[<span class="math notranslate nohighlight">\(W \cdot m^{-1} \cdot K^{-1}\)</span>]</td>
+</tr>
+<tr class="row-even"><td>spring coefficient</td>
+<td>[<span class="math notranslate nohighlight">\(N \cdot m^{-1}\)</span>]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mesh-settings">
+<h2>Mesh settings<a class="headerlink" href="#mesh-settings" title="Permalink to this headline">¶</a></h2>
+<p>There are some settings we can specify for the mesh and the automatic mesh
+refinement algorithm. These settings must be preceded by “amr.” in the input
+file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="62%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>n_cell</td>
+<td>Number of cells at level 0 in each coordinate direction</td>
+<td>Ints</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>max_level</td>
+<td>Maximum level of refinement allowed (0 when single-level)</td>
+<td>Int</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="geometry-settings">
+<h2>Geometry settings<a class="headerlink" href="#geometry-settings" title="Permalink to this headline">¶</a></h2>
+<p>The following inputs must be preceded by “geometry.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="63%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>coord_sys</td>
+<td>0 for Cartesian</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>is_periodic</td>
+<td>1 for true, 0 for false (one value for each coordinate direction)</td>
+<td>Ints</td>
+<td>0 0 0</td>
+</tr>
+<tr class="row-even"><td>prob_lo</td>
+<td>Low corner of physical domain (physical not index space)</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>prob_hi</td>
+<td>High corner of physical domain (physical not index space)</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mfix-exa-settings">
+<h2>MFIX-Exa settings<a class="headerlink" href="#mfix-exa-settings" title="Permalink to this headline">¶</a></h2>
+<p>The following inputs must be preceded by “mfix.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="63%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>geometry</td>
+<td>Which type of EB geometry are we using?</td>
+<td>String</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>levelset__refinement</td>
+<td>Refinement factor of levelset resolution relative to level 0 resolution</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>po_no_par_out</td>
+<td>Let particles exit (default) or bounce-back at pressure outflows</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>gravity</td>
+<td>Gravity vector (e.g., mfix.gravity = -9.81  0.0  0.0) [required]</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>advect_enthalpy</td>
+<td>Switch for turning ON (1) or OFF (0) fluid temperature evolution</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>advect_fluid_species</td>
+<td>Switch for turning ON (1) or OFF (0) fluid species mass fraction
+evolution</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="species-model-settings">
+<h2>Species model settings<a class="headerlink" href="#species-model-settings" title="Permalink to this headline">¶</a></h2>
+<p>Enabling the species mass fraction solver and specifying species model options.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="63%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>species.solve</td>
+<td>Specified name of the species or None to disable the species solver.
+The name assigned to the species solver is used to specify species
+inputs.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by the given to the species solver e.g., “species.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="55%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>diffusivity</td>
+<td><p class="first">Specify which diffusivity model to use for species [required].
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant diffusivity model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>[specie0].diffusivity</td>
+<td>Value of constant species diffusivity. [required if
+diffusivity_model=’constant’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying species solver model options.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>species.solve = O2 H2O He
+
+species.diffusivity = constant
+
+species.O2.diffusivity = 1.9e-5
+species.H2O.diffusivity = 2.4e-5
+species.He.diffusivity = 7.1e-5
+</pre></div>
+</div>
+</div>
+<div class="section" id="fluid-model-settings">
+<h2>Fluid model settings<a class="headerlink" href="#fluid-model-settings" title="Permalink to this headline">¶</a></h2>
+<p>Enabling the fluid solver and specifying fluid model options.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="63%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>fluid.solve</td>
+<td>Specified name of the fluid or None to disable the fluid solver. The
+name assigned to the fluid solver is used to specify fluid inputs.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by the given to the fluid solver e.g., “fluid.”</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="55%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>density</td>
+<td><p class="first">Specify which density model to use for fluid [required].
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant density model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density.constant</td>
+<td>Value of constant fluid density [required if density_model=
+‘constant’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>viscosity</td>
+<td><p class="first">Specify which viscosity model to use for fluid [required].
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant viscosity model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>viscosity.constant</td>
+<td>Value of constant fluid viscosity [required if
+viscosity_model=’constant’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>specific_heat</td>
+<td><p class="first">Specify which specific heat model to use for fluid [required
+if advect_enthalpy]. Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant specific heat model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>specific_heat.constant</td>
+<td>Value of constant fluid specific heat [required if
+specific_heat_model=’constant’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>thermal_conductivity</td>
+<td><p class="first">Specify which thermal conductivity model to use for fluid
+[required if advect_enthalpy=1]. available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant thermal conductivity model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>thermal_conductivity.constant</td>
+<td>Value of constant fluid thermal conductivity [required if
+thermal_conductivity_model=’constant’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>species</td>
+<td>Specify which species can constitute the fluid phase</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying fluid solver model options.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fluid.solve = myfluid
+
+myfluid.density = constant
+myfluid.density.constant = 1.0
+
+myfluid.viscosity = constant
+myfluid.viscosity.constant = 1.8e-5
+
+myfluid.specific_heat = constant
+myfluid.specific_heat.constant = 918
+
+myfluid.thermal_conductivity = constant
+myfluid.thermal_conductivity.constant = 0.024
+
+myfluid.species = O2 H2O He N2 CO
+</pre></div>
+</div>
+</div>
+<div class="section" id="dem-model-settings">
+<h2>DEM model settings<a class="headerlink" href="#dem-model-settings" title="Permalink to this headline">¶</a></h2>
+<p>Enabling the DEM solver and specifying model options.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="61%" />
+<col width="8%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dem.solve</td>
+<td>Specified name(s) of the DEM types or None to disable the DEM solver.
+The user defined names are used to specify DEM model inputs.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>dem.friction_coeff.pp</td>
+<td>Friction coefficient :: particle to particle collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>dem.friction_coeff.pw</td>
+<td>Friction coefficient :: particle to wall collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>dem.spring_const.pp</td>
+<td>Normal spring constant :: particle to particle collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>dem.spring_const.pw</td>
+<td>Normal spring constant :: particle to wall collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>dem.spring_tang_fac.pp</td>
+<td>Tangential-to-normal spring constant factor :: particle to particle
+collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>dem.spring_tang_fac.pw</td>
+<td>Tangential-to-normal spring constant factor :: particle to wall
+collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>dem.damping_tang_fac.pp</td>
+<td>Factor relating the tangential damping coefficient to the normal
+damping coefficient :: particle to particle collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>dem.damping_tang_fac.pw</td>
+<td>Factor relating the tangential damping coefficient to the normal
+damping coefficient :: particle to wall collisions [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs use the DEM type names specified using the <cite>dem.solve</cite> input to define restitution coefficients and
+are proceeded with <cite>dem.restitution_coeff</cite>. These must be defined for all solid-solid and solid-wall combinations.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="61%" />
+<col width="8%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[solid0].[solid1]</td>
+<td>Specifies the restitution coefficient between solid0 and solid1. Here
+the order is not important and could be defined as [solid1].[solid0]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>[solid0].wall</td>
+<td>Specifies the restitution coefficient between solid0 and the wall.
+Order is not important and this could be defined as wall.[solid0]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying the inputs for two DEM solids.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dem.solve = sand  char
+
+dem.friction_coeff.pp     =     0.25
+dem.friction_coeff.pw     =     0.15
+
+dem.spring_const.pp       =   100.0
+dem.spring_const.pw       =   100.0
+
+dem.spring_tang_fac.pp    =     0.2857
+dem.spring_tang_fac.pw    =     0.2857
+
+dem.damping_tang_fac.pp   =     0.5
+dem.damping_tang_fac.pw   =     0.5
+
+dem.restitution_coeff.sand.sand =  0.85
+dem.restitution_coeff.sand.char =  0.88
+dem.restitution_coeff.char.char =  0.90
+
+dem.restitution_coeff.sand.wall =  0.85
+dem.restitution_coeff.char.wall =  0.89
+</pre></div>
+</div>
+</div>
+<div class="section" id="region-definitions">
+<h2>Region definitions<a class="headerlink" href="#region-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Regions are used to define sections of the domain. They may be either boxes, planes or points. They are used in building initial condition regions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>mfix.regions</td>
+<td>Names given to regions.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>regions.[region].lo</td>
+<td>Low corner of physical region (physical, not index space)</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>regions.[region].hi</td>
+<td>High corner of physical region (physical, not index space)</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying two regions.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mfix.regions  = full-domain   riser
+
+regions.full-domain.lo = 0.0000  0.0000  0.0000
+regions.full-domain.hi = 3.7584  0.2784  0.2784
+
+regions.riser.lo       = 0.0000  0.0000  0.0000
+regions.riser.hi       = 0.1000  0.2784  0.2784
+</pre></div>
+</div>
+</div>
+<div class="section" id="initial-conditions">
+<h2>Initial Conditions<a class="headerlink" href="#initial-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Initial conditions are built from defined regions. The input names are built using the prefix <cite>ic.</cite>, the name of the
+region to apply the IC, and the name of the phase (e.g., <cite>myfluid</cite>).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ic.regions</td>
+<td>Regions used to define initial conditions.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For a fluid phase, the following inputs can be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volfrac</td>
+<td>Volume fraction [required]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>pressure</td>
+<td>Fluid pressure</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>temperature</td>
+<td>Fluid temperature</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>velocity</td>
+<td>Velocity components</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The name of the DEM phases to be defined in the IC region and the packing must be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="59%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ic.[region].solids</td>
+<td>List of solids</td>
+<td>Strings</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>ic.[region].packing</td>
+<td><p class="first">Specifies how auto-generated particles are placed in the IC
+region:</p>
+<ul class="last simple">
+<li>hcp – hex-centered packing</li>
+<li>random – random packing</li>
+<li>pseudo_random</li>
+<li>oneper – one particle per cell</li>
+<li>eightper – eight particles per cell</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For each solid, the following inputs may be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volfrac</td>
+<td>Volume fraction</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>temperature</td>
+<td>Fluid temperature</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>velocity</td>
+<td>Velocity components</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>diameter</td>
+<td><p class="first">Method to specify particle diameter in the IC region. This is
+only used for auto-generated particles. Available options include:</p>
+<ul class="last simple">
+<li>‘constant’  – specified constant</li>
+<li>‘uniform’   – uniform distribution</li>
+<li>‘normal’    – normal distribution</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>diameter.constant</td>
+<td>Value of specified constant particle density</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>diameter.mean</td>
+<td>Distribution mean</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>diameter.std</td>
+<td>Distribution standard deviation</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>diameter.min</td>
+<td>Minimum diameter to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>diameter.max</td>
+<td>Maximum diameter to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density</td>
+<td><p class="first">Method to specify particle density in the IC region. This is
+only used for auto-generated particles. Available options include:</p>
+<ul class="last simple">
+<li>‘constant’  – specified constant</li>
+<li>‘uniform’   – uniform distribution</li>
+<li>‘normal’    – normal distribution</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>density.constant</td>
+<td>Value of specified constant particle density</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density.mean</td>
+<td>Distribution mean</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>density.std</td>
+<td>Distribution standard deviation</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>density.min</td>
+<td>Minimum density to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>density.max</td>
+<td>Maximum density to clip distribution</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying an initial condition for a fluid (fluid) and one DEM solid (solid0).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ic.regions  = bed
+
+ic.bed.fluid.volfrac   =  0.725
+
+ic.bed.fluid.velocity  =  0.015  0.00  0.00
+
+ic.bed.solids  = solid0
+ic.bed.packing = pseudo_random
+
+ic.bed.solid0.volfrac  =  0.275
+
+ic.bed.solid0.velocity =  0.00  0.00  0.00
+
+ic.bed.solid0.diameter = constant
+ic.bed.solid0.diameter.constant =  100.0e-6
+
+ic.bed.solid0.density  = constant
+ic.bed.solid0.density.constant  = 1000.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="boundary-conditions">
+<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Boundary conditions are built from defined regions. The input names are built using the prefix <cite>bc.</cite>, the name of the
+region to apply the BC, and the name of the phase (e.g., <cite>myfluid</cite>).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bc.regions</td>
+<td>Regions used to define boundary conditions.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The type of the boundary conditions in the BC region must be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bc.[region]</td>
+<td><p class="first">Used to define boundary condition type. Available options include:</p>
+<ul class="last simple">
+<li>‘pi’  for pressure inflow BC type</li>
+<li>‘po’  for pressure outflow BC type</li>
+<li>‘mi’  for mass inflow BC type</li>
+<li>‘nsw’ for no-slip wall BC type</li>
+<li>‘eb’  for setting inhomogeneous Dirichlet BCs on the contained EBs</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For a fluid phase, the following inputs can be defined.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volfrac</td>
+<td>Volume fraction [required if bc_region_type=’mi’]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>pressure</td>
+<td>Fluid pressure [required if bc_region_type=’po’ or ‘pi’]</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>temperature</td>
+<td>Fluid temperature [required if bc_region_type=’mi’ or ‘pi’]</td>
+<td>Real</td>
+<td>0.0</td>
+</tr>
+<tr class="row-odd"><td>velocity</td>
+<td>Velocity components [required if bc_region_type=’mi’]</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>delp_dir</td>
+<td>Direction for specified pressure drop. Note that this direction
+should also be periodic.</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>delp</td>
+<td>Pressure drop (Pa)</td>
+<td>Real</td>
+<td>0.0</td>
+</tr>
+<tr class="row-even"><td>species.[specie0]</td>
+<td>Specie [specie0] mass fraction [required if advect_fluid_species=1
+and bc_region_type=’mi’ or ‘pi’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying boundary conditions for a fluid <cite>myfluid</cite>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bc.regions = inflow outflow
+
+bc.inflow = mi
+bc.inflow.myfluid.volfrac     =  1.0
+bc.inflow.myfluid.velocity    =  0.015  0.0  0.0
+bc.inflow.myfluid.temperature =  300
+bc.inflow.myfluid.species.O2  =  0.0
+bc.inflow.myfluid.species.CO  =  0.5
+bc.inflow.myfluid.species.H2O =  0.0
+bc.inflow.myfluid.species.He  =  0.5
+
+bc.outflow = po
+bc.outflow.myfluid.pressure =  0.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="boundary-conditions-on-embedded-boundaries">
+<h2>Boundary Conditions on Embedded Boundaries<a class="headerlink" href="#boundary-conditions-on-embedded-boundaries" title="Permalink to this headline">¶</a></h2>
+<p>In MFIX-Exa it is possible to set boundary conditions on the embedded
+boundaries. For instance, it is possible to set inhomogeneous Dirichlet boundary
+conditions for the fluid temperature variable on the subpart of the embedded
+boundaries which is contained in the BC region (which in this case has to be
+tridimensional). We recall that, on the remaining part of the EBs, homogeneous
+Neumann boundary conditions are assumed by default.</p>
+<p>In the following table there is a list of the possible entries for EB boundary
+conditions. Each entry must be preceeded by <cite>bc.[region0].</cite></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>eb.temperature</td>
+<td>Inhomogeneous Dirichlet BC value for temperature on EBs contained in
+the (tridimensional) region [required if advect_enthalpy=1 and
+bc_region_type=’eb’].</td>
+<td>Real</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying boundary conditions for a fluid <cite>myfluid</cite>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bc.regions = hot-wall
+
+bc.hot-walls = eb
+bc.hot-walls.eb.temperature = 800
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InputsDrag.html" class="btn btn-neutral float-right" title="Drag Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Inputs_Chapter.html" class="btn btn-neutral float-left" title="Run-time Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, MFiX-Exa Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

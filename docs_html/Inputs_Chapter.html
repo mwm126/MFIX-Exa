@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Problem Definition" href="InputsProblemDefinition.html" />
-    <link rel="prev" title="Regression testing" href="RegressionTesting.html" /> 
+    <link rel="next" title="Problem Definition" href="inputs/InputsProblemDefinition.html" />
+    <link rel="prev" title="Using Paraview" href="getting_started/Paraview.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,31 +82,39 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">User guide:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run-time Inputs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Drag Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsMultigrid.html">Multigrid Inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsProblemDefinition.html">Units, mesh, geometry, species, fluid, DEM, regions, inital and boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsDrag.html">Particle drag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsTimeStepping.html">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsMultigrid.html">Multigrid Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsPlotFiles.html">Plotfiles and Other Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsCheckpoint.html">Checkpoint/Restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsMonitors.html">Monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/InputsVerbosity.html">Verbosity</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tests and Benchmarks:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CITests.html">Continuous Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NightlyTests.html">Nightly Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qb/index.html">Qualitative Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 </ul>
 
             
@@ -173,18 +181,37 @@
             
   <div class="section" id="run-time-inputs">
 <span id="chap-inputs"></span><h1>Run-time Inputs<a class="headerlink" href="#run-time-inputs" title="Permalink to this headline">¶</a></h1>
+<p>Run-time inputs are used to control the simulation setup such as the grid,
+solver settings, geometry, boundary conditions etc. These <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span> <span class="pre">=</span> <span class="pre">&lt;value(s)&gt;</span></code>
+pairs are saved in a text file, with any file name, that is passed to the
+MFiX-Exa executable at run time:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./mfix my_project.inputs
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Traditionally, input files have been named <code class="docutils literal notranslate"><span class="pre">inputs</span></code>. However, it is
+recommended that you provide a descriptive name with an extension of
+<code class="docutils literal notranslate"><span class="pre">.inputs</span></code> such as <code class="docutils literal notranslate"><span class="pre">fluid_bed.inputs</span></code></p>
+</div>
+<p>The input text file looks something like this:</p>
+<p>where comments are denoted with a <code class="docutils literal notranslate"><span class="pre">#</span></code>. If a value is not specified for a key,
+the default value will be used.</p>
+<p>The following sections contain information addressing the input keywords and
+values for setting up a problem. Pay special attention to any prefixes for the
+keywords such as <code class="docutils literal notranslate"><span class="pre">mfix</span></code>, <code class="docutils literal notranslate"><span class="pre">amr</span></code>, <code class="docutils literal notranslate"><span class="pre">geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">nodal_proj</span></code> etc.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="InputsProblemDefinition.html">Problem Definition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsDrag.html">Drag Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsMultigrid.html">Multigrid Inputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsPlotFiles.html">Plotfiles and Other Output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsProblemDefinition.html">Units, mesh, geometry, species, fluid, DEM, regions, inital and boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsDrag.html">Particle drag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsTimeStepping.html">Time Stepping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsMultigrid.html">Multigrid Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsPlotFiles.html">Plotfiles and Other Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsCheckpoint.html">Checkpoint/Restart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsMonitors.html">Monitors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs/InputsVerbosity.html">Verbosity</a></li>
 </ul>
 </div>
 </div>
@@ -197,10 +224,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="InputsProblemDefinition.html" class="btn btn-neutral float-right" title="Problem Definition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="inputs/InputsProblemDefinition.html" class="btn btn-neutral float-right" title="Problem Definition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="RegressionTesting.html" class="btn btn-neutral float-left" title="Regression testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting_started/Paraview.html" class="btn btn-neutral float-left" title="Using Paraview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

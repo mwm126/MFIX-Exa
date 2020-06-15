@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MFiX-Exa Introduction" href="Introduction.html" /> 
+    <link rel="next" title="Introduction" href="Introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,19 +81,27 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">User guide:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tests and Benchmarks:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CITests.html">Continuous Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NightlyTests.html">Nightly Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qb/index.html">Qualitative Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 </ul>
 
             
@@ -160,27 +168,58 @@
             
   <div class="section" id="welcome-to-mfix-exa-s-documentation">
 <h1>Welcome to MFiX-EXA’s documentation!<a class="headerlink" href="#welcome-to-mfix-exa-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>MFiX-Exa is a new multiphase modeling tool for the exascale.  It
-combines kernels from the existing MFiX code with the AMReX framework.</p>
+<p>MFiX-Exa is a new multiphase computational fluid dynamics (CFD) modeling tool
+that can take advantage of massively parallel high performance computers (HPC)
+with the goal of scaling well at exascale.  It combines the underlying physics
+from the existing <a class="reference external" href="https://mfix.netl.doe.gov/">MFiX</a> code with the
+<a class="reference external" href="https://amrex-codes.github.io/amrex/">AMReX</a> framework, creating the next
+generation, high performance, multiphase CFD workhorse.</p>
+<img alt="_images/particle_banner.png" src="_images/particle_banner.png" />
 <p>MFiX-Exa is under active development as part of the MFiX-Exa
-application project in DOE’s Exascale Computing Project.</p>
-<p>All of MFiX-Exa’s development is done in the NETL gitlab repository, with
+application project in DOE’s
+<a class="reference external" href="https://www.exascaleproject.org/">Exascale Computing Project (ECP)</a>. All of
+MFiX-Exa’s development is done in the
+<a class="reference external" href="https://mfix.netl.doe.gov/gitlab/exa/mfix">NETL gitlab repository</a>, with
 active development in the develop branch. Changes are merged into
 the master branch at the beginning of each month.</p>
+<p>When mature, this project will provide a modern multi-level multi-grid fluid
+solver with chemistry, heat transfer, complex geometry, and two particle models:</p>
+<ol class="arabic simple">
+<li><strong>Discrete particle method (DEM)</strong> - Each particle is modeled as a sphere,
+resolving all particle collisions</li>
+<li><strong>Particle in cell method (PIC)</strong> - Particles are group in parcels and see
+other parcels through a stress gradient.</li>
+</ol>
+<p>To get started with MFiX-Exa, follow the user guide sections:</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption"><span class="caption-text">User guide:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+</ul>
+</div>
+<p>To learn more about the implementation, follow the following reference sections:</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+</ul>
+</div>
+<p>The following section detail the testing and benchmarks used to ensure solutions
+and performance:</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Tests and Benchmarks:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CITests.html">Continuous Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NightlyTests.html">Nightly Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qb/index.html">Qualitative Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 </ul>
 </div>
 <div class="section" id="notice">
@@ -211,7 +250,7 @@ accounts of practical applications of this software.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Introduction.html" class="btn btn-neutral float-right" title="MFiX-Exa Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>

@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Regression testing" href="RegressionTesting.html" />
-    <link rel="prev" title="Building MFiX-Exa with gmake" href="BuildingGMake.html" /> 
+    <link rel="prev" title="Debugging" href="Debugging.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,35 +82,36 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Introduction.html">MFiX-Exa Introduction</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="GettingStarted.html">Getting Started</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Structure.html">Directory overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingCMake.html">Building MFiX-Exa with CMake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BuildingGMake.html">Building MFiX-Exa with gmake</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Running the MFiX Test Suite</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#run-all-tests">Run all tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#list-all-tests-without-running-them">List all tests (without running them)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-particular-test-by-the-index-listed-in-ctest-n">Run a particular test by the index listed in ctest -N</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-particular-test-by-name">Run a particular test by name</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-particular-test-via-make">Run a particular test via make</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-specific">Run specific</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-user-defined-case">Run a user-defined case</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
-</ul>
-</li>
+              <p class="caption"><span class="caption-text">User guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Fluids_Chapter.html">Solving the Fluid Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Chapter.html">Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tests and Benchmarks:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running the MFiX Test Suite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-all-tests">Run all tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-all-tests-without-running-them">List all tests (without running them)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-particular-test-by-the-index-listed-in-ctest-n">Run a particular test by the index listed in ctest -N</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-particular-test-by-name">Run a particular test by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-particular-test-via-make">Run a particular test via make</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-specific">Run specific</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-user-defined-case">Run a user-defined case</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="RegressionTesting.html">Regression testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CITests.html">Continuous Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NightlyTests.html">Nightly Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qb/index.html">Qualitative Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 </ul>
 
             
@@ -155,8 +156,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="GettingStarted.html">Getting Started</a> &raquo;</li>
         
       <li>Running the MFiX Test Suite</li>
     
@@ -266,7 +265,7 @@ still defined in <em>mfix.dat</em>.</p>
         <a href="RegressionTesting.html" class="btn btn-neutral float-right" title="Regression testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="BuildingGMake.html" class="btn btn-neutral float-left" title="Building MFiX-Exa with gmake" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Debugging.html" class="btn btn-neutral float-left" title="Debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

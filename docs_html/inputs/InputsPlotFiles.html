@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plotfiles and Other Output &mdash; MFiX-Exa  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Checkpoint/Restart" href="InputsCheckpoint.html" />
+    <link rel="prev" title="Multigrid Inputs" href="InputsMultigrid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MFiX-Exa
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User guide:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Inputs_Chapter.html">Run-time Inputs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="InputsProblemDefinition.html">Units, mesh, geometry, species, fluid, DEM, regions, inital and boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsDrag.html">Particle drag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsTimeStepping.html">Time Stepping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsInitialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsLoadBalancing.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsMultigrid.html">Multigrid Inputs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotfiles and Other Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsCheckpoint.html">Checkpoint/Restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsMonitors.html">Monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InputsVerbosity.html">Verbosity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Fluids_Chapter.html">Solving the Fluid Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Particles_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Debugging.html">Debugging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tests and Benchmarks:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../RunningTestSuite.html">Running the MFiX Test Suite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RegressionTesting.html">Regression testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CITests.html">Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NightlyTests.html">Nightly Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qb/index.html">Qualitative Benchmarks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MFiX-Exa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
+        
+      <li>Plotfiles and Other Output</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/inputs/InputsPlotFiles.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plotfiles-and-other-output">
+<span id="chap-inputsplotfiles"></span><h1>Plotfiles and Other Output<a class="headerlink" href="#plotfiles-and-other-output" title="Permalink to this headline">¶</a></h1>
+<p>The following inputs must be preceded by “amr” and control frequency and naming of plotfile generation as well
+as whether the EB geometry or level set should be written out, and if the particles should be written out in Ascii
+format (for debugging).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first">plot_int</p>
+<p>plot_per_exact</p>
+<p class="last">plot_per_approx</p>
+</td>
+<td>Frequency of plotfile output;
+if -1 then no plotfiles will be written at this frequency
+Time period of plotfile output (exact); will modify dt
+if -1 then no plotfiles will be written at this frequency
+Time period of plotfile output (approximate); does not modify dt
+if -1 then no plotfiles will be written at this frequency</td>
+<td><p class="first">Int</p>
+<p>Real</p>
+<p class="last">Real</p>
+</td>
+<td><p class="first">-1</p>
+<p>-1</p>
+<p class="last">-1</p>
+</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>plotfile_on_restart</td>
+<td>Should we write a plotfile when we restart (only used if plot_int&gt;0)</td>
+<td>Bool</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>plot_file</td>
+<td>Prefix to use for plotfile output</td>
+<td>String</td>
+<td>plt</td>
+</tr>
+<tr class="row-even"><td>write_ls</td>
+<td>Should we write a plotfile holding the level set and volfrac?
+If true, it will only be written once,after initialization or restart</td>
+<td>Bool</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>write_eb_surface</td>
+<td>Should we write out the EB geometry in vtp format
+If true, it will only be written once,after initialization or restart</td>
+<td>Bool</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>par_ascii_file</td>
+<td>Prefix to use for ascii particle output</td>
+<td>String</td>
+<td>par</td>
+</tr>
+<tr class="row-odd"><td>par_ascii_int</td>
+<td>Frequency of ascii particle output;
+if -1 then no plotfiles will be written</td>
+<td>Int</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by “amr” and control what variables will be written in plotfiles.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="61%" />
+<col width="11%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>plt_regtest</td>
+<td>Save all variables to plot file (overrides all other IO flags)</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_vel_g</td>
+<td>Save fluid velocity data to plot file</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>plt_ep_g</td>
+<td>Save fluid volume fraction to plot file</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>plt_p_g</td>
+<td>Save fluid pressure to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_ro_g</td>
+<td>Save fluid density to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_mu_g</td>
+<td>Save fluid viscosity to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_diveu</td>
+<td>Save div(ep_g . u) to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_volfrac</td>
+<td>Save Eulerian grid volume fraction (from cut cells) to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_gradp_g</td>
+<td>Save gradient of pressure filed to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_vort</td>
+<td>Save vorticity to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_vel_p</td>
+<td>Save particle velocity to plot file</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>plt_radius</td>
+<td>Save particle radius to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_volume</td>
+<td>Save particle volume to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_volume</td>
+<td>Save particle volume to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_mass</td>
+<td>Save particle mass to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_ro_p</td>
+<td>Save particle density to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_omoi</td>
+<td>Save (one divided by the) particle momentum of inertia to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_mass</td>
+<td>Save particle mass to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_omega_p</td>
+<td>Save particle angular velocity to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>plt_drag_p</td>
+<td>Save particle drag force to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>plt_phase</td>
+<td>Save particle type to plot file</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InputsCheckpoint.html" class="btn btn-neutral float-right" title="Checkpoint/Restart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="InputsMultigrid.html" class="btn btn-neutral float-left" title="Multigrid Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, MFiX-Exa Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
