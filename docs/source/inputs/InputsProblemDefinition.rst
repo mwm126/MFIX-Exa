@@ -90,22 +90,31 @@ MFIX-Exa settings
 
 The following inputs must be preceded by "mfix."
 
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
-|                      | Description                                                             |   Type   | Default   |
-+======================+=========================================================================+==========+===========+
-| geometry             | Which type of EB geometry are we using?                                 |   String |           |
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
-| levelset__refinement | Refinement factor of levelset resolution relative to level 0 resolution |   Int    | 1         |
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
-| po_no_par_out        | Let particles exit (default) or bounce-back at pressure outflows        |   Int    | 0         |
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
-| gravity              | Gravity vector (e.g., mfix.gravity = -9.81  0.0  0.0) [required]        |  Reals   |  None     |
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
-| advect_enthalpy      | Switch for turning ON (1) or OFF (0) fluid temperature evolution        |   Int    | 0         |
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
-| advect_fluid_species | Switch for turning ON (1) or OFF (0) fluid species mass fraction        |   Int    | 0         |
-|                      | evolution                                                               |          |           |
-+----------------------+-------------------------------------------------------------------------+----------+-----------+
++------------------------+-------------------------------------------------------------------+----------+-----------+
+|                        | Description                                                       |   Type   | Default   |
++========================+===================================================================+==========+===========+
+| geometry               | Which type of EB geometry are we using?                           |   String |           |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| levelset__refinement   | Refinement factor of levelset resolution relative to level 0      |   Int    | 1         |
+|                        | resolution                                                        |          |           |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| po_no_par_out          | Let particles exit (default) or bounce-back at pressure outflows  |   Int    | 0         |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| gravity                | Gravity vector (e.g., mfix.gravity = -9.81  0.0  0.0) [required]  |  Reals   |  None     |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| advect_density         | Switch for turning ON (1) or OFF (0) fluid density evolution      |   Int    | 0         |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| advect_enthalpy        | Switch for turning ON (1) or OFF (0) fluid temperature evolution  |   Int    | 0         |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| advect_fluid_species   | Switch for turning ON (1) or OFF (0) fluid species mass fraction  |   Int    | 0         |
+|                        | evolution                                                         |          |           |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| solve_reactions        | Switch for turning ON (1) or OFF (0) inter/intra-phase chemical   |   Int    | 0         |
+|                        | reactions                                                         |          |           |
++------------------------+-------------------------------------------------------------------+----------+-----------+
+| open_system_constraint | Switch for turning ON (1) or OFF (0) the open-system constraint.  |   Int    | 0         |
+|                        | By default, the cold-flow constraint is used.                     |          |           |
++------------------------+-------------------------------------------------------------------+----------+-----------+
 
 
 Species model settings
@@ -122,19 +131,32 @@ Enabling the species mass fraction solver and specifying species model options.
 +----------------------+-------------------------------------------------------------------------+----------+-----------+
 
 
-The following inputs must be preceded by the given to the species solver e.g., "species."
+The following inputs must be preceded by the "species." prefix
 
-+-------------------------------+----------------------------------------------------------------+----------+-----------+
-|                               | Description                                                    |   Type   | Default   |
-+===============================+================================================================+==========+===========+
-| diffusivity                   | Specify which diffusivity model to use for species [required]. | String   |  None     |
-|                               | Available options include:                                     |          |           |
-|                               |                                                                |          |           |
-|                               | * 'constant' for constant diffusivity model                    |          |           |
-+-------------------------------+----------------------------------------------------------------+----------+-----------+
-| [specie0].diffusivity         | Value of constant species diffusivity. [required if            |  Real    |  None     |
-|                               | diffusivity_model='constant'].                                 |          |           |
-+-------------------------------+----------------------------------------------------------------+----------+-----------+
++----------------------------------+-------------------------------------------------------+----------+-----------+
+|                                  | Description                                           |   Type   | Default   |
++==================================+=======================================================+==========+===========+
+| [specie0].molecular_weight       | Value of species molecular weight. [required if       |  Real    |  0        |
+|                                  | fluid.molecular_weight='mixture'].                    |          |           |
++----------------------------------+-------------------------------------------------------+----------+-----------+
+| diffusivity                      | Specify which diffusivity model to use for species    | String   |  None     |
+|                                  | [required].                                           |          |           |
+|                                  | Available options include:                            |          |           |
+|                                  |                                                       |          |           |
+|                                  | * 'constant' for constant diffusivity model           |          |           |
++----------------------------------+-------------------------------------------------------+----------+-----------+
+| [specie0].diffusivity.constant   | Value of constant species diffusivity. [required if   |  Real    |  None     |
+|                                  | diffusivity_model='constant'].                        |          |           |
++----------------------------------+-------------------------------------------------------+----------+-----------+
+| specific_heat                    | Specify which specific heat model to use for species  | String   |  None     |
+|                                  | [required if fluid.molecular_weight='mixture'].       |          |           |
+|                                  | Available options include:                            |          |           |
+|                                  |                                                       |          |           |
+|                                  | * 'constant' for constant specific heat model         |          |           |
++----------------------------------+-------------------------------------------------------+----------+-----------+
+| [specie0].specific_heat.constant | Value of constant species diffusivity. [required if   |  Real    |  None     |
+|                                  | diffusivity_model='constant'].                        |          |           |
++----------------------------------+-------------------------------------------------------+----------+-----------+
 
 Below is an example for specifying species solver model options.
 
@@ -142,11 +164,21 @@ Below is an example for specifying species solver model options.
 
    species.solve = O2 H2O He
 
+   species.O2.molecular_weight = 32.0
+   species.H2O.molecular_weight = 18.01528
+   species.He.molecular_weight = 4.0
+
    species.diffusivity = constant
 
-   species.O2.diffusivity = 1.9e-5
-   species.H2O.diffusivity = 2.4e-5
-   species.He.diffusivity = 7.1e-5
+   species.O2.diffusivity.constant = 1.9e-5
+   species.H2O.diffusivity.constant = 2.4e-5
+   species.He.diffusivity.constant = 7.1e-5
+
+   species.specific_heat = constant
+
+   species.O2.specific_heat.constant = 918.0
+   species.H2O.specific_heat.constant = 4186.0
+   species.He.specific_heat.constant = 1667.0
 
 
 Fluid model settings
@@ -172,8 +204,17 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 |                               |                                                                |          |           |
 |                               | * 'constant' for constant density model                        |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
-| density.constant              | Value of constant fluid density [required if density_model=    |  Real    |  None     |
+| density.constant              | Value of constant fluid density [required if density=          |  Real    |  None     |
 |                               | 'constant'].                                                   |          |           |
++-------------------------------+----------------------------------------------------------------+----------+-----------+
+| molecular_weight              | Specify which molecular weight model to use for fluid.         | String   | Constant  |
+|                               | Available options include:                                     |          |           |
+|                               |                                                                |          |           |
+|                               | * 'constant' for constant molecular weight model               |          |           |
+|                               | * 'mixture' for species-mixture molecular weight model         |          |           |
++-------------------------------+----------------------------------------------------------------+----------+-----------+
+| molecular_weight.constant     | Value of constant fluid molecular weight [required if          |  Real    |    0      |
+|                               | molecular_weight='constant'].                                  |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | viscosity                     | Specify which viscosity model to use for fluid [required].     | String   |  None     |
 |                               | Available options include:                                     |          |           |
@@ -200,6 +241,8 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 |                               | thermal_conductivity_model='constant'].                        |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | species                       | Specify which species can constitute the fluid phase           | String   |  None     |
+|                               | [defined species must be a subset of the species.solve         |          |           |
+|                               |  arguments]                                                    |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 
 Below is an example for specifying fluid solver model options.
@@ -211,6 +254,8 @@ Below is an example for specifying fluid solver model options.
    myfluid.density = constant
    myfluid.density.constant = 1.0
 
+   myfluid.molecular_weight = mixture
+
    myfluid.viscosity = constant
    myfluid.viscosity.constant = 1.8e-5
 
@@ -220,7 +265,94 @@ Below is an example for specifying fluid solver model options.
    myfluid.thermal_conductivity = constant
    myfluid.thermal_conductivity.constant = 0.024
 
-   myfluid.species = O2 H2O He N2 CO
+   myfluid.species = O2 He
+
+
+Solids model settings
+---------------------
+
+Enabling the SOLIDS solver and specifying options common to both DEM and PIC
+models.
+
++-------------------------+----------------------------------------------------------------------+----------+-----------+
+|                         | Description                                                          |   Type   | Default   |
++=========================+======================================================================+==========+===========+
+| solids.types            | Specified name(s) of the SOLIDS types or None to disable the SOLIDS  | String   |  None     |
+|                         | solver. The user defined names are used to specify DEM and/or PIC    |          |           |
+|                         | model inputs.                                                        |          |           |
++-------------------------+----------------------------------------------------------------------+----------+-----------+
+
+The following inputs define the single solids properties.
+
++------------------------------------+--------------------------------------------------------+----------+-----------+
+|                                    | Description                                            |   Type   | Default   |
++====================================+========================================================+==========+===========+
+| [solid0].molecular_weight          | Specify which molecular weight model to use for solid. |  String  |  Constant |
+|                                    | Available options include:                             |          |           |
+|                                    |                                                        |          |           |
+|                                    | * 'constant' for constant molecular weight model       |          |           |
++------------------------------------+--------------------------------------------------------+----------+-----------+
+| [solid0].molecular_weight.constant | Value of constant solid molecular weight [required if  |  Real    |  0        |
+|                                    | molecular_weight='constant'].                          |          |           |
++------------------------------------+--------------------------------------------------------+----------+-----------+
+| [solid0].specific_heat             | Specify which specific heat model to use for solid.    |  String  |  None     |
+|                                    | Available options include:                             |          |           |
+|                                    |                                                        |          |           |
+|                                    | * 'constant' for constant specific heat model          |          |           |
++------------------------------------+--------------------------------------------------------+----------+-----------+
+| [solid0].specific_heat.constant    | Value of species molecular weight. [required if        |  Real    |  0        |
+|                                    | fluid.specific_heat='constant'].                       |          |           |
++------------------------------------+--------------------------------------------------------+----------+-----------+
+| [solid0].species                   | Specify which species can constitute the fluid phase   |  String  |  None     |
+|                                    | [defined species must be a subset of the species.solve |          |           |
+|                                    |  arguments].                                           |          |           |
++------------------------------------+--------------------------------------------------------+----------+-----------+
+
+Below is an example for specifying the solids solver model options.
+
+.. code-block:: none
+
+   solids.types = mysolid
+
+   mysolid.molecular_weight = constant
+   mysolid.molecular_weight.constant = 18.01528
+
+   mysolid.specific_heat = constant
+   mysolid.specific_heat.constant = 918
+
+   mysolid.species = H2O
+
+
+Chemical Reactions model settings
+---------------------------------
+
+Enabling the Chemical Reactions solver and specifying model options.
+
++-------------------------+----------------------------------------------------------------------+----------+-----------+
+|                         | Description                                                          |   Type   | Default   |
++=========================+======================================================================+==========+===========+
+| chemistry.solve         | Specified name(s) of the chemical reactions types or None to disable | String   |  None     |
+|                         | the reactions solver.                                                |          |           |
++-------------------------+----------------------------------------------------------------------+----------+-----------+
+
+The following inputs must be preceded by the "chemistry." prefix
+
++------------------------+---------------------------------------------------------+----------+-----------+
+|                        | Description                                             |   Type   | Default   |
++========================+=========================================================+==========+===========+
+| [reaction0].reaction   | Chemical formula for the given reaction. The string     |  String  |  None     |
+|                        | given as input must not contain white spaces and        |          |           |
+|                        | the reaction direction has to be specified as '-->'     |          |           |
+|                        | or '<--'. Chemical species phases must be defined as    |          |           |
+|                        | '(g)' for the fluid phase or '(s)' for the solid phase. |          |           |
++------------------------+---------------------------------------------------------+----------+-----------+
+
+.. code-block:: none
+
+   chemistry.solve = myreaction0 myreaction1
+
+   myreaction0.reaction = CH4(g)+2O2(g)-->CO2(g)+2H2O(g)
+   myreaction1.reaction = C(s)+0.5O2(g)-->CO(g)
 
 
 DEM model settings
@@ -348,6 +480,8 @@ For a fluid phase, the following inputs can be defined.
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | velocity            | Velocity components                                                   | Reals       | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| species.[species0]  | Species 'species0' mass fraction                                      | Reals       | None      |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
 
 The name of the DEM phases to be defined in the IC region and the packing must be defined.
@@ -375,6 +509,8 @@ For each solid, the following inputs may be defined.
 | volfrac             | Volume fraction                                                       | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | temperature         | Fluid temperature                                                     | Real        | None      |
++---------------------+-----------------------------------------------------------------------+-------------+-----------+
+| species.[species0]  | Species 'species0' mass fraction                                      | Real        | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | velocity            | Velocity components                                                   | Reals       | None      |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
@@ -423,11 +559,18 @@ Below is an example for specifying an initial condition for a fluid (fluid) and 
    ic.bed.fluid.volfrac   =  0.725
 
    ic.bed.fluid.velocity  =  0.015  0.00  0.00
+   ic.bed.fluid.temperature =  383.0
+   ic.bed.fluid.species.H20 =  0.3
+   ic.bed.fluid.species.He =  0.2
+   ic.bed.fluid.species.O2 =  0.5
 
    ic.bed.solids  = solid0
    ic.bed.packing = pseudo_random
 
    ic.bed.solid0.volfrac  =  0.275
+   ic.bed.solid0.temperature  =  400.0
+   ic.bed.solid0.species.C  =  0.4
+   ic.bed.solid0.species.H20  =  0.6
 
    ic.bed.solid0.velocity =  0.00  0.00  0.00
 
@@ -483,7 +626,7 @@ For a fluid phase, the following inputs can be defined.
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 | delp                | Pressure drop (Pa)                                                    | Real        | 0.0       |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
-| species.[specie0]   | Specie [specie0] mass fraction [required if advect_fluid_species=1    | Real        | None      |
+| species.[species0]  | Species 'species0' mass fraction [required if advect_fluid_species=1  | Real        | None      |
 |                     | and bc_region_type='mi' or 'pi'].                                     |             |           |
 +---------------------+-----------------------------------------------------------------------+-------------+-----------+
 
