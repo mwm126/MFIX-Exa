@@ -242,7 +242,7 @@ The following inputs must be preceded by the given to the fluid solver e.g., "fl
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 | species                       | Specify which species can constitute the fluid phase           | String   |  None     |
 |                               | [defined species must be a subset of the species.solve         |          |           |
-|                               |  arguments]                                                    |          |           |
+|                               | arguments]                                                     |          |           |
 +-------------------------------+----------------------------------------------------------------+----------+-----------+
 
 Below is an example for specifying fluid solver model options.
@@ -305,7 +305,7 @@ The following inputs define the single solids properties.
 +------------------------------------+--------------------------------------------------------+----------+-----------+
 | [solid0].species                   | Specify which species can constitute the fluid phase   |  String  |  None     |
 |                                    | [defined species must be a subset of the species.solve |          |           |
-|                                    |  arguments].                                           |          |           |
+|                                    | arguments].                                            |          |           |
 +------------------------------------+--------------------------------------------------------+----------+-----------+
 
 Below is an example for specifying the solids solver model options.
