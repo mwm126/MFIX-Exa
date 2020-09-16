@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['radius',['radius',['../structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a66b742a73d42b0f812555560c262b6fe',1,'realData']]],
-  ['random_5ffill_5fdem',['random_fill_dem',['../class_particles_generator.html#aea1da9b589d2b712d038caad6eabdafc',1,'ParticlesGenerator']]],
-  ['random_5ffill_5fpic',['random_fill_pic',['../class_particles_generator.html#a9aab7c3c9ba12d5c5557f3b069e7afeb',1,'ParticlesGenerator']]],
+  ['radius',['radius',['../structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe',1,'realData']]],
+  ['random_5ffill_5fdem',['random_fill_dem',['../class_particles_generator.html#a21b725f0d8410f942a2e9a621fd6b7a8',1,'ParticlesGenerator']]],
+  ['random_5ffill_5fpic',['random_fill_pic',['../class_particles_generator.html#a82ab3ce0bd62dfc58eb4c63acc071112',1,'ParticlesGenerator']]],
+  ['reactionratestype',['ReactionRatesType',['../struct_reaction_rates_type.html',1,'']]],
+  ['reactionsdata',['reactionsData',['../structreactions_data.html',1,'']]],
   ['readparameters',['ReadParameters',['../main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63',1,'main.cpp']]],
   ['realdata',['realData',['../structreal_data.html',1,'']]],
   ['regrid',['Regrid',['../classmfix.html#ade9fe369f6b58b374cc706a5160c29b3',1,'mfix']]],
@@ -18,5 +20,6 @@ var searchData=
   ['resetiochkdata',['ResetIOChkData',['../classmfix.html#a9ef90289159ecc06bb1ab6e5f8566792',1,'mfix']]],
   ['resizearrays',['ResizeArrays',['../classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8',1,'mfix']]],
   ['restart',['Restart',['../classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a',1,'mfix']]],
-  ['restart_5ffile',['restart_file',['../main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5',1,'main.cpp']]]
+  ['restart_5ffile',['restart_file',['../main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5',1,'main.cpp']]],
+  ['rratesuser',['RRatesUser',['../struct_reaction_rates_type.html#ab68c27ebbc9cc37fc79b297c12716999abe57f6cb58e7c52957301f8620c779ae',1,'ReactionRatesType']]]
 ];

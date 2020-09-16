@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['realdata',['realData',['../structreal_data.html',1,'']]]
+  ['particlesgenerator',['ParticlesGenerator',['../class_particles_generator.html',1,'']]]
 ];

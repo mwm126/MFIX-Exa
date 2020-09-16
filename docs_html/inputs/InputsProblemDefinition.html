@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,19 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -30,11 +36,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Drag Types" href="InputsDrag.html" />
@@ -52,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> MFiX-Exa
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MFiX-Exa
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -94,6 +96,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#mfix-exa-settings">MFIX-Exa settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#species-model-settings">Species model settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fluid-model-settings">Fluid model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solids-model-settings">Solids model settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chemical-reactions-model-settings">Chemical Reactions model settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dem-model-settings">DEM model settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#region-definitions">Region definitions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#initial-conditions">Initial Conditions</a></li>
@@ -133,6 +137,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -171,7 +176,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../Inputs_Chapter.html">Run-time Inputs</a> &raquo;</li>
         
@@ -343,10 +348,10 @@ file.</p>
 <p>The following inputs must be preceded by “mfix.”</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="63%" />
+<col width="21%" />
+<col width="60%" />
 <col width="9%" />
-<col width="9%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -362,7 +367,8 @@ file.</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>levelset__refinement</td>
-<td>Refinement factor of levelset resolution relative to level 0 resolution</td>
+<td>Refinement factor of levelset resolution relative to level 0
+resolution</td>
 <td>Int</td>
 <td>1</td>
 </tr>
@@ -376,14 +382,31 @@ file.</p>
 <td>Reals</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>advect_enthalpy</td>
+<tr class="row-even"><td>advect_density</td>
+<td>Switch for turning ON (1) or OFF (0) fluid density evolution</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>advect_enthalpy</td>
 <td>Switch for turning ON (1) or OFF (0) fluid temperature evolution</td>
 <td>Int</td>
 <td>0</td>
 </tr>
-<tr class="row-odd"><td>advect_fluid_species</td>
+<tr class="row-even"><td>advect_fluid_species</td>
 <td>Switch for turning ON (1) or OFF (0) fluid species mass fraction
 evolution</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>solve_reactions</td>
+<td>Switch for turning ON (1) or OFF (0) inter/intra-phase chemical
+reactions</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>open_system_constraint</td>
+<td>Switch for turning ON (1) or OFF (0) the open-system constraint.
+By default, the cold-flow constraint is used.</td>
 <td>Int</td>
 <td>0</td>
 </tr>
@@ -417,13 +440,13 @@ inputs.</td>
 </tr>
 </tbody>
 </table>
-<p>The following inputs must be preceded by the given to the species solver e.g., “species.”</p>
+<p>The following inputs must be preceded by the “species.” prefix</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="27%" />
-<col width="55%" />
+<col width="31%" />
+<col width="50%" />
 <col width="9%" />
-<col width="9%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">&#160;</th>
@@ -433,8 +456,15 @@ inputs.</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>diffusivity</td>
-<td><p class="first">Specify which diffusivity model to use for species [required].
+<tr class="row-even"><td>[specie0].molecular_weight</td>
+<td>Value of species molecular weight. [required if
+fluid.molecular_weight=’mixture’].</td>
+<td>Real</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>diffusivity</td>
+<td><p class="first">Specify which diffusivity model to use for species
+[required].
 Available options include:</p>
 <ul class="last simple">
 <li>‘constant’ for constant diffusivity model</li>
@@ -443,7 +473,24 @@ Available options include:</p>
 <td>String</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>[specie0].diffusivity</td>
+<tr class="row-even"><td>[specie0].diffusivity.constant</td>
+<td>Value of constant species diffusivity. [required if
+diffusivity_model=’constant’].</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>specific_heat</td>
+<td><p class="first">Specify which specific heat model to use for species
+[required if fluid.molecular_weight=’mixture’].
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant specific heat model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-even"><td>[specie0].specific_heat.constant</td>
 <td>Value of constant species diffusivity. [required if
 diffusivity_model=’constant’].</td>
 <td>Real</td>
@@ -454,11 +501,21 @@ diffusivity_model=’constant’].</td>
 <p>Below is an example for specifying species solver model options.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>species.solve = O2 H2O He
 
+species.O2.molecular_weight = 32.0
+species.H2O.molecular_weight = 18.01528
+species.He.molecular_weight = 4.0
+
 species.diffusivity = constant
 
-species.O2.diffusivity = 1.9e-5
-species.H2O.diffusivity = 2.4e-5
-species.He.diffusivity = 7.1e-5
+species.O2.diffusivity.constant = 1.9e-5
+species.H2O.diffusivity.constant = 2.4e-5
+species.He.diffusivity.constant = 7.1e-5
+
+species.specific_heat = constant
+
+species.O2.specific_heat.constant = 918.0
+species.H2O.specific_heat.constant = 4186.0
+species.He.specific_heat.constant = 1667.0
 </pre></div>
 </div>
 </div>
@@ -515,10 +572,27 @@ Available options include:</p>
 <td>None</td>
 </tr>
 <tr class="row-odd"><td>density.constant</td>
-<td>Value of constant fluid density [required if density_model=
+<td>Value of constant fluid density [required if density=
 ‘constant’].</td>
 <td>Real</td>
 <td>None</td>
+</tr>
+<tr class="row-even"><td>molecular_weight</td>
+<td><p class="first">Specify which molecular weight model to use for fluid.
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant molecular weight model</li>
+<li>‘mixture’ for species-mixture molecular weight model</li>
+</ul>
+</td>
+<td>String</td>
+<td>Constant</td>
+</tr>
+<tr class="row-odd"><td>molecular_weight.constant</td>
+<td>Value of constant fluid molecular weight [required if
+molecular_weight=’constant’].</td>
+<td>Real</td>
+<td>0</td>
 </tr>
 <tr class="row-even"><td>viscosity</td>
 <td><p class="first">Specify which viscosity model to use for fluid [required].
@@ -569,7 +643,9 @@ thermal_conductivity_model=’constant’].</td>
 <td>None</td>
 </tr>
 <tr class="row-even"><td>species</td>
-<td>Specify which species can constitute the fluid phase</td>
+<td>Specify which species can constitute the fluid phase
+[defined species must be a subset of the species.solve
+arguments]</td>
 <td>String</td>
 <td>None</td>
 </tr>
@@ -581,6 +657,8 @@ thermal_conductivity_model=’constant’].</td>
 myfluid.density = constant
 myfluid.density.constant = 1.0
 
+myfluid.molecular_weight = mixture
+
 myfluid.viscosity = constant
 myfluid.viscosity.constant = 1.8e-5
 
@@ -590,7 +668,165 @@ myfluid.specific_heat.constant = 918
 myfluid.thermal_conductivity = constant
 myfluid.thermal_conductivity.constant = 0.024
 
-myfluid.species = O2 H2O He N2 CO
+myfluid.species = O2 He
+</pre></div>
+</div>
+</div>
+<div class="section" id="solids-model-settings">
+<h2>Solids model settings<a class="headerlink" href="#solids-model-settings" title="Permalink to this headline">¶</a></h2>
+<p>Enabling the SOLIDS solver and specifying options common to both DEM and PIC
+models.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="60%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>solids.types</td>
+<td>Specified name(s) of the SOLIDS types or None to disable the SOLIDS
+solver. The user defined names are used to specify DEM and/or PIC
+model inputs.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs define the single solids properties.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="50%" />
+<col width="9%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[solid0].molecular_weight</td>
+<td><p class="first">Specify which molecular weight model to use for solid.
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant molecular weight model</li>
+</ul>
+</td>
+<td>String</td>
+<td>Constant</td>
+</tr>
+<tr class="row-odd"><td>[solid0].molecular_weight.constant</td>
+<td>Value of constant solid molecular weight [required if
+molecular_weight=’constant’].</td>
+<td>Real</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>[solid0].specific_heat</td>
+<td><p class="first">Specify which specific heat model to use for solid.
+Available options include:</p>
+<ul class="last simple">
+<li>‘constant’ for constant specific heat model</li>
+</ul>
+</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>[solid0].specific_heat.constant</td>
+<td>Value of species molecular weight. [required if
+fluid.specific_heat=’constant’].</td>
+<td>Real</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>[solid0].species</td>
+<td>Specify which species can constitute the fluid phase
+[defined species must be a subset of the species.solve
+arguments].</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Below is an example for specifying the solids solver model options.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>solids.types = mysolid
+
+mysolid.molecular_weight = constant
+mysolid.molecular_weight.constant = 18.01528
+
+mysolid.specific_heat = constant
+mysolid.specific_heat.constant = 918
+
+mysolid.species = H2O
+</pre></div>
+</div>
+</div>
+<div class="section" id="chemical-reactions-model-settings">
+<h2>Chemical Reactions model settings<a class="headerlink" href="#chemical-reactions-model-settings" title="Permalink to this headline">¶</a></h2>
+<p>Enabling the Chemical Reactions solver and specifying model options.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="60%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>chemistry.solve</td>
+<td>Specified name(s) of the chemical reactions types or None to disable
+the reactions solver.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The following inputs must be preceded by the “chemistry.” prefix</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="56%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[reaction0].reaction</td>
+<td>Chemical formula for the given reaction. The string
+given as input must not contain white spaces and
+the reaction direction has to be specified as ‘–&gt;’
+or ‘&lt;–’. Chemical species phases must be defined as
+‘(g)’ for the fluid phase or ‘(s)’ for the solid phase.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chemistry.solve = myreaction0 myreaction1
+
+myreaction0.reaction = CH4(g)+2O2(g)--&gt;CO2(g)+2H2O(g)
+myreaction1.reaction = C(s)+0.5O2(g)--&gt;CO(g)
 </pre></div>
 </div>
 </div>
@@ -827,6 +1063,11 @@ region to apply the IC, and the name of the phase (e.g., <cite>myfluid</cite>).<
 <td>Reals</td>
 <td>None</td>
 </tr>
+<tr class="row-even"><td>species.[species0]</td>
+<td>Species ‘species0’ mass fraction</td>
+<td>Reals</td>
+<td>None</td>
+</tr>
 </tbody>
 </table>
 <p>The name of the DEM phases to be defined in the IC region and the packing must be defined.</p>
@@ -892,12 +1133,17 @@ region:</p>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>velocity</td>
+<tr class="row-even"><td>species.[species0]</td>
+<td>Species ‘species0’ mass fraction</td>
+<td>Real</td>
+<td>None</td>
+</tr>
+<tr class="row-odd"><td>velocity</td>
 <td>Velocity components</td>
 <td>Reals</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>diameter</td>
+<tr class="row-even"><td>diameter</td>
 <td><p class="first">Method to specify particle diameter in the IC region. This is
 only used for auto-generated particles. Available options include:</p>
 <ul class="last simple">
@@ -909,32 +1155,32 @@ only used for auto-generated particles. Available options include:</p>
 <td>String</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>diameter.constant</td>
+<tr class="row-odd"><td>diameter.constant</td>
 <td>Value of specified constant particle density</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>diameter.mean</td>
+<tr class="row-even"><td>diameter.mean</td>
 <td>Distribution mean</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>diameter.std</td>
+<tr class="row-odd"><td>diameter.std</td>
 <td>Distribution standard deviation</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>diameter.min</td>
+<tr class="row-even"><td>diameter.min</td>
 <td>Minimum diameter to clip distribution</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>diameter.max</td>
+<tr class="row-odd"><td>diameter.max</td>
 <td>Maximum diameter to clip distribution</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>density</td>
+<tr class="row-even"><td>density</td>
 <td><p class="first">Method to specify particle density in the IC region. This is
 only used for auto-generated particles. Available options include:</p>
 <ul class="last simple">
@@ -946,27 +1192,27 @@ only used for auto-generated particles. Available options include:</p>
 <td>String</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>density.constant</td>
+<tr class="row-odd"><td>density.constant</td>
 <td>Value of specified constant particle density</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>density.mean</td>
+<tr class="row-even"><td>density.mean</td>
 <td>Distribution mean</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>density.std</td>
+<tr class="row-odd"><td>density.std</td>
 <td>Distribution standard deviation</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>density.min</td>
+<tr class="row-even"><td>density.min</td>
 <td>Minimum density to clip distribution</td>
 <td>Real</td>
 <td>None</td>
 </tr>
-<tr class="row-even"><td>density.max</td>
+<tr class="row-odd"><td>density.max</td>
 <td>Maximum density to clip distribution</td>
 <td>Real</td>
 <td>None</td>
@@ -979,11 +1225,18 @@ only used for auto-generated particles. Available options include:</p>
 ic.bed.fluid.volfrac   =  0.725
 
 ic.bed.fluid.velocity  =  0.015  0.00  0.00
+ic.bed.fluid.temperature =  383.0
+ic.bed.fluid.species.H20 =  0.3
+ic.bed.fluid.species.He =  0.2
+ic.bed.fluid.species.O2 =  0.5
 
 ic.bed.solids  = solid0
 ic.bed.packing = pseudo_random
 
 ic.bed.solid0.volfrac  =  0.275
+ic.bed.solid0.temperature  =  400.0
+ic.bed.solid0.species.C  =  0.4
+ic.bed.solid0.species.H20  =  0.6
 
 ic.bed.solid0.velocity =  0.00  0.00  0.00
 
@@ -1099,8 +1352,8 @@ should also be periodic.</td>
 <td>Real</td>
 <td>0.0</td>
 </tr>
-<tr class="row-even"><td>species.[specie0]</td>
-<td>Specie [specie0] mass fraction [required if advect_fluid_species=1
+<tr class="row-even"><td>species.[species0]</td>
+<td>Species ‘species0’ mass fraction [required if advect_fluid_species=1
 and bc_region_type=’mi’ or ‘pi’].</td>
 <td>Real</td>
 <td>None</td>
@@ -1188,11 +1441,19 @@ bc.hot-walls.eb.temperature = 800
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2017-2018, MFiX-Exa Team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1203,7 +1464,6 @@ bc.hot-walls.eb.temperature = 800
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userdrag',['UserDrag',['../mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa',1,'mfix.H']]]
+  ['userdrag',['UserDrag',['../struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422aca9a9e00d2530120943c7d38fbe2d7ec',1,'DragType']]]
 ];

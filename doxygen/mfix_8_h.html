@@ -111,31 +111,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;AMReX_MLNodeLaplacian.H&gt;</code><br />
 <code>#include &lt;AMReX_NodalProjector.H&gt;</code><br />
 <code>#include &lt;AMReX_PhysBCFunct.H&gt;</code><br />
-<code>#include &lt;DiffusionOp.H&gt;</code><br />
-<code>#include &lt;<a class="el" href="_m_f_i_x_particle_container_8_h.html">MFIXParticleContainer.H</a>&gt;</code><br />
-<code>#include &lt;MFIX_BC_List.H&gt;</code><br />
+<code>#include &lt;mfix_diffusion_op.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="mfix__pc_8_h.html">mfix_pc.H</a>&gt;</code><br />
+<code>#include &lt;mfix_bc_list.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="mfix__eb__if_8_h.html">mfix_eb_if.H</a>&gt;</code><br />
-<code>#include &lt;MFIX_DEM_Parms.H&gt;</code><br />
-<code>#include &lt;MFIX_PIC_Parms.H&gt;</code><br />
-<code>#include &lt;MFIX_LevelData.H&gt;</code><br />
+<code>#include &lt;mfix_dem_parms.H&gt;</code><br />
+<code>#include &lt;mfix_pic_parms.H&gt;</code><br />
+<code>#include &lt;mfix_leveldata.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html">mfix_des_heterogeneous_rates_K.H</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_drag_type.html">DragType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_reaction_rates_type.html">ReactionRatesType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html">mfix</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aff6a4c5ab7182d5999dc15d5edf200ae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200ae">DragType</a> { <br />
-&#160;&#160;<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeae962ea8b0b3a376575ad0e616eeac474">Invalid</a> =-1, 
-<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426">WenYu</a>, 
-<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea6fff5fe02e9754eb2b8f3aa0894fc12b">Gidaspow</a>, 
-<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194">BVK2</a>, 
-<br />
-&#160;&#160;<a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa">UserDrag</a>
-<br />
- }</td></tr>
-<tr class="separator:aff6a4c5ab7182d5999dc15d5edf200ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0acede667a9165d99ef8427c6793130b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130b">DepositionScheme</a> { <a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130baacccaf2c1202c2b8284106d48862da20">trilinear</a>, 
 <a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130bae2b3f365860d0dd2b5d31195690bdcf1">square_dpvm</a>, 
 <a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130baa150e9b4884937f241400250bb804597">true_dpvm</a>, 
@@ -161,30 +156,6 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a0acede667a9165d99ef8427c6793130baa150e9b4884937f241400250bb804597"></a>true_dpvm&#160;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a0acede667a9165d99ef8427c6793130ba6fb78ba59773ac48c2709d20df1ebefd"></a>centroid&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200ae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200ae">DragType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aeae962ea8b0b3a376575ad0e616eeac474"></a>Invalid&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aeaa7d25c7945f615f4cf1a1d5850154426"></a>WenYu&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aea6fff5fe02e9754eb2b8f3aa0894fc12b"></a>Gidaspow&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194"></a>BVK2&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aff6a4c5ab7182d5999dc15d5edf200aeaea0feadd30bdef45998b949912d0bfaa"></a>UserDrag&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 

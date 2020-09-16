@@ -4,7 +4,7 @@ var searchData=
   ['last_5favg',['last_avg',['../main_8cpp.html#a6690d99f826ebcbd6ba52a39b77d5fc2',1,'main.cpp']]],
   ['last_5fchk',['last_chk',['../main_8cpp.html#a5cd632ab74de8e0245f5a2178c201f06',1,'main.cpp']]],
   ['last_5fpar_5fascii',['last_par_ascii',['../main_8cpp.html#a507d8d626ecea74d1239af27d080d00b',1,'main.cpp']]],
-  ['level_5fset_5fnormal',['level_set_normal',['../mfix__des___k_8_h.html#aab1fe39e95b363d99034d2575bb82a33',1,'mfix_des_K.H']]],
+  ['level_5fset_5fnormal',['level_set_normal',['../mfix__des___k_8_h.html#a767030be258d22dbb74055d2429ab987',1,'mfix_des_K.H']]],
   ['levelset_5feb_5fpad',['levelset_eb_pad',['../classmfix.html#ac3d137e8ef77327cfb289f550d8a28d2',1,'mfix']]],
   ['levelset_5feb_5frefinement',['levelset_eb_refinement',['../classmfix.html#a27099d4cfee25f579643c123d41d87ab',1,'mfix']]],
   ['levelset_5fpad',['levelset_pad',['../classmfix.html#aa5fa13a8ad1485893ccdc05635019001',1,'mfix']]],

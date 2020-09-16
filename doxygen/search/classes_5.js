@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['unioncif',['UnionCIF',['../class_union_c_i_f.html',1,'']]],
-  ['unionlistif',['UnionListIF',['../class_union_list_i_f.html',1,'']]]
+  ['reactionratestype',['ReactionRatesType',['../struct_reaction_rates_type.html',1,'']]],
+  ['reactionsdata',['reactionsData',['../structreactions_data.html',1,'']]],
+  ['realdata',['realData',['../structreal_data.html',1,'']]]
 ];

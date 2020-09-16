@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bvk2',['BVK2',['../mfix_8_h.html#aff6a4c5ab7182d5999dc15d5edf200aea48e94d8ad2167dbcb4edc4ec0e563194',1,'mfix.H']]]
+  ['bvk2',['BVK2',['../struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422a94d9e4bc0e53ba72b7842c34074a1352',1,'DragType']]]
 ];

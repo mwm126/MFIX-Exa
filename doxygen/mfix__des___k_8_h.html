@@ -90,23 +90,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">mfix_des_K.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_m_f_i_x_particle_container_8_h.html">MFIXParticleContainer.H</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="mfix__pc_8_h.html">mfix_pc.H</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abd2aa3dfd77d7df82591dc7cf437110a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#abd2aa3dfd77d7df82591dc7cf437110a">cross_product</a> (const amrex::Real *a, const amrex::Real *b, amrex::Real *c)</td></tr>
-<tr class="separator:abd2aa3dfd77d7df82591dc7cf437110a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18492510ee9046cc326749e6cc6b9e62"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#a18492510ee9046cc326749e6cc6b9e62">dot_product</a> (const amrex::Real *a, const amrex::Real *b)</td></tr>
-<tr class="separator:a18492510ee9046cc326749e6cc6b9e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e5120a828ae5c109392588a9812c64a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#a2e5120a828ae5c109392588a9812c64a">cfrelvel</a> (const MFIXParticleContainer::ParticleType &amp;p1, const MFIXParticleContainer::ParticleType &amp;p2, amrex::Real &amp;vrn, amrex::Real *vslip, const amrex::Real *normal, const amrex::Real dist_mag)</td></tr>
-<tr class="separator:a2e5120a828ae5c109392588a9812c64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad10a3e98acbfe21d88bba38916fd64fb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#ad10a3e98acbfe21d88bba38916fd64fb">cross_product</a> (const amrex::RealVect &amp;a, const amrex::RealVect &amp;b, amrex::RealVect &amp;c)</td></tr>
+<tr class="separator:ad10a3e98acbfe21d88bba38916fd64fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c999b4d9520b89d39f60bf13f174da"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product</a> (const amrex::RealVect &amp;a, const amrex::RealVect &amp;b)</td></tr>
+<tr class="separator:aa7c999b4d9520b89d39f60bf13f174da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8faca410ad889f55d300046a1bb5ae44"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#a8faca410ad889f55d300046a1bb5ae44">cfrelvel</a> (const MFIXParticleContainer::ParticleType &amp;p1, const MFIXParticleContainer::ParticleType &amp;p2, amrex::Real &amp;vrn, amrex::RealVect &amp;vslip, const amrex::RealVect &amp;normal, const amrex::Real dist_mag)</td></tr>
+<tr class="separator:a8faca410ad889f55d300046a1bb5ae44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33b362ab6030646671547f01f49b61f3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#a33b362ab6030646671547f01f49b61f3">interp_level_set</a> (MFIXParticleContainer::ParticleType const &amp;p, const int n_refine, amrex::Array4&lt; amrex::Real const  &gt; const &amp;phi, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi)</td></tr>
 <tr class="separator:a33b362ab6030646671547f01f49b61f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab1fe39e95b363d99034d2575bb82a33"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#aab1fe39e95b363d99034d2575bb82a33">level_set_normal</a> (MFIXParticleContainer::ParticleType const &amp;p, const int n_refine, amrex::Real *normal, amrex::Array4&lt; amrex::Real const  &gt; const &amp;phi, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi)</td></tr>
-<tr class="separator:aab1fe39e95b363d99034d2575bb82a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a767030be258d22dbb74055d2429ab987"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfix__des___k_8_h.html#a767030be258d22dbb74055d2429ab987">level_set_normal</a> (MFIXParticleContainer::ParticleType const &amp;p, const int n_refine, amrex::RealVect &amp;normal, amrex::Array4&lt; amrex::Real const  &gt; const &amp;phi, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi)</td></tr>
+<tr class="separator:a767030be258d22dbb74055d2429ab987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a2e5120a828ae5c109392588a9812c64a"></a>
+<a class="anchor" id="a8faca410ad889f55d300046a1bb5ae44"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -131,13 +131,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real *&#160;</td>
+          <td class="paramtype">amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>vslip</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>normal</em>, </td>
         </tr>
         <tr>
@@ -154,32 +154,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="mfix__des___k_8_h.html#abd2aa3dfd77d7df82591dc7cf437110a">cross_product()</a>, <a class="el" href="mfix__des___k_8_h.html#a18492510ee9046cc326749e6cc6b9e62">dot_product()</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4ac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#a50bbe5fb637233378ce6416d299f59b4a069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
+<p>References <a class="el" href="mfix__des___k_8_h.html#ad10a3e98acbfe21d88bba38916fd64fb">cross_product()</a>, <a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
 
 <p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">MFIXParticleContainer::EvolveParticles()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abd2aa3dfd77d7df82591dc7cf437110a"></a>
+<a class="anchor" id="ad10a3e98acbfe21d88bba38916fd64fb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_INLINE void cross_product </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real *&#160;</td>
+          <td class="paramtype">amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
@@ -190,24 +190,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="mfix__des___k_8_h.html#a2e5120a828ae5c109392588a9812c64a">cfrelvel()</a>, and <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">MFIXParticleContainer::EvolveParticles()</a>.</p>
+<p>Referenced by <a class="el" href="mfix__des___k_8_h.html#a8faca410ad889f55d300046a1bb5ae44">cfrelvel()</a>, and <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">MFIXParticleContainer::EvolveParticles()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a18492510ee9046cc326749e6cc6b9e62"></a>
+<a class="anchor" id="aa7c999b4d9520b89d39f60bf13f174da"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_INLINE amrex::Real dot_product </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -218,7 +218,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="mfix__des___k_8_h.html#a2e5120a828ae5c109392588a9812c64a">cfrelvel()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">MFIXParticleContainer::EvolveParticles()</a>, <a class="el" href="mfix__des___k_8_h.html#aab1fe39e95b363d99034d2575bb82a33">level_set_normal()</a>, and <a class="el" href="classmfix.html#a1c6f1342aa95091eb6f12cc594913a03">mfix::mfix_calc_transfer_coeffs()</a>.</p>
+<p>Referenced by <a class="el" href="mfix__des___k_8_h.html#a8faca410ad889f55d300046a1bb5ae44">cfrelvel()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">MFIXParticleContainer::EvolveParticles()</a>, <a class="el" href="mfix__des___k_8_h.html#a767030be258d22dbb74055d2429ab987">level_set_normal()</a>, and <a class="el" href="classmfix.html#a1c6f1342aa95091eb6f12cc594913a03">mfix::mfix_calc_transfer_coeffs()</a>.</p>
 
 </div>
 </div>
@@ -268,7 +268,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aab1fe39e95b363d99034d2575bb82a33"></a>
+<a class="anchor" id="a767030be258d22dbb74055d2429ab987"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -287,7 +287,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real *&#160;</td>
+          <td class="paramtype">amrex::RealVect &amp;&#160;</td>
           <td class="paramname"><em>normal</em>, </td>
         </tr>
         <tr>
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="mfix__des___k_8_h.html#a18492510ee9046cc326749e6cc6b9e62">dot_product()</a>.</p>
+<p>References <a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product()</a>.</p>
 
 <p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">MFIXParticleContainer::EvolveParticles()</a>.</p>
 
