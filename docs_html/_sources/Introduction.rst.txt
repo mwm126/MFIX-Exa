@@ -1,8 +1,6 @@
 Introduction
 ============
 
-CAN YOU SEE ME???
-
 MFiX-Exa is a new massively parallel code for computing multiphase
 flow in which solid particles interact with the gas surrounding them. It is
 built on top of `AMReX`_, a publicly available software framework designed for
