@@ -103,7 +103,7 @@ Inheritance diagram for MFIXParticleContainer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2e8619764e1b89b911fecddfe12a3fbe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a2e8619764e1b89b911fecddfe12a3fbe">MFIXParIter</a> = amrex::ParIter&lt; <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a42c136d7fde6db7408e2c7dc36b23c63">intData::count</a>, 0, 0 &gt;</td></tr>
+<tr class="memitem:a2e8619764e1b89b911fecddfe12a3fbe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a2e8619764e1b89b911fecddfe12a3fbe">MFIXParIter</a> = amrex::ParIter&lt; <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a42c136d7fde6db7408e2c7dc36b23c63">intData::count</a>, 0, 0 &gt;</td></tr>
 <tr class="separator:a2e8619764e1b89b911fecddfe12a3fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -134,14 +134,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1a95f73e5fab3bc5eaccfb2ff845713c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90c96ffddffb87ca088257b9fdc8faed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a90c96ffddffb87ca088257b9fdc8faed">PrintParticleCounts</a> ()</td></tr>
 <tr class="separator:a90c96ffddffb87ca088257b9fdc8faed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a610d5c204efc718beb1578749a7f6ca0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">EvolveParticles</a> (int lev, int nstep, amrex::Real dt, amrex::Real time, amrex::RealVect &amp;gravity, amrex::EBFArrayBoxFactory *ebfactory, const amrex::MultiFab *ls_phi, const int ls_refinement, amrex::MultiFab *cost, std::string &amp;knapsack_weight_type, int &amp;nsubsteps, const int advect_enthalpy)</td></tr>
-<tr class="separator:a610d5c204efc718beb1578749a7f6ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f7a8a540912c41c07a41f008775764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a35f7a8a540912c41c07a41f008775764">EvolveParticles</a> (int lev, int nstep, amrex::Real dt, amrex::Real time, amrex::RealVect &amp;gravity, amrex::EBFArrayBoxFactory *ebfactory, const amrex::MultiFab *ls_phi, const int ls_refinement, amrex::MultiFab *cost, std::string &amp;knapsack_weight_type, int &amp;nsubsteps, const int advect_enthalpy, const amrex::Real enthalpy_source)</td></tr>
+<tr class="separator:a35f7a8a540912c41c07a41f008775764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec82a6fa0ced5a176f03c0298fea21ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#aec82a6fa0ced5a176f03c0298fea21ae">MFIX_PC_InitCollisionParams</a> ()</td></tr>
 <tr class="separator:aec82a6fa0ced5a176f03c0298fea21ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13d73aa1b7f558933d14b33c37185271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a13d73aa1b7f558933d14b33c37185271">UpdateMaxVelocity</a> ()</td></tr>
 <tr class="separator:a13d73aa1b7f558933d14b33c37185271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a483c59087f04e6e7fc27f2deec8337a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a483c59087f04e6e7fc27f2deec8337a3">UpdateMaxForces</a> (std::map&lt; PairIndex, amrex::Gpu::ManagedDeviceVector&lt; amrex::Real &gt;&gt; pfor, std::map&lt; PairIndex, amrex::Gpu::ManagedDeviceVector&lt; amrex::Real &gt;&gt; wfor)</td></tr>
-<tr class="separator:a483c59087f04e6e7fc27f2deec8337a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7afff3f5f78375e2834804c04184b85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#ad7afff3f5f78375e2834804c04184b85">UpdateMaxForces</a> (std::map&lt; PairIndex, amrex::Gpu::DeviceVector&lt; amrex::Real &gt;&gt; pfor, std::map&lt; PairIndex, amrex::Gpu::DeviceVector&lt; amrex::Real &gt;&gt; wfor)</td></tr>
+<tr class="separator:ad7afff3f5f78375e2834804c04184b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ce5fcb7467646e6a9aa66c97b1083b"><td class="memItemLeft" align="right" valign="top">amrex::RealVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#ab4ce5fcb7467646e6a9aa66c97b1083b">GetMaxVelocity</a> ()</td></tr>
 <tr class="separator:ab4ce5fcb7467646e6a9aa66c97b1083b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6e50dd6551d00a2ab797e1cc9b5e4e4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::RealVect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#aa6e50dd6551d00a2ab797e1cc9b5e4e4">GetMaxForces</a> ()</td></tr>
@@ -157,18 +157,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a058f46f36a070510616a0bde748245bb"><td class="memTemplParams" colspan="2">template&lt;typename FB &gt; </td></tr>
 <tr class="memitem:a058f46f36a070510616a0bde748245bb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a058f46f36a070510616a0bde748245bb">SolidsVolumeDeposition</a> (FB WeightFunc, int lev, amrex::MultiFab &amp;mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)</td></tr>
 <tr class="separator:a058f46f36a070510616a0bde748245bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae21bddcf7ba98315c4331b8241e9b210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#ae21bddcf7ba98315c4331b8241e9b210">InterphaseTxfrDeposition</a> (int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;txfr_mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)</td></tr>
-<tr class="separator:ae21bddcf7ba98315c4331b8241e9b210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c0c36c207ff65ff9a084759799da320"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:a3c0c36c207ff65ff9a084759799da320"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a3c0c36c207ff65ff9a084759799da320">InterphaseTxfrDeposition</a> (F WeightFunc, int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;txfr_mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)</td></tr>
-<tr class="separator:a3c0c36c207ff65ff9a084759799da320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f54a7839e8ed749d215e4d2223273a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#ae0f54a7839e8ed749d215e4d2223273a">InterphaseChemDeposition</a> (int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;Rrates, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)</td></tr>
-<tr class="separator:ae0f54a7839e8ed749d215e4d2223273a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab57f4b8270ee68803e23dc84c080ece0"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:ab57f4b8270ee68803e23dc84c080ece0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#ab57f4b8270ee68803e23dc84c080ece0">InterphaseChemDeposition</a> (F WeightFunc, int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;chem_txfr_mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)</td></tr>
-<tr class="separator:ab57f4b8270ee68803e23dc84c080ece0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69093878f5e7b254eae16322cf3bad8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#aa69093878f5e7b254eae16322cf3bad8">InterphaseTxfrDeposition</a> (int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;txfr_mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags, const int advect_enthalpy)</td></tr>
+<tr class="separator:aa69093878f5e7b254eae16322cf3bad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f42208b8c42998ec6eda48d1e617ec"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ae0f42208b8c42998ec6eda48d1e617ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#ae0f42208b8c42998ec6eda48d1e617ec">InterphaseTxfrDeposition</a> (F WeightFunc, int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;txfr_mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags, const int advect_enthalpy)</td></tr>
+<tr class="separator:ae0f42208b8c42998ec6eda48d1e617ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc55ef59abf1a65d7829f41c8f713355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#afc55ef59abf1a65d7829f41c8f713355">InterphaseChemDeposition</a> (int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;Rrates, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags, const amrex::Vector&lt; <a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html#a8242d61725508852f35cb28c55ea15ce">REACTIONS::ChemicalReaction</a> * &gt; &amp;)</td></tr>
+<tr class="separator:afc55ef59abf1a65d7829f41c8f713355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955fafcf563e1752dec7737cffcb47bf"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a955fafcf563e1752dec7737cffcb47bf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a955fafcf563e1752dec7737cffcb47bf">InterphaseChemDeposition</a> (F WeightFunc, int lev, amrex::MultiFab &amp;mf_tmp_eps, amrex::MultiFab &amp;chem_txfr_mf, const amrex::MultiFab *volfrac, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags, const amrex::Vector&lt; <a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html#a8242d61725508852f35cb28c55ea15ce">REACTIONS::ChemicalReaction</a> * &gt; &amp;)</td></tr>
+<tr class="separator:a955fafcf563e1752dec7737cffcb47bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0294645acb85bcfee40880dcaf80156c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">ComputeAverageVelocities</a> (const int lev, const amrex::Real time, const std::string &amp;basename, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_vel_p, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_x_w, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_x_e, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_y_s, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_y_n, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_z_b, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_z_t)</td></tr>
 <tr class="separator:a0294645acb85bcfee40880dcaf80156c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8f3a13ded09a62dbd518f1b98cdac2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a6b8f3a13ded09a62dbd518f1b98cdac2">ComputeAverageTemperatures</a> (const int lev, const amrex::Real time, const std::string &amp;basename, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_T_p, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_x_w, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_x_e, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_y_s, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_y_n, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_z_b, const amrex::Vector&lt; amrex::Real &gt; &amp;avg_region_z_t)</td></tr>
+<tr class="separator:a6b8f3a13ded09a62dbd518f1b98cdac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1219863fadeafa6bc1799bd34f137ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a1219863fadeafa6bc1799bd34f137ca6">MFIX_PC_CalcSolidsStressGrad</a> (int lev, amrex::EBFArrayBoxFactory *ebfactory, amrex::MultiFab &amp;ep_g_in, amrex::MultiFab &amp;grad_tau_in, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;cost, std::string &amp;knapsack_weight_type)</td></tr>
 <tr class="separator:a1219863fadeafa6bc1799bd34f137ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f685116c037662212aa8e610d8e514e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_f_i_x_particle_container.html#a7f685116c037662212aa8e610d8e514e">MFIX_PC_SolidsVelocityDeposition</a> (int lev, amrex::MultiFab &amp;vel_s_mf, const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *flags)</td></tr>
@@ -184,7 +186,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_m_f_i_x_particle_container.html#a2e8619764e1b89b911fecddfe12a3fbe">MFIXParticleContainer::MFIXParIter</a> =  amrex::ParIter&lt;<a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>,<a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a42c136d7fde6db7408e2c7dc36b23c63">intData::count</a>,0,0&gt;</td>
+          <td class="memname">using <a class="el" href="class_m_f_i_x_particle_container.html#a2e8619764e1b89b911fecddfe12a3fbe">MFIXParticleContainer::MFIXParIter</a> =  amrex::ParIter&lt;<a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>,<a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a42c136d7fde6db7408e2c7dc36b23c63">intData::count</a>,0,0&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -244,6 +246,84 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6b8f3a13ded09a62dbd518f1b98cdac2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MFIXParticleContainer::ComputeAverageTemperatures </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>basename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_T_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_region_x_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_region_x_e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_region_y_s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_region_y_n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_region_z_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_region_z_t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b">NumberOfParticles()</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>.</p>
+
+<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">ComputeAverageVelocities()</a>, and <a class="el" href="classmfix.html#a03391a94d7f0ce86e573601c67e11e94">mfix::WriteAverageRegions()</a>.</p>
 
 </div>
 </div>
@@ -319,13 +399,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b">NumberOfParticles()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
+<p>References <a class="el" href="class_m_f_i_x_particle_container.html#a6b8f3a13ded09a62dbd518f1b98cdac2">ComputeAverageTemperatures()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b">NumberOfParticles()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
 
 <p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#aa6e50dd6551d00a2ab797e1cc9b5e4e4">GetMaxForces()</a>, and <a class="el" href="classmfix.html#a03391a94d7f0ce86e573601c67e11e94">mfix::WriteAverageRegions()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a610d5c204efc718beb1578749a7f6ca0"></a>
+<a class="anchor" id="a35f7a8a540912c41c07a41f008775764"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -399,7 +479,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>advect_enthalpy</em>&#160;</td>
+          <td class="paramname"><em>advect_enthalpy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>enthalpy_source</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -409,7 +495,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="mfix__des___k_8_h.html#a8faca410ad889f55d300046a1bb5ae44">cfrelvel()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structspecies_data.html#a6d9717a47a875bc0b11a25bd94238ddca978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, <a class="el" href="mfix__des___k_8_h.html#ad10a3e98acbfe21d88bba38916fd64fb">cross_product()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="structreactions_data.html#a4e51a3e79e990e2d085bc96097a6b580a4fa4cd442311c7100ffe2e46130aa8e4">reactionsData::G_sn_pg_q</a>, <a class="el" href="class_m_f_i_x_particle_container.html#aa6e50dd6551d00a2ab797e1cc9b5e4e4">GetMaxForces()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#ab4ce5fcb7467646e6a9aa66c97b1083b">GetMaxVelocity()</a>, <a class="el" href="mfix__des___k_8_h.html#a33b362ab6030646671547f01f49b61f3">interp_level_set()</a>, <a class="el" href="mfix__des___k_8_h.html#a767030be258d22dbb74055d2429ab987">level_set_normal()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b">NumberOfParticles()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da68950273e38a8a42e722859692d4fc23">realData::oneOverI</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a483c59087f04e6e7fc27f2deec8337a3">UpdateMaxForces()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a13d73aa1b7f558933d14b33c37185271">UpdateMaxVelocity()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dada202f06a57217487b5502675d245413">realData::volume</a>, and <a class="el" href="structspecies_data.html#a6d9717a47a875bc0b11a25bd94238ddcaf0e1e6de8388dd63e3161b1f8765f982">speciesData::X_sn</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="mfix__des___k_8_h.html#a8faca410ad889f55d300046a1bb5ae44">cfrelvel()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502da978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, <a class="el" href="mfix__des___k_8_h.html#ad10a3e98acbfe21d88bba38916fd64fb">cross_product()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="structreactions_data.html#a18d81d1aba3ac43719c9b4dc12b753f8a4fa4cd442311c7100ffe2e46130aa8e4">reactionsData::G_sn_pg_q</a>, <a class="el" href="class_m_f_i_x_particle_container.html#aa6e50dd6551d00a2ab797e1cc9b5e4e4">GetMaxForces()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#ab4ce5fcb7467646e6a9aa66c97b1083b">GetMaxVelocity()</a>, <a class="el" href="mfix__des___k_8_h.html#a33b362ab6030646671547f01f49b61f3">interp_level_set()</a>, <a class="el" href="mfix__des___k_8_h.html#a767030be258d22dbb74055d2429ab987">level_set_normal()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b">NumberOfParticles()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a68950273e38a8a42e722859692d4fc23">realData::oneOverI</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="class_m_f_i_x_particle_container.html#ad7afff3f5f78375e2834804c04184b85">UpdateMaxForces()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a13d73aa1b7f558933d14b33c37185271">UpdateMaxVelocity()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ada202f06a57217487b5502675d245413">realData::volume</a>, and <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502daf0e1e6de8388dd63e3161b1f8765f982">speciesData::X_sn</a>.</p>
 
 </div>
 </div>
@@ -428,7 +514,7 @@ Public Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">ComputeAverageVelocities()</a>.</p>
 
-<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">EvolveParticles()</a>.</p>
+<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a35f7a8a540912c41c07a41f008775764">EvolveParticles()</a>.</p>
 
 </div>
 </div>
@@ -445,7 +531,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">EvolveParticles()</a>.</p>
+<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a35f7a8a540912c41c07a41f008775764">EvolveParticles()</a>.</p>
 
 </div>
 </div>
@@ -478,7 +564,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da68950273e38a8a42e722859692d4fc23">realData::oneOverI</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a51f36a58e49d1b9d84e18f5264d3c866">intData::state</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dacf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dada202f06a57217487b5502675d245413">realData::volume</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a68950273e38a8a42e722859692d4fc23">realData::oneOverI</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a51f36a58e49d1b9d84e18f5264d3c866">intData::state</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3acf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
 
 </div>
 </div>
@@ -512,7 +598,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>.</p>
 
 </div>
 </div>
@@ -531,7 +617,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae0f54a7839e8ed749d215e4d2223273a"></a>
+<a class="anchor" id="afc55ef59abf1a65d7829f41c8f713355"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -563,7 +649,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html#a8242d61725508852f35cb28c55ea15ce">REACTIONS::ChemicalReaction</a> * &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -578,7 +670,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab57f4b8270ee68803e23dc84c080ece0"></a>
+<a class="anchor" id="a955fafcf563e1752dec7737cffcb47bf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -618,7 +710,13 @@ template&lt;typename F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html#a8242d61725508852f35cb28c55ea15ce">REACTIONS::ChemicalReaction</a> * &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -630,7 +728,7 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae21bddcf7ba98315c4331b8241e9b210"></a>
+<a class="anchor" id="aa69093878f5e7b254eae16322cf3bad8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -662,7 +760,13 @@ template&lt;typename F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>advect_enthalpy</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -677,7 +781,7 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3c0c36c207ff65ff9a084759799da320"></a>
+<a class="anchor" id="ae0f42208b8c42998ec6eda48d1e617ec"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -717,7 +821,13 @@ template&lt;typename F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::FabArray&lt; amrex::EBCellFlagFab &gt; *&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>advect_enthalpy</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -892,7 +1002,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>.</p>
 
 </div>
 </div>
@@ -951,7 +1061,7 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">ComputeAverageVelocities()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">EvolveParticles()</a>, and <a class="el" href="class_m_f_i_x_particle_container.html#a483c59087f04e6e7fc27f2deec8337a3">UpdateMaxForces()</a>.</p>
+<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a6b8f3a13ded09a62dbd518f1b98cdac2">ComputeAverageTemperatures()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">ComputeAverageVelocities()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a35f7a8a540912c41c07a41f008775764">EvolveParticles()</a>, and <a class="el" href="class_m_f_i_x_particle_container.html#ad7afff3f5f78375e2834804c04184b85">UpdateMaxForces()</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1137,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, and <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a51f36a58e49d1b9d84e18f5264d3c866">intData::state</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, and <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a51f36a58e49d1b9d84e18f5264d3c866">intData::state</a>.</p>
 
 </div>
 </div>
@@ -1067,7 +1177,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dacf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3acf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
 
 </div>
 </div>
@@ -1107,7 +1217,7 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da68950273e38a8a42e722859692d4fc23">realData::oneOverI</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a51f36a58e49d1b9d84e18f5264d3c866">intData::state</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dacf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dada202f06a57217487b5502675d245413">realData::volume</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dbf4afca677a0fabba6ecce0b91707a">realData::c_ps</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502da978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="structreactions_data.html#a18d81d1aba3ac43719c9b4dc12b753f8a4fa4cd442311c7100ffe2e46130aa8e4">reactionsData::G_sn_pg_q</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac1d5ee2d0b126e2458e76f21e2c9ccb3">realData::omegax</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a852edb23a58e36c564ad4eb02c7c98cb">realData::omegay</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a19cfa2d07ec3fba66d6fcbe3da724a10">realData::omegaz</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a68950273e38a8a42e722859692d4fc23">realData::oneOverI</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a51f36a58e49d1b9d84e18f5264d3c866">intData::state</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3acf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ada202f06a57217487b5502675d245413">realData::volume</a>, and <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502daf0e1e6de8388dd63e3161b1f8765f982">speciesData::X_sn</a>.</p>
 
 <p>Referenced by <a class="el" href="classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a">mfix::Restart()</a>.</p>
 
@@ -1200,20 +1310,20 @@ template&lt;typename FB &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a483c59087f04e6e7fc27f2deec8337a3"></a>
+<a class="anchor" id="ad7afff3f5f78375e2834804c04184b85"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void MFIXParticleContainer::UpdateMaxForces </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; PairIndex, amrex::Gpu::ManagedDeviceVector&lt; amrex::Real &gt;&gt;&#160;</td>
+          <td class="paramtype">std::map&lt; PairIndex, amrex::Gpu::DeviceVector&lt; amrex::Real &gt;&gt;&#160;</td>
           <td class="paramname"><em>pfor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; PairIndex, amrex::Gpu::ManagedDeviceVector&lt; amrex::Real &gt;&gt;&#160;</td>
+          <td class="paramtype">std::map&lt; PairIndex, amrex::Gpu::DeviceVector&lt; amrex::Real &gt;&gt;&#160;</td>
           <td class="paramname"><em>wfor</em>&#160;</td>
         </tr>
         <tr>
@@ -1226,7 +1336,7 @@ template&lt;typename FB &gt; </div>
 
 <p>References <a class="el" href="class_m_f_i_x_particle_container.html#a2dbc8727dbddc8aeedb5651517bb9e2b">NumberOfParticles()</a>.</p>
 
-<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">EvolveParticles()</a>.</p>
+<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a35f7a8a540912c41c07a41f008775764">EvolveParticles()</a>.</p>
 
 </div>
 </div>
@@ -1243,9 +1353,9 @@ template&lt;typename FB &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
 
-<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a610d5c204efc718beb1578749a7f6ca0">EvolveParticles()</a>.</p>
+<p>Referenced by <a class="el" href="class_m_f_i_x_particle_container.html#a35f7a8a540912c41c07a41f008775764">EvolveParticles()</a>.</p>
 
 </div>
 </div>
@@ -1281,7 +1391,7 @@ template&lt;typename FB &gt; </div>
 </div><div class="memdoc">
 <p>Write out all particles in the format of the particle_input.dat files so we can initialize a run with them </p>
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structint_data.html#a99bb2e98cd7e07633dd1a54e904cc933a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a883072905063cc2829c9ceba0c67cf28">realData::density</a>, <a class="el" href="structint_data.html#a34acc89a4f2ec83be04f59ff2da5df56a081e64fd42cd3bec8bc59964d2ca495c">intData::phase</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>.</p>
 
 </div>
 </div>

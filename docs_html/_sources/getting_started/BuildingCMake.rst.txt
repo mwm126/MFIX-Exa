@@ -4,7 +4,11 @@ Building MFiX-Exa with CMake
 CMake build is a two-step process. First ``cmake`` is invoked to create
 configuration files and makefiles in a chosen directory (``builddir``).
 Next, the actual build is performed by invoking ``make`` from within ``builddir``.
-The CMake build process is summarized as follows:
+If you are new to CMake, `this short tutorial <https://hsf-training.github.io/hsf-training-cmake-webpage/>`_
+from the HEP Software foundation is the perfect place to get started with it.
+
+
+The CMake build process for MFiX-Exa is summarized as follows:
 
 .. highlight:: console
 
@@ -62,7 +66,7 @@ Working with the AMReX submodule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **SUPERBUILD** mode relies on a git submodule to checkout the AMReX git repository.
-If the AMReX submodule is not initialized, **SUPERBUILD** mode will initialize it and checkout 
+If the AMReX submodule is not initialized, **SUPERBUILD** mode will initialize it and checkout
 the AMReX commit the submodule is pointing to.
 Instead, if the AMReX submodule has already been manually initialized and a custom commit has been checked out,
 **SUPERBUILD** mode will use that commit. For MFiX-Exa development or testing, you may need to build with a different
@@ -97,9 +101,7 @@ AMReX development is outside the scope of this document. Run ``git status`` in
 the top-level MFix-Exa repo to see whether the AMReX submodule has new commits,
 modified files, or untracked files.
 
-The CMake variables ``AMREX_GIT_COMMIT_DEVELOP`` and
-``AMREX_GIT_COMMIT_DEVELOP`` have been removed. Instead, to update the AMReX
-submodule referenced by MFiX-Exa:
+To update the AMReX submodule referenced by MFiX-Exa:
 
 .. code:: shell
 
@@ -118,13 +120,13 @@ subprojects/amrex``.)
     Only update the AMReX submodule reference in coordination with the other
     MFiX-Exa developers!
 
-   
+
 .. _sec:build:standalone:
 
 **STANDALONE** instructions
 ---------------------------------------------------------------------
 
-Building AMReX 
+Building AMReX
 ~~~~~~~~~~~~~~~~~~~
 
 Clone AMReX from the official Git repository and checkout the
@@ -142,10 +144,10 @@ Next, configure, build and install AMReX as follows:
 
     > mkdir build
     > cd build
-    > cmake -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] -DENABLE_PARTICLES=yes -DENABLE_AMRDATA=yes -DENABLE_EB=yes [other amrex options] -DCMAKE_INSTALL_PREFIX:PATH=/absolute/path/to/installdir ..
+    > cmake -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] -DAMReX_PARTICLES=yes -DAMReX_AMRDATA=yes -DAMReX_EB=yes [other amrex options] -DCMAKE_INSTALL_PREFIX:PATH=/absolute/path/to/installdir ..
     > make install
 
-The options **ENABLE\_PARTICLES=yes**, **ENABLE\_AMRDATA=yes**, and **ENABLE\_EB=yes** are required by MFiX-Exa. ``[other amrex options]`` in the snippet above refers to any other AMReX configuration option in addition to the required ones. Please refer to the `AMReX user guide <https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake>`_ for more details on building AMReX with CMake.
+The options **AMReX\_PARTICLES=yes**, **AMReX\_AMRDATA=yes**, and **AMReX\_EB=yes** are required by MFiX-Exa. ``[other amrex options]`` in the snippet above refers to any other AMReX configuration option in addition to the required ones. Please refer to the `AMReX user guide <https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake>`_ for more details on building AMReX with CMake.
 
 
 Building MFiX-Exa
@@ -183,22 +185,24 @@ for an available AMReX installation.
 | CMAKE\_CUDA\    | User-defined CUDA flags      | valid CUDA       | None        |
 | _FLAGS          |                              | compiler flags   |             |
 +-----------------+------------------------------+------------------+-------------+
-| ENABLE\_MPI     | Enable build with MPI        | no/yes           | yes         |
+| MFIX\_MPI       | Enable build with MPI        | no/yes           | yes         |
 |                 |                              |                  |             |
 +-----------------+------------------------------+------------------+-------------+
-| ENABLE\_OMP     | Enable build with OpenMP     | no/yes           | no          |
+| MFIX\_OMP       | Enable build with OpenMP     | no/yes           | no          |
 |                 |                              |                  |             |
 +-----------------+------------------------------+------------------+-------------+
-| ENABLE\_CUDA    | Enable build with CUDA       | no/yes           | no          |
+| MFIX\_CUDA      | Enable build with CUDA       | no/yes           | no          |
 |                 |                              |                  |             |
 +-----------------+------------------------------+------------------+-------------+
-| ENABLE\_HYPRE   | Enable HYPRE support         | no/yes           | no          |
+| MFIX\_HYPRE     | Enable HYPRE support         | no/yes           | no          |
 |                 |                              |                  |             |
 +-----------------+------------------------------+------------------+-------------+
-| ENABLE\_FPE     | Build with Floating-Point    | no/yes           | no          |
+| MFIX\_FPE       | Build with Floating-Point    | no/yes           | no          |
 |                 | Exceptions checks            |                  |             |
 +-----------------+------------------------------+------------------+-------------+
-
+| MFIX\_CSG       | Build with CSG support       | no/yes           | no          |
+|                 |                              |                  |             |
++-----------------+------------------------------+------------------+-------------+
 
 
 
@@ -223,10 +227,16 @@ MFiX-Exa uses the same compiler flags used to build AMReX, unless
 the environmental variables ``FFLAGS``/``CXXFLAGS`` are set.
 
 
+For GPU builds, MFiX-Exa relies on the `AMReX GPU build infrastructure <https://amrex-codes.github.io/amrex/docs_html/GPU.html#building-with-cmake>`_
+. The target architecture to build for can be specified via the AMReX configuration option ``-DAMReX_CUDA_ARCH=<target-architecture>``,
+or by defining the *environmental variable* ``AMREX_CUDA_ARCH`` (all caps). If no GPU architecture is specified,
+CMake will try to determine which GPU is supported by the system.
+
+
 Building MFiX-Exa for Cori (NERSC)
 -----------------------------------
 
-Standard build 
+Standard build
 ~~~~~~~~~~~~~~~~~~~
 
 For the Cori cluster at NERSC, you first need to load/unload modules required to build MFIX-Exa.
@@ -253,10 +263,10 @@ Now MFIX-Exa can be built following the :ref:`sec:build:superbuild`.
 
 .. note::
 
-    The load/unload modules options could be saved in the `~/.bash_profile.ext` 
+    The load/unload modules options could be saved in the `~/.bash_profile.ext`
 
 
-GPU build 
+GPU build
 ~~~~~~~~~~~~~~~~~~~
 
 To compile on the GPU nodes in Cori, you first need to purge your modules, most of which won't work on the GPU nodes
@@ -288,7 +298,7 @@ Finally, navigate to the base of the MFIX-Exa repository and compile in GPU mode
     > cd mfix
     > mdkir build
     > cd build
-    > cmake -DENABLE_CUDA=yes -DCUDA_ARCH=Volta -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran ..
+    > cmake -DMFIX_CUDA=yes -DAMReX_CUDA_ARCH=Volta -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran ..
     > make -j
 
 For more information about GPU nodes in Cori -- `<https://docs-dev.nersc.gov/cgpu/>`_
@@ -320,8 +330,8 @@ To compile:
     > cd mfix
     > mdkir build
     > cd build
-    > cmake -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran -DENABLE_CUDA=[no|yes]
+    > cmake -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran -DMFIX_CUDA=[no|yes]
     > make -j
 
 An example of a *submission_script* for GPUs can be found in the repo ``mfix/tests/GPU_test/script.sh``.
-For more information about Summit cluster: `<https://www.olcf.ornl.gov/for-users/system-user-guides/summit/>`_ 
+For more information about Summit cluster: `<https://www.olcf.ornl.gov/for-users/system-user-guides/summit/>`_

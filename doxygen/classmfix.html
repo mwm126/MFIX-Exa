@@ -166,9 +166,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac3b06a482506fcb19ee29d1f660f34b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8956439d97557edad97bfbd17a2875e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ab8956439d97557edad97bfbd17a2875e">intersect_ls_walls</a> ()</td></tr>
 <tr class="separator:ab8956439d97557edad97bfbd17a2875e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6192b20bea7fde13477f1f1af64b7473"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a6192b20bea7fde13477f1f1af64b7473"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#a6192b20bea7fde13477f1f1af64b7473">build_particle_eb_levels</a> (EB2::GeometryShop&lt; F &gt; gshop)</td></tr>
-<tr class="separator:a6192b20bea7fde13477f1f1af64b7473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad786e20f8a6805c3f758d12e832a734f"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
 <tr class="memitem:ad786e20f8a6805c3f758d12e832a734f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#ad786e20f8a6805c3f758d12e832a734f">build_eb_levels</a> (EB2::GeometryShop&lt; F &gt; gshop)</td></tr>
 <tr class="separator:ad786e20f8a6805c3f758d12e832a734f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,8 +255,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2dfc4b869c78ac2ed49b51fd27308114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33fdc3516944f0c22451ecb4b7b8df3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a33fdc3516944f0c22451ecb4b7b8df3a">set_ls_inflow</a> (const int lev, FArrayBox &amp;ls_phi_fab, const Box &amp;domain, const int *levelset_nghost, const int &amp;nref, const Real *dx)</td></tr>
 <tr class="separator:a33fdc3516944f0c22451ecb4b7b8df3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11fa6d5c4368782638309359c70537aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a11fa6d5c4368782638309359c70537aa">mfix_compute_slopes</a> (int lev, Real time, MultiFab &amp;Sborder, Vector&lt; MultiFab * &gt; const &amp;xslopes_in, Vector&lt; MultiFab * &gt; const &amp;yslopes_in, Vector&lt; MultiFab * &gt; const &amp;zslopes_in, int slopes_comp, std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt;&gt; &amp;bc_types)</td></tr>
-<tr class="separator:a11fa6d5c4368782638309359c70537aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdae0270ceceb16ddc44085bef9e8d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#acdae0270ceceb16ddc44085bef9e8d3c">mfix_compute_slopes</a> (int lev, Real time, MultiFab &amp;Sborder, Vector&lt; MultiFab * &gt; const &amp;xslopes_in, Vector&lt; MultiFab * &gt; const &amp;yslopes_in, Vector&lt; MultiFab * &gt; const &amp;zslopes_in, int slopes_comp, std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt;&gt; &amp;bc_types)</td></tr>
+<tr class="separator:acdae0270ceceb16ddc44085bef9e8d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68b2be0a216a8480334e5acd35b64063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a68b2be0a216a8480334e5acd35b64063">set_bc0</a> (const Box &amp;sbx, MFIter *mfi, const int lev, const Box &amp;domain)</td></tr>
 <tr class="separator:a68b2be0a216a8480334e5acd35b64063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd450c5bc08fc0af3e28aca56eae5c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#afd450c5bc08fc0af3e28aca56eae5c96">set_temperature_bc0</a> (const Box &amp;sbx, MFIter *mfi, const int lev, const Box &amp;domain)</td></tr>
@@ -270,6 +267,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab6e10dd4dfc76f7925474c6fa2a4b24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76174c4718fe580c33398f6817354fe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a76174c4718fe580c33398f6817354fe7">set_gp0</a> (const int lev, const Box &amp;domain)</td></tr>
 <tr class="separator:a76174c4718fe580c33398f6817354fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53fef508952745b959fd9f079903e9a0"><td class="memTemplParams" colspan="2">template&lt;typename F1 &gt; </td></tr>
+<tr class="memitem:a53fef508952745b959fd9f079903e9a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#a53fef508952745b959fd9f079903e9a0">mfix_calc_transfer_coeffs</a> (F1 DragFunc)</td></tr>
+<tr class="separator:a53fef508952745b959fd9f079903e9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6f1342aa95091eb6f12cc594913a03"><td class="memTemplParams" colspan="2">template&lt;typename F1 , typename F2 &gt; </td></tr>
 <tr class="memitem:a1c6f1342aa95091eb6f12cc594913a03"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#a1c6f1342aa95091eb6f12cc594913a03">mfix_calc_transfer_coeffs</a> (F1 DragFunc, F2 ConvectionCoeff)</td></tr>
 <tr class="separator:a1c6f1342aa95091eb6f12cc594913a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,6 +285,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acb9b180a34fd825a9541494af053feaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fda5e434f2867d4f8b1a94dc4b6b711"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a9fda5e434f2867d4f8b1a94dc4b6b711">volWgtSumBox</a> (int lev, const MultiFab &amp;mf, int comp, const Box a_bx, bool local=false) const </td></tr>
 <tr class="separator:a9fda5e434f2867d4f8b1a94dc4b6b711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b64b79898dc107c7a3671034718f5d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a6b64b79898dc107c7a3671034718f5d2">ReportGridStats</a> () const </td></tr>
+<tr class="separator:a6b64b79898dc107c7a3671034718f5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f9fc3c42cc07e9ac71fc93c5d69d8f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a3f9fc3c42cc07e9ac71fc93c5d69d8f6">mfix_set_bc_type</a> (int lev)</td></tr>
 <tr class="separator:a3f9fc3c42cc07e9ac71fc93c5d69d8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4679dfec4e1bf3f0ea77f2de59b122e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ad4679dfec4e1bf3f0ea77f2de59b122e">set_MAC_velocity_bcs</a> (int lev, Vector&lt; MultiFab * &gt; const &amp;u, Vector&lt; MultiFab * &gt; const &amp;v, Vector&lt; MultiFab * &gt; const &amp;w, Real time)</td></tr>
@@ -303,23 +305,25 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adf0ecf7cea2b2d8a639fd7edc39fd0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5cd7e58f31d3754e8baf85e54120788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aa5cd7e58f31d3754e8baf85e54120788">apply_MAC_projection</a> (Vector&lt; MultiFab * &gt; const &amp;ep_u_mac, Vector&lt; MultiFab * &gt; const &amp;ep_v_mac, Vector&lt; MultiFab * &gt; const &amp;ep_w_mac, Vector&lt; MultiFab * &gt; const &amp;ep_g_in, Vector&lt; MultiFab * &gt; const &amp;ro_g_in, Vector&lt; MultiFab * &gt; const &amp;MW_g_in, Vector&lt; MultiFab * &gt; const &amp;T_g_in, Vector&lt; MultiFab * &gt; const &amp;cp_g_in, Vector&lt; MultiFab * &gt; const &amp;k_g_in, Vector&lt; MultiFab * &gt; const &amp;T_g_on_eb_in, Vector&lt; MultiFab * &gt; const &amp;k_g_on_eb_in, Vector&lt; MultiFab * &gt; const &amp;X_gk_in, Vector&lt; MultiFab * &gt; const &amp;D_gk_in, Vector&lt; MultiFab * &gt; const &amp;h_gk_in, Vector&lt; MultiFab * &gt; const &amp;txfr_in, Vector&lt; MultiFab * &gt; const &amp;ro_gk_txfr_in, Real time)</td></tr>
 <tr class="separator:aa5cd7e58f31d3754e8baf85e54120788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b94c19ecf70b8032241481136d7c27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a16b94c19ecf70b8032241481136d7c27">initialize_chem_reactions</a> ()</td></tr>
+<tr class="separator:a16b94c19ecf70b8032241481136d7c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03027d939d8b9a0633e618debc079ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a03027d939d8b9a0633e618debc079ce8">mfix_calc_chem_txfr</a> (const Real time, const Vector&lt; MultiFab * &gt; &amp;ep_g_in, const Vector&lt; MultiFab * &gt; &amp;ro_g_in, const Vector&lt; MultiFab * &gt; &amp;X_gk_in)</td></tr>
 <tr class="separator:a03027d939d8b9a0633e618debc079ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfc96442b02ca3b5cb6a71889e101592"><td class="memTemplParams" colspan="2">template&lt;typename F1 &gt; </td></tr>
 <tr class="memitem:abfc96442b02ca3b5cb6a71889e101592"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmfix.html#abfc96442b02ca3b5cb6a71889e101592">mfix_calc_chem_txfr</a> (const Real time, const Vector&lt; MultiFab * &gt; &amp;ep_g_in, const Vector&lt; MultiFab * &gt; &amp;ro_g_in, const Vector&lt; MultiFab * &gt; &amp;X_gk_in, F1 RRatesFunc)</td></tr>
 <tr class="separator:abfc96442b02ca3b5cb6a71889e101592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8ec44c9c9996ab690747d2f25c7f7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a8c8ec44c9c9996ab690747d2f25c7f7a">mfix_apply_predictor</a> (Vector&lt; MultiFab * &gt; &amp;conv_u_old, Vector&lt; MultiFab * &gt; &amp;conv_s_old, Vector&lt; MultiFab * &gt; &amp;conv_X_old, Vector&lt; MultiFab * &gt; &amp;ro_RHS_old, Vector&lt; MultiFab * &gt; &amp;vel_RHS_old, Vector&lt; MultiFab * &gt; &amp;trac_RHS_old, Vector&lt; MultiFab * &gt; &amp;enthalpy_RHS_old, Vector&lt; MultiFab * &gt; &amp;species_RHS_old, Real time, Real dt, Real prev_dt, bool proj_2)</td></tr>
-<tr class="separator:a8c8ec44c9c9996ab690747d2f25c7f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98e3ff8b2755d42470e70ff222419e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ae98e3ff8b2755d42470e70ff222419e1">mfix_apply_predictor</a> (Vector&lt; MultiFab * &gt; &amp;conv_u_old, Vector&lt; MultiFab * &gt; &amp;conv_s_old, Vector&lt; MultiFab * &gt; &amp;conv_X_old, Vector&lt; MultiFab * &gt; &amp;ro_RHS_old, Vector&lt; MultiFab * &gt; &amp;vel_RHS_old, Vector&lt; MultiFab * &gt; &amp;lap_trac_old, Vector&lt; MultiFab * &gt; &amp;enthalpy_RHS_old, Vector&lt; MultiFab * &gt; &amp;lap_T_old, Vector&lt; MultiFab * &gt; &amp;species_RHS_old, Vector&lt; MultiFab * &gt; &amp;lap_X_old, Real time, Real dt, Real prev_dt, bool proj_2)</td></tr>
+<tr class="separator:ae98e3ff8b2755d42470e70ff222419e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4feb4ac35c0bfadb6ccc850b8ca20d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a4feb4ac35c0bfadb6ccc850b8ca20d6b">mfix_density_rhs</a> (Vector&lt; MultiFab * &gt; const &amp;rhs, Vector&lt; MultiFab * &gt; const &amp;ro_gk_txfr)</td></tr>
 <tr class="separator:a4feb4ac35c0bfadb6ccc850b8ca20d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34233aead420d8a320851f59352a047f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a34233aead420d8a320851f59352a047f">mfix_enthalpy_rhs</a> (const bool explicit_diffusion, Vector&lt; MultiFab * &gt; const &amp;rhs, Vector&lt; MultiFab * &gt; const &amp;T_g, Vector&lt; MultiFab * &gt; const &amp;ep_g, Vector&lt; MultiFab * &gt; const &amp;ro_g, Vector&lt; MultiFab * &gt; const &amp;k_g, Vector&lt; MultiFab * &gt; const &amp;T_g_on_eb, Vector&lt; MultiFab * &gt; const &amp;k_g_on_eb, Vector&lt; MultiFab * &gt; const &amp;X_gk, Vector&lt; MultiFab * &gt; const &amp;D_gk, Vector&lt; MultiFab * &gt; const &amp;h_gk)</td></tr>
-<tr class="separator:a34233aead420d8a320851f59352a047f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f2b4273aee73ac5d88468dc083bc79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ae1f2b4273aee73ac5d88468dc083bc79">mfix_scalar_rhs</a> (const bool explicit_diffusion, Vector&lt; MultiFab * &gt; const &amp;rhs, Vector&lt; MultiFab * &gt; const &amp;trac, Vector&lt; MultiFab * &gt; const &amp;ep_g, Vector&lt; MultiFab * &gt; const &amp;ro_g, const Vector&lt; Real &gt; &amp;<a class="el" href="classmfix.html#a381da6efa3a07b5d9256d52d7be449c3">mu_s</a>)</td></tr>
-<tr class="separator:ae1f2b4273aee73ac5d88468dc083bc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac10b81ce324809967482e861bb0a4db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ac10b81ce324809967482e861bb0a4db3">mfix_species_X_rhs</a> (const bool explicit_diffusion, Vector&lt; MultiFab * &gt; const &amp;rhs, Vector&lt; MultiFab * &gt; const &amp;X_gk, Vector&lt; MultiFab * &gt; const &amp;ep_g, Vector&lt; MultiFab * &gt; const &amp;ro_g, Vector&lt; MultiFab * &gt; const &amp;D_gk, Vector&lt; MultiFab * &gt; const &amp;ro_gk_txfr)</td></tr>
-<tr class="separator:ac10b81ce324809967482e861bb0a4db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac09870e2f1c1fe46a3072ae26a878857"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ac09870e2f1c1fe46a3072ae26a878857">mfix_apply_corrector</a> (Vector&lt; MultiFab * &gt; &amp;conv_u_old, Vector&lt; MultiFab * &gt; &amp;conv_s_old, Vector&lt; MultiFab * &gt; &amp;conv_X_old, Vector&lt; MultiFab * &gt; &amp;ro_RHS_old, Vector&lt; MultiFab * &gt; &amp;vel_RHS_old, Vector&lt; MultiFab * &gt; &amp;trac_RHS_old, Vector&lt; MultiFab * &gt; &amp;enthalpy_RHS_old, Vector&lt; MultiFab * &gt; &amp;species_RHS_old, Real time, Real dt, Real prev_dt, bool proj_2)</td></tr>
-<tr class="separator:ac09870e2f1c1fe46a3072ae26a878857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaddd8d697027b1d2092a9717adc173ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aaddd8d697027b1d2092a9717adc173ec">mfix_enthalpy_rhs</a> (const bool explicit_diffusion, Vector&lt; MultiFab * &gt; const &amp;rhs, Vector&lt; MultiFab * &gt; const &amp;lap_T, Vector&lt; MultiFab * &gt; const &amp;T_g, Vector&lt; MultiFab * &gt; const &amp;ep_g, Vector&lt; MultiFab * &gt; const &amp;ro_g, Vector&lt; MultiFab * &gt; const &amp;k_g, Vector&lt; MultiFab * &gt; const &amp;T_g_on_eb, Vector&lt; MultiFab * &gt; const &amp;k_g_on_eb, Vector&lt; MultiFab * &gt; const &amp;X_gk, Vector&lt; MultiFab * &gt; const &amp;D_gk, Vector&lt; MultiFab * &gt; const &amp;h_gk)</td></tr>
+<tr class="separator:aaddd8d697027b1d2092a9717adc173ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3442e68d60362bca998449485545c5ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a3442e68d60362bca998449485545c5ae">mfix_scalar_rhs</a> (const bool explicit_diffusion, Vector&lt; MultiFab * &gt; const &amp;lap_trac, Vector&lt; MultiFab * &gt; const &amp;trac, Vector&lt; MultiFab * &gt; const &amp;ep_g, Vector&lt; MultiFab * &gt; const &amp;ro_g, const Vector&lt; Real &gt; &amp;<a class="el" href="classmfix.html#a381da6efa3a07b5d9256d52d7be449c3">mu_s</a>)</td></tr>
+<tr class="separator:a3442e68d60362bca998449485545c5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fd6aa218dc0efe2d5ee723b75c38f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af7fd6aa218dc0efe2d5ee723b75c38f8">mfix_species_X_rhs</a> (const bool explicit_diffusion, Vector&lt; MultiFab * &gt; const &amp;rhs, Vector&lt; MultiFab * &gt; const &amp;lap_X, Vector&lt; MultiFab * &gt; const &amp;X_gk, Vector&lt; MultiFab * &gt; const &amp;ep_g, Vector&lt; MultiFab * &gt; const &amp;ro_g, Vector&lt; MultiFab * &gt; const &amp;D_gk, Vector&lt; MultiFab * &gt; const &amp;ro_gk_txfr)</td></tr>
+<tr class="separator:af7fd6aa218dc0efe2d5ee723b75c38f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7042a7a7f641a0e9fc56a1b8a003982e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a7042a7a7f641a0e9fc56a1b8a003982e">mfix_apply_corrector</a> (Vector&lt; MultiFab * &gt; &amp;conv_u_old, Vector&lt; MultiFab * &gt; &amp;conv_s_old, Vector&lt; MultiFab * &gt; &amp;conv_X_old, Vector&lt; MultiFab * &gt; &amp;ro_RHS_old, Vector&lt; MultiFab * &gt; &amp;vel_RHS_old, Vector&lt; MultiFab * &gt; &amp;lap_trac_old, Vector&lt; MultiFab * &gt; &amp;enthalpy_RHS_old, Vector&lt; MultiFab * &gt; &amp;lap_T_old, Vector&lt; MultiFab * &gt; &amp;species_RHS_old, Vector&lt; MultiFab * &gt; &amp;lap_X_old, Real time, Real dt, Real prev_dt, bool proj_2)</td></tr>
+<tr class="separator:a7042a7a7f641a0e9fc56a1b8a003982e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a665a917b2dbf316081e444331a0c4a75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a665a917b2dbf316081e444331a0c4a75">mfix_normalize_fluid_species</a> (const Vector&lt; MultiFab * &gt; &amp;X_gk)</td></tr>
 <tr class="separator:a665a917b2dbf316081e444331a0c4a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76b06c68b8717a5cea58b3aa6fdac75a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a76b06c68b8717a5cea58b3aa6fdac75a">mfix_update_fluid_and_species</a> (const Vector&lt; MultiFab * &gt; &amp;cp_gk, const Vector&lt; MultiFab * &gt; &amp;h_gk, const Vector&lt; MultiFab * &gt; &amp;MW_g, const Vector&lt; MultiFab * &gt; &amp;cp_g, const Vector&lt; MultiFab * &gt; &amp;h_g, const Vector&lt; MultiFab * &gt; &amp;T_g, const Vector&lt; MultiFab * &gt; &amp;X_gk)</td></tr>
@@ -363,9 +367,11 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a0bced74e039628fef12228e4d073f88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16cefe733684d5e754be887bcbe0c88a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a16cefe733684d5e754be887bcbe0c88a">m_drag_type</a> = <a class="el" href="struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422a3d0126aeea227aef40d3ac17b18383b5">DragType::Invalid</a></td></tr>
 <tr class="separator:a16cefe733684d5e754be887bcbe0c88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027900ca8b8a7824d324b7c5a069189f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a027900ca8b8a7824d324b7c5a069189f">m_convection_type</a> = <a class="el" href="struct_convection_type.html#ac376812de1669a480b37eadc46862264a80efad6f88ae2c680edb090c91e929c8">ConvectionType::Invalid</a></td></tr>
+<tr class="separator:a027900ca8b8a7824d324b7c5a069189f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97bb1451c2576279827050fc5162100c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="mfix_8_h.html#a0acede667a9165d99ef8427c6793130b">DepositionScheme</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a97bb1451c2576279827050fc5162100c">m_deposition_scheme</a></td></tr>
 <tr class="separator:a97bb1451c2576279827050fc5162100c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e64da2223f4a9c5ad35d53ce9c310f1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a9e64da2223f4a9c5ad35d53ce9c310f1">m_reaction_rates_type</a> = <a class="el" href="struct_reaction_rates_type.html#ab68c27ebbc9cc37fc79b297c12716999abe57f6cb58e7c52957301f8620c779ae">ReactionRatesType::RRatesUser</a></td></tr>
+<tr class="memitem:a9e64da2223f4a9c5ad35d53ce9c310f1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a9e64da2223f4a9c5ad35d53ce9c310f1">m_reaction_rates_type</a> = <a class="el" href="struct_reaction_rates_type.html#a9ad6ebdeb8761a6d860ab2e0ebcb1332abe57f6cb58e7c52957301f8620c779ae">ReactionRatesType::RRatesUser</a></td></tr>
 <tr class="separator:a9e64da2223f4a9c5ad35d53ce9c310f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab87871d7506f992d426ef58bb89c683f"><td class="memItemLeft" align="right" valign="top">static amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a> = -1.0</td></tr>
 <tr class="separator:ab87871d7506f992d426ef58bb89c683f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -433,30 +439,48 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a381da6efa3a07b5d9256d52d7be449c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e0d66979661267f2fe1e368b957221e"><td class="memItemLeft" align="right" valign="top">BCList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a3e0d66979661267f2fe1e368b957221e">bc_list</a></td></tr>
 <tr class="separator:a3e0d66979661267f2fe1e368b957221e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ae0ec2f7c0a8c59b8b8ee4a41782fa5"><td class="memItemLeft" align="right" valign="top">Gpu::ManagedVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a4ae0ec2f7c0a8c59b8b8ee4a41782fa5">m_bc_u_g</a></td></tr>
-<tr class="separator:a4ae0ec2f7c0a8c59b8b8ee4a41782fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9150e1aff40dc41f2144ed56fe71b6b"><td class="memItemLeft" align="right" valign="top">Gpu::ManagedVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ab9150e1aff40dc41f2144ed56fe71b6b">m_bc_v_g</a></td></tr>
-<tr class="separator:ab9150e1aff40dc41f2144ed56fe71b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78005732a5f3a89d3383c72fbf7f09fc"><td class="memItemLeft" align="right" valign="top">Gpu::ManagedVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a78005732a5f3a89d3383c72fbf7f09fc">m_bc_w_g</a></td></tr>
-<tr class="separator:a78005732a5f3a89d3383c72fbf7f09fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a415a78e2deb8c98ebbca121047309d"><td class="memItemLeft" align="right" valign="top">Gpu::ManagedVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a5a415a78e2deb8c98ebbca121047309d">m_bc_t_g</a></td></tr>
-<tr class="separator:a5a415a78e2deb8c98ebbca121047309d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee3f0eb8bc2192036aa4e204c3d0fd25"><td class="memItemLeft" align="right" valign="top">Vector&lt; Gpu::ManagedVector&lt; Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#aee3f0eb8bc2192036aa4e204c3d0fd25">m_bc_X_gk</a></td></tr>
-<tr class="separator:aee3f0eb8bc2192036aa4e204c3d0fd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0895c0090157d2bf68a1d6b3623a3b04"><td class="memItemLeft" align="right" valign="top">Gpu::ManagedVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a0895c0090157d2bf68a1d6b3623a3b04">m_bc_ep_g</a></td></tr>
-<tr class="separator:a0895c0090157d2bf68a1d6b3623a3b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a687de25921a16d64f04d2fac33e3ace4"><td class="memItemLeft" align="right" valign="top">Gpu::ManagedVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a687de25921a16d64f04d2fac33e3ace4">m_bc_p_g</a></td></tr>
-<tr class="separator:a687de25921a16d64f04d2fac33e3ace4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a623e32221252250b8340d5bdb05ee91c"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a623e32221252250b8340d5bdb05ee91c">m_vel_g_bc_types</a></td></tr>
-<tr class="separator:a623e32221252250b8340d5bdb05ee91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af413786c063e41862c7791bb75ea9bff"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af413786c063e41862c7791bb75ea9bff">m_ro_g_bc_types</a></td></tr>
-<tr class="separator:af413786c063e41862c7791bb75ea9bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa18fc58af812716dfd0939d354593f8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#afa18fc58af812716dfd0939d354593f8">m_T_g_bc_types</a></td></tr>
-<tr class="separator:afa18fc58af812716dfd0939d354593f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564337f48f57f26e6f6acee5428380b7"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a564337f48f57f26e6f6acee5428380b7">m_trac_g_bc_types</a></td></tr>
-<tr class="separator:a564337f48f57f26e6f6acee5428380b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72a6e6e34c746d75d674f6095e44bb67"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a72a6e6e34c746d75d674f6095e44bb67">m_X_gk_bc_types</a></td></tr>
-<tr class="separator:a72a6e6e34c746d75d674f6095e44bb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae775f98da6efc55b02cfe08003b5f99e"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ae775f98da6efc55b02cfe08003b5f99e">m_bc_u_g</a></td></tr>
+<tr class="separator:ae775f98da6efc55b02cfe08003b5f99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac839d3dcd133937ab5a7a764a40c66c4"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#ac839d3dcd133937ab5a7a764a40c66c4">m_bc_v_g</a></td></tr>
+<tr class="separator:ac839d3dcd133937ab5a7a764a40c66c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9de1e3534c3497e274cc8e895ca67c"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a6b9de1e3534c3497e274cc8e895ca67c">m_bc_w_g</a></td></tr>
+<tr class="separator:a6b9de1e3534c3497e274cc8e895ca67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c73e258366eabbb1cf3477df1bf6b2f"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a8c73e258366eabbb1cf3477df1bf6b2f">m_bc_t_g</a></td></tr>
+<tr class="separator:a8c73e258366eabbb1cf3477df1bf6b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606f5d9b5ba11b7666d6254dc28d18e3"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a606f5d9b5ba11b7666d6254dc28d18e3">m_bc_ep_g</a></td></tr>
+<tr class="separator:a606f5d9b5ba11b7666d6254dc28d18e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7349ab16ebe90b6164a1cb7dc38f9756"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a7349ab16ebe90b6164a1cb7dc38f9756">m_bc_p_g</a></td></tr>
+<tr class="separator:a7349ab16ebe90b6164a1cb7dc38f9756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d57a44394d55b370b92a9fa9676c9a"><td class="memItemLeft" align="right" valign="top">Vector&lt; Gpu::DeviceVector&lt; Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a96d57a44394d55b370b92a9fa9676c9a">m_bc_X_gk</a></td></tr>
+<tr class="separator:a96d57a44394d55b370b92a9fa9676c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbb8defcccca742f3e223ef127e74b0"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; Real * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a0fbb8defcccca742f3e223ef127e74b0">m_bc_X_gk_ptr</a></td></tr>
+<tr class="separator:a0fbb8defcccca742f3e223ef127e74b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4fe3d11d9aec5e283dfc241ee2af4e"><td class="memItemLeft" align="right" valign="top">Vector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a9e4fe3d11d9aec5e283dfc241ee2af4e">m_h_bc_u_g</a></td></tr>
+<tr class="separator:a9e4fe3d11d9aec5e283dfc241ee2af4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3d087b45a371902f58e8d0ea29e675"><td class="memItemLeft" align="right" valign="top">Vector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a1f3d087b45a371902f58e8d0ea29e675">m_h_bc_v_g</a></td></tr>
+<tr class="separator:a1f3d087b45a371902f58e8d0ea29e675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df34146fc44806f46f348124d3dd96a"><td class="memItemLeft" align="right" valign="top">Vector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a2df34146fc44806f46f348124d3dd96a">m_h_bc_w_g</a></td></tr>
+<tr class="separator:a2df34146fc44806f46f348124d3dd96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f28eca63f9e304fc6a1308a9434259"><td class="memItemLeft" align="right" valign="top">Vector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a13f28eca63f9e304fc6a1308a9434259">m_h_bc_t_g</a></td></tr>
+<tr class="separator:a13f28eca63f9e304fc6a1308a9434259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3e2505daa094bd14143308f26fb28c"><td class="memItemLeft" align="right" valign="top">Vector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a7f3e2505daa094bd14143308f26fb28c">m_h_bc_ep_g</a></td></tr>
+<tr class="separator:a7f3e2505daa094bd14143308f26fb28c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83cbf22bd71151a4622865ec561e035"><td class="memItemLeft" align="right" valign="top">Vector&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#af83cbf22bd71151a4622865ec561e035">m_h_bc_p_g</a></td></tr>
+<tr class="separator:af83cbf22bd71151a4622865ec561e035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acde315f5c0fa248b9659a89ade119687"><td class="memItemLeft" align="right" valign="top">Vector&lt; Vector&lt; Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#acde315f5c0fa248b9659a89ade119687">m_h_bc_X_gk</a></td></tr>
+<tr class="separator:acde315f5c0fa248b9659a89ade119687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d5659ff48f09951b50b6a7bc0956d2"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a96d5659ff48f09951b50b6a7bc0956d2">m_vel_g_bc_types</a></td></tr>
+<tr class="separator:a96d5659ff48f09951b50b6a7bc0956d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e126c6174817e298802137c17fbc812"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a0e126c6174817e298802137c17fbc812">m_ro_g_bc_types</a></td></tr>
+<tr class="separator:a0e126c6174817e298802137c17fbc812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0d79a9adef7f27d1d59c8f3d869122"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#acd0d79a9adef7f27d1d59c8f3d869122">m_T_g_bc_types</a></td></tr>
+<tr class="separator:acd0d79a9adef7f27d1d59c8f3d869122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457f68f46e82ce326f23c23f66fa205e"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a457f68f46e82ce326f23c23f66fa205e">m_trac_g_bc_types</a></td></tr>
+<tr class="separator:a457f68f46e82ce326f23c23f66fa205e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72eaf0cb92054fb383448b71080475de"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a72eaf0cb92054fb383448b71080475de">m_X_gk_bc_types</a></td></tr>
+<tr class="separator:a72eaf0cb92054fb383448b71080475de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c7f74aa5bc5be8c410ae655fb67fda"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; <a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html#a8242d61725508852f35cb28c55ea15ce">REACTIONS::ChemicalReaction</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmfix.html#a52c7f74aa5bc5be8c410ae655fb67fda">m_chemical_reactions</a></td></tr>
+<tr class="separator:a52c7f74aa5bc5be8c410ae655fb67fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -479,7 +503,7 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a3e0d66979661267f2fe1e368b957221e">bc_list</a>, <a class="el" href="classmfix.html#af413786c063e41862c7791bb75ea9bff">m_ro_g_bc_types</a>, <a class="el" href="classmfix.html#afa18fc58af812716dfd0939d354593f8">m_T_g_bc_types</a>, <a class="el" href="classmfix.html#a564337f48f57f26e6f6acee5428380b7">m_trac_g_bc_types</a>, <a class="el" href="classmfix.html#a623e32221252250b8340d5bdb05ee91c">m_vel_g_bc_types</a>, and <a class="el" href="classmfix.html#a72a6e6e34c746d75d674f6095e44bb67">m_X_gk_bc_types</a>.</p>
+<p>References <a class="el" href="classmfix.html#a3e0d66979661267f2fe1e368b957221e">bc_list</a>, <a class="el" href="classmfix.html#a0e126c6174817e298802137c17fbc812">m_ro_g_bc_types</a>, <a class="el" href="classmfix.html#acd0d79a9adef7f27d1d59c8f3d869122">m_T_g_bc_types</a>, <a class="el" href="classmfix.html#a457f68f46e82ce326f23c23f66fa205e">m_trac_g_bc_types</a>, <a class="el" href="classmfix.html#a96d5659ff48f09951b50b6a7bc0956d2">m_vel_g_bc_types</a>, and <a class="el" href="classmfix.html#a72eaf0cb92054fb383448b71080475de">m_X_gk_bc_types</a>.</p>
 
 </div>
 </div>
@@ -495,10 +519,8 @@ Static Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>EB factory that lives on the fluid grids</p>
-<p>EB factory that lives on the particle grids </p>
 
-<p>References <a class="el" href="classmfix.html#a3be6b18f19d961aa108de0efda2fce6e">bcoeff</a>.</p>
+<p>References <a class="el" href="classmfix.html#a3be6b18f19d961aa108de0efda2fce6e">bcoeff</a>, and <a class="el" href="classmfix.html#a52c7f74aa5bc5be8c410ae655fb67fda">m_chemical_reactions</a>.</p>
 
 </div>
 </div>
@@ -709,32 +731,6 @@ template&lt;class F &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Construct EB levels from Geometry shop. This builds each EB level and saves a pointer to each level into <code>eb_levels</code>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6192b20bea7fde13477f1f1af64b7473"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class F &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mfix::build_particle_eb_levels </td>
-          <td>(</td>
-          <td class="paramtype">EB2::GeometryShop&lt; F &gt;&#160;</td>
-          <td class="paramname"><em>gshop</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1418,6 +1414,21 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a16b94c19ecf70b8032241481136d7c27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::initialize_chem_reactions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa5f2767b5a831949c3e40641c7c320d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1448,7 +1459,7 @@ template&lt;class F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>, <a class="el" href="structspecies_data.html#a6d9717a47a875bc0b11a25bd94238ddca978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, and <a class="el" href="structreactions_data.html#a4e51a3e79e990e2d085bc96097a6b580affb194d05efec6dbc66f0a261cf6f93b">reactionsData::count</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a16ca662b20fb79a2b5b07b47efe3ee0f">realData::count</a>, <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502da978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, and <a class="el" href="structreactions_data.html#a18d81d1aba3ac43719c9b4dc12b753f8affb194d05efec6dbc66f0a261cf6f93b">reactionsData::count</a>.</p>
 
 </div>
 </div>
@@ -1704,7 +1715,7 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac09870e2f1c1fe46a3072ae26a878857"></a>
+<a class="anchor" id="a7042a7a7f641a0e9fc56a1b8a003982e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1742,7 +1753,7 @@ template&lt;class F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>trac_RHS_old</em>, </td>
+          <td class="paramname"><em>lap_trac_old</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1754,7 +1765,19 @@ template&lt;class F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lap_T_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
           <td class="paramname"><em>species_RHS_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lap_X_old</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1842,7 +1865,7 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8c8ec44c9c9996ab690747d2f25c7f7a"></a>
+<a class="anchor" id="ae98e3ff8b2755d42470e70ff222419e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1880,7 +1903,7 @@ template&lt;class F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>trac_RHS_old</em>, </td>
+          <td class="paramname"><em>lap_trac_old</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1892,7 +1915,19 @@ template&lt;class F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lap_T_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
           <td class="paramname"><em>species_RHS_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lap_X_old</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1964,7 +1999,7 @@ template&lt;class F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a9e64da2223f4a9c5ad35d53ce9c310f1">m_reaction_rates_type</a>, and <a class="el" href="struct_reaction_rates_type.html#ab68c27ebbc9cc37fc79b297c12716999abe57f6cb58e7c52957301f8620c779ae">ReactionRatesType::RRatesUser</a>.</p>
+<p>References <a class="el" href="classmfix.html#a9e64da2223f4a9c5ad35d53ce9c310f1">m_reaction_rates_type</a>, and <a class="el" href="struct_reaction_rates_type.html#a9ad6ebdeb8761a6d860ab2e0ebcb1332abe57f6cb58e7c52957301f8620c779ae">ReactionRatesType::RRatesUser</a>.</p>
 
 </div>
 </div>
@@ -2012,7 +2047,27 @@ template&lt;typename F1 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structspecies_data.html#a6d9717a47a875bc0b11a25bd94238ddca978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, <a class="el" href="structreactions_data.html#a4e51a3e79e990e2d085bc96097a6b580a4fa4cd442311c7100ffe2e46130aa8e4">reactionsData::G_sn_pg_q</a>, <a class="el" href="class_m_f_i_x_particle_container.html#ae0f54a7839e8ed749d215e4d2223273a">MFIXParticleContainer::InterphaseChemDeposition()</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>, <a class="el" href="classmfix.html#af44d25d563093e6dc9bd3d442f5a46fe">mfix_set_density_bcs()</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="classmfix.html#af58c6e522025a7000587c252f5529f47">mfix_set_species_bcs()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dada202f06a57217487b5502675d245413">realData::volume</a>, and <a class="el" href="structspecies_data.html#a6d9717a47a875bc0b11a25bd94238ddcaf0e1e6de8388dd63e3161b1f8765f982">speciesData::X_sn</a>.</p>
+<p>References <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502da978d15cac3ea89e3f2da624f5a665887">speciesData::count</a>, <a class="el" href="structreactions_data.html#a18d81d1aba3ac43719c9b4dc12b753f8a4fa4cd442311c7100ffe2e46130aa8e4">reactionsData::G_sn_pg_q</a>, <a class="el" href="class_m_f_i_x_particle_container.html#afc55ef59abf1a65d7829f41c8f713355">MFIXParticleContainer::InterphaseChemDeposition()</a>, <a class="el" href="classmfix.html#a52c7f74aa5bc5be8c410ae655fb67fda">m_chemical_reactions</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a599d4ce0f2b12ce5f1677382bd122be3">realData::mass</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>, <a class="el" href="classmfix.html#af44d25d563093e6dc9bd3d442f5a46fe">mfix_set_density_bcs()</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="classmfix.html#af58c6e522025a7000587c252f5529f47">mfix_set_species_bcs()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ada202f06a57217487b5502675d245413">realData::volume</a>, and <a class="el" href="structspecies_data.html#af66b6748d7917e1839f81628ec4d502daf0e1e6de8388dd63e3161b1f8765f982">speciesData::X_sn</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53fef508952745b959fd9f079903e9a0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F1 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::mfix_calc_transfer_coeffs </td>
+          <td>(</td>
+          <td class="paramtype">F1&#160;</td>
+          <td class="paramname"><em>DragFunc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>References <a class="el" href="struct_convection_type.html#ac376812de1669a480b37eadc46862264a2aaeda3a1c2a090164a68643e3ce5544">ConvectionType::Gunn</a>, <a class="el" href="classmfix.html#a027900ca8b8a7824d324b7c5a069189f">m_convection_type</a>, <a class="el" href="classmfix.html#a2cae5d89ef4d5fd9ad9fe72f0772e50f">mfix_calc_transfer_coeffs()</a>, and <a class="el" href="struct_convection_type.html#ac376812de1669a480b37eadc46862264a7e57911e237f9d47542b50113bc9a552">ConvectionType::RanzMarshall</a>.</p>
 
 </div>
 </div>
@@ -2042,7 +2097,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dacf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dada202f06a57217487b5502675d245413">realData::volume</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="mfix__des___k_8_h.html#aa7c999b4d9520b89d39f60bf13f174da">dot_product()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="classmfix.html#abe4703223c5bbaa25e27ccc635384d9c">mfix_set_epg_bcs()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe">realData::radius</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3acf19902d9cf3ce6b143bf8590950e4cc">realData::statwt</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
 
 </div>
 </div>
@@ -2069,7 +2124,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 <p>References <a class="el" href="struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422a94d9e4bc0e53ba72b7842c34074a1352">DragType::BVK2</a>, <a class="el" href="struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422a6f3b2db60ba047f68172a6ce1097f54f">DragType::Gidaspow</a>, <a class="el" href="classmfix.html#a16cefe733684d5e754be887bcbe0c88a">m_drag_type</a>, <a class="el" href="struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422aca9a9e00d2530120943c7d38fbe2d7ec">DragType::UserDrag</a>, and <a class="el" href="struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422aa13b033208983480481640d057aad7f2">DragType::WenYu</a>.</p>
 
-<p>Referenced by <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>.</p>
+<p>Referenced by <a class="el" href="classmfix.html#a53fef508952745b959fd9f079903e9a0">mfix_calc_transfer_coeffs()</a>, and <a class="el" href="classmfix.html#a0a73375233c0b3038f4584a242daa2b2">mfix_calc_txfr_fluid()</a>.</p>
 
 </div>
 </div>
@@ -2095,7 +2150,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a30565da22d0363a7045d12e16897614c">diffusion_op</a>, <a class="el" href="class_m_f_i_x_particle_container.html#ae21bddcf7ba98315c4331b8241e9b210">MFIXParticleContainer::InterphaseTxfrDeposition()</a>, <a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="classmfix.html#a2cae5d89ef4d5fd9ad9fe72f0772e50f">mfix_calc_transfer_coeffs()</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, and <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>.</p>
+<p>References <a class="el" href="classmfix.html#a30565da22d0363a7045d12e16897614c">diffusion_op</a>, <a class="el" href="class_m_f_i_x_particle_container.html#aa69093878f5e7b254eae16322cf3bad8">MFIXParticleContainer::InterphaseTxfrDeposition()</a>, <a class="el" href="classmfix.html#ab87871d7506f992d426ef58bb89c683f">m_deposition_diffusion_coeff</a>, <a class="el" href="classmfix.html#ace30c9b8e90c26ba0d33e5ebc1634043">m_max_solids_volume_fraction</a>, <a class="el" href="classmfix.html#a2cae5d89ef4d5fd9ad9fe72f0772e50f">mfix_calc_transfer_coeffs()</a>, <a class="el" href="classmfix.html#a40aecb4948a5458a2a1d2dc889e95dc0">mfix_deposition_bcs()</a>, and <a class="el" href="classmfix.html#a4a71655cbe081c6ee4c51193754bd708">mfix_redistribute_deposition()</a>.</p>
 
 </div>
 </div>
@@ -2113,7 +2168,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="classmfix.html#ab0dd9a81ff59a5c8b1214e6548c6310c">gp0</a>, <a class="el" href="classmfix.html#ab062a32b96b4d70f5c4a71753866fa5c">mfix_set_temperature_bcs()</a>, <a class="el" href="classmfix.html#a66a58745a2f93f95ee33b5bb2afcb7c0">mfix_set_velocity_bcs()</a>, <a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs()</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dafbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521da069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#a7a4926bdd051e850b79da8a998fc521dada202f06a57217487b5502675d245413">realData::volume</a>.</p>
+<p>References <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a0aa88be75c997cb5c87e449b28b4bc2b">realData::convection</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6dfe37de0300243b46e3055b76e0375a">realData::dragcoeff</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ac0bb9944f280bf19ee11f6951021c189">realData::dragx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a713ba093d0dc3c12ee28d1f1127fe5b1">realData::dragy</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ab9d41258c8c15a6da755a9cc05d5f8bb">realData::dragz</a>, <a class="el" href="classmfix.html#ab0dd9a81ff59a5c8b1214e6548c6310c">gp0</a>, <a class="el" href="classmfix.html#ab062a32b96b4d70f5c4a71753866fa5c">mfix_set_temperature_bcs()</a>, <a class="el" href="classmfix.html#a66a58745a2f93f95ee33b5bb2afcb7c0">mfix_set_velocity_bcs()</a>, <a class="el" href="classmfix.html#a2dfc4b869c78ac2ed49b51fd27308114">set_gradp_bcs()</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a914f2045d6afaa66eaa5e9663c8db3fd">realData::temperature</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3afbd77824ffff1683f4cb01664b433442">realData::velx</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a6c3644185908a4ba59cb581df665bf2a">realData::vely</a>, <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a069e38644b938e403dacd110296a8e0c">realData::velz</a>, and <a class="el" href="structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3ada202f06a57217487b5502675d245413">realData::volume</a>.</p>
 
 </div>
 </div>
@@ -2605,7 +2660,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a11fa6d5c4368782638309359c70537aa"></a>
+<a class="anchor" id="acdae0270ceceb16ddc44085bef9e8d3c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2654,7 +2709,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; std::string, Gpu::ManagedVector&lt; int &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, Gpu::DeviceVector&lt; int &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>bc_types</em>&#160;</td>
         </tr>
         <tr>
@@ -2754,7 +2809,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a34233aead420d8a320851f59352a047f"></a>
+<a class="anchor" id="aaddd8d697027b1d2092a9717adc173ec"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2769,6 +2824,12 @@ template&lt;typename F1 , typename F2 &gt; </div>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lap_T</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3039,7 +3100,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#a34233aead420d8a320851f59352a047f">mfix_enthalpy_rhs()</a>, <a class="el" href="classmfix.html#a66a58745a2f93f95ee33b5bb2afcb7c0">mfix_set_velocity_bcs()</a>, <a class="el" href="classmfix.html#ac10b81ce324809967482e861bb0a4db3">mfix_species_X_rhs()</a>, and <a class="el" href="classmfix.html#a1da19af6a7da88e4748c33f294a11e23">set_vec_bcs()</a>.</p>
+<p>References <a class="el" href="classmfix.html#aaddd8d697027b1d2092a9717adc173ec">mfix_enthalpy_rhs()</a>, <a class="el" href="classmfix.html#a66a58745a2f93f95ee33b5bb2afcb7c0">mfix_set_velocity_bcs()</a>, <a class="el" href="classmfix.html#af7fd6aa218dc0efe2d5ee723b75c38f8">mfix_species_X_rhs()</a>, and <a class="el" href="classmfix.html#a1da19af6a7da88e4748c33f294a11e23">set_vec_bcs()</a>.</p>
 
 </div>
 </div>
@@ -3174,7 +3235,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae1f2b4273aee73ac5d88468dc083bc79"></a>
+<a class="anchor" id="a3442e68d60362bca998449485545c5ae"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -3188,7 +3249,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>, </td>
+          <td class="paramname"><em>lap_trac</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3636,7 +3697,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac10b81ce324809967482e861bb0a4db3"></a>
+<a class="anchor" id="af7fd6aa218dc0efe2d5ee723b75c38f8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -3651,6 +3712,12 @@ template&lt;typename F1 , typename F2 &gt; </div>
           <td></td>
           <td class="paramtype">Vector&lt; MultiFab * &gt; const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>lap_X</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4016,6 +4083,23 @@ template&lt;typename F1 , typename F2 &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Remake an existing level using provided BoxArray and DistributionMapping and fill with existing fine and coarse data. Called by AmrCore::regrid. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6b64b79898dc107c7a3671034718f5d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mfix::ReportGridStats </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 
 </div>
 </div>
@@ -5219,7 +5303,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>References <a class="el" href="classmfix.html#ae582a240dcf6b7717ba308cd762d3175">ComputeAverageFluidVars()</a>, and <a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">MFIXParticleContainer::ComputeAverageVelocities()</a>.</p>
+<p>References <a class="el" href="classmfix.html#ae582a240dcf6b7717ba308cd762d3175">ComputeAverageFluidVars()</a>, <a class="el" href="class_m_f_i_x_particle_container.html#a6b8f3a13ded09a62dbd518f1b98cdac2">MFIXParticleContainer::ComputeAverageTemperatures()</a>, and <a class="el" href="class_m_f_i_x_particle_container.html#a0294645acb85bcfee40880dcaf80156c">MFIXParticleContainer::ComputeAverageVelocities()</a>.</p>
 
 <p>Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>, and <a class="el" href="main_8cpp.html#aa0a3b7021962714fdc5f5ca8e49734b1">writeNow()</a>.</p>
 
@@ -5543,7 +5627,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0895c0090157d2bf68a1d6b3623a3b04"></a>
+<a class="anchor" id="a606f5d9b5ba11b7666d6254dc28d18e3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5551,19 +5635,19 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Gpu::ManagedVector&lt;Real&gt; mfix::m_bc_ep_g</td>
+          <td class="memname">Gpu::DeviceVector&lt;Real&gt; mfix::m_bc_ep_g</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a687de25921a16d64f04d2fac33e3ace4"></a>
+<a class="anchor" id="a7349ab16ebe90b6164a1cb7dc38f9756"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5571,19 +5655,19 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Gpu::ManagedVector&lt;Real&gt; mfix::m_bc_p_g</td>
+          <td class="memname">Gpu::DeviceVector&lt;Real&gt; mfix::m_bc_p_g</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a5a415a78e2deb8c98ebbca121047309d"></a>
+<a class="anchor" id="a8c73e258366eabbb1cf3477df1bf6b2f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5591,19 +5675,19 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Gpu::ManagedVector&lt;Real&gt; mfix::m_bc_t_g</td>
+          <td class="memname">Gpu::DeviceVector&lt;Real&gt; mfix::m_bc_t_g</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a4ae0ec2f7c0a8c59b8b8ee4a41782fa5"></a>
+<a class="anchor" id="ae775f98da6efc55b02cfe08003b5f99e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5611,19 +5695,19 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Gpu::ManagedVector&lt;Real&gt; mfix::m_bc_u_g</td>
+          <td class="memname">Gpu::DeviceVector&lt;Real&gt; mfix::m_bc_u_g</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ab9150e1aff40dc41f2144ed56fe71b6b"></a>
+<a class="anchor" id="ac839d3dcd133937ab5a7a764a40c66c4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5631,19 +5715,19 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Gpu::ManagedVector&lt;Real&gt; mfix::m_bc_v_g</td>
+          <td class="memname">Gpu::DeviceVector&lt;Real&gt; mfix::m_bc_v_g</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a78005732a5f3a89d3383c72fbf7f09fc"></a>
+<a class="anchor" id="a6b9de1e3534c3497e274cc8e895ca67c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5651,19 +5735,19 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Gpu::ManagedVector&lt;Real&gt; mfix::m_bc_w_g</td>
+          <td class="memname">Gpu::DeviceVector&lt;Real&gt; mfix::m_bc_w_g</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aee3f0eb8bc2192036aa4e204c3d0fd25"></a>
+<a class="anchor" id="a96d57a44394d55b370b92a9fa9676c9a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5671,15 +5755,79 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Vector&lt; Gpu::ManagedVector&lt;Real&gt; &gt; mfix::m_bc_X_gk</td>
+          <td class="memname">Vector&lt; Gpu::DeviceVector&lt;Real&gt; &gt; mfix::m_bc_X_gk</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0fbb8defcccca742f3e223ef127e74b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gpu::DeviceVector&lt;Real*&gt; mfix::m_bc_X_gk_ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52c7f74aa5bc5be8c410ae655fb67fda"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt; <a class="el" href="mfix__des__heterogeneous__rates___k_8_h.html#a8242d61725508852f35cb28c55ea15ce">REACTIONS::ChemicalReaction</a>* &gt; mfix::m_chemical_reactions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Referenced by <a class="el" href="classmfix.html#abfc96442b02ca3b5cb6a71889e101592">mfix_calc_chem_txfr()</a>, and <a class="el" href="classmfix.html#abfb54f75af118fd5411d4b5239baabd1">~mfix()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a027900ca8b8a7824d324b7c5a069189f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mfix::m_convection_type = <a class="el" href="struct_convection_type.html#ac376812de1669a480b37eadc46862264a80efad6f88ae2c680edb090c91e929c8">ConvectionType::Invalid</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Referenced by <a class="el" href="classmfix.html#a53fef508952745b959fd9f079903e9a0">mfix_calc_transfer_coeffs()</a>.</p>
 
 </div>
 </div>
@@ -5767,6 +5915,146 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a7f3e2505daa094bd14143308f26fb28c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Real&gt; mfix::m_h_bc_ep_g</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af83cbf22bd71151a4622865ec561e035"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Real&gt; mfix::m_h_bc_p_g</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a13f28eca63f9e304fc6a1308a9434259"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Real&gt; mfix::m_h_bc_t_g</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e4fe3d11d9aec5e283dfc241ee2af4e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Real&gt; mfix::m_h_bc_u_g</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1f3d087b45a371902f58e8d0ea29e675"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Real&gt; mfix::m_h_bc_v_g</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2df34146fc44806f46f348124d3dd96a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Real&gt; mfix::m_h_bc_w_g</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acde315f5c0fa248b9659a89ade119687"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;Vector&lt;Real&gt; &gt; mfix::m_h_bc_X_gk</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ace30c9b8e90c26ba0d33e5ebc1634043"></a>
 <div class="memitem">
 <div class="memproto">
@@ -5797,7 +6085,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int mfix::m_reaction_rates_type = <a class="el" href="struct_reaction_rates_type.html#ab68c27ebbc9cc37fc79b297c12716999abe57f6cb58e7c52957301f8620c779ae">ReactionRatesType::RRatesUser</a></td>
+          <td class="memname">int mfix::m_reaction_rates_type = <a class="el" href="struct_reaction_rates_type.html#a9ad6ebdeb8761a6d860ab2e0ebcb1332abe57f6cb58e7c52957301f8620c779ae">ReactionRatesType::RRatesUser</a></td>
         </tr>
       </table>
   </td>
@@ -5811,7 +6099,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af413786c063e41862c7791bb75ea9bff"></a>
+<a class="anchor" id="a0e126c6174817e298802137c17fbc812"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5819,7 +6107,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, Gpu::ManagedVector&lt;int&gt; &gt; mfix::m_ro_g_bc_types</td>
+          <td class="memname">std::map&lt; std::string, Gpu::DeviceVector&lt;int&gt; &gt; mfix::m_ro_g_bc_types</td>
         </tr>
       </table>
   </td>
@@ -5833,7 +6121,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afa18fc58af812716dfd0939d354593f8"></a>
+<a class="anchor" id="acd0d79a9adef7f27d1d59c8f3d869122"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5841,7 +6129,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, Gpu::ManagedVector&lt;int&gt; &gt; mfix::m_T_g_bc_types</td>
+          <td class="memname">std::map&lt; std::string, Gpu::DeviceVector&lt;int&gt; &gt; mfix::m_T_g_bc_types</td>
         </tr>
       </table>
   </td>
@@ -5855,7 +6143,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a564337f48f57f26e6f6acee5428380b7"></a>
+<a class="anchor" id="a457f68f46e82ce326f23c23f66fa205e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5863,7 +6151,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, Gpu::ManagedVector&lt;int&gt; &gt; mfix::m_trac_g_bc_types</td>
+          <td class="memname">std::map&lt; std::string, Gpu::DeviceVector&lt;int&gt; &gt; mfix::m_trac_g_bc_types</td>
         </tr>
       </table>
   </td>
@@ -5877,7 +6165,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a623e32221252250b8340d5bdb05ee91c"></a>
+<a class="anchor" id="a96d5659ff48f09951b50b6a7bc0956d2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5885,7 +6173,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, Gpu::ManagedVector&lt;int&gt; &gt; mfix::m_vel_g_bc_types</td>
+          <td class="memname">std::map&lt; std::string, Gpu::DeviceVector&lt;int&gt; &gt; mfix::m_vel_g_bc_types</td>
         </tr>
       </table>
   </td>
@@ -5899,7 +6187,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a72a6e6e34c746d75d674f6095e44bb67"></a>
+<a class="anchor" id="a72eaf0cb92054fb383448b71080475de"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -5907,7 +6195,7 @@ template&lt;typename F1 , typename F2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, Gpu::ManagedVector&lt;int&gt; &gt; mfix::m_X_gk_bc_types</td>
+          <td class="memname">std::map&lt; std::string, Gpu::DeviceVector&lt;int&gt; &gt; mfix::m_X_gk_bc_types</td>
         </tr>
       </table>
   </td>

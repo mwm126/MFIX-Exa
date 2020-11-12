@@ -202,7 +202,9 @@
 <p>CMake build is a two-step process. First <code class="docutils literal notranslate"><span class="pre">cmake</span></code> is invoked to create
 configuration files and makefiles in a chosen directory (<code class="docutils literal notranslate"><span class="pre">builddir</span></code>).
 Next, the actual build is performed by invoking <code class="docutils literal notranslate"><span class="pre">make</span></code> from within <code class="docutils literal notranslate"><span class="pre">builddir</span></code>.
-The CMake build process is summarized as follows:</p>
+If you are new to CMake, <a class="reference external" href="https://hsf-training.github.io/hsf-training-cmake-webpage/">this short tutorial</a>
+from the HEP Software foundation is the perfect place to get started with it.</p>
+<p>The CMake build process for MFiX-Exa is summarized as follows:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir /path/to/builddir</span>
 <span class="go">cd    /path/to/builddir</span>
 <span class="go">cmake [options] -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] /path/to/mfix</span>
@@ -270,9 +272,7 @@ instance, to build with the <code class="docutils literal notranslate"><span cla
 AMReX development is outside the scope of this document. Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in
 the top-level MFix-Exa repo to see whether the AMReX submodule has new commits,
 modified files, or untracked files.</p>
-<p>The CMake variables <code class="docutils literal notranslate"><span class="pre">AMREX_GIT_COMMIT_DEVELOP</span></code> and
-<code class="docutils literal notranslate"><span class="pre">AMREX_GIT_COMMIT_DEVELOP</span></code> have been removed. Instead, to update the AMReX
-submodule referenced by MFiX-Exa:</p>
+<p>To update the AMReX submodule referenced by MFiX-Exa:</p>
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> git -C subprojects/amrex checkout UPDATED_AMREX_COMMIT_SHA1
 <span class="gp">&gt;</span> git add subprojects/amrex
 <span class="gp">&gt;</span> git commit -m <span class="s1">&#39;Updating AMReX version&#39;</span>
@@ -304,11 +304,11 @@ MFiX-Exa developers!</p>
 <p>Next, configure, build and install AMReX as follows:</p>
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> mkdir build
 <span class="gp">&gt;</span> <span class="nb">cd</span> build
-<span class="gp">&gt;</span> cmake -DCMAKE_BUILD_TYPE<span class="o">=[</span>Debug<span class="p">|</span>Release<span class="p">|</span>RelWithDebInfo<span class="p">|</span>MinSizeRel<span class="o">]</span> -DENABLE_PARTICLES<span class="o">=</span>yes -DENABLE_AMRDATA<span class="o">=</span>yes -DENABLE_EB<span class="o">=</span>yes <span class="o">[</span>other amrex options<span class="o">]</span> -DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span>/absolute/path/to/installdir ..
+<span class="gp">&gt;</span> cmake -DCMAKE_BUILD_TYPE<span class="o">=[</span>Debug<span class="p">|</span>Release<span class="p">|</span>RelWithDebInfo<span class="p">|</span>MinSizeRel<span class="o">]</span> -DAMReX_PARTICLES<span class="o">=</span>yes -DAMReX_AMRDATA<span class="o">=</span>yes -DAMReX_EB<span class="o">=</span>yes <span class="o">[</span>other amrex options<span class="o">]</span> -DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span>/absolute/path/to/installdir ..
 <span class="gp">&gt;</span> make install
 </pre></div>
 </div>
-<p>The options <strong>ENABLE_PARTICLES=yes</strong>, <strong>ENABLE_AMRDATA=yes</strong>, and <strong>ENABLE_EB=yes</strong> are required by MFiX-Exa. <code class="docutils literal notranslate"><span class="pre">[other</span> <span class="pre">amrex</span> <span class="pre">options]</span></code> in the snippet above refers to any other AMReX configuration option in addition to the required ones. Please refer to the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake">AMReX user guide</a> for more details on building AMReX with CMake.</p>
+<p>The options <strong>AMReX_PARTICLES=yes</strong>, <strong>AMReX_AMRDATA=yes</strong>, and <strong>AMReX_EB=yes</strong> are required by MFiX-Exa. <code class="docutils literal notranslate"><span class="pre">[other</span> <span class="pre">amrex</span> <span class="pre">options]</span></code> in the snippet above refers to any other AMReX configuration option in addition to the required ones. Please refer to the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake">AMReX user guide</a> for more details on building AMReX with CMake.</p>
 </div>
 <div class="section" id="building-mfix-exa">
 <h3>Building MFiX-Exa<a class="headerlink" href="#building-mfix-exa" title="Permalink to this headline">¶</a></h3>
@@ -359,29 +359,34 @@ compiler flags</td>
 compiler flags</td>
 <td>None</td>
 </tr>
-<tr class="row-odd"><td>ENABLE_MPI</td>
+<tr class="row-odd"><td>MFIX_MPI</td>
 <td>Enable build with MPI</td>
 <td>no/yes</td>
 <td>yes</td>
 </tr>
-<tr class="row-even"><td>ENABLE_OMP</td>
+<tr class="row-even"><td>MFIX_OMP</td>
 <td>Enable build with OpenMP</td>
 <td>no/yes</td>
 <td>no</td>
 </tr>
-<tr class="row-odd"><td>ENABLE_CUDA</td>
+<tr class="row-odd"><td>MFIX_CUDA</td>
 <td>Enable build with CUDA</td>
 <td>no/yes</td>
 <td>no</td>
 </tr>
-<tr class="row-even"><td>ENABLE_HYPRE</td>
+<tr class="row-even"><td>MFIX_HYPRE</td>
 <td>Enable HYPRE support</td>
 <td>no/yes</td>
 <td>no</td>
 </tr>
-<tr class="row-odd"><td>ENABLE_FPE</td>
+<tr class="row-odd"><td>MFIX_FPE</td>
 <td>Build with Floating-Point
 Exceptions checks</td>
+<td>no/yes</td>
+<td>no</td>
+</tr>
+<tr class="row-even"><td>MFIX_CSG</td>
+<td>Build with CSG support</td>
 <td>no/yes</td>
 <td>no</td>
 </tr>
@@ -403,6 +408,10 @@ the above command (with full path to the compilers) or the following:</p>
 <p>MFiX-Exa uses the same compiler flags used to build AMReX, unless
 <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> is explicitly provided, or
 the environmental variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/<code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> are set.</p>
+<p>For GPU builds, MFiX-Exa relies on the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/GPU.html#building-with-cmake">AMReX GPU build infrastructure</a>
+. The target architecture to build for can be specified via the AMReX configuration option <code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=&lt;target-architecture&gt;</span></code>,
+or by defining the <em>environmental variable</em> <code class="docutils literal notranslate"><span class="pre">AMREX_CUDA_ARCH</span></code> (all caps). If no GPU architecture is specified,
+CMake will try to determine which GPU is supported by the system.</p>
 </div>
 <div class="section" id="building-mfix-exa-for-cori-nersc">
 <h2>Building MFiX-Exa for Cori (NERSC)<a class="headerlink" href="#building-mfix-exa-for-cori-nersc" title="Permalink to this headline">¶</a></h2>
@@ -448,7 +457,7 @@ the environmental variables <code class="docutils literal notranslate"><span cla
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">cd</span> mfix
 <span class="gp">&gt;</span> mdkir build
 <span class="gp">&gt;</span> <span class="nb">cd</span> build
-<span class="gp">&gt;</span> cmake -DENABLE_CUDA<span class="o">=</span>yes -DCUDA_ARCH<span class="o">=</span>Volta -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran ..
+<span class="gp">&gt;</span> cmake -DMFIX_CUDA<span class="o">=</span>yes -DAMReX_CUDA_ARCH<span class="o">=</span>Volta -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran ..
 <span class="gp">&gt;</span> make -j
 </pre></div>
 </div>
@@ -473,7 +482,7 @@ the environmental variables <code class="docutils literal notranslate"><span cla
 <div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nb">cd</span> mfix
 <span class="gp">&gt;</span> mdkir build
 <span class="gp">&gt;</span> <span class="nb">cd</span> build
-<span class="gp">&gt;</span> cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran -DENABLE_CUDA<span class="o">=[</span>no<span class="p">|</span>yes<span class="o">]</span>
+<span class="gp">&gt;</span> cmake -DCMAKE_CXX_COMPILER<span class="o">=</span>g++ -DCMAKE_Fortran_COMPILER<span class="o">=</span>gfortran -DMFIX_CUDA<span class="o">=[</span>no<span class="p">|</span>yes<span class="o">]</span>
 <span class="gp">&gt;</span> make -j
 </pre></div>
 </div>

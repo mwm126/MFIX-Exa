@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['radius',['radius',['../structreal_data.html#a7a4926bdd051e850b79da8a998fc521da66b742a73d42b0f812555560c262b6fe',1,'realData']]],
+  ['radius',['radius',['../structreal_data.html#abf38a427acfd0e93aaeea66b650b99f3a66b742a73d42b0f812555560c262b6fe',1,'realData']]],
   ['random_5ffill_5fdem',['random_fill_dem',['../class_particles_generator.html#a21b725f0d8410f942a2e9a621fd6b7a8',1,'ParticlesGenerator']]],
   ['random_5ffill_5fpic',['random_fill_pic',['../class_particles_generator.html#a82ab3ce0bd62dfc58eb4c63acc071112',1,'ParticlesGenerator']]],
+  ['ranzmarshall',['RanzMarshall',['../struct_convection_type.html#ac376812de1669a480b37eadc46862264a7e57911e237f9d47542b50113bc9a552',1,'ConvectionType']]],
   ['reactionratestype',['ReactionRatesType',['../struct_reaction_rates_type.html',1,'']]],
   ['reactionsdata',['reactionsData',['../structreactions_data.html',1,'']]],
   ['readparameters',['ReadParameters',['../main_8cpp.html#acdc41eb96c44ce93645711a46e9dba63',1,'main.cpp']]],
@@ -17,9 +18,10 @@ var searchData=
   ['repl_5fy',['repl_y',['../main_8cpp.html#ac4e3f414220fd172cd356b7b1821a764',1,'main.cpp']]],
   ['repl_5fz',['repl_z',['../main_8cpp.html#a91276953768f7c18c8dbd5f7b3a939c1',1,'main.cpp']]],
   ['replicate',['Replicate',['../class_m_f_i_x_particle_container.html#a1bdedd056e284628d606f640f3461bdd',1,'MFIXParticleContainer']]],
+  ['reportgridstats',['ReportGridStats',['../classmfix.html#a6b64b79898dc107c7a3671034718f5d2',1,'mfix']]],
   ['resetiochkdata',['ResetIOChkData',['../classmfix.html#a9ef90289159ecc06bb1ab6e5f8566792',1,'mfix']]],
   ['resizearrays',['ResizeArrays',['../classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8',1,'mfix']]],
   ['restart',['Restart',['../classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a',1,'mfix']]],
   ['restart_5ffile',['restart_file',['../main_8cpp.html#a0a37a03c8c87cb8dcc69c2150fb089c5',1,'main.cpp']]],
-  ['rratesuser',['RRatesUser',['../struct_reaction_rates_type.html#ab68c27ebbc9cc37fc79b297c12716999abe57f6cb58e7c52957301f8620c779ae',1,'ReactionRatesType']]]
+  ['rratesuser',['RRatesUser',['../struct_reaction_rates_type.html#a9ad6ebdeb8761a6d860ab2e0ebcb1332abe57f6cb58e7c52957301f8620c779ae',1,'ReactionRatesType']]]
 ];

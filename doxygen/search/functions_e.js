@@ -9,6 +9,7 @@ var searchData=
   ['remakelevel',['RemakeLevel',['../classmfix.html#a4f5686f0fcbcb6d0abfaf50eda54e24c',1,'mfix']]],
   ['removeoutofrange',['RemoveOutOfRange',['../class_m_f_i_x_particle_container.html#ad07a432517e4a38717905992027b04dd',1,'MFIXParticleContainer']]],
   ['replicate',['Replicate',['../class_m_f_i_x_particle_container.html#a1bdedd056e284628d606f640f3461bdd',1,'MFIXParticleContainer']]],
+  ['reportgridstats',['ReportGridStats',['../classmfix.html#a6b64b79898dc107c7a3671034718f5d2',1,'mfix']]],
   ['resetiochkdata',['ResetIOChkData',['../classmfix.html#a9ef90289159ecc06bb1ab6e5f8566792',1,'mfix']]],
   ['resizearrays',['ResizeArrays',['../classmfix.html#a731534b6e2c99ab9c074bbde3294e7e8',1,'mfix']]],
   ['restart',['Restart',['../classmfix.html#a2ba3f6593e19d7db99da9f0da665f84a',1,'mfix']]]

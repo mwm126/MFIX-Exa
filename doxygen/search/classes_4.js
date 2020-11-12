@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['particlesgenerator',['ParticlesGenerator',['../class_particles_generator.html',1,'']]]
+  ['nullconvectioncoeff',['NullConvectionCoeff',['../struct_null_convection_coeff.html',1,'']]]
 ];

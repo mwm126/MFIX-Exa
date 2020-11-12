@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g_5fsn_5fpg_5fq',['G_sn_pg_q',['../structreactions_data.html#a4e51a3e79e990e2d085bc96097a6b580a4fa4cd442311c7100ffe2e46130aa8e4',1,'reactionsData']]],
+  ['g_5fsn_5fpg_5fq',['G_sn_pg_q',['../structreactions_data.html#a18d81d1aba3ac43719c9b4dc12b753f8a4fa4cd442311c7100ffe2e46130aa8e4',1,'reactionsData']]],
   ['generate',['generate',['../class_particles_generator.html#a52135b01a7597c95cea9d6231c1dd877',1,'ParticlesGenerator']]],
   ['generate_5fprop',['generate_prop',['../class_particles_generator.html#a4fd44123dd5bf93ed27b1cadd487c442',1,'ParticlesGenerator']]],
   ['get_5fgeom_5fref',['get_geom_ref',['../classmfix.html#aafc80427bfc7039eb78bb1fddc821596',1,'mfix']]],
@@ -16,5 +16,6 @@ var searchData=
   ['gidaspow',['Gidaspow',['../struct_drag_type.html#ae9d9178d4f47de37a0a6b2b159ca2422a6f3b2db60ba047f68172a6ce1097f54f',1,'DragType']]],
   ['gp0',['gp0',['../classmfix.html#ab0dd9a81ff59a5c8b1214e6548c6310c',1,'mfix']]],
   ['gravity',['gravity',['../classmfix.html#ac38880b922b206c465be1fc62ba08bb0',1,'mfix']]],
-  ['grow_5fpdata',['grow_pdata',['../class_particles_generator.html#aae970c8785b8e02dab108ab41703784d',1,'ParticlesGenerator']]]
+  ['grow_5fpdata',['grow_pdata',['../class_particles_generator.html#aae970c8785b8e02dab108ab41703784d',1,'ParticlesGenerator']]],
+  ['gunn',['Gunn',['../struct_convection_type.html#ac376812de1669a480b37eadc46862264a2aaeda3a1c2a090164a68643e3ce5544',1,'ConvectionType']]]
 ];
