@@ -56,10 +56,20 @@ Assuming no valid AMReX installation is present on the target system, and ``AMRe
     > cd mfix
     > mkdir build
     > cd build
-    > cmake [amrex options] -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] ..
+    > cmake [mfix options] [amrex options] -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] ..
     > make -j
 
-``[amrex options]`` in the snippet above is a list of any of the AMReX configuration options listed in the `AMReX user guide <https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake>`_
+``[amrex options]`` in the snippet above is a list of any of the AMReX configuration options listed in
+the `AMReX user guide <https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake>`_,
+while ``[mfix options]`` is any of the configuration options listed :ref:`here <tab:mfixcmakeoptions>`.
+
+
+For example, to enable AMReX profiling capabilities in MFiX_Exa, configure as follows:
+
+.. code:: shell
+
+    > cmake [mfix options] -DAMReX_TINY_PROFILE=yes -DCMAKE_BUILD_TYPE=[Debug|Release|RelWithDebInfo|MinSizeRel] ..
+
 
 
 Working with the AMReX submodule
@@ -168,41 +178,44 @@ Passing ``-DAMReX_ROOT=/absolute/path/to/amrex/installdir`` instructs CMake to s
 ``/absolute/path/to/amrex/installdir`` before searching system paths
 for an available AMReX installation.
 ``AMReX_ROOT`` can also be set as an environmental variable instead of passing it as a command line option.
-
-
 ``[mfix options]`` indicates any of the configuration option listed in the table below.
 
-+-----------------+------------------------------+------------------+-------------+
-| Option name     | Description                  | Possible values  | Default     |
-|                 |                              |                  | value       |
-+=================+==============================+==================+=============+
-| CMAKE\_Fortran\ | User-defined Fortran flags   | valid Fortran    | None        |
-| _FLAGS          |                              | compiler flags   |             |
-+-----------------+------------------------------+------------------+-------------+
-| CMAKE\_CXX\     | User-defined C++ flags       | valid C++        | None        |
-| _FLAGS          |                              | compiler flags   |             |
-+-----------------+------------------------------+------------------+-------------+
-| CMAKE\_CUDA\    | User-defined CUDA flags      | valid CUDA       | None        |
-| _FLAGS          |                              | compiler flags   |             |
-+-----------------+------------------------------+------------------+-------------+
-| MFIX\_MPI       | Enable build with MPI        | no/yes           | yes         |
-|                 |                              |                  |             |
-+-----------------+------------------------------+------------------+-------------+
-| MFIX\_OMP       | Enable build with OpenMP     | no/yes           | no          |
-|                 |                              |                  |             |
-+-----------------+------------------------------+------------------+-------------+
-| MFIX\_CUDA      | Enable build with CUDA       | no/yes           | no          |
-|                 |                              |                  |             |
-+-----------------+------------------------------+------------------+-------------+
-| MFIX\_HYPRE     | Enable HYPRE support         | no/yes           | no          |
-|                 |                              |                  |             |
-+-----------------+------------------------------+------------------+-------------+
-| MFIX\_FPE       | Build with Floating-Point    | no/yes           | no          |
-|                 | Exceptions checks            |                  |             |
-+-----------------+------------------------------+------------------+-------------+
-| MFIX\_CSG       | Build with CSG support       | no/yes           | no          |
-|                 |                              |                  |             |
-+-----------------+------------------------------+------------------+-------------+
+
+.. _tab:mfixcmakeoptions:
+
+.. table:: MFiX-Exa configuration options
+
+           +-----------------+------------------------------+------------------+-------------+
+           | Option name     | Description                  | Possible values  | Default     |
+           |                 |                              |                  | value       |
+           +=================+==============================+==================+=============+
+           | CMAKE\_Fortran\ | User-defined Fortran flags   | valid Fortran    | None        |
+           | _FLAGS          |                              | compiler flags   |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | CMAKE\_CXX\     | User-defined C++ flags       | valid C++        | None        |
+           | _FLAGS          |                              | compiler flags   |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | CMAKE\_CUDA\    | User-defined CUDA flags      | valid CUDA       | None        |
+           | _FLAGS          |                              | compiler flags   |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | MFIX\_MPI       | Enable build with MPI        | no/yes           | yes         |
+           |                 |                              |                  |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | MFIX\_OMP       | Enable build with OpenMP     | no/yes           | no          |
+           |                 |                              |                  |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | MFIX\_CUDA      | Enable build with CUDA       | no/yes           | no          |
+           |                 |                              |                  |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | MFIX\_HYPRE     | Enable HYPRE support         | no/yes           | no          |
+           |                 |                              |                  |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | MFIX\_FPE       | Build with Floating-Point    | no/yes           | no          |
+           |                 | Exceptions checks            |                  |             |
+           +-----------------+------------------------------+------------------+-------------+
+           | MFIX\_CSG       | Build with CSG support       | no/yes           | no          |
+           |                 |                              |                  |             |
+           +-----------------+------------------------------+------------------+-------------+
 
 
 
