@@ -236,11 +236,17 @@ In this mode, MFiX-Exa CMake inherents AMReX CMake targets and configuration opt
 <span class="gp">&gt;</span> <span class="nb">cd</span> mfix
 <span class="gp">&gt;</span> mkdir build
 <span class="gp">&gt;</span> <span class="nb">cd</span> build
-<span class="gp">&gt;</span> cmake <span class="o">[</span>amrex options<span class="o">]</span> -DCMAKE_BUILD_TYPE<span class="o">=[</span>Debug<span class="p">|</span>Release<span class="p">|</span>RelWithDebInfo<span class="p">|</span>MinSizeRel<span class="o">]</span> ..
+<span class="gp">&gt;</span> cmake <span class="o">[</span>mfix options<span class="o">]</span> <span class="o">[</span>amrex options<span class="o">]</span> -DCMAKE_BUILD_TYPE<span class="o">=[</span>Debug<span class="p">|</span>Release<span class="p">|</span>RelWithDebInfo<span class="p">|</span>MinSizeRel<span class="o">]</span> ..
 <span class="gp">&gt;</span> make -j
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">[amrex</span> <span class="pre">options]</span></code> in the snippet above is a list of any of the AMReX configuration options listed in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake">AMReX user guide</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">[amrex</span> <span class="pre">options]</span></code> in the snippet above is a list of any of the AMReX configuration options listed in
+the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html#building-with-cmake">AMReX user guide</a>,
+while <code class="docutils literal notranslate"><span class="pre">[mfix</span> <span class="pre">options]</span></code> is any of the configuration options listed <a class="reference internal" href="#tab-mfixcmakeoptions"><span class="std std-ref">here</span></a>.</p>
+<p>For example, to enable AMReX profiling capabilities in MFiX_Exa, configure as follows:</p>
+<div class="code shell highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> cmake <span class="o">[</span>mfix options<span class="o">]</span> -DAMReX_TINY_PROFILE<span class="o">=</span>yes -DCMAKE_BUILD_TYPE<span class="o">=[</span>Debug<span class="p">|</span>Release<span class="p">|</span>RelWithDebInfo<span class="p">|</span>MinSizeRel<span class="o">]</span> ..
+</pre></div>
+</div>
 <div class="section" id="working-with-the-amrex-submodule">
 <h3>Working with the AMReX submodule<a class="headerlink" href="#working-with-the-amrex-submodule" title="Permalink to this headline">¶</a></h3>
 <p><strong>SUPERBUILD</strong> mode relies on a git submodule to checkout the AMReX git repository.
@@ -323,9 +329,10 @@ MFiX-Exa developers!</p>
 <p>Passing <code class="docutils literal notranslate"><span class="pre">-DAMReX_ROOT=/absolute/path/to/amrex/installdir</span></code> instructs CMake to search
 <code class="docutils literal notranslate"><span class="pre">/absolute/path/to/amrex/installdir</span></code> before searching system paths
 for an available AMReX installation.
-<code class="docutils literal notranslate"><span class="pre">AMReX_ROOT</span></code> can also be set as an environmental variable instead of passing it as a command line option.</p>
-<p><code class="docutils literal notranslate"><span class="pre">[mfix</span> <span class="pre">options]</span></code> indicates any of the configuration option listed in the table below.</p>
-<table border="1" class="docutils">
+<code class="docutils literal notranslate"><span class="pre">AMReX_ROOT</span></code> can also be set as an environmental variable instead of passing it as a command line option.
+<code class="docutils literal notranslate"><span class="pre">[mfix</span> <span class="pre">options]</span></code> indicates any of the configuration option listed in the table below.</p>
+<span id="tab-mfixcmakeoptions"></span><table border="1" class="docutils" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">MFiX-Exa configuration options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="22%" />
 <col width="38%" />
