@@ -8,7 +8,7 @@ jobs:
   # when a job name is not provided
   super-lint:
     # Name the Job
-    name: Lint code base
+    name: Build Sphinx manual HTML target
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 
@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v2
 
       # Runs the Super-Linter action
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
+      - name: Build MFiX-Exa HTML manual
+        run: make -C docs
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
