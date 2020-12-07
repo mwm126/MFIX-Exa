@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install Doxygen
+        run: sudo apt install doxygen
 
-      - name: Install dependencies
+      - name: Install Sphinx
         run: pip install sphinx sphinx-rtd-theme
 
       - name: Checkout code
